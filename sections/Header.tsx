@@ -43,17 +43,18 @@ export default function Header({
   },
 }: Nav) {
   return (
-    <nav class="drawer drawer-end">
+    <nav class="drawer drawer-end fixed top-0 left-0 z-50">
       <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
 
       {/* main content */}
       <div class="drawer-content container lg:px-0 px-4 flex gap-8 items-center justify-between py-4">
 
         <a href="/" class="min-w-64 h-12">
-          <Image src={logo.src || ""} width={257} height={47} alt={logo.alt} class="h-full w-full" />
+          <Image src={logo.src || ""} width={257} height={40} alt={logo.alt} class="h-full w-full" />
         </a>
 
-        <div class="hidden items-center justify-between lg:flex w-full">
+        {/* <div class="hidden items-center justify-between lg:flex w-full"> */}
+        <div class="hidden items-center justify-between w-full">
           <ul class="flex">
             {navigation.links.map((link) => (
               <li>
@@ -83,9 +84,13 @@ export default function Header({
           </ul>
         </div>
 
-        <label
+        {/* <label
           htmlFor="mobile-drawer-nav"
           class="flex lg:hidden btn btn-ghost drawer-button"
+        > */}
+        <label
+          htmlFor="mobile-drawer-nav"
+          class="flex btn btn-ghost drawer-button"
         >
           <Icon id="Bars3" size={24} strokeWidth={0.1} />
         </label>

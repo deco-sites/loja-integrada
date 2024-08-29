@@ -1,7 +1,56 @@
 {
   "__resolveType": "site/sections/Header.tsx",
   "navigation": {
-    "links": [],
+    "links": [
+      {
+        "label": "Abra sua Loja na LI",
+        "url": "#"
+      },
+      {
+        "label": "Nosso ecossistema",
+        "url": "#"
+      },
+      {
+        "label": "Recursos e Ferramentas",
+        "url": "#"
+      },
+      {
+        "label": "Faça parte da Elite",
+        "url": "#"
+      },
+      {
+        "label": "Planos",
+        "url": "#"
+      },
+      {
+        "label": "Compre Junto e Carrinho Abandonado",
+        "url": "#"
+      },
+      {
+        "label": "Plano Aceleração",
+        "url": "#"
+      },
+      {
+        "label": "Plano Expansão ",
+        "url": "#"
+      },
+      {
+        "label": "Plano Elite",
+        "url": "#"
+      },
+      {
+        "label": "Pagali e Enviali",
+        "url": "#"
+      },
+      {
+        "label": "Plano Crescimento",
+        "url": "#"
+      },
+      {
+        "label": "Ecossistema de conteúdo",
+        "url": "#"
+      }
+    ],
     "buttons": []
   },
   "logo": {
