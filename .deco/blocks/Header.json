@@ -51,7 +51,29 @@
         "url": "#"
       }
     ],
-    "buttons": []
+    "buttons": [
+      {
+        "href": "#",
+        "text": "Criar loja"
+      },
+      {
+        "text": "Acessar minha loja",
+        "href": "#",
+        "outline": true
+      }
+    ],
+    "sideMenuButtons": [],
+    "asideMenuButtons": [
+      {
+        "text": "Abrir loja virtual",
+        "href": "#"
+      },
+      {
+        "text": "Fazer Login",
+        "href": "#",
+        "outline": true
+      }
+    ]
   },
   "logo": {
     "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12380/089daad4-d996-4911-9340-e227552948de"
