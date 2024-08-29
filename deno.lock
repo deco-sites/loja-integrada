@@ -3,9 +3,11 @@
   "packages": {
     "specifiers": {
       "jsr:@core/asyncutil@^1.0.2": "jsr:@core/asyncutil@1.1.1",
+      "jsr:@deco/deco@1.95.3": "jsr:@deco/deco@1.95.3",
       "jsr:@deco/deno-ast-wasm@0.5.0": "jsr:@deco/deno-ast-wasm@0.5.0",
       "jsr:@deco/durable@^0.5.3": "jsr:@deco/durable@0.5.3",
       "jsr:@deco/inspect-vscode@0.2.1": "jsr:@deco/inspect-vscode@0.2.1",
+      "jsr:@deco/warp@^0.3.6": "jsr:@deco/warp@0.3.6",
       "jsr:@deno/cache-dir@0.10.1": "jsr:@deno/cache-dir@0.10.1",
       "jsr:@hono/hono@^4.5.4": "jsr:@hono/hono@4.5.9",
       "jsr:@luca/esbuild-deno-loader@0.10.3": "jsr:@luca/esbuild-deno-loader@0.10.3",
@@ -16,9 +18,11 @@
       "jsr:@std/async@^0.224.1": "jsr:@std/async@0.224.2",
       "jsr:@std/bytes@^0.223.0": "jsr:@std/bytes@0.223.0",
       "jsr:@std/bytes@^1.0.2": "jsr:@std/bytes@1.0.2",
+      "jsr:@std/cli@^1.0.3": "jsr:@std/cli@1.0.4",
       "jsr:@std/cli@^1.0.4": "jsr:@std/cli@1.0.4",
       "jsr:@std/crypto@1.0.0-rc.1": "jsr:@std/crypto@1.0.0-rc.1",
       "jsr:@std/encoding@0.213": "jsr:@std/encoding@0.213.1",
+      "jsr:@std/encoding@0.224.0": "jsr:@std/encoding@0.224.0",
       "jsr:@std/encoding@^1.0.0-rc.1": "jsr:@std/encoding@1.0.3",
       "jsr:@std/encoding@^1.0.3": "jsr:@std/encoding@1.0.3",
       "jsr:@std/flags@^0.224.0": "jsr:@std/flags@0.224.0",
@@ -32,6 +36,7 @@
       "jsr:@std/io@^0.223": "jsr:@std/io@0.223.0",
       "jsr:@std/io@^0.224.4": "jsr:@std/io@0.224.6",
       "jsr:@std/io@^0.224.6": "jsr:@std/io@0.224.6",
+      "jsr:@std/json@^0.213.1": "jsr:@std/json@0.213.1",
       "jsr:@std/jsonc@0.213": "jsr:@std/jsonc@0.213.1",
       "jsr:@std/log@^0.224.5": "jsr:@std/log@0.224.6",
       "jsr:@std/media-types@^1.0.0-rc.1": "jsr:@std/media-types@1.0.3",
@@ -46,6 +51,7 @@
       "jsr:@std/semver@^0.224.3": "jsr:@std/semver@0.224.3",
       "jsr:@std/streams@^1.0.3": "jsr:@std/streams@1.0.3",
       "jsr:@supabase/supabase-js@2.45.1": "jsr:@supabase/supabase-js@2.45.1",
+      "jsr:@zaubrik/djwt@^3.0.2": "jsr:@zaubrik/djwt@3.0.2",
       "npm:@algolia/client-search": "npm:@algolia/client-search@5.1.0",
       "npm:@algolia/requester-fetch@4.20.0": "npm:@algolia/requester-fetch@4.20.0",
       "npm:@algolia/transporter@4.20.0": "npm:@algolia/transporter@4.20.0",
@@ -57,6 +63,7 @@
       "npm:@opentelemetry/exporter-trace-otlp-proto@0.52.1": "npm:@opentelemetry/exporter-trace-otlp-proto@0.52.1_@opentelemetry+api@1.9.0",
       "npm:@opentelemetry/instrumentation-fetch@0.52.1": "npm:@opentelemetry/instrumentation-fetch@0.52.1_@opentelemetry+api@1.9.0",
       "npm:@opentelemetry/instrumentation@0.52.1": "npm:@opentelemetry/instrumentation@0.52.1_@opentelemetry+api@1.9.0",
+      "npm:@opentelemetry/otlp-exporter-base@0.52.1": "npm:@opentelemetry/otlp-exporter-base@0.52.1_@opentelemetry+api@1.9.0",
       "npm:@opentelemetry/resources@1.25.1": "npm:@opentelemetry/resources@1.25.1_@opentelemetry+api@1.9.0",
       "npm:@opentelemetry/sdk-logs@0.52.1": "npm:@opentelemetry/sdk-logs@0.52.1_@opentelemetry+api@1.9.0",
       "npm:@opentelemetry/sdk-metrics@1.25.1": "npm:@opentelemetry/sdk-metrics@1.25.1_@opentelemetry+api@1.9.0",
@@ -70,24 +77,84 @@
       "npm:@supabase/realtime-js@2.10.2": "npm:@supabase/realtime-js@2.10.2",
       "npm:@supabase/storage-js@2.6.0": "npm:@supabase/storage-js@2.6.0",
       "npm:@swc/wasm-web@1.5.25": "npm:@swc/wasm-web@1.5.25",
+      "npm:@swc/wasm@1.3.76": "npm:@swc/wasm@1.3.76",
+      "npm:@types/json-schema@7.0.11": "npm:@types/json-schema@7.0.11",
+      "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:autoprefixer@10.4.14": "npm:autoprefixer@10.4.14_postcss@8.4.27",
       "npm:colorjs.io": "npm:colorjs.io@0.5.2",
       "npm:cssnano@6.0.1": "npm:cssnano@6.0.1_postcss@8.4.27",
       "npm:daisyui@4.4.19": "npm:daisyui@4.4.19_postcss@8.4.27",
+      "npm:fast-json-patch@^3.1.1": "npm:fast-json-patch@3.1.1",
       "npm:fuse.js@7.0.0": "npm:fuse.js@7.0.0",
       "npm:lru-cache@10.2.0": "npm:lru-cache@10.2.0",
       "npm:postcss@8.4.27": "npm:postcss@8.4.27",
       "npm:preact-render-to-string@6.4.0": "npm:preact-render-to-string@6.4.0_preact@10.23.2",
+      "npm:preact@10.23.1": "npm:preact@10.23.1",
       "npm:search-insights@2.9.0": "npm:search-insights@2.9.0",
+      "npm:simple-git@^3.25.0": "npm:simple-git@3.25.0",
       "npm:tailwindcss@3.4.1": "npm:tailwindcss@3.4.1_postcss@8.4.27",
       "npm:typesense@1.7.1": "npm:typesense@1.7.1_@babel+runtime@7.25.0",
       "npm:ua-parser-js@2.0.0-beta.2": "npm:ua-parser-js@2.0.0-beta.2",
       "npm:unique-names-generator@4.7.1": "npm:unique-names-generator@4.7.1",
+      "npm:utility-types@3.10.0": "npm:utility-types@3.10.0",
       "npm:weak-lru-cache@1.0.0": "npm:weak-lru-cache@1.0.0"
     },
     "jsr": {
       "@core/asyncutil@1.1.1": {
         "integrity": "64540c79e023605f1c3cee2a50291d4d83d495b89a2b32c99fd3c2fbf445971c"
+      },
+      "@deco/deco@1.95.3": {
+        "integrity": "78a83683a76d425b9a56d365a7782a4148335fcb97511f23636c151e3240d9ce",
+        "dependencies": [
+          "jsr:@core/asyncutil@^1.0.2",
+          "jsr:@deco/deno-ast-wasm@0.5.0",
+          "jsr:@deco/durable@^0.5.3",
+          "jsr:@deco/inspect-vscode@0.2.1",
+          "jsr:@deco/warp@^0.3.6",
+          "jsr:@deno/cache-dir@0.10.1",
+          "jsr:@hono/hono@^4.5.4",
+          "jsr:@std/async@^0.224.1",
+          "jsr:@std/cli@^1.0.3",
+          "jsr:@std/crypto@1.0.0-rc.1",
+          "jsr:@std/encoding@^1.0.0-rc.1",
+          "jsr:@std/flags@^0.224.0",
+          "jsr:@std/fmt@^0.225.3",
+          "jsr:@std/fs@^0.229.1",
+          "jsr:@std/http@^1.0.0",
+          "jsr:@std/io@^0.224.4",
+          "jsr:@std/log@^0.224.5",
+          "jsr:@std/media-types@^1.0.0-rc.1",
+          "jsr:@std/path@^0.225.2",
+          "jsr:@std/semver@^0.224.3",
+          "jsr:@supabase/supabase-js@2.45.1",
+          "jsr:@zaubrik/djwt@^3.0.2",
+          "npm:@opentelemetry/api-logs@0.52.1",
+          "npm:@opentelemetry/api@1.9.0",
+          "npm:@opentelemetry/exporter-logs-otlp-http@0.52.1",
+          "npm:@opentelemetry/exporter-metrics-otlp-http@0.52.1",
+          "npm:@opentelemetry/exporter-trace-otlp-proto@0.52.1",
+          "npm:@opentelemetry/instrumentation-fetch@0.52.1",
+          "npm:@opentelemetry/instrumentation@0.52.1",
+          "npm:@opentelemetry/resources@1.25.1",
+          "npm:@opentelemetry/sdk-logs@0.52.1",
+          "npm:@opentelemetry/sdk-metrics@1.25.1",
+          "npm:@opentelemetry/sdk-trace-base@1.25.1",
+          "npm:@opentelemetry/sdk-trace-node@1.25.1",
+          "npm:@opentelemetry/semantic-conventions@1.25.1",
+          "npm:@swc/wasm-web@1.5.25",
+          "npm:autoprefixer@10.4.14",
+          "npm:cssnano@6.0.1",
+          "npm:fast-json-patch@^3.1.1",
+          "npm:lru-cache@10.2.0",
+          "npm:postcss@8.4.27",
+          "npm:preact-render-to-string@6.4.0",
+          "npm:preact@10.23.1",
+          "npm:simple-git@^3.25.0",
+          "npm:tailwindcss@3.4.1",
+          "npm:ua-parser-js@2.0.0-beta.2",
+          "npm:unique-names-generator@4.7.1",
+          "npm:weak-lru-cache@1.0.0"
+        ]
       },
       "@deco/deno-ast-wasm@0.5.0": {
         "integrity": "19b5b92803a21e4ad2dde1b44b0f3d3bad6931cb56c421be083595f5c3729c92"
@@ -101,6 +168,9 @@
           "jsr:@std/path@^1.0.2",
           "npm:fuse.js@7.0.0"
         ]
+      },
+      "@deco/warp@0.3.6": {
+        "integrity": "ee908fd2e9f786e4de7f40d359051ef687d6bf7f81cadebdcfd71f97c9980526"
       },
       "@deno/cache-dir@0.10.1": {
         "integrity": "30f0a3b975df62adebd859a56f285873c56c6e68190e4370c7a539c6664559ad",
@@ -151,6 +221,9 @@
       },
       "@std/encoding@0.213.1": {
         "integrity": "fcbb6928713dde941a18ca5db88ca1544d0755ec8fb20fe61e2dc8144b390c62"
+      },
+      "@std/encoding@0.224.0": {
+        "integrity": "efb6dca97d3e9c31392bd5c8cfd9f9fc9decf5a1f4d1f78af7900a493bcf89b5"
       },
       "@std/encoding@1.0.3": {
         "integrity": "5dbc2d7f5aa6062de7e19862ea856ac7a0dcce0b6fb46bb7b332d3bdcd4408b7"
@@ -207,10 +280,14 @@
           "jsr:@std/bytes@^1.0.2"
         ]
       },
+      "@std/json@0.213.1": {
+        "integrity": "f572b1de605d07c4a5602445dac54bfc51b1fb87a3710a17aed2608bfca54e68"
+      },
       "@std/jsonc@0.213.1": {
         "integrity": "5578f21aa583b7eb7317eed077ffcde47b294f1056bdbb9aacec407758637bfe",
         "dependencies": [
-          "jsr:@std/assert@^0.213.1"
+          "jsr:@std/assert@^0.213.1",
+          "jsr:@std/json@^0.213.1"
         ]
       },
       "@std/log@0.224.6": {
@@ -266,6 +343,12 @@
           "npm:@supabase/postgrest-js@1.15.8",
           "npm:@supabase/realtime-js@2.10.2",
           "npm:@supabase/storage-js@2.6.0"
+        ]
+      },
+      "@zaubrik/djwt@3.0.2": {
+        "integrity": "8070adaa49cd9e5d2b8ae82fd461132c966ef2f8ff8378db4a4da8df4f17c664",
+        "dependencies": [
+          "jsr:@std/encoding@0.224.0"
         ]
       }
     },
@@ -371,6 +454,16 @@
           "@jridgewell/resolve-uri": "@jridgewell/resolve-uri@3.1.2",
           "@jridgewell/sourcemap-codec": "@jridgewell/sourcemap-codec@1.5.0"
         }
+      },
+      "@kwsites/file-exists@1.1.1": {
+        "integrity": "sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==",
+        "dependencies": {
+          "debug": "debug@4.3.6"
+        }
+      },
+      "@kwsites/promise-deferred@1.1.1": {
+        "integrity": "sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==",
+        "dependencies": {}
       },
       "@nodelib/fs.scandir@2.1.5": {
         "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==",
@@ -653,8 +746,16 @@
         "integrity": "sha512-hwX3Oficta3Ok9hAjWUnsxrRCXPCnQ+NlsiQtd0a6qQIqLnG3q+TptSvf23qCVeWIdoUyu25fFa/55jDOCtDVw==",
         "dependencies": {}
       },
+      "@swc/wasm@1.3.76": {
+        "integrity": "sha512-AgI1dbzYFn4jXlD6sGJ/xn0KXSoAGHHUFlobSJi6EqA8AKUD3penlPSiRSUi+4rPQzhVDKLh8rKH1GgQOdWcBg==",
+        "dependencies": {}
+      },
       "@trysound/sax@0.2.0": {
         "integrity": "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==",
+        "dependencies": {}
+      },
+      "@types/json-schema@7.0.11": {
+        "integrity": "sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==",
         "dependencies": {}
       },
       "@types/node@18.16.19": {
@@ -1024,6 +1125,10 @@
           "merge2": "merge2@1.4.1",
           "micromatch": "micromatch@4.0.7"
         }
+      },
+      "fast-json-patch@3.1.1": {
+        "integrity": "sha512-vf6IHUX2SBcA+5/+4883dsIjpBTqmfBjmYiWK1savxQmFk4JfBMLa7ynTYOs1Rolp/T1betJxHiGD3g1Mn8lUQ==",
+        "dependencies": {}
       },
       "fastparse@1.1.2": {
         "integrity": "sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==",
@@ -1563,6 +1668,10 @@
           "pretty-format": "pretty-format@3.8.0"
         }
       },
+      "preact@10.23.1": {
+        "integrity": "sha512-O5UdRsNh4vdZaTieWe3XOgSpdMAmkIYBCT3VhQDlKrzyCm8lUYsk0fmVEvoQQifoOjFRTaHZO69ylrzTW2BH+A==",
+        "dependencies": {}
+      },
       "preact@10.23.2": {
         "integrity": "sha512-kKYfePf9rzKnxOAKDpsWhg/ysrHPqT+yQ7UW4JjdnqjFIeNUnNcEJvhuA8fDenxAGWzUqtd51DfVg7xp/8T9NA==",
         "dependencies": {}
@@ -1659,6 +1768,14 @@
       "signal-exit@4.1.0": {
         "integrity": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==",
         "dependencies": {}
+      },
+      "simple-git@3.25.0": {
+        "integrity": "sha512-KIY5sBnzc4yEcJXW7Tdv4viEz8KyG+nU0hay+DWZasvdFOYKeUZ6Xc25LUHHjw0tinPT7O1eY6pzX7pRT1K8rw==",
+        "dependencies": {
+          "@kwsites/file-exists": "@kwsites/file-exists@1.1.1",
+          "@kwsites/promise-deferred": "@kwsites/promise-deferred@1.1.1",
+          "debug": "debug@4.3.6"
+        }
       },
       "source-map-js@1.2.0": {
         "integrity": "sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==",
@@ -1809,6 +1926,10 @@
         "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==",
         "dependencies": {}
       },
+      "utility-types@3.10.0": {
+        "integrity": "sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==",
+        "dependencies": {}
+      },
       "weak-lru-cache@1.0.0": {
         "integrity": "sha512-135bPugHHIJLNx20guHgk4etZAbd7nou34NQfdKkJPgMuC3Oqn4cT6f7ORVvnud9oEyXJVJXPcTFsUvttGm5xg==",
         "dependencies": {}
@@ -1855,6 +1976,11 @@
         "dependencies": {}
       }
     }
+  },
+  "redirects": {
+    "https://deco.cx/run": "https://deno.land/x/deco/scripts/run.ts",
+    "https://deno.land/x/deco/scripts/run.ts": "https://deno.land/x/deco@1.92.4/scripts/run.ts",
+    "https://esm.sh/v135/@types/babel__helper-validator-identifier@~7/index.d.ts": "https://esm.sh/v135/@types/babel__helper-validator-identifier@7.15.2/index.d.ts"
   },
   "remote": {
     "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.1/admin/widgets.ts": "fa00cb641a085cd414b4756566478e7f8ce1336533bfaa78594e3f96cdd78625",
@@ -2498,6 +2624,8 @@
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/manifest/defaults.ts": "e20471c161d25207820f4369ce181a4a2becce519790ab787b213d0c442c33ac",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/manifest/fresh.ts": "8904a4e3ffc2646436a2d0cea9f8fd0c6f66c1283209cc9d00f965060dc29dc3",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/manifest/manifest.ts": "23db32e9751df4cc53d62f87685db505345f98e050688c20f9d554a450d2f905",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/manifest/manifestBuilder.ts": "8f57242885e60a8e65f27506aec1da0896ddc67723687708b77699c18b40f801",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/manifest/manifestGen.ts": "d7e97faf03fb091e8bee2d83f04223fa0dead5ae1aef14936eb12b7b964926c3",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/manifest/utils.ts": "7568363b0ef83e4f252fa8ce558430ba173096b3fba0239adaa1e0f49e22fc08",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/middleware.ts": "9edf69bcb207d8517574a37f7d9e12d3346d52aa39f74a9a5ca42999538644ab",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/engine/schema/builder.ts": "fcdd5d34deff2de023d8a583e7572091c34f9767135a9b07bfe1162a8e645ccc",
@@ -2575,6 +2703,10 @@
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/runtime/routes/styles.css.ts": "aa8350b8bde20d2a3c34918e6b8893fa4518cb64430a585f78815817168dd1d7",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/runtime/routes/workflow.ts": "5e6126cdd748cd7d335c596bee461b0bf31ea6545d1484c5becb096853d8e3eb",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/runtime/utils.ts": "43a8075473ac9bf3641ecab007a27c594f8892a48109805a5b7deb028c8fed7b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/scripts/apps/bundle.lib.ts": "cf0cb61e1888c71d68d199265f9edda7b57aad0cbd9b05714fa07423e05afa2f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/scripts/apps/bundle.ts": "72064a02bc8190c47c0bb548b7c484d7960c5fb080686d41549b8987134ed54b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/scripts/apps/config.ts": "77e1c8001a38b30f9a17aa2bf896f865f3b0298b1626d68c15f7a4654f25105b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/scripts/formatter.ts": "c90be7018e89aa7d1449b41e241e798783b7bdef9bfc79cb13de1e5af3cecdfa",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/scripts/registry.ts": "e4c413c936c29fc13f756d7180b7e6d109fd7f7823e4cd34e1ec12e0ceea584c",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/supabase.ts": "c95d2b036607f42b43f808e184ccbdf5c93c75927f5c2e049609d1349a8650c6",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.90.2/types.ts": "f7589e9d9075d14d4699c32df220fcf5871f806e229d141c6e15f899f4fa5f2f",
@@ -2813,6 +2945,7 @@
     "https://deno.land/std@0.216.0/fs/walk.ts": "78e1d01a9f75715614bf8d6e58bd77d9fafb1222c41194e607cd3849d7a0e771",
     "https://deno.land/std@0.216.0/http/server.ts": "6dce295abc169d0956ae00432441331b3425afad4d79e8b3475739be2f04d614",
     "https://deno.land/std@0.216.0/http/status.ts": "ed61b4882af2514a81aefd3245e8df4c47b9a8e54929a903577643d2d1ebf514",
+    "https://deno.land/std@0.216.0/json/common.ts": "33f1a4f39a45e2f9f357823fd0b5cf88b63fb4784b8c9a28f8120f70a20b23e9",
     "https://deno.land/std@0.216.0/jsonc/mod.ts": "82722888823e1af5a8f7918bf810ea581f68081064d529218533acad6cb7c2bc",
     "https://deno.land/std@0.216.0/jsonc/parse.ts": "747a0753289fdbfcb9cb86b709b56348c98abc107fbb0a7f350b87af4425a76a",
     "https://deno.land/std@0.216.0/media_types/_db.ts": "1d695d9fe1c785e523d6de7191b33f33ecc7866db77358a4f966221cca56e2f9",
@@ -2945,6 +3078,7 @@
     "https://deno.land/x/code_block_writer@12.0.0/mod.ts": "2c3448060e47c9d08604c8f40dee34343f553f33edcdfebbf648442be33205e5",
     "https://deno.land/x/code_block_writer@12.0.0/utils/string_utils.ts": "60cb4ec8bd335bf241ef785ccec51e809d576ff8e8d29da43d2273b69ce2a6ff",
     "https://deno.land/x/croner@6.0.3/dist/croner.js": "a28ce3562d41922dd3060542001ded2e8546528e495b554e42ecdf0b1db5c382",
+    "https://deno.land/x/deco@1.92.4/scripts/run.ts": "b5074e120651bf92a4c5545783a052c515f46ba36010df7b3350139c08e90dba",
     "https://deno.land/x/denoflate@1.2.1/mod.ts": "f5628e44b80b3d80ed525afa2ba0f12408e3849db817d47a883b801f9ce69dd6",
     "https://deno.land/x/denoflate@1.2.1/pkg/denoflate.js": "b9f9ad9457d3f12f28b1fb35c555f57443427f74decb403113d67364e4f2caf4",
     "https://deno.land/x/denoflate@1.2.1/pkg/denoflate_bg.wasm.js": "d581956245407a2115a3d7e8d85a9641c032940a8e810acbd59ca86afd34d44d",
@@ -2982,7 +3116,13 @@
     "https://deno.land/x/fresh@1.6.8/src/runtime/build_id.ts": "8376e70e42ce456dfa6932c638409d2ef1bca4833b4ceba0bf74510080a7f976",
     "https://deno.land/x/fresh@1.6.8/src/runtime/csp.ts": "9ee900e9b0b786057b1009da5976298c202d1b86d1f1e4d2510bde5f06530ac9",
     "https://deno.land/x/fresh@1.6.8/src/runtime/deserializer.ts": "1b83e75fa61c48b074ea121f33647d1ed15c68fa2f2a11b0a7f7a12cd38af627",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/client.ts": "a9224606e41bc58d81f37b7125650432920a7d136bdf416051e925ac9bbd1f05",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/deserializer.ts": "e836f44c454e1f67c86eab30f108eb9be05a38489604a24e418b564b77058b96",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/main.ts": "de3aa5cbd9b3abfa825939b58bc8df088ab183e042c0447b37180f4ea31c613c",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/main_dev.ts": "d2960e339119e45017954c7cf6798b9e0a3110d173cc378e1e3e7bc84bd68c34",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/signals.ts": "782c81f97d125ad4f92aa0160dad3a2e8b6ea7a61cec7fdab87bbbbd8c0d215c",
     "https://deno.land/x/fresh@1.6.8/src/runtime/head.ts": "0f9932874497ab6e57ed1ba01d549e843523df4a5d36ef97460e7a43e3132fdc",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/polyfills.ts": "c3de932b2f23df9a4ade1ab4f8890730c0db0a71bf85faa41742a1763631e917",
     "https://deno.land/x/fresh@1.6.8/src/runtime/utils.ts": "4f40630c308e8ea7d53860687905caf1a2f2a46ad8692f24e905a8e996b584c3",
     "https://deno.land/x/fresh@1.6.8/src/server/boot.ts": "969da650e882adba6559af3784b90473d357201345d4e5b24a0cf5e582882d6b",
     "https://deno.land/x/fresh@1.6.8/src/server/build_id.ts": "82d9cb985de6b1e38c3108e5a00667b16e80eedc145d73835d6b44349ebe6389",
@@ -3100,6 +3240,8 @@
     "https://denopkg.com/deco-cx/durable@0.5.3/security/jwt.ts": "e09a7fe856de9d8c0da4957634bbad8484ab054c1567a13492325ee3f4e7478e",
     "https://denopkg.com/deco-cx/durable@0.5.3/security/keys.ts": "b7e24eaea07bed77cf6409e134690166f191f42d124b8efe01c01f71cade2d3c",
     "https://denopkg.com/deco-cx/durable@0.5.3/types.ts": "cc559900185387dafb842b4f21c8b0b6b566216d8837e842a709bc4e563aaea5",
+    "https://esm.sh/*@preact/signals-core@1.5.1": "de8dffabec1aab92430087751f0c451af2853ee5163fe7761fd94d70263b7ea6",
+    "https://esm.sh/*@preact/signals@1.2.2": "8b174b406f1c00fdf3930fbb4ddc556162e6fd0dfe84a5ec300e9ac1776cbf42",
     "https://esm.sh/*preact-render-to-string@6.3.1": "07807f027acf54b994b630bbb2a923f5a835f9544e01144f67ab292e90a431e4",
     "https://esm.sh/@anthropic-ai/sdk@0.21.1": "13a100932f9d6aabee7ae2ea57d4e7fc7188132835585a188f14cf069bfd4bbf",
     "https://esm.sh/@babel/helper-validator-identifier@7.22.20": "daace34e028130297fddf97f3ef6deb4b05ec3eb46f5c5cacd6eaa43d6323b0a",
@@ -3150,6 +3292,8 @@
     "https://esm.sh/v135/@anthropic-ai/sdk@0.21.1/denonext/uploads.js": "d47f1c4c454f3f105b8ee3bb14247bb6d7cea9e9771b397b53f9f7c92cb514a0",
     "https://esm.sh/v135/@anthropic-ai/sdk@0.21.1/denonext/version.js": "cc5dbc26e5b08b1055a84b212a18d48dcd7c656fea3db244bc0ec147d846f387",
     "https://esm.sh/v135/@babel/helper-validator-identifier@7.22.20/denonext/helper-validator-identifier.mjs": "1ad312a9040d1f3b096e90a3e6a9da7ecfc99662140852fe3862a316c2591c93",
+    "https://esm.sh/v135/@preact/signals-core@1.5.1/denonext/signals-core.mjs": "dc36965311a6fda182378c0b3aec418ffe60fb2bb6020d9948d105862a27ddf8",
+    "https://esm.sh/v135/@preact/signals@1.2.2/X-ZS8q/denonext/signals.mjs": "f2cb7b0335f75be2827049bf6a1ce3c6bd35e74c7a922a1eeb338b0312d61556",
     "https://esm.sh/v135/algoliasearch@4.20.0/denonext/algoliasearch.mjs": "597d17680a34a71d7904b0293ce8fd6593966f87c28ebed58e793efb0ad91194",
     "https://esm.sh/v135/aws-sdk@2.1585.0/denonext/aws-sdk.mjs": "b0e46f44244359c1f54c7ac6d999ffc77e5d534f5bfeac0038d7bb9ccd906c96",
     "https://esm.sh/v135/base64-js@1.5.1/esnext/base64-js.mjs": "349361f227d34ff80b673a7741ea0b509dbb6c9c89d650b86a0b55705e25c8dc",
