@@ -8,7 +8,53 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/MainHero.tsx"
+        "__resolveType": "website/flags/multivariate/section.ts",
+        "variants": [
+          {
+            "value": {
+              "__resolveType": "site/sections/MainHero.tsx",
+              "title": "Reduza seus custos e venda com mais eficiência",
+              "caption": "<p><span style=\"font-size: 14pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 14pt; color: rgb(95, 110, 130);\">Conheça o ecossistema Loja Integrada e <strong><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">ganhe até 20% OFF</span></strong> na assinatura anual</span></p>",
+              "inputPlaceHolder": "Digite seu email aqui para ganhar",
+              "inputButtonText": "Aproveitar",
+              "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
+              "image": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
+                "alt": "top image"
+              },
+              "backgroundImage": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
+                "alt": "background image"
+              }
+            },
+            "rule": {
+              "__resolveType": "website/matchers/device.ts",
+              "mobile": true,
+              "tablet": false
+            }
+          },
+          {
+            "value": {
+              "__resolveType": "site/sections/MainHero.tsx",
+              "title": "Suporte e economia na hora de migrar",
+              "caption": "<p><span style=\"font-size: 24pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 24pt; color: rgb(95, 110, 130);\">Redução média de R$ 90.000/ano com custos de manutenção da plataforma</span><br></p>",
+              "inputPlaceHolder": "Digite seu email aqui para ganhar",
+              "inputButtonText": "Aproveitar",
+              "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
+              "image": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
+                "alt": "top image"
+              },
+              "backgroundImage": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
+                "alt": "background image"
+              }
+            },
+            "rule": {
+              "__resolveType": "website/matchers/always.ts"
+            }
+          }
+        ]
       }
     },
     {

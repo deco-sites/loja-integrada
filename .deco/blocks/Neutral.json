@@ -23,7 +23,7 @@
     "success": "#008060",
     "warning": "#ffc453",
     "error": "#d82c0d",
-    "info": "#2e72d2"
+    "info": "#EAE0EE"
   },
   "font": {
     "__resolveType": "website/loaders/fonts/googleFonts.ts",
@@ -36,6 +36,8 @@
   },
   "mode": "light",
   "complementaryColors": {
-    "primary-content": "#ffffff"
+    "primary-content": "#ffffff",
+    "base-200": "#EBEBEB",
+    "base-300": "#5F6E82"
   }
 }
