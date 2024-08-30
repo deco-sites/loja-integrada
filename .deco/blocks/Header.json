@@ -73,6 +73,12 @@
         "href": "#",
         "outline": true
       }
+    ],
+    "mobielButtons": [
+      {
+        "href": "#",
+        "text": "Ver planos"
+      }
     ]
   },
   "logo": {

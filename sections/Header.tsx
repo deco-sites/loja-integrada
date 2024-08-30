@@ -35,6 +35,7 @@ export interface Nav {
       url?: string;
     }[];
     buttons: CTA[];
+    mobielButtons: CTA[];
     asideMenuButtons?: CTA[];
   };
 }
@@ -56,6 +57,7 @@ export default function Header({
       { id: "change-me-1", href: "/", text: "Change me", outline: false },
       { id: "change-me-2", href: "/", text: "Change me", outline: true },
     ],
+    mobielButtons: [],
   },
 }: Nav) {
 
@@ -64,14 +66,14 @@ export default function Header({
       <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
 
       {/* main content */}
-      <div class="drawer-content mx-auto w-full lg:px-0 px-4 py-0 flex gap-8 items-center justify-between max-w-[1260px]">
+      <div class="drawer-content mx-auto w-full lg:px-0 px-4 py-0 flex gap-8 items-center justify-between max-w-[1260px] ">
 
         <script
           type="module"
           dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
         />
 
-        <a href="/" class="min-w-44 h-5 md:min-w-64 md:h-10">
+        <a href="/" class="min-w-32 h-5 md:min-w-64 md:h-10">
           <Image src={logo.src || ""} width={257} height={40} alt={logo.alt} class="h-full w-full" />
         </a>
 
@@ -91,7 +93,28 @@ export default function Header({
               </li>
             ))}
           </ul>
-          <ul class="flex justify-end gap-7">
+          <ul class="flex md:hidden justify-end gap-7">
+            {navigation.mobielButtons?.map((item) => (
+              <div class="flex items-center">
+                <a
+                  key={item?.id}
+                  id={item?.id}
+                  href={item?.href ?? "#"}
+                  target={item?.href.includes("http") ? "_blank" : "_self"}
+                  class={` ${item.outline ? "" : ""} font-bold text-primary px-4 py-1.5 rounded-md transition-all hover:scale-110 text-xs bg-primary-content bg-opacity-60`}
+                >
+                  {item?.text}
+                </a>
+              </div>
+            ))}
+            <label
+              htmlFor="mobile-drawer-nav"
+              class="flex btn btn-ghost drawer-button px-0"
+            >
+              <Icon id="Bars3" size={46} strokeWidth={0.1} class="text-primary fill-current" />
+            </label>
+          </ul>
+          <ul class="hidden md:flex justify-end gap-7">
             {navigation.buttons?.map((item) => (
               <a
                 key={item?.id}
@@ -124,7 +147,12 @@ export default function Header({
         />
 
         <div class="flex flex-col gap-8 min-h-full min-w-64 h-10 bg-base-100 text-base-content">
-          <ul class="pt-8 pb-6 pl-4 pr-6 flex items-center gap-3 bg-accent">
+          <ul class="pt-8 pb-6 pl-4 pr-16 flex items-center flex-wrap gap-3 bg-accent relative">
+            <label class="flex justify-center items-center h-8 w-8 cursor-pointer absolute top-10 right-6" aria-label="close sidebar" htmlFor="mobile-drawer-nav">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-primary fill-current" width="25" height="25" viewBox="0 0 25 25">
+                <path d="M23.6357 21.4319C23.9528 21.749 24.1309 22.1789 24.1309 22.6273C24.1309 23.0756 23.9528 23.5056 23.6357 23.8226C23.3187 24.1396 22.8888 24.3177 22.4404 24.3177C21.9921 24.3177 21.5621 24.1396 21.2451 23.8226L12.3168 14.8915L3.38574 23.8198C3.06872 24.1368 2.63876 24.3149 2.19043 24.3149C1.7421 24.3149 1.31213 24.1368 0.995115 23.8198C0.678098 23.5027 0.5 23.0728 0.5 22.6245C0.5 22.1761 0.678098 21.7462 0.995115 21.4291L9.92621 12.5009L0.997927 3.56976C0.68091 3.25275 0.502813 2.82278 0.502813 2.37445C0.502813 1.92612 0.68091 1.49615 0.997927 1.17914C1.31494 0.862121 1.74491 0.684023 2.19324 0.684023C2.64157 0.684023 3.07154 0.862121 3.38855 1.17914L12.3168 10.1102L21.2479 1.17773C21.5649 0.860715 21.9949 0.682617 22.4432 0.682617C22.8916 0.682617 23.3215 0.860715 23.6385 1.17773C23.9556 1.49475 24.1337 1.92471 24.1337 2.37304C24.1337 2.82137 23.9556 3.25134 23.6385 3.56836L14.7075 12.5009L23.6357 21.4319Z" />
+              </svg>
+            </label>
             {navigation.asideMenuButtons?.map((item) => (
               <a
                 key={item?.id}
@@ -136,11 +164,6 @@ export default function Header({
                 {item?.text}
               </a>
             ))}
-            <label class="flex justify-center items-center h-8 w-8 cursor-pointer " aria-label="close sidebar" htmlFor="mobile-drawer-nav">
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-primary fill-current" width="25" height="25" viewBox="0 0 25 25">
-                <path d="M23.6357 21.4319C23.9528 21.749 24.1309 22.1789 24.1309 22.6273C24.1309 23.0756 23.9528 23.5056 23.6357 23.8226C23.3187 24.1396 22.8888 24.3177 22.4404 24.3177C21.9921 24.3177 21.5621 24.1396 21.2451 23.8226L12.3168 14.8915L3.38574 23.8198C3.06872 24.1368 2.63876 24.3149 2.19043 24.3149C1.7421 24.3149 1.31213 24.1368 0.995115 23.8198C0.678098 23.5027 0.5 23.0728 0.5 22.6245C0.5 22.1761 0.678098 21.7462 0.995115 21.4291L9.92621 12.5009L0.997927 3.56976C0.68091 3.25275 0.502813 2.82278 0.502813 2.37445C0.502813 1.92612 0.68091 1.49615 0.997927 1.17914C1.31494 0.862121 1.74491 0.684023 2.19324 0.684023C2.64157 0.684023 3.07154 0.862121 3.38855 1.17914L12.3168 10.1102L21.2479 1.17773C21.5649 0.860715 21.9949 0.682617 22.4432 0.682617C22.8916 0.682617 23.3215 0.860715 23.6385 1.17773C23.9556 1.49475 24.1337 1.92471 24.1337 2.37304C24.1337 2.82137 23.9556 3.25134 23.6385 3.56836L14.7075 12.5009L23.6357 21.4319Z" />
-              </svg>
-            </label>
           </ul>
 
           <ul class="menu carousel px-8">
