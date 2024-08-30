@@ -16,6 +16,9 @@ export default {
           "100%": { transform: "translateX(-50%)" },
         },
       },
+      boxShadow: {
+        "spreaded": "0px 5.563px 31.72px 0px rgba(0, 72, 82, 0.09)",
+      },
     },
   },
 };

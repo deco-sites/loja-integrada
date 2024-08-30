@@ -35,7 +35,7 @@ export interface Nav {
       url?: string;
     }[];
     buttons: CTA[];
-    mobielButtons: CTA[];
+    mobileButtons: CTA[];
     asideMenuButtons?: CTA[];
   };
 }
@@ -57,7 +57,7 @@ export default function Header({
       { id: "change-me-1", href: "/", text: "Change me", outline: false },
       { id: "change-me-2", href: "/", text: "Change me", outline: true },
     ],
-    mobielButtons: [],
+    mobileButtons: [],
   },
 }: Nav) {
 
@@ -94,7 +94,7 @@ export default function Header({
             ))}
           </ul>
           <ul class="flex md:hidden justify-end gap-7">
-            {navigation.mobielButtons?.map((item) => (
+            {navigation.mobileButtons?.map((item) => (
               <div class="flex items-center">
                 <a
                   key={item?.id}
@@ -111,7 +111,7 @@ export default function Header({
               htmlFor="mobile-drawer-nav"
               class="flex btn btn-ghost drawer-button px-0"
             >
-              <Icon id="Bars3" size={46} strokeWidth={0.1} class="text-primary fill-current" />
+              <Icon id="Bars3" size={25} strokeWidth={0.1} class="text-primary fill-current" />
             </label>
           </ul>
           <ul class="hidden md:flex justify-end gap-7">

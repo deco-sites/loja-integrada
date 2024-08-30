@@ -74,7 +74,7 @@
         "outline": true
       }
     ],
-    "mobielButtons": [
+    "mobileButtons": [
       {
         "href": "#",
         "text": "Ver planos"
