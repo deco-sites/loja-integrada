@@ -1,8 +1,22 @@
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import Icon from "../components/ui/Icon.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
+import { useScript } from "deco/hooks/useScript.ts";
+
+const onLoad = () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeUp = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up50");
+        }
+      });
+    });
+    fadeUp.observe(document.getElementById("testimonialsCarousel") as HTMLElement);
+  });
+}
+
 
 /**
  * @titleBy alt
@@ -206,34 +220,40 @@ function Carousel(props: Props) {
   const { title, slides, interval } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div
-      id={id}
-      class="min-h-min flex flex-col lg:container md:max-w-[1332px] lg:mx-auto pt-7 lg:pt-14"
-    >
-      {title && <h2 class="text-4xl leading-snug lg:w-1/2 pb-12 lg:pb-16 text-primary">
-        {title}
-      </h2>}
-      <Slider
-        class="carousel carousel-center w-full col-span-full row-span-full gap-9 pl-[30px] pr-[22px] py-9 md:px-9"
-        rootId={id}
-        interval={interval && interval * 1e3}
-        infinite
-      >
-        {slides?.map((slide, index) => (
-          <Slider.Item
-            index={index}
-            class="carousel-item max-w-[608px] w-full"
-          >
-            <SliderItem
-              slide={slide}
-              id={`${id}::${index}`}
-            />
-          </Slider.Item>
-        ))}
-      </Slider>
+    <div id="testimonialsCarousel">
 
-      <div class="flex justify-end pr-[22px] lg:px-9 ">
-        <div class="w-full flex justify-between">
+      <div
+        id={id}
+        class="min-h-min flex flex-col lg:container md:max-w-[1332px] lg:mx-auto pt-7 lg:pt-14"
+      >
+        <script
+          type="module"
+          dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
+        />
+
+        {title && <h2 class="text-4xl leading-snug lg:w-1/2 pb-12 lg:pb-16 text-primary">
+          {title}
+        </h2>}
+        <Slider
+          class="carousel carousel-center w-full col-span-full row-span-full gap-9 pl-[30px] pr-[22px] py-9 md:px-9"
+          rootId={id}
+          interval={interval && interval * 1e3}
+          infinite
+        >
+          {slides?.map((slide, index) => (
+            <Slider.Item
+              index={index}
+              class="carousel-item max-w-[608px] w-full"
+            >
+              <SliderItem
+                slide={slide}
+                id={`${id}::${index}`}
+              />
+            </Slider.Item>
+          ))}
+        </Slider>
+
+        <div class="flex justify-end pr-[22px] lg:px-9 ">
           {props.dots && <Dots slides={slides} interval={interval} />}{" "}
           {props.arrows && <Buttons />}
         </div>
