@@ -6,56 +6,53 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "website/flags/multivariate/section.ts",
-        "variants": [
-          {
-            "value": {
-              "__resolveType": "site/sections/MainHero.tsx",
-              "title": "Reduza seus custos e venda com mais eficiência",
-              "caption": "<p><span style=\"font-size: 14pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 14pt; color: rgb(95, 110, 130);\">Conheça o ecossistema Loja Integrada e <strong><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">ganhe até 20% OFF</span></strong> na assinatura anual</span></p>",
-              "inputPlaceHolder": "Digite seu email aqui para ganhar",
-              "inputButtonText": "Aproveitar",
-              "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
-              "image": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
-                "alt": "top image"
-              },
-              "backgroundImage": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
-                "alt": "background image"
-              }
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/MainHero.tsx",
+            "title": "Reduza seus custos e venda com mais eficiência",
+            "caption": "<p><span style=\"font-size: 14pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 14pt; color: rgb(95, 110, 130);\">Conheça o ecossistema Loja Integrada e <strong><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">ganhe até 20% OFF</span></strong> na assinatura anual</span></p>",
+            "inputPlaceHolder": "Digite seu email aqui para ganhar",
+            "inputButtonText": "Aproveitar",
+            "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
+              "alt": "top image"
             },
-            "rule": {
-              "__resolveType": "website/matchers/device.ts",
-              "mobile": true,
-              "tablet": false
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
+              "alt": "background image"
             }
           },
-          {
-            "value": {
-              "__resolveType": "site/sections/MainHero.tsx",
-              "title": "Suporte e economia na hora de migrar",
-              "caption": "<p><span style=\"font-size: 24pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 24pt; color: rgb(95, 110, 130);\">Redução média de R$ 90.000/ano com custos de manutenção da plataforma</span><br></p>",
-              "inputPlaceHolder": "Digite seu email aqui para ganhar",
-              "inputButtonText": "Aproveitar",
-              "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
-              "image": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
-                "alt": "top image"
-              },
-              "backgroundImage": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
-                "alt": "background image"
-              }
-            },
-            "rule": {
-              "__resolveType": "website/matchers/always.ts"
-            }
+          "rule": {
+            "__resolveType": "website/matchers/device.ts",
+            "mobile": true,
+            "tablet": false
           }
-        ]
-      }
+        },
+        {
+          "value": {
+            "__resolveType": "site/sections/MainHero.tsx",
+            "title": "Suporte e economia na hora de migrar",
+            "caption": "<p><span style=\"font-size: 24pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 24pt; color: rgb(95, 110, 130);\">Redução média de R$ 90.000/ano com custos de manutenção da plataforma</span><br></p>",
+            "inputPlaceHolder": "Digite seu email aqui para ganhar",
+            "inputButtonText": "Aproveitar",
+            "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
+              "alt": "top image"
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
+              "alt": "background image"
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
+          }
+        }
+      ]
     },
     {
       "__resolveType": "website/flags/multivariate/section.ts",
@@ -144,6 +141,29 @@
       ]
     },
     {
+      "__resolveType": "site/sections/Testimonials.tsx",
+      "arrows": false,
+      "dots": false,
+      "slides": [
+        {
+          "content": {
+            "description": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">\"Depois que migramos para a Loja Integrada, <em><strong>aumentamos nosso ticket médio em 15% e reduzimos nossos custos operacionais em 9 mil reais.</strong></em> Viemos pela fácil integração com a VTEX, em busca de redução de custo e uma plataforma mais fácil de usar e foi exatamente isso que encontramos\".</span></p>",
+            "avatar": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/c3896dc4-da5c-4496-a704-f5f37a2c759c/m-camicado-logo.png",
+            "name": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Loja no ar em <strong>menos de meses</strong></span></p>",
+            "alt": "m camicado"
+          }
+        },
+        {
+          "content": {
+            "description": "<p><em><strong><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Logo no primeiro mês pós migração, vi um aumento</span></strong></em><br><em><strong><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">na taxa de conversão de 60%.</span></strong></em><br><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Vim pela necessidade de otimizar meu investimento, em busca de uma plataforma fácil de usar. Encontrei ambos e ainda um time próximo, o que é muito bom\".</span></p>",
+            "avatar": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/afd6caee-5062-4712-a347-de06834ec8a8/livraria-florence-logo.png",
+            "name": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Loja no ar em <strong>30 dias</strong></span></p>",
+            "alt": "livraria florence"
+          }
+        }
+      ]
+    },
+    {
       "__resolveType": "site/sections/Hero.tsx",
       "title": "<p>Click here to tweak this text however you want.</p>",
       "cta": [],
@@ -158,10 +178,6 @@
     },
     {
       "__resolveType": "site/sections/BlogPosts.tsx"
-    },
-    {
-      "__resolveType": "site/sections/Testimonials.tsx",
-      "arrows": true
     },
     {
       "__resolveType": "site/sections/Faq.tsx"
