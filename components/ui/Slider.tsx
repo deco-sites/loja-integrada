@@ -111,9 +111,12 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     const isShowingFirst = indices[0] === 0;
     const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
 
-    goToItem(
-      isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage,
-    );
+    //goToItem(isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage);
+    if (itemsPerPage > 2) {
+      goToItem(isShowingFirst ? items.length - 1 : indices[0] - 1);
+    } else {
+      goToItem(isShowingFirst ? items.length - 2 : (pageIndex - 1) * itemsPerPage);
+    }
   };
 
   const onClickNext = () => {
@@ -124,7 +127,12 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     const isShowingLast = indices[indices.length - 1] === items.length - 1;
     const pageIndex = Math.floor(indices[0] / itemsPerPage);
 
-    goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
+    // goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage); 
+    if (itemsPerPage > 2) {
+      goToItem(isShowingLast ? 0 : indices[itemsPerPage - 2]);
+    } else {
+      goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
+    }
   };
 
   const observer = new IntersectionObserver(

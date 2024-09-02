@@ -14,7 +14,9 @@ export default {
         "fade-in": "fade-in 2s ease-in-out",
         "pop-up": "pop-up 1s ease-in-out",
         "fade-up": "fade-up 1s ease-in-out",
+        "fade-down": "fade-down 1s ease-in-out",
         "fade-up50": "fade-up50 1.5s ease-in-out",
+        "fade-down50": "fade-down50 1.5s ease-in-out",
       },
       keyframes: {
         sliding: {
@@ -37,8 +39,16 @@ export default {
           "0%": { transform: "translateY(100%)", opacity: 0 },
           "100%": { transform: "translateY(0%)", opacity: 1 },
         },
+        "fade-down": {
+          "0%": { transform: "translateY(-100%)", opacity: 0 },
+          "100%": { transform: "translateY(0%)", opacity: 1 },
+        },
         "fade-up50": {
           "0%": { transform: "translateY(50%)", opacity: 0 },
+          "100%": { transform: "translateY(0%)", opacity: 1 },
+        },
+        "fade-down50": {
+          "0%": { transform: "translateY(-50%)", opacity: 0 },
           "100%": { transform: "translateY(0%)", opacity: 1 },
         },
       },
