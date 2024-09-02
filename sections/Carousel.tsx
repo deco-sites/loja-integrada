@@ -9,6 +9,13 @@ const onLoad = () => {
         const fadeUp = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-fade-up");
+                }
+            });
+        });
+        const fadeUp50 = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
                     entry.target.classList.add("animate-fade-up50");
                 }
             });
@@ -24,9 +31,11 @@ const onLoad = () => {
         const carousel = document.getElementById("MainCarousel") as HTMLElement;
         const carouselText = carousel.querySelector("#carouselText");
         const carouselSlider = carousel.querySelector("#carouselSlider");
+        const carouselButtons = carousel.querySelector("#carouselButtons");
 
-        if (carouselText) fadeDown.observe(carouselText);
-        if (carouselSlider) fadeUp.observe(carouselSlider);
+        fadeDown.observe(carouselText as HTMLElement);
+        fadeUp50.observe(carouselSlider as HTMLElement);
+        fadeUp.observe(carouselButtons as HTMLElement);
     });
 }
 
@@ -261,7 +270,7 @@ function Carousel(props: Props) {
                     {props.dots && <Dots slides={slides} interval={interval} />}{" "}
                     {props.arrows && <Buttons />}
                 </div>
-                {cta && <div class="flex justify-center gap-7 mt-4">
+                {cta && <div id="carouselButtons" class="flex justify-center gap-7 mt-4">
                     {cta.map((item) => (
                         <a
                             key={item?.id}
