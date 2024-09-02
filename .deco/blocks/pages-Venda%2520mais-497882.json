@@ -164,6 +164,135 @@
       ]
     },
     {
+      "__resolveType": "site/sections/Carousel.tsx",
+      "title": "Aumente suas vendas e potencialize sua eficiência com nosso ecossistema!",
+      "slides": [
+        {
+          "title": "Gere mais receita por usuário",
+          "caption": "Ferramentas estratégicas: Carrinho abandonado, promoções, Compre Junto e cupom nativos.",
+          "backgroundImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/31ba9f97-836f-451a-8c56-fdfd36eabadf/carousel-image-1.png"
+          },
+          "textPlacement": "Top",
+          "icon": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
+            "alt": "purple arrow"
+          },
+          "textColor": "Dark"
+        },
+        {
+          "textPlacement": "Top",
+          "icon": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
+            "alt": "white arrow",
+            "placement": "Top right"
+          },
+          "title": "Aumente sua conversão",
+          "caption": "Checkout inteligente, sem senha, baseado no SmartCheckout da VTEX.",
+          "backgroundImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b229cb86-1e0d-4853-a4f6-c2e30eeec939/carousel-image-2.png"
+          },
+          "textColor": "Light",
+          "bulletPoints": {
+            "bulletPointsTitle": "Usamos seu E-mai de forma 100% segura para:",
+            "items": [
+              "Identificar seu perfil",
+              "Notificar sobre andamento do seu pedido",
+              "Gerenciar seu histórico de compras",
+              "Acelerar o preenchimento de suas informações "
+            ],
+            "bulletPointsIcon": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/12f925ba-030b-498b-8aaf-ff031a1c765d/check-icon.png",
+              "alt": "check icon"
+            }
+          }
+        },
+        {
+          "textColor": "Dark",
+          "textPlacement": "Top",
+          "icon": {
+            "placement": "Top right",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
+            "alt": "purple arrow"
+          },
+          "bulletPoints": {
+            "items": []
+          },
+          "title": "Reduza seu custo com logística",
+          "caption": "<p>Conte com o Enviali para obter as<br>melhores negociações de fretecom Correios e outras transportadoras.<br><strong>Fretes com até 70% de desconto.</strong></p>",
+          "backgroundImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b1802835-9b2b-4ed1-ab2a-560863be1c1c/carousel-image-3.png"
+          }
+        },
+        {
+          "textColor": "Light",
+          "textPlacement": "Top",
+          "icon": {
+            "placement": "Top right",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
+            "alt": "white arrow"
+          },
+          "bulletPoints": {
+            "items": []
+          },
+          "title": "Aumente seu tráfego qualificado ",
+          "caption": "<p>Ferramentas estratégicas: Carrinho abandonado, promoções, Compre Junto e cupom nativos.</p>",
+          "backgroundImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/531dda31-3645-49c7-ba96-7aa159ed080d/carousel-image-4.png"
+          }
+        },
+        {
+          "textColor": "Dark",
+          "textPlacement": "Top",
+          "icon": {
+            "placement": "Top right",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
+            "alt": "white arrow"
+          },
+          "bulletPoints": {
+            "items": []
+          },
+          "title": "Melhore sua experiência",
+          "caption": "<p>Apps e integrações plug n' play que alavancam as suas vendas.</p>",
+          "backgroundImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/211824dc-57db-47f7-8efd-62b3e1136823/carousel-image-5.png"
+          }
+        },
+        {
+          "textColor": "Light",
+          "textPlacement": "Bottom",
+          "icon": {
+            "placement": "Top right",
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
+            "alt": "white arrow"
+          },
+          "bulletPoints": {
+            "items": []
+          },
+          "title": "Estabilidade de verdade",
+          "caption": "<p>Escale sem medo. Nossa infraestrutura elástica cresce junto com você.</p>",
+          "backgroundImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5aa0aee6-d22a-4fdc-8d21-32fdcc0a7754/carousel-image-6.png"
+          }
+        }
+      ],
+      "arrows": true,
+      "backgroundImage": {
+        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4868c23-20ac-4754-a3d9-8a02cf8d61bb/rounded-bg-figure.png"
+      },
+      "cta": [
+        {
+          "href": "/",
+          "text": "Ver planos"
+        },
+        {
+          "text": "Ver recursos",
+          "href": "/",
+          "outline": true
+        }
+      ]
+    },
+    {
       "__resolveType": "site/sections/Hero.tsx",
       "title": "<p>Click here to tweak this text however you want.</p>",
       "cta": [],
