@@ -3,6 +3,9 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 
 const onLoad = () => {
+  document.getElementById('logosTitleAndCaption')?.classList.add("opacity-0");
+  document.getElementById('logosSliderContent')?.classList.add("opacity-0");
+
   document.addEventListener('DOMContentLoaded', () => {
     const fadeUp = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -45,7 +48,7 @@ export default function Logos({
   logos = [...logos, ...logos];
 
   const slideContent = (
-    <div id="logosSliderContent" class="flex items-center gap-7 md:gap-16 opacity-0">
+    <div id="logosSliderContent" class="flex items-center gap-7 md:gap-16">
       {logos?.map((logo) => {
         return (
           <div class="w-28 md:w-[156px]">
@@ -67,7 +70,7 @@ export default function Logos({
         dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
       />
       <div class="flex flex-col gap-10">
-        <div id="logosTitleAndCaption" class="opacity-0">
+        <div id="logosTitleAndCaption">
           <p class="text-lg md:text-[32px] text-primary font-semibold ">{title}</p>
           <p class="text-base md:text-2xl font-light mt-4">{caption}</p>
         </div>

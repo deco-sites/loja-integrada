@@ -5,6 +5,8 @@ import { useId } from "../sdk/useId.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 
 const onLoad = () => {
+  document.getElementById("testimonialsCarousel")?.classList.add("opacity-0");
+
   document.addEventListener('DOMContentLoaded', () => {
     const fadeUp = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -221,7 +223,7 @@ function Carousel(props: Props) {
   const { title, slides, interval } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div id="testimonialsCarousel" class="opacity-0">
+    <div id="testimonialsCarousel">
 
       <div
         id={id}
