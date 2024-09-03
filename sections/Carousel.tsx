@@ -10,6 +10,7 @@ const onLoad = () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("animate-fade-up");
+                    entry.target.classList.remove("opacity-0");
                 }
             });
         });
@@ -17,6 +18,7 @@ const onLoad = () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("animate-fade-up50");
+                    entry.target.classList.remove("opacity-0");
                 }
             });
         });
@@ -24,6 +26,7 @@ const onLoad = () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("animate-fade-down");
+                    entry.target.classList.remove("opacity-0");
                 }
             });
         });
@@ -232,7 +235,7 @@ function Carousel(props: Props) {
                     class="h-full object-contain"
                 /></div>}
 
-                <div id="carouselText">
+                <div id="carouselText" class="opacity-0">
                     {title && <h2 class="text-2xl md:text-5xl font-semibold text-center text-primary leading-snug max-w-[942px] lg:pb-16">
                         {title}
                     </h2>}
@@ -241,7 +244,7 @@ function Carousel(props: Props) {
                     </p>}
                 </div>
                 <Slider
-                    class="carousel carousel-center w-full col-span-full row-span-full gap-[30px] pl-[30px] pr-[22px] py-9 md:px-9"
+                    class="carousel carousel-center w-full col-span-full row-span-full gap-[30px] pl-[30px] pr-[22px] py-9 md:px-9 opacity-0"
                     rootId={id}
                     interval={interval && interval * 1e3}
                     infinite
@@ -270,7 +273,7 @@ function Carousel(props: Props) {
                     {props.dots && <Dots slides={slides} interval={interval} />}{" "}
                     {props.arrows && <Buttons />}
                 </div>
-                {cta && <div id="carouselButtons" class="flex justify-center gap-7 mt-4">
+                {cta && <div id="carouselButtons" class="flex justify-center gap-7 mt-4 opacity-0">
                     {cta.map((item) => (
                         <a
                             key={item?.id}

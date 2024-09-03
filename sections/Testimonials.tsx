@@ -10,6 +10,7 @@ const onLoad = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate-fade-up50");
+          entry.target.classList.remove("opacity-0");
         }
       });
     });
@@ -220,7 +221,7 @@ function Carousel(props: Props) {
   const { title, slides, interval } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div id="testimonialsCarousel">
+    <div id="testimonialsCarousel" class="opacity-0">
 
       <div
         id={id}
