@@ -224,7 +224,7 @@ function Carousel(props: Props) {
                     dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
                 />
 
-                {backgroundImage && <div class="absolute -z-50 top-0 left-0 h-full w-full"><Image
+                {backgroundImage && <div class="absolute hidden md:block -z-50 top-0 left-0 h-full w-full"><Image
                     src={backgroundImage.src}
                     alt={backgroundImage.alt || "background image"}
                     height={780}
