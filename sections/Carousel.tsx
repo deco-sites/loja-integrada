@@ -5,6 +5,13 @@ import { useId } from "../sdk/useId.ts";
 import { useScript } from "deco/hooks/useScript.ts";
 
 const onLoad = () => {
+
+    const carousel = document.getElementById("MainCarousel") as HTMLElement;
+    carousel.querySelector("#carouselText")?.classList.add("opacity-0");
+    carousel.querySelector("#carouselSlider")?.classList.add("opacity-0");
+    carousel.querySelector("#carouselButtons")?.classList.add("opacity-0");
+
+
     document.addEventListener('DOMContentLoaded', () => {
         const fadeUp = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -235,7 +242,7 @@ function Carousel(props: Props) {
                     class="h-full object-contain"
                 /></div>}
 
-                <div id="carouselText" class="opacity-0">
+                <div id="carouselText">
                     {title && <h2 class="text-2xl md:text-5xl font-semibold text-center text-primary leading-snug max-w-[942px] lg:pb-16">
                         {title}
                     </h2>}
@@ -244,7 +251,7 @@ function Carousel(props: Props) {
                     </p>}
                 </div>
                 <Slider
-                    class="carousel carousel-center w-full col-span-full row-span-full gap-[30px] pl-[30px] pr-[22px] py-9 md:px-9 opacity-0"
+                    class="carousel carousel-center w-full col-span-full row-span-full gap-[30px] pl-[30px] pr-[22px] py-9 md:px-9"
                     rootId={id}
                     interval={interval && interval * 1e3}
                     infinite
@@ -273,7 +280,7 @@ function Carousel(props: Props) {
                     {props.dots && <Dots slides={slides} interval={interval} />}{" "}
                     {props.arrows && <Buttons />}
                 </div>
-                {cta && <div id="carouselButtons" class="flex justify-center gap-7 mt-4 opacity-0">
+                {cta && <div id="carouselButtons" class="flex justify-center gap-7 mt-4">
                     {cta.map((item) => (
                         <a
                             key={item?.id}
