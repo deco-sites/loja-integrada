@@ -39,6 +39,7 @@
     "primary-content": "#ffffff",
     "base-200": "#EBEBEB",
     "base-300": "#5F6E82",
-    "secondary-content": "#F1EAF4"
+    "secondary-content": "#F1EAF4",
+    "tertiary-content": "#A1ABBC"
   }
 }

@@ -17,6 +17,7 @@ export default {
         "fade-down": "fade-down 1s ease-in-out",
         "fade-up50": "fade-up50 1.5s ease-in-out",
         "fade-down50": "fade-down50 1.5s ease-in-out",
+        "progress": "progress 3s linear",
       },
       keyframes: {
         sliding: {
@@ -50,6 +51,10 @@ export default {
         "fade-down50": {
           "0%": { transform: "translateY(-50%)", opacity: 0 },
           "100%": { transform: "translateY(0%)", opacity: 1 },
+        },
+        "progress": {
+          "0%": { width: 0 },
+          "100%": { width: "100%" },
         },
       },
       boxShadow: {
