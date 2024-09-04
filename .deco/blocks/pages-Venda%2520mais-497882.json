@@ -295,6 +295,18 @@
     },
     {
       "__resolveType": "site/sections/DetailedCarousel.tsx",
+      "title": "Um ecossistema de recursos",
+      "cta": [
+        {
+          "text": "Ver planos",
+          "href": "#"
+        },
+        {
+          "text": "Falar com Especialista ",
+          "href": "#",
+          "outline": true
+        }
+      ],
       "slides": [
         {
           "image": {
@@ -430,25 +442,13 @@
           "title": "+10 Formas de envio"
         }
       ],
-      "arrows": true,
-      "title": "Um ecossistema de recursos",
+      "arrows": false,
       "backgroundImage": {
         "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
         "alt": "carousel background"
       },
       "dots": true,
-      "interval": 13,
-      "cta": [
-        {
-          "text": "Ver planos",
-          "href": "#"
-        },
-        {
-          "text": "Falar com Especialista ",
-          "href": "#",
-          "outline": true
-        }
-      ]
+      "interval": 13
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
