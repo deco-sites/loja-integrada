@@ -115,7 +115,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     if (itemsPerPage > 2) {
       goToItem(isShowingFirst ? items.length - 1 : indices[0] - 1);
     } else {
-      goToItem(isShowingFirst ? items.length - 2 : (pageIndex - 1) * itemsPerPage);
+      goToItem(isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage);
     }
   };
 
