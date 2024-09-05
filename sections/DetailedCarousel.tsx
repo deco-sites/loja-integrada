@@ -54,6 +54,13 @@ export interface CTA {
     outline?: boolean;
 }
 
+/** @title {{text}} */
+export interface Link {
+    textBefore: string;
+    text: string;
+    href: string;
+}
+
 export interface IImage {
     src: ImageWidget;
     alt?: string;
@@ -93,6 +100,7 @@ export interface Props {
      */
     interval?: number;
     cta?: CTA[];
+    links?: Link[];
     backgroundImage?: IImage;
 }
 
@@ -107,7 +115,7 @@ function SliderItem(
         <div id="detailedCarouselContent">
             <div
                 id={id}
-                class="relative flex gap-10 w-full min-h-[292px]"
+                class="relative flex flex-col md:flex-row gap-[84px] md:gap-10 w-full min-h-[292px]"
             >
                 <div class="max-w-[730px] flex-grow bg-primary-content bg-opacity-30 rounded-[30px]">
                     <Image
@@ -118,19 +126,19 @@ function SliderItem(
                     />
                 </div>
 
-                <div class="flex flex-col gap-7 max-w-[396px]">
-                    <h2 class="text-primary text-[40px] font-bold leading-[120%]">{title}</h2>
-                    <div>
+                <div class="flex flex-col gap-7 md:max-w-[396px]">
+                    <h2 class="text-primary text-xl text-center md:text-[40px] font-bold leading-[120%]">{title}</h2>
+                    <div class="flex flex-wrap gap-1 md:flex-col justify-between">
                         {bulletPoints?.items?.map((bulletPoint) => (
-                            <div class="flex gap-5 mt-[10px]">
-                                {bulletPoints.bulletPointsIcon && <Image
+                            <div class="flex gap-[15px] md:gap-5 mt-[10px] w-5/12 md:w-auto">
+                                {bulletPoints.bulletPointsIcon && <div class="min-w-[15px] w-[15px] md:w-5 md:min-w-5"><Image
                                     src={bulletPoints.bulletPointsIcon.src}
                                     alt={bulletPoints.bulletPointsIcon.alt || "bullet point icon"}
                                     width={20}
                                     height={20}
                                     class="object-contain"
-                                />}
-                                <p class="text-lg font-semibold">{bulletPoint}</p>
+                                /></div>}
+                                <p class="text-sm md:text-lg font-semibold">{bulletPoint}</p>
                             </div>
                         ))}
                     </div>
@@ -154,29 +162,35 @@ function Dots({ slides, interval = 0 }: Props) {
           `,
                 }}
             />
-            <ul class="flex gap-6 z-10">
-                {slides?.map((slide, index) => (
-                    <li class="">
-                        <Slider.Dot index={index}>
-                            <div class="py-5">
-                                <p class="text-lg text-primary font-semibold opacity-30 group-disabled:opacity-100">{slide.title}</p>
-                                <div
-                                    class="h-1 mt-2 rounded-full dot overflow-hidden !bg-accent-content "
-                                >
-                                    <div class="h-full w-0 bg-primary group-disabled:animate-progress" style={{ animationDuration: `${interval}s` }} />
-                                </div>
-                            </div>
-                        </Slider.Dot>
-                    </li>
-                ))}
-            </ul>
+            <div class="relative w-full">
+                <div class="absolute top-[70vw] left-0 md:static w-full flex justify-center">
+                    <ul class="flex gap-1 md:gap-6 z-10">
+                        {slides?.map((slide, index) => (
+                            <li class="w-11 md:w-auto">
+                                <Slider.Dot index={index}>
+                                    <div class="py-5 h-full">
+                                        <div class="h-0 w-11 opacity-0 md:opacity-100 md:h-auto md:w-auto">
+                                            <p class="text-lg text-primary font-semibold opacity-30 group-disabled:opacity-100">{slide.title}</p>
+                                        </div>
+                                        <div
+                                            class="h-1 mt-2 rounded-full dot overflow-hidden !bg-accent-content"
+                                        >
+                                            <div class="h-full w-0 bg-primary group-disabled:animate-progress" style={{ animationDuration: `${interval}s` }} />
+                                        </div>
+                                    </div>
+                                </Slider.Dot>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </>
     );
 }
 
 function Buttons() {
     return (
-        <div class="flex gap-4">
+        <div class="flex gap-4 w-full justify-between">
             <div class="flex items-center justify-center z-10 ">
                 <Slider.PrevButton class="flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="text-primary fill-current rotate-180">
@@ -197,7 +211,7 @@ function Buttons() {
 
 function Carousel(props: Props) {
     const id = useId();
-    const { title, slides, interval, backgroundImage, cta } = { ...props };
+    const { title, slides, interval, backgroundImage, cta, links } = { ...props };
 
     return (
         <div id="detailedCarousel" class="relative mt-16">
@@ -219,14 +233,19 @@ function Carousel(props: Props) {
                     dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
                 />
 
-                {title && <h2 id="detailedCarouselTitle" class="max-w-[307px] md:max-w-full text-2xl md:text-5xl text-primary text-center font-semibold leading-snug pb-12 lg:pb-16">
+                {title && <h2 id="detailedCarouselTitle" class="max-w-[307px] md:max-w-full text-2xl md:text-5xl text-primary text-center font-semibold leading-snug pb-7 md:pb-12 lg:pb-16">
                     {title}
                 </h2>}
 
+                <div class="relative w-full md:hidden">
+                    <div class="absolute top-[28vw] left-0 flex justify-end w-full lg:px-9 ">
+                        {props.arrows && <Buttons />}
+                    </div>
+                </div>
                 {props.dots && <Dots slides={slides} interval={interval} />}{" "}
 
                 <Slider
-                    class="carousel carousel-center w-full col-span-full row-span-full gap-9 pl-[30px] pr-[22px] py-9 md:px-9"
+                    class="carousel carousel-center w-full col-span-full row-span-full gap-9 pl-[30px] pr-[22px] py-0 md:py-9 md:px-9"
                     rootId={id}
                     interval={interval && interval * 1e3}
                     infinite
@@ -243,10 +262,7 @@ function Carousel(props: Props) {
                         </Slider.Item>
                     ))}
                 </Slider>
-                <div class="flex justify-end w-full pr-[22px] lg:px-9 ">
-                    {props.arrows && <Buttons />}
-                </div>
-                {cta && <div id="detailedCarouselButtons" class="flex justify-center gap-7 mt-4">
+                {cta && <div id="detailedCarouselButtons" class="flex flex-wrap justify-center gap-7 mt-4">
                     {cta.map((item) => (
                         <a
                             key={item?.id}
@@ -256,6 +272,21 @@ function Carousel(props: Props) {
                             class={`btn btn-primary ${item.outline ? "btn-outline" : ""} font-bold px-7 hover:scale-110 text-lg`}
                         >
                             {item?.text}
+                        </a>
+                    ))}
+                </div>}
+                {links && <div class="mt-5 text-primary flex flex-wrap justify-center gap-5">
+                    {links.map(link => (
+                        <a
+                            class="flex items-center text-lg font-medium"
+                            href={link.href || "#"}
+                            target={link.href.includes("http") ? "_blank" : "_self"}
+                        >
+                            {link.textBefore}
+                            <span class="underline mr-1">{link.text}</span>
+                            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.3465 0.75V8.46875C11.3465 8.62622 11.284 8.77725 11.1726 8.8886C11.0613 8.99994 10.9102 9.0625 10.7528 9.0625C10.5953 9.0625 10.4443 8.99994 10.3329 8.8886C10.2216 8.77725 10.159 8.62622 10.159 8.46875V2.18316L1.67285 10.6701C1.56144 10.7815 1.41033 10.8441 1.25277 10.8441C1.09521 10.8441 0.944105 10.7815 0.832693 10.6701C0.721282 10.5587 0.658691 10.4076 0.658691 10.25C0.658691 10.0924 0.721282 9.94133 0.832693 9.82992L9.31961 1.34375H3.03402C2.87655 1.34375 2.72553 1.28119 2.61418 1.16984C2.50283 1.05849 2.44027 0.907472 2.44027 0.75C2.44027 0.592528 2.50283 0.441505 2.61418 0.330155C2.72553 0.218806 2.87655 0.15625 3.03402 0.15625H10.7528C10.9102 0.15625 11.0613 0.218806 11.1726 0.330155C11.284 0.441505 11.3465 0.592528 11.3465 0.75Z" fill="#371E55" />
+                            </svg>
                         </a>
                     ))}
                 </div>}

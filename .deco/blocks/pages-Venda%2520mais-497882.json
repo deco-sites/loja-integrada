@@ -294,161 +294,337 @@
       "interval": 0
     },
     {
-      "__resolveType": "site/sections/DetailedCarousel.tsx",
-      "title": "Um ecossistema de recursos",
-      "cta": [
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
         {
-          "text": "Ver planos",
-          "href": "#"
-        },
-        {
-          "text": "Falar com Especialista ",
-          "href": "#",
-          "outline": true
-        }
-      ],
-      "slides": [
-        {
-          "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
-          },
-          "title": "+10 Funcionalidades incrementais",
-          "bulletPoints": {
-            "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+          "value": {
+            "__resolveType": "site/sections/DetailedCarousel.tsx",
+            "slides": [
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
+                },
+                "title": "+10 Funcionalidades incrementais",
+                "bulletPoints": {
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                  },
+                  "items": [
+                    "Compre Junto",
+                    "Carrinho Abandonado",
+                    "Painel de promoções ",
+                    "Cupons personalizados",
+                    "Alerta de frete grátis",
+                    "Avise-me",
+                    "Brindes",
+                    "Aniversariantes do mês ",
+                    "Newsletter ",
+                    "E muito mais..."
+                  ]
+                },
+                "time": 3
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
+                },
+                "title": "Atendimento e suporte",
+                "bulletPoints": {
+                  "items": [
+                    "Prioridade no Atendimento (a partir do Expansão)",
+                    "Migração Assistida (Liberado no Elite)",
+                    "Atendimento Premiado (Chat, email e WhatsApp)",
+                    "Atendimento Exclusivo (Liberado no Elite) ",
+                    "Alerta de frete grátis",
+                    "Central de Ajuda",
+                    "Comunidade",
+                    "Blog"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                  }
+                }
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
+                },
+                "title": "+10 Canais de venda",
+                "bulletPoints": {
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                  },
+                  "items": [
+                    "Venda por redes sociais",
+                    "Google PMAX Nativa (ROAS 8,5x ~ Melhor da América Latina)",
+                    "Sacolinha do Instagram integrada",
+                    "Venda no Tik Tok ",
+                    "Recursos de SEO",
+                    "Venda por Marketplaces",
+                    "Venda por Dropshipping",
+                    "Pedidos Manuais",
+                    "API da META",
+                    "+80 aplicativos extras"
+                  ]
+                }
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
+                },
+                "bulletPoints": {
+                  "items": [
+                    "Sua Loja Pronta por Loja do E-commerce",
+                    "Curso de Tráfego Pago por Ajuda Vitor",
+                    "Banners Personalizados por Consultor Net",
+                    "Gestão Tráfego por Marketing e Inteligência ",
+                    "Cronômetro de Vitrine por Samá Themes",
+                    "Pacote de Redes Sociais por MT Soluções",
+                    "+20 Serviços recomendados"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                  }
+                },
+                "title": "+30 Serviços de parceiros recomendados "
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
+                },
+                "bulletPoints": {
+                  "items": [
+                    "Pagali (Melhores taxas e Integração Nativa)",
+                    "PayPal Plus",
+                    "Mercado Pago",
+                    "Pagamento na Entrega ",
+                    "Pagar.me V4",
+                    "PagBank",
+                    "PagHiper",
+                    "PayPal"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                  }
+                },
+                "title": "+7 Formas de pagamento "
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
+                },
+                "bulletPoints": {
+                  "items": [
+                    "Enviali (Melhores taxas e Integração Nativa)",
+                    "Frenet",
+                    "Kangu ",
+                    "Manda Bem ",
+                    "Melhor Envio",
+                    "Frete Barato",
+                    "Correios SEDEX",
+                    "Correios PAC",
+                    "Motoboy",
+                    "Transportados",
+                    "Retirar Pessoalmente"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                  }
+                },
+                "title": "+10 Formas de envio"
+              }
+            ],
+            "arrows": true,
+            "title": "Um ecossistema de recursos",
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
+              "alt": "carousel background"
             },
-            "items": [
-              "Compre Junto",
-              "Carrinho Abandonado",
-              "Painel de promoções ",
-              "Cupons personalizados",
-              "Alerta de frete grátis",
-              "Avise-me",
-              "Brindes",
-              "Aniversariantes do mês ",
-              "Newsletter ",
-              "E muito mais..."
+            "dots": true,
+            "interval": 13,
+            "cta": [
+              {
+                "text": "Ver planos",
+                "href": "#"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": " Ative agora",
+                "href": "#"
+              }
             ]
           },
-          "time": 3
-        },
-        {
-          "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
-          },
-          "title": "Atendimento e suporte",
-          "bulletPoints": {
-            "items": [
-              "Prioridade no Atendimento (a partir do Expansão)",
-              "Migração Assistida (Liberado no Elite)",
-              "Atendimento Premiado (Chat, email e WhatsApp)",
-              "Atendimento Exclusivo (Liberado no Elite) ",
-              "Alerta de frete grátis",
-              "Central de Ajuda",
-              "Comunidade",
-              "Blog"
-            ],
-            "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
-            }
+          "rule": {
+            "__resolveType": "website/matchers/device.ts",
+            "mobile": true
           }
         },
         {
-          "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
-          },
-          "title": "+10 Canais de venda",
-          "bulletPoints": {
-            "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+          "value": {
+            "__resolveType": "site/sections/DetailedCarousel.tsx",
+            "slides": [
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
+                },
+                "title": "+10 Funcionalidades incrementais",
+                "bulletPoints": {
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                  },
+                  "items": [
+                    "Compre Junto",
+                    "Carrinho Abandonado",
+                    "Painel de promoções ",
+                    "Cupons personalizados",
+                    "Alerta de frete grátis",
+                    "Avise-me",
+                    "Brindes",
+                    "Aniversariantes do mês ",
+                    "Newsletter ",
+                    "E muito mais..."
+                  ]
+                },
+                "time": 3
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
+                },
+                "title": "Atendimento e suporte",
+                "bulletPoints": {
+                  "items": [
+                    "Prioridade no Atendimento (a partir do Expansão)",
+                    "Migração Assistida (Liberado no Elite)",
+                    "Atendimento Premiado (Chat, email e WhatsApp)",
+                    "Atendimento Exclusivo (Liberado no Elite) ",
+                    "Alerta de frete grátis",
+                    "Central de Ajuda",
+                    "Comunidade",
+                    "Blog"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                  }
+                }
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
+                },
+                "title": "+10 Canais de venda",
+                "bulletPoints": {
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                  },
+                  "items": [
+                    "Venda por redes sociais",
+                    "Google PMAX Nativa (ROAS 8,5x ~ Melhor da América Latina)",
+                    "Sacolinha do Instagram integrada",
+                    "Venda no Tik Tok ",
+                    "Recursos de SEO",
+                    "Venda por Marketplaces",
+                    "Venda por Dropshipping",
+                    "Pedidos Manuais",
+                    "API da META",
+                    "+80 aplicativos extras"
+                  ]
+                }
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
+                },
+                "bulletPoints": {
+                  "items": [
+                    "Sua Loja Pronta por Loja do E-commerce",
+                    "Curso de Tráfego Pago por Ajuda Vitor",
+                    "Banners Personalizados por Consultor Net",
+                    "Gestão Tráfego por Marketing e Inteligência ",
+                    "Cronômetro de Vitrine por Samá Themes",
+                    "Pacote de Redes Sociais por MT Soluções",
+                    "+20 Serviços recomendados"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                  }
+                },
+                "title": "+30 Serviços de parceiros recomendados "
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
+                },
+                "bulletPoints": {
+                  "items": [
+                    "Pagali (Melhores taxas e Integração Nativa)",
+                    "PayPal Plus",
+                    "Mercado Pago",
+                    "Pagamento na Entrega ",
+                    "Pagar.me V4",
+                    "PagBank",
+                    "PagHiper",
+                    "PayPal"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                  }
+                },
+                "title": "+7 Formas de pagamento "
+              },
+              {
+                "image": {
+                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
+                },
+                "bulletPoints": {
+                  "items": [
+                    "Enviali (Melhores taxas e Integração Nativa)",
+                    "Frenet",
+                    "Kangu ",
+                    "Manda Bem ",
+                    "Melhor Envio",
+                    "Frete Barato",
+                    "Correios SEDEX",
+                    "Correios PAC",
+                    "Motoboy",
+                    "Transportados",
+                    "Retirar Pessoalmente"
+                  ],
+                  "bulletPointsIcon": {
+                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                  }
+                },
+                "title": "+10 Formas de envio"
+              }
+            ],
+            "arrows": true,
+            "title": "Um ecossistema de recursos",
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
+              "alt": "carousel background"
             },
-            "items": [
-              "Venda por redes sociais",
-              "Google PMAX Nativa (ROAS 8,5x ~ Melhor da América Latina)",
-              "Sacolinha do Instagram integrada",
-              "Venda no Tik Tok ",
-              "Recursos de SEO",
-              "Venda por Marketplaces",
-              "Venda por Dropshipping",
-              "Pedidos Manuais",
-              "API da META",
-              "+80 aplicativos extras"
-            ]
+            "dots": true,
+            "interval": 13,
+            "cta": [
+              {
+                "text": "Ver planos",
+                "href": "#"
+              },
+              {
+                "text": "Falar com Especialista ",
+                "href": "#",
+                "outline": true
+              }
+            ],
+            "links": []
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
           }
-        },
-        {
-          "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
-          },
-          "bulletPoints": {
-            "items": [
-              "Sua Loja Pronta por Loja do E-commerce",
-              "Curso de Tráfego Pago por Ajuda Vitor",
-              "Banners Personalizados por Consultor Net",
-              "Gestão Tráfego por Marketing e Inteligência ",
-              "Cronômetro de Vitrine por Samá Themes",
-              "Pacote de Redes Sociais por MT Soluções",
-              "+20 Serviços recomendados"
-            ],
-            "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
-            }
-          },
-          "title": "+30 Serviços de parceiros recomendados "
-        },
-        {
-          "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
-          },
-          "bulletPoints": {
-            "items": [
-              "Pagali (Melhores taxas e Integração Nativa)",
-              "PayPal Plus",
-              "Mercado Pago",
-              "Pagamento na Entrega ",
-              "Pagar.me V4",
-              "PagBank",
-              "PagHiper",
-              "PayPal"
-            ],
-            "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
-            }
-          },
-          "title": "+7 Formas de pagamento "
-        },
-        {
-          "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
-          },
-          "bulletPoints": {
-            "items": [
-              "Enviali (Melhores taxas e Integração Nativa)",
-              "Frenet",
-              "Kangu ",
-              "Manda Bem ",
-              "Melhor Envio",
-              "Frete Barato",
-              "Correios SEDEX",
-              "Correios PAC",
-              "Motoboy",
-              "Transportados",
-              "Retirar Pessoalmente"
-            ],
-            "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
-            }
-          },
-          "title": "+10 Formas de envio"
         }
-      ],
-      "arrows": false,
-      "backgroundImage": {
-        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
-        "alt": "carousel background"
-      },
-      "dots": true,
-      "interval": 13
+      ]
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

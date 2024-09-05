@@ -86,6 +86,8 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   };
 
   const goToItem = (index: number) => {
+    resetInterval();
+
     const item = items.item(index);
 
     if (!isHTMLElement(item)) {
@@ -117,6 +119,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     } else {
       goToItem(isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage);
     }
+
   };
 
   const onClickNext = () => {
@@ -133,6 +136,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     } else {
       goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
     }
+
   };
 
   const observer = new IntersectionObserver(
@@ -176,7 +180,16 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   prev?.addEventListener("click", onClickPrev);
   next?.addEventListener("click", onClickNext);
 
-  const timeout = interval && setInterval(onClickNext, interval);
+  let timeout: number | undefined;
+
+  function startInterval() {
+    timeout = interval && setInterval(onClickNext, interval);
+  }
+
+  function resetInterval() {
+    clearInterval(timeout);
+    startInterval();
+  }
 
   // Unregister callbacks
   return () => {
