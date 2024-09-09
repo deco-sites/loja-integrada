@@ -2,6 +2,28 @@ import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
 
+const moneyInputOnKeyUp = () => {
+    const element = event!.currentTarget as HTMLInputElement;
+    let valor = element.value;
+    valor = valor.replace(/\D/g, ""); // Remove tudo que não é dígito
+    valor = (parseFloat(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
+    valor = valor.replace(".", ","); // Substitui ponto por vírgula
+    valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."); // Adiciona ponto a cada 3 dígitos
+    element.value = "R$ " + valor;
+}
+
+const percentageInputOnKeyUp = () => {
+    const element = event!.currentTarget as HTMLInputElement;
+    let valor = element.value;
+    valor = valor.replace(/\D/g, ""); // Remove tudo que não é dígito
+    valor = (Number(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
+    valor = valor.replace(".", ","); // Substitui ponto por vírgula
+    element.value = valor + "%"; // Adiciona o símbolo de porcentagem
+    if (event.key === "Backspace") {
+        element.value = "";
+    }
+}
+
 const onClickBack = (rootId: string) => {
     const parent = document.getElementById(rootId);
     event?.preventDefault();
@@ -151,7 +173,8 @@ function TcoCalculatorPage2(
                         </div>
                         <input
                             class={inputClass}
-                            type="number"
+                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
+                            type="text"
                             placeholder={averageMonthlyRevenue.placeholder}
                         >
                         </input>
@@ -180,7 +203,8 @@ function TcoCalculatorPage2(
                         </div>
                         <input
                             class={inputClass}
-                            type="number"
+                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
+                            type="text"
                             placeholder={currentPlatformMonthlyFee.placeholder}
                         >
                         </input>
@@ -194,7 +218,8 @@ function TcoCalculatorPage2(
                         </div>
                         <input
                             class={inputClass}
-                            type="number"
+                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            type="text"
                             placeholder={currentPlatformComission.placeholder}
                         >
                         </input>
