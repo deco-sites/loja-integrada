@@ -1,6 +1,6 @@
 {
-  "name": "Venda mais",
-  "path": "/venda-mais",
+  "name": "Teste",
+  "path": "/pos-vozes",
   "sections": [
     {
       "__resolveType": "Header"
@@ -627,123 +627,77 @@
       ]
     },
     {
-      "__resolveType": "site/sections/TcoCalculator.tsx",
-      "page1": {
-        "title": "Custo Total de Propriedade (TCO) de um ecommerce",
-        "caption": "O TCO é o total dos custos relacionados à implementação, operação e manutenção de uma loja virtual. Ele reflete o custo total que o seu e-commerce representa para você, levando em conta um ciclo de vida completo.",
-        "benefits": [
-          {
-            "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/970b1637-bcb5-472c-88f3-a176ac1a66b0/calc-icon.svg",
-              "alt": "calculator icon"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/TcoCalculator.tsx",
+        "page1": {
+          "title": "Custo Total de Propriedade (TCO) de um ecommerce",
+          "caption": "O TCO é o total dos custos relacionados à implementação, operação e manutenção de uma loja virtual. Ele reflete o custo total que o seu e-commerce representa para você, levando em conta um ciclo de vida completo.",
+          "benefits": [
+            {
+              "icon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/970b1637-bcb5-472c-88f3-a176ac1a66b0/calc-icon.svg",
+                "alt": "calculator icon"
+              },
+              "title": "Negócio",
+              "caption": "Compare seus custos mensais de plataforma e comissão versus sua receita."
             },
-            "title": "Negócio",
-            "caption": "Compare seus custos mensais de plataforma e comissão versus sua receita."
-          },
-          {
-            "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b366da33-5a92-4ba1-ad12-d2e7399ac659/hand-payment-icon.svg",
-              "alt": "hand payment icon"
+            {
+              "icon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b366da33-5a92-4ba1-ad12-d2e7399ac659/hand-payment-icon.svg",
+                "alt": "hand payment icon"
+              },
+              "title": "Pagamento",
+              "caption": "Analise seus custos com tarifas de cartão de crédito, pix, boleto e ferramentas antifraude."
             },
-            "title": "Pagamento",
-            "caption": "Analise seus custos com tarifas de cartão de crédito, pix, boleto e ferramentas antifraude."
-          },
-          {
-            "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ab812e28-846a-44a7-9014-a7deca4c28f3/rocket-icon.svg",
-              "alt": "rocket icon"
-            },
-            "title": "Envio",
-            "caption": "Leve em consideração todos os custos que sua loja possui com o envio de produtos."
-          }
-        ],
-        "contentTitle": "<p>É rapidinho <strong>1 min</strong></p>",
-        "contentTitleIcon": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b355f7b9-d26f-48eb-b075-832fd8ea1435/clock-icon.svg",
-          "alt": "clock icon"
-        },
-        "contentCaption": "Preencha os campos abaixo com seus custos atuais e  compare com os custos da Loja Integrada:",
-        "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4ae51a58-e6ee-4ea4-9091-3444688795a9/progress-1.svg",
-          "alt": "progress bar"
-        },
-        "objectivesCaption": "Qual o seu objetivo?",
-        "objectives": [
-          {
-            "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fef3d2f9-5ffe-4626-9627-cfe6b5a4c151/turn-icon-png.png",
-              "alt": "migrate icon"
-            },
-            "title": "Quero  migrar"
-          },
-          {
-            "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/9d44075a-fe10-46a4-9af2-04d2f5046cbe/expand-icon.svg",
-              "alt": "expand icon"
-            },
-            "title": "Quero  expandir"
-          },
-          {
-            "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/2f9f48b5-07e6-4966-84e3-672e7132248f/world-icon.svg",
-              "alt": "digitalize icon"
-            },
-            "title": "Quero  digitalizar"
-          }
-        ],
-        "emailCaption": "Digite seu email para começar:",
-        "emailPlaceHolder": "Digite seu email",
-        "emailButtonText": "Começar",
-        "contentBackground": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/f79bb247-7e00-4f82-98a2-62ee2fd33830/tco-bg.svg"
-        },
-        "asideBackground": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/75a002b4-f5a9-476d-9e97-88c8cacdfe9d/tco-aside-background.svg"
-        },
-        "asideTopIcon": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3378d398-85c5-4432-b6b7-fff2419fbeaf/Coins.svg"
-        }
-      },
-      "title": "Calcule a eficiência da sua operação",
-      "caption": "Cálculo de TCO",
-      "page2": {
-        "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7d774b13-a5f2-4366-890b-27119e1d6ffc/progress-2.svg",
-          "alt": "progress bar"
-        },
-        "averageMonthlyRevenue": {
-          "caption": "GMV mensal",
-          "placeholder": "R$ 50.000,00",
-          "tooltipMessage": "Informe o seu GMV (Gross Merchandise Volume) mensal. Esse valor representa o total bruto das vendas realizadas em sua loja"
-        },
-        "currentPlatform": {
-          "caption": "Plataforma atual",
-          "placeholder": "Plataforma",
-          "options": [
-            "NuvemShop",
-            "Tray",
-            "Bagy",
-            "Shopify"
+            {
+              "icon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ab812e28-846a-44a7-9014-a7deca4c28f3/rocket-icon.svg",
+                "alt": "rocket icon"
+              },
+              "title": "Envio",
+              "caption": "Leve em consideração todos os custos que sua loja possui com o envio de produtos."
+            }
           ],
-          "tooltipMessage": "Qual é a sua plataforma de e-commerce atual?"
+          "contentTitle": "<p>É rapidinho <strong>1 min</strong></p>",
+          "contentTitleIcon": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b355f7b9-d26f-48eb-b075-832fd8ea1435/clock-icon.svg",
+            "alt": "clock icon"
+          },
+          "contentCaption": "Preencha os campos abaixo com seus custos atuais e  compare com os custos da Loja Integrada:",
+          "progressImage": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4ae51a58-e6ee-4ea4-9091-3444688795a9/progress-1.svg"
+          },
+          "objectivesCaption": "Qual o seu objetivo?",
+          "objectives": [
+            {
+              "icon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/171c832e-2672-477d-9adb-ae4846f5fd83/turn-icon.svg",
+                "alt": "migrate icon"
+              },
+              "title": "Quero  migrar"
+            },
+            {
+              "icon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/1750ae03-ede1-4ed6-aa16-c2db098e15ff/expand-icon.svg",
+                "alt": "expand icon"
+              },
+              "title": "Quero  expandir"
+            },
+            {
+              "icon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/cb64ff29-f00c-4238-b550-0ddef27ddd81/world-icon.svg",
+                "alt": "digitalize icon"
+              },
+              "title": "Quero  digitalizar"
+            }
+          ],
+          "emailCaption": "Digite seu email para começar:",
+          "emailPlaceHolder": "Digite seu email",
+          "emailButtonText": "Começar"
         },
-        "currentPlatformMonthlyFee": {
-          "caption": "Mensalidade",
-          "placeholder": "R$ 99,99",
-          "tooltipMessage": "Qual é o valor mensal que você paga pela utilização da sua plataforma de e-commerce atual?"
-        },
-        "currentPlatformComission": {
-          "caption": "Comissão",
-          "placeholder": "1,5%",
-          "tooltipMessage": "Qual é a taxa de comissão que você paga sobre as vendas realizadas na plataforma?"
-        },
-        "MontlyOrders": {
-          "caption": "Pedidos por mês",
-          "placeholder": "500",
-          "tooltipMessage": "Quantos pedidos sua loja recebe em média por mês?"
-        },
-        "nextButtonText": "Próximo",
-        "backButtonText": "Voltar"
+        "title": "Calcule a eficiência da sua operação",
+        "caption": "Cálculo de TCO"
       }
     },
     {
