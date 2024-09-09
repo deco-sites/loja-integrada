@@ -16,7 +16,7 @@
   },
   "mainColors": {
     "base-100": "#ffffff",
-    "primary": "#3E2555",
+    "primary": "#371E55",
     "secondary": "#fcfcfc",
     "tertiary": "#C6B3CE",
     "neutral": "#CCC4CF",
@@ -40,6 +40,11 @@
     "base-200": "#EBEBEB",
     "base-300": "#5F6E82",
     "secondary-content": "#F1EAF4",
-    "tertiary-content": "#A1ABBC"
+    "tertiary-content": "#A1ABBC",
+    "neutral-content": "#828CA0",
+    "success-content": "#D2C7FE",
+    "warning-content": "#825AB4",
+    "error-content": "#BB95D7",
+    "info-content": "#000000"
   }
 }

@@ -215,7 +215,6 @@ function Carousel(props: Props) {
 
     return (
         <div id="detailedCarousel" class="relative mt-16">
-
             {backgroundImage && <div class="absolute w-full h-full top-0 left-0 -z-50"><Image
                 width={1440}
                 height={1104}
@@ -223,7 +222,6 @@ function Carousel(props: Props) {
                 alt={backgroundImage.alt || "carousel background"}
                 class="h-full w-full object-fill"
             /></div>}
-
             <div
                 id={id}
                 class="min-h-min flex items-center flex-col lg:container md:max-w-[1220px] lg:mx-auto pt-16 pb-24 lg:pt-24"
