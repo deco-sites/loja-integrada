@@ -25,21 +25,12 @@ const percentageInputOnKeyUp = () => {
     }
 }
 
-const onClickNext = (rootId: string) => {
-    const parent = document.getElementById(rootId);
-    event?.preventDefault();
-    if (parent) {
-        Array.from(parent.children)[1].classList.add("hidden");
-        Array.from(parent.children)[2].classList.remove("hidden");
-    }
-};
-
 const onClickBack = (rootId: string) => {
     const parent = document.getElementById(rootId);
     event?.preventDefault();
     if (parent) {
-        Array.from(parent.children)[0].classList.remove("hidden");
-        Array.from(parent.children)[1].classList.add("hidden");
+        Array.from(parent.children)[1].classList.remove("hidden");
+        Array.from(parent.children)[2].classList.add("hidden");
     }
 };
 
@@ -79,13 +70,16 @@ export interface Page1 {
     contentBackground?: IImage;
 }
 
-export interface Page2 { 
+export interface Page3 { 
     progressImage?: IImage 
-    averageMonthlyRevenue: IInput;
-    currentPlatform: IDropdown;
-    currentPlatformMonthlyFee: IInput;
-    currentPlatformComission: IInput;
-    MontlyOrders: IInput;
+    cardShare: IInput;
+    cardFee: IInput;
+    boletoShare: IInput;
+    boletoFee: IInput;
+    pixShare: IInput;
+    pixFee: IInput;
+    antiFraudCosts: IInput;
+    processingCosts: IInput;
     nextButtonText: string;
     backButtonText: string;
 }
@@ -96,21 +90,22 @@ function InfoIcon() {
     </svg>
 }
 
-function TcoCalculatorPage2(
-    { page1, rootId, page2 }: { page1: Page1; page2: Page2; rootId: string, },
+function TcoCalculatorPage3(
+    { page1, rootId, page3 }: { page1: Page1; page3: Page3; rootId: string, },
 ) {
     const {
         title, caption, benefits, contentTitle, contentTitleIcon, contentCaption, contentBackground, asideBackground, asideTopIcon
     } = page1;
 
-    const { progressImage, averageMonthlyRevenue, currentPlatform, currentPlatformMonthlyFee, currentPlatformComission, MontlyOrders, nextButtonText, backButtonText } = page2;
+    const { progressImage, cardShare, cardFee, boletoShare, boletoFee, pixFee, pixShare, antiFraudCosts, processingCosts, nextButtonText, backButtonText } = page3;
 
+    const labeClass = "w-[195px]";
     const inputCaptionClass = "text-base text-primary flex justify-between items-center";
     const inputClass = "bg-transparent min-h-[38px] w-full rounded-lg border border-primary px-4 mt-2.5";
 
     return (
         <div
-            class="relative flex w-full min-h-[971px]  rounded-[30px] overflow-hidden hidden"
+            class="relative flex w-full min-h-[971px] rounded-[30px] overflow-hidden hidden"
         >
             <div class={`relative max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content`}>
                 {asideTopIcon && <Image
@@ -173,56 +168,11 @@ function TcoCalculatorPage2(
                     alt={progressImage.alt || "progress image"}
                 /></div>}
 
-                <form class="flex flex-col gap-[18px] mt-14 max-w-[375px]">
-                    <label>
+                <form class="flex flex-wrap gap-[38px] mt-14 w-full">
+                    <label class={labeClass}>
                         <div class={inputCaptionClass} >
-                            <p>{averageMonthlyRevenue.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={averageMonthlyRevenue.tooltipMessage}>
-                                <InfoIcon />
-                            </div>
-                        </div>
-                        <input
-                            class={inputClass}
-                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
-                            type="text"
-                            placeholder={averageMonthlyRevenue.placeholder}
-                        >
-                        </input>
-                    </label>
-                    <label>
-                        <div class={inputCaptionClass} >
-                            <p>{currentPlatform.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={currentPlatform.tooltipMessage}>
-                                <InfoIcon />
-                            </div>
-                        </div>
-                        <select 
-                            class={inputClass}
-                        >
-                            {currentPlatform.options.map(option => (
-                                <option>{option}</option>
-                            ))}
-                        </select>
-                    </label>
-                    <label>
-                        <div class={inputCaptionClass} >
-                            <p>{currentPlatformMonthlyFee.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={currentPlatformMonthlyFee.tooltipMessage}>
-                                <InfoIcon />
-                            </div>
-                        </div>
-                        <input
-                            class={inputClass}
-                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
-                            type="text"
-                            placeholder={currentPlatformMonthlyFee.placeholder}
-                        >
-                        </input>
-                    </label>
-                    <label>
-                        <div class={inputCaptionClass} >
-                            <p>{currentPlatformComission.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={currentPlatformComission.tooltipMessage}>
+                            <p>{cardShare.caption}</p>
+                            <div class="tooltip tooltip-info" data-tip={cardShare.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -230,25 +180,118 @@ function TcoCalculatorPage2(
                             class={inputClass}
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
-                            placeholder={currentPlatformComission.placeholder}
+                            placeholder={cardShare.placeholder}
                         >
                         </input>
                     </label>
-                    <label>
+                    <label class={labeClass}>
                         <div class={inputCaptionClass} >
-                            <p>{MontlyOrders.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={MontlyOrders.tooltipMessage}>
+                            <p>{cardFee.caption}</p>
+                            <div class="tooltip tooltip-info" data-tip={cardFee.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
                         <input
                             class={inputClass}
-                            type="number"
-                            placeholder={MontlyOrders.placeholder}
+                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            type="text"
+                            placeholder={cardFee.placeholder}
                         >
                         </input>
                     </label>
-                <div class="flex justify-end gap-10">
+                    <label class={labeClass}>
+                        <div class={inputCaptionClass} > 
+                            <p>{boletoShare.caption}</p>
+                            <div class="tooltip tooltip-info" data-tip={boletoShare.tooltipMessage}>
+                                <InfoIcon />
+                            </div>
+                        </div>
+                        <input
+                            class={inputClass}
+                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            type="text"
+                            placeholder={boletoShare.placeholder}
+                        >
+                        </input>
+                    </label>
+                    <label class={labeClass}>
+                        <div class={inputCaptionClass} >
+                            <p>{boletoFee.caption}</p>
+                            <div class="tooltip tooltip-info" data-tip={boletoFee.tooltipMessage}>
+                                <InfoIcon />
+                            </div>
+                        </div>
+                        <input
+                            class={inputClass}
+                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            type="text"
+                            placeholder={boletoFee.placeholder}
+                        >
+                        </input>
+                    </label>
+                    <label class={labeClass}>
+                        <div class={inputCaptionClass} > 
+                            <p>{pixShare.caption}</p>
+                            <div class="tooltip tooltip-info" data-tip={pixShare.tooltipMessage}>
+                                <InfoIcon />
+                            </div>
+                        </div>
+                        <input
+                            class={inputClass}
+                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            type="text"
+                            placeholder={pixShare.placeholder}
+                        >
+                        </input>
+                    </label>
+                    <label class={labeClass}>
+                        <div class={inputCaptionClass} >
+                            <p>{pixFee.caption}</p>
+                            <div class="tooltip tooltip-info" data-tip={pixFee.tooltipMessage}>
+                                <InfoIcon />
+                            </div>
+                        </div>
+                        <input
+                            class={inputClass}
+                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            type="text"
+                            placeholder={pixFee.placeholder}
+                        >
+                        </input>
+                    </label>
+                    <div class="w-[375px] flex flex-col gap-y-[18px]">
+                        <label class="w-full">
+                            <div class={inputCaptionClass} >
+                                <p>{antiFraudCosts.caption}</p>
+                                <div class="tooltip tooltip-info" data-tip={antiFraudCosts.tooltipMessage}>
+                                    <InfoIcon />
+                                </div>
+                            </div>
+                            <input
+                                class={inputClass}
+                                hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                                type="text"
+                                placeholder={antiFraudCosts.placeholder}
+                            >
+                            </input>
+                        </label>
+                        <label class="w-full">
+                            <div class={inputCaptionClass} >
+                                <p>{processingCosts.caption}</p>
+                                <div class="tooltip tooltip-info" data-tip={processingCosts.tooltipMessage}>
+                                    <InfoIcon />
+                                </div>
+                            </div>
+                            <input
+                                class={inputClass}
+                                hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                                type="text"
+                                placeholder={processingCosts.placeholder}
+                            >
+                            </input>
+                        </label>
+                    </div>
+                <div class="flex justify-center w-full gap-10">
                     <button 
                         class="flex items-center gap-1 font-bold hover:scale-110 text-lg transition-transform text-primary"
                         hx-on:click={useScript(onClickBack, rootId)}
@@ -259,13 +302,15 @@ function TcoCalculatorPage2(
                         {backButtonText}
                     </button>
                     <button 
-                        class="flex items-center gap-1 font-bold hover:scale-110 text-lg transition-transform text-primary"
-                        hx-on:click={useScript(onClickNext, rootId)}
+                        class="flex items-center gap-1 font-bold hover:scale-110 text-lg transition-transform text-secondary-content bg-primary rounded-lg py-2.5 px-[30px]"
+                        hx-on:click={useScript(onClickBack, rootId)}
+                        disabled
                         >
                         {nextButtonText}
-                        <svg width="17" height="17" class="text-primary fill-current" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.5 0.910645C6.97338 0.910645 5.48104 1.36334 4.2117 2.21149C2.94235 3.05964 1.95302 4.26514 1.36881 5.67556C0.784594 7.08597 0.631737 8.63796 0.929567 10.1352C1.2274 11.6325 1.96254 13.0079 3.04202 14.0874C4.12151 15.1669 5.49686 15.902 6.99415 16.1998C8.49144 16.4977 10.0434 16.3448 11.4538 15.7606C12.8643 15.1764 14.0698 14.187 14.9179 12.9177C15.7661 11.6484 16.2188 10.156 16.2188 8.62939C16.2166 6.58292 15.4027 4.62088 13.9556 3.1738C12.5085 1.72672 10.5465 0.912806 8.5 0.910645ZM11.8888 9.04947L9.51383 11.4245C9.40242 11.5359 9.25131 11.5985 9.09375 11.5985C8.93619 11.5985 8.78509 11.5359 8.67368 11.4245C8.56226 11.3131 8.49967 11.162 8.49967 11.0044C8.49967 10.8468 8.56226 10.6957 8.67368 10.5843L10.0356 9.22314H5.53125C5.37378 9.22314 5.22276 9.16059 5.11141 9.04924C5.00006 8.93789 4.9375 8.78687 4.9375 8.62939C4.9375 8.47192 5.00006 8.3209 5.11141 8.20955C5.22276 8.0982 5.37378 8.03564 5.53125 8.03564H10.0356L8.67368 6.67447C8.56226 6.56306 8.49967 6.41195 8.49967 6.25439C8.49967 6.09683 8.56226 5.94573 8.67368 5.83432C8.78509 5.7229 8.93619 5.66031 9.09375 5.66031C9.25131 5.66031 9.40242 5.7229 9.51383 5.83432L11.8888 8.20932C11.944 8.26446 11.9878 8.32994 12.0177 8.40202C12.0476 8.4741 12.063 8.55137 12.063 8.62939C12.063 8.70742 12.0476 8.78469 12.0177 8.85677C11.9878 8.92885 11.944 8.99433 11.8888 9.04947Z" />
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.71875 0.410645C6.19213 0.410645 4.69979 0.863341 3.43045 1.71149C2.1611 2.55964 1.17177 3.76514 0.587558 5.17556C0.00334442 6.58597 -0.149513 8.13796 0.148317 9.63525C0.446147 11.1325 1.18129 12.5079 2.26077 13.5874C3.34026 14.6669 4.71561 15.402 6.2129 15.6998C7.71019 15.9977 9.26217 15.8448 10.6726 15.2606C12.083 14.6764 13.2885 13.687 14.1367 12.4177C14.9848 11.1484 15.4375 9.65602 15.4375 8.1294C15.4353 6.08292 14.6214 4.12088 13.1743 2.6738C11.7273 1.22672 9.76523 0.412806 7.71875 0.410645ZM11.1076 8.54947L8.73258 10.9245C8.62117 11.0359 8.47006 11.0985 8.3125 11.0985C8.15494 11.0985 8.00384 11.0359 7.89243 10.9245C7.78101 10.8131 7.71842 10.662 7.71842 10.5044C7.71842 10.3468 7.78101 10.1957 7.89243 10.0843L9.25434 8.72315H4.75C4.59253 8.72315 4.44151 8.66059 4.33016 8.54924C4.21881 8.43789 4.15625 8.28687 4.15625 8.1294C4.15625 7.97192 4.21881 7.8209 4.33016 7.70955C4.44151 7.5982 4.59253 7.53565 4.75 7.53565H9.25434L7.89243 6.17447C7.78101 6.06306 7.71842 5.91195 7.71842 5.7544C7.71842 5.59684 7.78101 5.44573 7.89243 5.33432C8.00384 5.22291 8.15494 5.16032 8.3125 5.16032C8.47006 5.16032 8.62117 5.22291 8.73258 5.33432L11.1076 7.70932C11.1628 7.76446 11.2066 7.82994 11.2365 7.90202C11.2663 7.9741 11.2817 8.05137 11.2817 8.1294C11.2817 8.20742 11.2663 8.28469 11.2365 8.35677C11.2066 8.42885 11.1628 8.49433 11.1076 8.54947Z" fill="white"/>
                         </svg>
+
                     </button>
                 </div>
                 </form>
@@ -275,4 +320,4 @@ function TcoCalculatorPage2(
     );
 }
 
-export default TcoCalculatorPage2;
+export default TcoCalculatorPage3;

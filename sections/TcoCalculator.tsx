@@ -2,8 +2,10 @@ import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import { useId } from "../sdk/useId.ts";
 import TcoCalculatorPage1 from "site/components/TcoCalculatorPage1.tsx";
 import TcoCalculatorPage2 from "site/components/TcoCalculatorPage2.tsx";
+import TcoCalculatorPage3 from "site/components/TcoCalculatorPage3.tsx";
 import { Page1 } from "site/components/TcoCalculatorPage1.tsx";
 import { Page2 } from "site/components/TcoCalculatorPage2.tsx";
+import { Page3 } from "site/components/TcoCalculatorPage3.tsx"
 
 export interface IImage {
     src: ImageWidget;
@@ -15,11 +17,12 @@ export interface Props {
     caption?: string;
     page1: Page1;
     page2: Page2;
+    page3: Page3;
 }
 
 function TcoCalculator(props: Props) {
     const id = useId();
-    const { title, caption, page1, page2 } = { ...props };
+    const { title, caption, page1, page2, page3 } = { ...props };
 
     return (
         <div
@@ -38,6 +41,11 @@ function TcoCalculator(props: Props) {
                 <TcoCalculatorPage2
                     page1={page1}
                     page2={page2}
+                    rootId={id}
+                />
+                <TcoCalculatorPage3
+                    page1={page1}
+                    page3={page3}
                     rootId={id}
                 />
             </div>
