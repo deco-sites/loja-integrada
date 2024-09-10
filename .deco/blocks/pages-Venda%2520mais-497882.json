@@ -744,6 +744,54 @@
         },
         "nextButtonText": "Próximo",
         "backButtonText": "Voltar"
+      },
+      "page3": {
+        "progressImage": {
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/f707df1b-69b3-4d55-a8db-d36495f47ff1/progress-3.svg",
+          "alt": "progress bar"
+        },
+        "cardShare": {
+          "caption": "Share do cartão",
+          "placeholder": "60%",
+          "tooltipMessage": "Qual é a porcentagem de vendas realizadas por cartão de crédito?"
+        },
+        "cardFee": {
+          "caption": "Tarifa cartão",
+          "placeholder": "30%",
+          "tooltipMessage": "Qual é a tarifa média cobrada por transação de cartão de crédito?"
+        },
+        "boletoShare": {
+          "caption": "Share do boleto",
+          "placeholder": "60%",
+          "tooltipMessage": "Qual é a porcentagem de vendas realizadas por boleto bancário?"
+        },
+        "boletoFee": {
+          "caption": "Tarifa do boleto",
+          "placeholder": "30%",
+          "tooltipMessage": "Qual é a tarifa média cobrada por boleto bancário emitido?"
+        },
+        "pixShare": {
+          "caption": "Share do Pix",
+          "placeholder": "60%",
+          "tooltipMessage": "Qual é a porcentagem de vendas realizadas por PIX?"
+        },
+        "pixFee": {
+          "caption": "Tarifa Pix",
+          "placeholder": "30%",
+          "tooltipMessage": "Qual é a tarifa média cobrada por transação via PIX?"
+        },
+        "antiFraudCosts": {
+          "caption": "Custos com Anti-Fraude",
+          "placeholder": "R$ O,30",
+          "tooltipMessage": "Custos destinados a prevenção de fraudes"
+        },
+        "processingCosts": {
+          "caption": "Custo processamento",
+          "placeholder": "R$ O,25",
+          "tooltipMessage": "Custos destinados a processamento de transações"
+        },
+        "nextButtonText": "Ver resultado",
+        "backButtonText": "Voltar"
       }
     },
     {
