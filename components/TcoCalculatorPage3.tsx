@@ -25,6 +25,15 @@ const percentageInputOnKeyUp = () => {
     }
 }
 
+const onClickNext = (rootId: string) => {
+    const parent = document.getElementById(rootId);
+    event?.preventDefault();
+    if (parent) {
+        Array.from(parent.children)[2].classList.add("hidden");
+        Array.from(parent.children)[3].classList.remove("hidden");
+    }
+};
+
 const onClickBack = (rootId: string) => {
     const parent = document.getElementById(rootId);
     event?.preventDefault();
@@ -269,7 +278,7 @@ function TcoCalculatorPage3(
                             </div>
                             <input
                                 class={inputClass}
-                                hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                                hx-on:keyup={useScript(moneyInputOnKeyUp)}
                                 type="text"
                                 placeholder={antiFraudCosts.placeholder}
                             >
@@ -284,7 +293,7 @@ function TcoCalculatorPage3(
                             </div>
                             <input
                                 class={inputClass}
-                                hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                                hx-on:keyup={useScript(moneyInputOnKeyUp)}
                                 type="text"
                                 placeholder={processingCosts.placeholder}
                             >
@@ -302,9 +311,8 @@ function TcoCalculatorPage3(
                         {backButtonText}
                     </button>
                     <button 
-                        class="flex items-center gap-1 font-bold hover:scale-110 text-lg transition-transform text-secondary-content bg-primary rounded-lg py-2.5 px-[30px]"
-                        hx-on:click={useScript(onClickBack, rootId)}
-                        disabled
+                        class="flex items-center gap-2.5 font-bold hover:scale-110 text-lg transition-transform text-secondary-content bg-primary rounded-lg py-2.5 px-[30px]"
+                        hx-on:click={useScript(onClickNext, rootId)}
                         >
                         {nextButtonText}
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

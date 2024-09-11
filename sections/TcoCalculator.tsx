@@ -3,9 +3,11 @@ import { useId } from "../sdk/useId.ts";
 import TcoCalculatorPage1 from "site/components/TcoCalculatorPage1.tsx";
 import TcoCalculatorPage2 from "site/components/TcoCalculatorPage2.tsx";
 import TcoCalculatorPage3 from "site/components/TcoCalculatorPage3.tsx";
+import TcoCalculatorPage4 from "site/components/TcoCalculatorPage4.tsx";
 import { Page1 } from "site/components/TcoCalculatorPage1.tsx";
 import { Page2 } from "site/components/TcoCalculatorPage2.tsx";
 import { Page3 } from "site/components/TcoCalculatorPage3.tsx"
+import { Page4 } from "site/components/TcoCalculatorPage4.tsx";
 
 export interface IImage {
     src: ImageWidget;
@@ -18,11 +20,12 @@ export interface Props {
     page1: Page1;
     page2: Page2;
     page3: Page3;
+    page4: Page4;
 }
 
 function TcoCalculator(props: Props) {
     const id = useId();
-    const { title, caption, page1, page2, page3 } = { ...props };
+    const { title, caption, page1, page2, page3, page4 } = { ...props };
 
     return (
         <div
@@ -46,6 +49,11 @@ function TcoCalculator(props: Props) {
                 <TcoCalculatorPage3
                     page1={page1}
                     page3={page3}
+                    rootId={id}
+                />
+                <TcoCalculatorPage4
+                    page1={page1}
+                    page4={page4}
                     rootId={id}
                 />
             </div>
