@@ -792,6 +792,71 @@
         },
         "nextButtonText": "Ver resultado",
         "backButtonText": "Voltar"
+      },
+      "page4": {
+        "progressImage": {
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7a6f43e7-71e6-4cdb-a6a2-10891cd62413/progress-4.svg"
+        },
+        "contentBackground": {
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/722fd251-8380-473b-bcc9-bc45a85bd315/page4contentBackground.svg"
+        },
+        "savingTextBefore": "Economize",
+        "savingTextAfter": "no plano Expansão",
+        "whatsappText": "Preencha o campo abaixo com o seu número de WhatsApp para receber uma proposta personalizada:",
+        "whatsappNameInput": {
+          "caption": "Nome:"
+        },
+        "whatsappNumberInput": {
+          "caption": "Número do WhatsApp:",
+          "placeholder": "11 - 97654 9875"
+        },
+        "whasappCta": {
+          "text": "Receba proposta",
+          "href": "#",
+          "icon": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/daceb68e-0a01-481c-a0f5-8f64df952d19/wpp-icon-white.svg",
+            "alt": "whatsapp icon"
+          },
+          "outline": false
+        },
+        "saving": {
+          "textBefore": "Economize",
+          "textAfter": "no plano Expansão",
+          "background": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/20ee682c-2405-4b9c-92e7-453ee5cf43e6/savings-bg-png.png",
+            "alt": "savings background"
+          }
+        },
+        "benefit1": {
+          "text": "Aumente suas vendas e economize na sua operação com as nossas soluções nativas",
+          "image": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4d16431e-e7c8-479c-a615-2a4f891e3f46/benefit1-bg.svg",
+            "alt": "background"
+          }
+        },
+        "benefit2": {
+          "text": "Atendimento prioritário",
+          "image": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a91d5483-1158-4a8f-b2de-90fb07612429/benefit2-bg.svg",
+            "alt": "background"
+          }
+        },
+        "result": {
+          "montlyFeeLabel": "Mensalidade",
+          "salesComissionLabel": "Comissão sobre Venda",
+          "platformTotal": "Total da plataforma",
+          "cardLabel": "Cartão",
+          "boletoLabel": "Boleto",
+          "pixLabel": "Pix",
+          "totalPaymentLabel": "Pagamento total",
+          "totalLabel": "Total",
+          "totalTcoLabel": "Total TCO",
+          "migrateCta": {
+            "href": "#",
+            "text": "Migre agora",
+            "outline": false
+          }
+        }
       }
     },
     {

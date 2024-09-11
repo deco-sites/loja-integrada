@@ -3,12 +3,15 @@
   "packages": {
     "specifiers": {
       "jsr:@core/asyncutil@^1.0.2": "jsr:@core/asyncutil@1.1.1",
+      "jsr:@deco/codemod-toolkit@^0.2.1": "jsr:@deco/codemod-toolkit@0.2.1",
       "jsr:@deco/deco@1.96.11": "jsr:@deco/deco@1.96.11",
+      "jsr:@deco/deco@1.97.5": "jsr:@deco/deco@1.97.5",
       "jsr:@deco/deno-ast-wasm@0.5.0": "jsr:@deco/deno-ast-wasm@0.5.0",
       "jsr:@deco/durable@^0.5.3": "jsr:@deco/durable@0.5.3",
       "jsr:@deco/inspect-vscode@0.2.1": "jsr:@deco/inspect-vscode@0.2.1",
       "jsr:@deco/warp@^0.3.6": "jsr:@deco/warp@0.3.6",
       "jsr:@deno/cache-dir@0.10.1": "jsr:@deno/cache-dir@0.10.1",
+      "jsr:@deno/graph@^0.73.1": "jsr:@deno/graph@0.73.1",
       "jsr:@hono/hono@^4.5.4": "jsr:@hono/hono@4.5.11",
       "jsr:@luca/esbuild-deno-loader@0.10.3": "jsr:@luca/esbuild-deno-loader@0.10.3",
       "jsr:@std/assert@^0.213.1": "jsr:@std/assert@0.213.1",
@@ -55,6 +58,7 @@
       "npm:@algolia/client-search": "npm:@algolia/client-search@5.3.2",
       "npm:@algolia/requester-fetch@4.20.0": "npm:@algolia/requester-fetch@4.20.0",
       "npm:@algolia/transporter@4.20.0": "npm:@algolia/transporter@4.20.0",
+      "npm:@libsql/client@0.6.0": "npm:@libsql/client@0.6.0",
       "npm:@libsql/client@0.7.0": "npm:@libsql/client@0.7.0",
       "npm:@opentelemetry/api-logs@0.52.1": "npm:@opentelemetry/api-logs@0.52.1",
       "npm:@opentelemetry/api@1.9.0": "npm:@opentelemetry/api@1.9.0",
@@ -84,6 +88,8 @@
       "npm:colorjs.io": "npm:colorjs.io@0.5.2",
       "npm:cssnano@6.0.1": "npm:cssnano@6.0.1_postcss@8.4.27",
       "npm:daisyui@4.4.19": "npm:daisyui@4.4.19_postcss@8.4.27",
+      "npm:drizzle-kit@0.21.2": "npm:drizzle-kit@0.21.2_esbuild@0.19.12",
+      "npm:drizzle-orm@0.30.10": "npm:drizzle-orm@0.30.10_@libsql+client@0.6.0_@opentelemetry+api@1.9.0",
       "npm:fast-json-patch@^3.1.1": "npm:fast-json-patch@3.1.1",
       "npm:fuse.js@7.0.0": "npm:fuse.js@7.0.0",
       "npm:lru-cache@10.2.0": "npm:lru-cache@10.2.0",
@@ -102,6 +108,9 @@
     "jsr": {
       "@core/asyncutil@1.1.1": {
         "integrity": "64540c79e023605f1c3cee2a50291d4d83d495b89a2b32c99fd3c2fbf445971c"
+      },
+      "@deco/codemod-toolkit@0.2.1": {
+        "integrity": "5024b11fe72129c5acc708ebc2dfd02ccda8c2a8b5b7a9bea40147823a19a0c1"
       },
       "@deco/deco@1.96.11": {
         "integrity": "555a17762ba6e4eb607393fd8a9b1773d969c034960f736f411a9a243522b8ff",
@@ -156,8 +165,65 @@
           "npm:weak-lru-cache@1.0.0"
         ]
       },
+      "@deco/deco@1.97.5": {
+        "integrity": "a6595db5d17a544e8ce54f146d053ec07485e5666c4fb838ddd8ad2d2e243e65",
+        "dependencies": [
+          "jsr:@core/asyncutil@^1.0.2",
+          "jsr:@deco/codemod-toolkit@^0.2.1",
+          "jsr:@deco/deno-ast-wasm@0.5.0",
+          "jsr:@deco/durable@^0.5.3",
+          "jsr:@deco/inspect-vscode@0.2.1",
+          "jsr:@deco/warp@^0.3.6",
+          "jsr:@deno/cache-dir@0.10.1",
+          "jsr:@hono/hono@^4.5.4",
+          "jsr:@std/async@^0.224.1",
+          "jsr:@std/cli@^1.0.3",
+          "jsr:@std/crypto@1.0.0-rc.1",
+          "jsr:@std/encoding@^1.0.0-rc.1",
+          "jsr:@std/flags@^0.224.0",
+          "jsr:@std/fmt@^0.225.3",
+          "jsr:@std/fs@^0.229.1",
+          "jsr:@std/http@^1.0.0",
+          "jsr:@std/io@^0.224.4",
+          "jsr:@std/log@^0.224.5",
+          "jsr:@std/media-types@^1.0.0-rc.1",
+          "jsr:@std/path@^0.225.2",
+          "jsr:@std/semver@^0.224.3",
+          "jsr:@supabase/supabase-js@2.45.1",
+          "jsr:@zaubrik/djwt@^3.0.2",
+          "npm:@opentelemetry/api-logs@0.52.1",
+          "npm:@opentelemetry/api@1.9.0",
+          "npm:@opentelemetry/exporter-logs-otlp-http@0.52.1",
+          "npm:@opentelemetry/exporter-metrics-otlp-http@0.52.1",
+          "npm:@opentelemetry/exporter-trace-otlp-proto@0.52.1",
+          "npm:@opentelemetry/instrumentation-fetch@0.52.1",
+          "npm:@opentelemetry/instrumentation@0.52.1",
+          "npm:@opentelemetry/resources@1.25.1",
+          "npm:@opentelemetry/sdk-logs@0.52.1",
+          "npm:@opentelemetry/sdk-metrics@1.25.1",
+          "npm:@opentelemetry/sdk-trace-base@1.25.1",
+          "npm:@opentelemetry/sdk-trace-node@1.25.1",
+          "npm:@opentelemetry/semantic-conventions@1.25.1",
+          "npm:@swc/wasm-web@1.5.25",
+          "npm:autoprefixer@10.4.14",
+          "npm:cssnano@6.0.1",
+          "npm:fast-json-patch@^3.1.1",
+          "npm:lru-cache@10.2.0",
+          "npm:postcss@8.4.27",
+          "npm:preact-render-to-string@6.4.0",
+          "npm:preact@10.23.1",
+          "npm:simple-git@^3.25.0",
+          "npm:tailwindcss@3.4.1",
+          "npm:ua-parser-js@2.0.0-beta.2",
+          "npm:unique-names-generator@4.7.1",
+          "npm:weak-lru-cache@1.0.0"
+        ]
+      },
       "@deco/deno-ast-wasm@0.5.0": {
-        "integrity": "19b5b92803a21e4ad2dde1b44b0f3d3bad6931cb56c421be083595f5c3729c92"
+        "integrity": "19b5b92803a21e4ad2dde1b44b0f3d3bad6931cb56c421be083595f5c3729c92",
+        "dependencies": [
+          "npm:@swc/wasm@1.3.76"
+        ]
       },
       "@deco/durable@0.5.3": {
         "integrity": "ed939fa140f0a4c7a21c3a622e5bdf21a93cb824d7c44a098dcad9b7315e4561"
@@ -175,11 +241,15 @@
       "@deno/cache-dir@0.10.1": {
         "integrity": "30f0a3b975df62adebd859a56f285873c56c6e68190e4370c7a539c6664559ad",
         "dependencies": [
+          "jsr:@deno/graph@^0.73.1",
           "jsr:@std/fmt@^0.223",
           "jsr:@std/fs@^0.223",
           "jsr:@std/io@^0.223",
           "jsr:@std/path@^0.223"
         ]
+      },
+      "@deno/graph@0.73.1": {
+        "integrity": "cd69639d2709d479037d5ce191a422eabe8d71bb68b0098344f6b07411c84d41"
       },
       "@hono/hono@4.5.11": {
         "integrity": "5bd6b1a3a503efb746fdcf0aae3ac536dd09229d372988bde5db0798ef64ae4f"
@@ -413,6 +483,200 @@
           "regenerator-runtime": "regenerator-runtime@0.14.1"
         }
       },
+      "@esbuild-kit/core-utils@3.3.2": {
+        "integrity": "sha512-sPRAnw9CdSsRmEtnsl2WXWdyquogVpB3yZ3dgwJfe8zrOzTsV7cJvmwrKVa+0ma5BoiGJ+BoqkMvawbayKUsqQ==",
+        "dependencies": {
+          "esbuild": "esbuild@0.18.20",
+          "source-map-support": "source-map-support@0.5.21"
+        }
+      },
+      "@esbuild-kit/esm-loader@2.6.5": {
+        "integrity": "sha512-FxEMIkJKnodyA1OaCUoEvbYRkoZlLZ4d/eXFu9Fh8CbBBgP5EmZxrfTRyN0qpXZ4vOvqnE5YdRdcrmUUXuU+dA==",
+        "dependencies": {
+          "@esbuild-kit/core-utils": "@esbuild-kit/core-utils@3.3.2",
+          "get-tsconfig": "get-tsconfig@4.8.0"
+        }
+      },
+      "@esbuild/aix-ppc64@0.19.12": {
+        "integrity": "sha512-bmoCYyWdEL3wDQIVbcyzRyeKLgk2WtWLTWz1ZIAZF/EGbNOwSA6ew3PftJ1PqMiOOGu0OyFMzG53L0zqIpPeNA==",
+        "dependencies": {}
+      },
+      "@esbuild/android-arm64@0.18.20": {
+        "integrity": "sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==",
+        "dependencies": {}
+      },
+      "@esbuild/android-arm64@0.19.12": {
+        "integrity": "sha512-P0UVNGIienjZv3f5zq0DP3Nt2IE/3plFzuaS96vihvD0Hd6H/q4WXUGpCxD/E8YrSXfNyRPbpTq+T8ZQioSuPA==",
+        "dependencies": {}
+      },
+      "@esbuild/android-arm@0.18.20": {
+        "integrity": "sha512-fyi7TDI/ijKKNZTUJAQqiG5T7YjJXgnzkURqmGj13C6dCqckZBLdl4h7bkhHt/t0WP+zO9/zwroDvANaOqO5Sw==",
+        "dependencies": {}
+      },
+      "@esbuild/android-arm@0.19.12": {
+        "integrity": "sha512-qg/Lj1mu3CdQlDEEiWrlC4eaPZ1KztwGJ9B6J+/6G+/4ewxJg7gqj8eVYWvao1bXrqGiW2rsBZFSX3q2lcW05w==",
+        "dependencies": {}
+      },
+      "@esbuild/android-x64@0.18.20": {
+        "integrity": "sha512-8GDdlePJA8D6zlZYJV/jnrRAi6rOiNaCC/JclcXpB+KIuvfBN4owLtgzY2bsxnx666XjJx2kDPUmnTtR8qKQUg==",
+        "dependencies": {}
+      },
+      "@esbuild/android-x64@0.19.12": {
+        "integrity": "sha512-3k7ZoUW6Q6YqhdhIaq/WZ7HwBpnFBlW905Fa4s4qWJyiNOgT1dOqDiVAQFwBH7gBRZr17gLrlFCRzF6jFh7Kew==",
+        "dependencies": {}
+      },
+      "@esbuild/darwin-arm64@0.18.20": {
+        "integrity": "sha512-bxRHW5kHU38zS2lPTPOyuyTm+S+eobPUnTNkdJEfAddYgEcll4xkT8DB9d2008DtTbl7uJag2HuE5NZAZgnNEA==",
+        "dependencies": {}
+      },
+      "@esbuild/darwin-arm64@0.19.12": {
+        "integrity": "sha512-B6IeSgZgtEzGC42jsI+YYu9Z3HKRxp8ZT3cqhvliEHovq8HSX2YX8lNocDn79gCKJXOSaEot9MVYky7AKjCs8g==",
+        "dependencies": {}
+      },
+      "@esbuild/darwin-x64@0.18.20": {
+        "integrity": "sha512-pc5gxlMDxzm513qPGbCbDukOdsGtKhfxD1zJKXjCCcU7ju50O7MeAZ8c4krSJcOIJGFR+qx21yMMVYwiQvyTyQ==",
+        "dependencies": {}
+      },
+      "@esbuild/darwin-x64@0.19.12": {
+        "integrity": "sha512-hKoVkKzFiToTgn+41qGhsUJXFlIjxI/jSYeZf3ugemDYZldIXIxhvwN6erJGlX4t5h417iFuheZ7l+YVn05N3A==",
+        "dependencies": {}
+      },
+      "@esbuild/freebsd-arm64@0.18.20": {
+        "integrity": "sha512-yqDQHy4QHevpMAaxhhIwYPMv1NECwOvIpGCZkECn8w2WFHXjEwrBn3CeNIYsibZ/iZEUemj++M26W3cNR5h+Tw==",
+        "dependencies": {}
+      },
+      "@esbuild/freebsd-arm64@0.19.12": {
+        "integrity": "sha512-4aRvFIXmwAcDBw9AueDQ2YnGmz5L6obe5kmPT8Vd+/+x/JMVKCgdcRwH6APrbpNXsPz+K653Qg8HB/oXvXVukA==",
+        "dependencies": {}
+      },
+      "@esbuild/freebsd-x64@0.18.20": {
+        "integrity": "sha512-tgWRPPuQsd3RmBZwarGVHZQvtzfEBOreNuxEMKFcd5DaDn2PbBxfwLcj4+aenoh7ctXcbXmOQIn8HI6mCSw5MQ==",
+        "dependencies": {}
+      },
+      "@esbuild/freebsd-x64@0.19.12": {
+        "integrity": "sha512-EYoXZ4d8xtBoVN7CEwWY2IN4ho76xjYXqSXMNccFSx2lgqOG/1TBPW0yPx1bJZk94qu3tX0fycJeeQsKovA8gg==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-arm64@0.18.20": {
+        "integrity": "sha512-2YbscF+UL7SQAVIpnWvYwM+3LskyDmPhe31pE7/aoTMFKKzIc9lLbyGUpmmb8a8AixOL61sQ/mFh3jEjHYFvdA==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-arm64@0.19.12": {
+        "integrity": "sha512-EoTjyYyLuVPfdPLsGVVVC8a0p1BFFvtpQDB/YLEhaXyf/5bczaGeN15QkR+O4S5LeJ92Tqotve7i1jn35qwvdA==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-arm@0.18.20": {
+        "integrity": "sha512-/5bHkMWnq1EgKr1V+Ybz3s1hWXok7mDFUMQ4cG10AfW3wL02PSZi5kFpYKrptDsgb2WAJIvRcDm+qIvXf/apvg==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-arm@0.19.12": {
+        "integrity": "sha512-J5jPms//KhSNv+LO1S1TX1UWp1ucM6N6XuL6ITdKWElCu8wXP72l9MM0zDTzzeikVyqFE6U8YAV9/tFyj0ti+w==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-ia32@0.18.20": {
+        "integrity": "sha512-P4etWwq6IsReT0E1KHU40bOnzMHoH73aXp96Fs8TIT6z9Hu8G6+0SHSw9i2isWrD2nbx2qo5yUqACgdfVGx7TA==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-ia32@0.19.12": {
+        "integrity": "sha512-Thsa42rrP1+UIGaWz47uydHSBOgTUnwBwNq59khgIwktK6x60Hivfbux9iNR0eHCHzOLjLMLfUMLCypBkZXMHA==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-loong64@0.18.20": {
+        "integrity": "sha512-nXW8nqBTrOpDLPgPY9uV+/1DjxoQ7DoB2N8eocyq8I9XuqJ7BiAMDMf9n1xZM9TgW0J8zrquIb/A7s3BJv7rjg==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-loong64@0.19.12": {
+        "integrity": "sha512-LiXdXA0s3IqRRjm6rV6XaWATScKAXjI4R4LoDlvO7+yQqFdlr1Bax62sRwkVvRIrwXxvtYEHHI4dm50jAXkuAA==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-mips64el@0.18.20": {
+        "integrity": "sha512-d5NeaXZcHp8PzYy5VnXV3VSd2D328Zb+9dEq5HE6bw6+N86JVPExrA6O68OPwobntbNJ0pzCpUFZTo3w0GyetQ==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-mips64el@0.19.12": {
+        "integrity": "sha512-fEnAuj5VGTanfJ07ff0gOA6IPsvrVHLVb6Lyd1g2/ed67oU1eFzL0r9WL7ZzscD+/N6i3dWumGE1Un4f7Amf+w==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-ppc64@0.18.20": {
+        "integrity": "sha512-WHPyeScRNcmANnLQkq6AfyXRFr5D6N2sKgkFo2FqguP44Nw2eyDlbTdZwd9GYk98DZG9QItIiTlFLHJHjxP3FA==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-ppc64@0.19.12": {
+        "integrity": "sha512-nYJA2/QPimDQOh1rKWedNOe3Gfc8PabU7HT3iXWtNUbRzXS9+vgB0Fjaqr//XNbd82mCxHzik2qotuI89cfixg==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-riscv64@0.18.20": {
+        "integrity": "sha512-WSxo6h5ecI5XH34KC7w5veNnKkju3zBRLEQNY7mv5mtBmrP/MjNBCAlsM2u5hDBlS3NGcTQpoBvRzqBcRtpq1A==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-riscv64@0.19.12": {
+        "integrity": "sha512-2MueBrlPQCw5dVJJpQdUYgeqIzDQgw3QtiAHUC4RBz9FXPrskyyU3VI1hw7C0BSKB9OduwSJ79FTCqtGMWqJHg==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-s390x@0.18.20": {
+        "integrity": "sha512-+8231GMs3mAEth6Ja1iK0a1sQ3ohfcpzpRLH8uuc5/KVDFneH6jtAJLFGafpzpMRO6DzJ6AvXKze9LfFMrIHVQ==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-s390x@0.19.12": {
+        "integrity": "sha512-+Pil1Nv3Umes4m3AZKqA2anfhJiVmNCYkPchwFJNEJN5QxmTs1uzyy4TvmDrCRNT2ApwSari7ZIgrPeUx4UZDg==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-x64@0.18.20": {
+        "integrity": "sha512-UYqiqemphJcNsFEskc73jQ7B9jgwjWrSayxawS6UVFZGWrAAtkzjxSqnoclCXxWtfwLdzU+vTpcNYhpn43uP1w==",
+        "dependencies": {}
+      },
+      "@esbuild/linux-x64@0.19.12": {
+        "integrity": "sha512-B71g1QpxfwBvNrfyJdVDexenDIt1CiDN1TIXLbhOw0KhJzE78KIFGX6OJ9MrtC0oOqMWf+0xop4qEU8JrJTwCg==",
+        "dependencies": {}
+      },
+      "@esbuild/netbsd-x64@0.18.20": {
+        "integrity": "sha512-iO1c++VP6xUBUmltHZoMtCUdPlnPGdBom6IrO4gyKPFFVBKioIImVooR5I83nTew5UOYrk3gIJhbZh8X44y06A==",
+        "dependencies": {}
+      },
+      "@esbuild/netbsd-x64@0.19.12": {
+        "integrity": "sha512-3ltjQ7n1owJgFbuC61Oj++XhtzmymoCihNFgT84UAmJnxJfm4sYCiSLTXZtE00VWYpPMYc+ZQmB6xbSdVh0JWA==",
+        "dependencies": {}
+      },
+      "@esbuild/openbsd-x64@0.18.20": {
+        "integrity": "sha512-e5e4YSsuQfX4cxcygw/UCPIEP6wbIL+se3sxPdCiMbFLBWu0eiZOJ7WoD+ptCLrmjZBK1Wk7I6D/I3NglUGOxg==",
+        "dependencies": {}
+      },
+      "@esbuild/openbsd-x64@0.19.12": {
+        "integrity": "sha512-RbrfTB9SWsr0kWmb9srfF+L933uMDdu9BIzdA7os2t0TXhCRjrQyCeOt6wVxr79CKD4c+p+YhCj31HBkYcXebw==",
+        "dependencies": {}
+      },
+      "@esbuild/sunos-x64@0.18.20": {
+        "integrity": "sha512-kDbFRFp0YpTQVVrqUd5FTYmWo45zGaXe0X8E1G/LKFC0v8x0vWrhOWSLITcCn63lmZIxfOMXtCfti/RxN/0wnQ==",
+        "dependencies": {}
+      },
+      "@esbuild/sunos-x64@0.19.12": {
+        "integrity": "sha512-HKjJwRrW8uWtCQnQOz9qcU3mUZhTUQvi56Q8DPTLLB+DawoiQdjsYq+j+D3s9I8VFtDr+F9CjgXKKC4ss89IeA==",
+        "dependencies": {}
+      },
+      "@esbuild/win32-arm64@0.18.20": {
+        "integrity": "sha512-ddYFR6ItYgoaq4v4JmQQaAI5s7npztfV4Ag6NrhiaW0RrnOXqBkgwZLofVTlq1daVTQNhtI5oieTvkRPfZrePg==",
+        "dependencies": {}
+      },
+      "@esbuild/win32-arm64@0.19.12": {
+        "integrity": "sha512-URgtR1dJnmGvX864pn1B2YUYNzjmXkuJOIqG2HdU62MVS4EHpU2946OZoTMnRUHklGtJdJZ33QfzdjGACXhn1A==",
+        "dependencies": {}
+      },
+      "@esbuild/win32-ia32@0.18.20": {
+        "integrity": "sha512-Wv7QBi3ID/rROT08SABTS7eV4hX26sVduqDOTe1MvGMjNd3EjOz4b7zeexIR62GTIEKrfJXKL9LFxTYgkyeu7g==",
+        "dependencies": {}
+      },
+      "@esbuild/win32-ia32@0.19.12": {
+        "integrity": "sha512-+ZOE6pUkMOJfmxmBZElNOx72NKpIa/HFOMGzu8fqzQJ5kgf6aTGrcJaFsNiVMH4JKpMipyK+7k0n2UXN7a8YKQ==",
+        "dependencies": {}
+      },
+      "@esbuild/win32-x64@0.18.20": {
+        "integrity": "sha512-kTdfRcSiDfQca/y9QIkng02avJ+NCaQvrMejlsB3RRv5sE9rRoeBPISaZpKxHELzRxZyLvNts1P27W3wV+8geQ==",
+        "dependencies": {}
+      },
+      "@esbuild/win32-x64@0.19.12": {
+        "integrity": "sha512-T1QyPSDCyMXaO3pzBkF96E8xMkiRYbUEZADd29SyPGabqxMViNoii+NcK7eWJAEoU6RZyEm5lVSIjTmcdoB9HA==",
+        "dependencies": {}
+      },
       "@isaacs/cliui@8.0.2": {
         "integrity": "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==",
         "dependencies": {
@@ -461,6 +725,15 @@
         "integrity": "sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==",
         "dependencies": {}
       },
+      "@libsql/client@0.6.0": {
+        "integrity": "sha512-qhQzTG/y2IEVbL3+9PULDvlQFWJ/RnjFXECr/Nc3nRngGiiMysDaOV5VUzYk7DulUX98EA4wi+z3FspKrUplUA==",
+        "dependencies": {
+          "@libsql/core": "@libsql/core@0.6.2",
+          "@libsql/hrana-client": "@libsql/hrana-client@0.6.2",
+          "js-base64": "js-base64@3.7.7",
+          "libsql": "libsql@0.3.19"
+        }
+      },
       "@libsql/client@0.7.0": {
         "integrity": "sha512-1aLDtWzsErr68GZ640TVyOLkL/+lB2YK8cYvJIfiI7Mt+DEPB22Jkoz2QfBDg5PVGX/efeRHog2j/oVbUhxO8Q==",
         "dependencies": {
@@ -469,6 +742,12 @@
           "js-base64": "js-base64@3.7.7",
           "libsql": "libsql@0.3.19",
           "promise-limit": "promise-limit@2.7.0"
+        }
+      },
+      "@libsql/core@0.6.2": {
+        "integrity": "sha512-c2P4M+4u/4b2L02A0KjggO3UW51rGkhxr/7fzJO0fEAqsqrWGxuNj2YtRkina/oxfYvAof6xjp8RucNoIV/Odw==",
+        "dependencies": {
+          "js-base64": "js-base64@3.7.7"
         }
       },
       "@libsql/core@0.7.0": {
@@ -934,6 +1213,10 @@
           "update-browserslist-db": "update-browserslist-db@1.1.0_browserslist@4.23.3"
         }
       },
+      "buffer-from@1.1.2": {
+        "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
+        "dependencies": {}
+      },
       "camelcase-css@2.0.1": {
         "integrity": "sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==",
         "dependencies": {}
@@ -968,6 +1251,16 @@
         "integrity": "sha512-cuSVIHi9/9E/+821Qjdvngor+xpnlwnuwIyZOaLmHBVdXL+gP+I6QQB9VkO7RI77YIcTV+S1W9AreJ5eN63JBA==",
         "dependencies": {}
       },
+      "cli-color@2.0.4": {
+        "integrity": "sha512-zlnpg0jNcibNrO7GG9IeHH7maWFeCz+Ja1wx/7tZNU5ASSSSZ+/qZciM0/LHCYxSdqv5h2sdbQ/PXYdOuetXvA==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "es5-ext": "es5-ext@0.10.64",
+          "es6-iterator": "es6-iterator@2.0.3",
+          "memoizee": "memoizee@0.4.17",
+          "timers-ext": "timers-ext@0.1.8"
+        }
+      },
       "color-convert@2.0.1": {
         "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
         "dependencies": {
@@ -992,6 +1285,10 @@
       },
       "commander@7.2.0": {
         "integrity": "sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==",
+        "dependencies": {}
+      },
+      "commander@9.5.0": {
+        "integrity": "sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==",
         "dependencies": {}
       },
       "cross-spawn@7.0.3": {
@@ -1107,6 +1404,13 @@
         "integrity": "sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==",
         "dependencies": {}
       },
+      "d@1.0.2": {
+        "integrity": "sha512-MOqHvMWF9/9MX6nza0KgvFH4HpMU0EF5uUDXqX/BtxtU8NfB0QzRtJ8Oe/6SuS4kbhyzVJwjd97EA4PKrzJ8bw==",
+        "dependencies": {
+          "es5-ext": "es5-ext@0.10.64",
+          "type": "type@2.7.3"
+        }
+      },
       "daisyui@4.4.19_postcss@8.4.27": {
         "integrity": "sha512-IjOLWwnndD4N7Ut5CDxbUsaVtbqXPeVHM92IcgxGFxpuOd3CCKW/PAXZH6JoBTHFRaN57vB9XqEhdWm5yC+bPA==",
         "dependencies": {
@@ -1133,6 +1437,12 @@
       "didyoumean@1.2.2": {
         "integrity": "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==",
         "dependencies": {}
+      },
+      "difflib@0.2.4": {
+        "integrity": "sha512-9YVwmMb0wQHQNr5J9m6BSj6fk4pfGITGQOOs+D9Fl+INODWFOfvhIU1hNv6GgR1RBoC/9NJcwu77zShxV0kT7w==",
+        "dependencies": {
+          "heap": "heap@0.2.7"
+        }
       },
       "dlv@1.1.3": {
         "integrity": "sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==",
@@ -1164,6 +1474,33 @@
           "domhandler": "domhandler@5.0.3"
         }
       },
+      "dreamopt@0.8.0": {
+        "integrity": "sha512-vyJTp8+mC+G+5dfgsY+r3ckxlz+QMX40VjPQsZc5gxVAxLmi64TBoVkP54A/pRAXMXsbu2GMMBrZPxNv23waMg==",
+        "dependencies": {
+          "wordwrap": "wordwrap@1.0.0"
+        }
+      },
+      "drizzle-kit@0.21.2_esbuild@0.19.12": {
+        "integrity": "sha512-U87IhZyCt/9d0ZT/Na3KFJVY31tSxtTx/n9UMcWFpW/5c2Ede39xiCG5efNV/0iimsv97UIRtDI0ldLBW5lbcg==",
+        "dependencies": {
+          "@esbuild-kit/esm-loader": "@esbuild-kit/esm-loader@2.6.5",
+          "commander": "commander@9.5.0",
+          "env-paths": "env-paths@3.0.0",
+          "esbuild": "esbuild@0.19.12",
+          "esbuild-register": "esbuild-register@3.6.0_esbuild@0.19.12",
+          "glob": "glob@8.1.0",
+          "hanji": "hanji@0.0.5",
+          "json-diff": "json-diff@0.9.0",
+          "zod": "zod@3.23.8"
+        }
+      },
+      "drizzle-orm@0.30.10_@libsql+client@0.6.0_@opentelemetry+api@1.9.0": {
+        "integrity": "sha512-IRy/QmMWw9lAQHpwbUh1b8fcn27S/a9zMIzqea1WNOxK9/4EB8gIo+FZWLiPXzl2n9ixGSv8BhsLZiOppWEwBw==",
+        "dependencies": {
+          "@libsql/client": "@libsql/client@0.6.0",
+          "@opentelemetry/api": "@opentelemetry/api@1.9.0"
+        }
+      },
       "eastasianwidth@0.2.0": {
         "integrity": "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==",
         "dependencies": {}
@@ -1184,9 +1521,130 @@
         "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==",
         "dependencies": {}
       },
+      "env-paths@3.0.0": {
+        "integrity": "sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==",
+        "dependencies": {}
+      },
+      "es5-ext@0.10.64": {
+        "integrity": "sha512-p2snDhiLaXe6dahss1LddxqEm+SkuDvV8dnIQG0MWjyHpcMNfXKPE+/Cc0y+PhxJX3A4xGNeFCj5oc0BUh6deg==",
+        "dependencies": {
+          "es6-iterator": "es6-iterator@2.0.3",
+          "es6-symbol": "es6-symbol@3.1.4",
+          "esniff": "esniff@2.0.1",
+          "next-tick": "next-tick@1.1.0"
+        }
+      },
+      "es6-iterator@2.0.3": {
+        "integrity": "sha512-zw4SRzoUkd+cl+ZoE15A9o1oQd920Bb0iOJMQkQhl3jNc03YqVjAhG7scf9C5KWRU/R13Orf588uCC6525o02g==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "es5-ext": "es5-ext@0.10.64",
+          "es6-symbol": "es6-symbol@3.1.4"
+        }
+      },
+      "es6-symbol@3.1.4": {
+        "integrity": "sha512-U9bFFjX8tFiATgtkJ1zg25+KviIXpgRvRHS8sau3GfhVzThRQrOeksPeT0BWW2MNZs1OEWJ1DPXOQMn0KKRkvg==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "ext": "ext@1.7.0"
+        }
+      },
+      "es6-weak-map@2.0.3": {
+        "integrity": "sha512-p5um32HOTO1kP+w7PRnB+5lQ43Z6muuMuIMffvDN8ZB4GcnjLBV6zGStpbASIMk4DCAvEaamhe2zhyCb/QXXsA==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "es5-ext": "es5-ext@0.10.64",
+          "es6-iterator": "es6-iterator@2.0.3",
+          "es6-symbol": "es6-symbol@3.1.4"
+        }
+      },
+      "esbuild-register@3.6.0_esbuild@0.19.12": {
+        "integrity": "sha512-H2/S7Pm8a9CL1uhp9OvjwrBh5Pvx0H8qVOxNu8Wed9Y7qv56MPtq+GGM8RJpq6glYJn9Wspr8uw7l55uyinNeg==",
+        "dependencies": {
+          "debug": "debug@4.3.7",
+          "esbuild": "esbuild@0.19.12"
+        }
+      },
+      "esbuild@0.18.20": {
+        "integrity": "sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==",
+        "dependencies": {
+          "@esbuild/android-arm": "@esbuild/android-arm@0.18.20",
+          "@esbuild/android-arm64": "@esbuild/android-arm64@0.18.20",
+          "@esbuild/android-x64": "@esbuild/android-x64@0.18.20",
+          "@esbuild/darwin-arm64": "@esbuild/darwin-arm64@0.18.20",
+          "@esbuild/darwin-x64": "@esbuild/darwin-x64@0.18.20",
+          "@esbuild/freebsd-arm64": "@esbuild/freebsd-arm64@0.18.20",
+          "@esbuild/freebsd-x64": "@esbuild/freebsd-x64@0.18.20",
+          "@esbuild/linux-arm": "@esbuild/linux-arm@0.18.20",
+          "@esbuild/linux-arm64": "@esbuild/linux-arm64@0.18.20",
+          "@esbuild/linux-ia32": "@esbuild/linux-ia32@0.18.20",
+          "@esbuild/linux-loong64": "@esbuild/linux-loong64@0.18.20",
+          "@esbuild/linux-mips64el": "@esbuild/linux-mips64el@0.18.20",
+          "@esbuild/linux-ppc64": "@esbuild/linux-ppc64@0.18.20",
+          "@esbuild/linux-riscv64": "@esbuild/linux-riscv64@0.18.20",
+          "@esbuild/linux-s390x": "@esbuild/linux-s390x@0.18.20",
+          "@esbuild/linux-x64": "@esbuild/linux-x64@0.18.20",
+          "@esbuild/netbsd-x64": "@esbuild/netbsd-x64@0.18.20",
+          "@esbuild/openbsd-x64": "@esbuild/openbsd-x64@0.18.20",
+          "@esbuild/sunos-x64": "@esbuild/sunos-x64@0.18.20",
+          "@esbuild/win32-arm64": "@esbuild/win32-arm64@0.18.20",
+          "@esbuild/win32-ia32": "@esbuild/win32-ia32@0.18.20",
+          "@esbuild/win32-x64": "@esbuild/win32-x64@0.18.20"
+        }
+      },
+      "esbuild@0.19.12": {
+        "integrity": "sha512-aARqgq8roFBj054KvQr5f1sFu0D65G+miZRCuJyJ0G13Zwx7vRar5Zhn2tkQNzIXcBrNVsv/8stehpj+GAjgbg==",
+        "dependencies": {
+          "@esbuild/aix-ppc64": "@esbuild/aix-ppc64@0.19.12",
+          "@esbuild/android-arm": "@esbuild/android-arm@0.19.12",
+          "@esbuild/android-arm64": "@esbuild/android-arm64@0.19.12",
+          "@esbuild/android-x64": "@esbuild/android-x64@0.19.12",
+          "@esbuild/darwin-arm64": "@esbuild/darwin-arm64@0.19.12",
+          "@esbuild/darwin-x64": "@esbuild/darwin-x64@0.19.12",
+          "@esbuild/freebsd-arm64": "@esbuild/freebsd-arm64@0.19.12",
+          "@esbuild/freebsd-x64": "@esbuild/freebsd-x64@0.19.12",
+          "@esbuild/linux-arm": "@esbuild/linux-arm@0.19.12",
+          "@esbuild/linux-arm64": "@esbuild/linux-arm64@0.19.12",
+          "@esbuild/linux-ia32": "@esbuild/linux-ia32@0.19.12",
+          "@esbuild/linux-loong64": "@esbuild/linux-loong64@0.19.12",
+          "@esbuild/linux-mips64el": "@esbuild/linux-mips64el@0.19.12",
+          "@esbuild/linux-ppc64": "@esbuild/linux-ppc64@0.19.12",
+          "@esbuild/linux-riscv64": "@esbuild/linux-riscv64@0.19.12",
+          "@esbuild/linux-s390x": "@esbuild/linux-s390x@0.19.12",
+          "@esbuild/linux-x64": "@esbuild/linux-x64@0.19.12",
+          "@esbuild/netbsd-x64": "@esbuild/netbsd-x64@0.19.12",
+          "@esbuild/openbsd-x64": "@esbuild/openbsd-x64@0.19.12",
+          "@esbuild/sunos-x64": "@esbuild/sunos-x64@0.19.12",
+          "@esbuild/win32-arm64": "@esbuild/win32-arm64@0.19.12",
+          "@esbuild/win32-ia32": "@esbuild/win32-ia32@0.19.12",
+          "@esbuild/win32-x64": "@esbuild/win32-x64@0.19.12"
+        }
+      },
       "escalade@3.2.0": {
         "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
         "dependencies": {}
+      },
+      "esniff@2.0.1": {
+        "integrity": "sha512-kTUIGKQ/mDPFoJ0oVfcmyJn4iBDRptjNVIzwIFR7tqWXdVI9xfA2RMwY/gbSpJG3lkdWNEjLap/NqVHZiJsdfg==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "es5-ext": "es5-ext@0.10.64",
+          "event-emitter": "event-emitter@0.3.5",
+          "type": "type@2.7.3"
+        }
+      },
+      "event-emitter@0.3.5": {
+        "integrity": "sha512-D9rRn9y7kLPnJ+hMq7S/nhvoKwwvVJahBi2BPmx3bvbsEdK3W9ii8cBSGjP+72/LnM4n6fo3+dkCX5FeTQruXA==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "es5-ext": "es5-ext@0.10.64"
+        }
+      },
+      "ext@1.7.0": {
+        "integrity": "sha512-6hxeJYaL110a9b5TEJSj0gojyHQAmA2ch5Os+ySCiA1QGdS697XWY1pzsrSjqA9LDEEgdB/KypIlR59RcLuHYw==",
+        "dependencies": {
+          "type": "type@2.7.3"
+        }
       },
       "fast-glob@3.3.2": {
         "integrity": "sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==",
@@ -1246,6 +1704,10 @@
         "integrity": "sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==",
         "dependencies": {}
       },
+      "fs.realpath@1.0.0": {
+        "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==",
+        "dependencies": {}
+      },
       "fsevents@2.3.3": {
         "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
         "dependencies": {}
@@ -1257,6 +1719,12 @@
       "fuse.js@7.0.0": {
         "integrity": "sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==",
         "dependencies": {}
+      },
+      "get-tsconfig@4.8.0": {
+        "integrity": "sha512-Pgba6TExTZ0FJAn1qkJAjIeKoDJ3CsI2ChuLohJnZl/tTU8MVrq3b+2t5UOPfRa4RMsorClBjJALkJUMjG1PAw==",
+        "dependencies": {
+          "resolve-pkg-maps": "resolve-pkg-maps@1.0.0"
+        }
       },
       "glob-parent@5.1.2": {
         "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
@@ -1281,11 +1749,32 @@
           "path-scurry": "path-scurry@1.11.1"
         }
       },
+      "glob@8.1.0": {
+        "integrity": "sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==",
+        "dependencies": {
+          "fs.realpath": "fs.realpath@1.0.0",
+          "inflight": "inflight@1.0.6",
+          "inherits": "inherits@2.0.4",
+          "minimatch": "minimatch@5.1.6",
+          "once": "once@1.4.0"
+        }
+      },
+      "hanji@0.0.5": {
+        "integrity": "sha512-Abxw1Lq+TnYiL4BueXqMau222fPSPMFtya8HdpWsz/xVAhifXou71mPh/kY2+08RgFcVccjG3uZHs6K5HAe3zw==",
+        "dependencies": {
+          "lodash.throttle": "lodash.throttle@4.1.1",
+          "sisteransi": "sisteransi@1.0.5"
+        }
+      },
       "hasown@2.0.2": {
         "integrity": "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==",
         "dependencies": {
           "function-bind": "function-bind@1.1.2"
         }
+      },
+      "heap@0.2.7": {
+        "integrity": "sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==",
+        "dependencies": {}
       },
       "import-in-the-middle@1.11.0_acorn@8.12.1": {
         "integrity": "sha512-5DimNQGoe0pLUHbR9qK84iWaWjjbsxiqXnw6Qz64+azRgleqv9k2kTt5fw7QsOpmaGYtuxxursnPPsnTKEx10Q==",
@@ -1295,6 +1784,17 @@
           "cjs-module-lexer": "cjs-module-lexer@1.4.1",
           "module-details-from-path": "module-details-from-path@1.0.3"
         }
+      },
+      "inflight@1.0.6": {
+        "integrity": "sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==",
+        "dependencies": {
+          "once": "once@1.4.0",
+          "wrappy": "wrappy@1.0.2"
+        }
+      },
+      "inherits@2.0.4": {
+        "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
+        "dependencies": {}
       },
       "is-binary-path@2.1.0": {
         "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
@@ -1326,6 +1826,10 @@
         "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==",
         "dependencies": {}
       },
+      "is-promise@2.2.2": {
+        "integrity": "sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==",
+        "dependencies": {}
+      },
       "isexe@2.0.0": {
         "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
         "dependencies": {}
@@ -1344,6 +1848,14 @@
       "js-base64@3.7.7": {
         "integrity": "sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==",
         "dependencies": {}
+      },
+      "json-diff@0.9.0": {
+        "integrity": "sha512-cVnggDrVkAAA3OvFfHpFEhOnmcsUpleEKq4d4O8sQWWSH40MBrWstKigVB1kGrgLWzuom+7rRdaCsnBD6VyObQ==",
+        "dependencies": {
+          "cli-color": "cli-color@2.0.4",
+          "difflib": "difflib@0.2.4",
+          "dreamopt": "dreamopt@0.8.0"
+        }
       },
       "libsql@0.3.19": {
         "integrity": "sha512-Aj5cQ5uk/6fHdmeW0TiXK42FqUlwx7ytmMLPSaUQPin5HKKKuUPD62MAbN4OEweGBBI7q1BekoEN4gPUEL6MZA==",
@@ -1379,6 +1891,10 @@
         "integrity": "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==",
         "dependencies": {}
       },
+      "lodash.throttle@4.1.1": {
+        "integrity": "sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==",
+        "dependencies": {}
+      },
       "lodash.uniq@4.5.0": {
         "integrity": "sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==",
         "dependencies": {}
@@ -1395,6 +1911,12 @@
         "integrity": "sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==",
         "dependencies": {}
       },
+      "lru-queue@0.1.0": {
+        "integrity": "sha512-BpdYkt9EvGl8OfWHDQPISVpcl5xZthb+XPsbELj5AQXxIC8IriDZIQYjBJPEm5rS420sjZ0TLEzRcq5KdBhYrQ==",
+        "dependencies": {
+          "es5-ext": "es5-ext@0.10.64"
+        }
+      },
       "mdn-data@2.0.28": {
         "integrity": "sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==",
         "dependencies": {}
@@ -1402,6 +1924,19 @@
       "mdn-data@2.0.30": {
         "integrity": "sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==",
         "dependencies": {}
+      },
+      "memoizee@0.4.17": {
+        "integrity": "sha512-DGqD7Hjpi/1or4F/aYAspXKNm5Yili0QDAFAY4QYvpqpgiY6+1jOfqpmByzjxbWd/T9mChbCArXAbDAsTm5oXA==",
+        "dependencies": {
+          "d": "d@1.0.2",
+          "es5-ext": "es5-ext@0.10.64",
+          "es6-weak-map": "es6-weak-map@2.0.3",
+          "event-emitter": "event-emitter@0.3.5",
+          "is-promise": "is-promise@2.2.2",
+          "lru-queue": "lru-queue@0.1.0",
+          "next-tick": "next-tick@1.1.0",
+          "timers-ext": "timers-ext@0.1.8"
+        }
       },
       "merge2@1.4.1": {
         "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==",
@@ -1412,6 +1947,12 @@
         "dependencies": {
           "braces": "braces@3.0.3",
           "picomatch": "picomatch@2.3.1"
+        }
+      },
+      "minimatch@5.1.6": {
+        "integrity": "sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==",
+        "dependencies": {
+          "brace-expansion": "brace-expansion@2.0.1"
         }
       },
       "minimatch@9.0.5": {
@@ -1442,6 +1983,10 @@
       },
       "nanoid@3.3.7": {
         "integrity": "sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==",
+        "dependencies": {}
+      },
+      "next-tick@1.1.0": {
+        "integrity": "sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==",
         "dependencies": {}
       },
       "node-domexception@1.0.0": {
@@ -1481,6 +2026,12 @@
       "object-hash@3.0.0": {
         "integrity": "sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==",
         "dependencies": {}
+      },
+      "once@1.4.0": {
+        "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
+        "dependencies": {
+          "wrappy": "wrappy@1.0.2"
+        }
       },
       "package-json-from-dist@1.0.0": {
         "integrity": "sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==",
@@ -1844,6 +2395,10 @@
           "resolve": "resolve@1.22.8"
         }
       },
+      "resolve-pkg-maps@1.0.0": {
+        "integrity": "sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==",
+        "dependencies": {}
+      },
       "resolve@1.22.8": {
         "integrity": "sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==",
         "dependencies": {
@@ -1896,8 +2451,23 @@
           "debug": "debug@4.3.7"
         }
       },
+      "sisteransi@1.0.5": {
+        "integrity": "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==",
+        "dependencies": {}
+      },
       "source-map-js@1.2.1": {
         "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+        "dependencies": {}
+      },
+      "source-map-support@0.5.21": {
+        "integrity": "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==",
+        "dependencies": {
+          "buffer-from": "buffer-from@1.1.2",
+          "source-map": "source-map@0.6.1"
+        }
+      },
+      "source-map@0.6.1": {
+        "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
         "dependencies": {}
       },
       "string-width@4.2.3": {
@@ -2003,6 +2573,13 @@
           "any-promise": "any-promise@1.3.0"
         }
       },
+      "timers-ext@0.1.8": {
+        "integrity": "sha512-wFH7+SEAcKfJpfLPkrgMPvvwnEtj8W4IurvEyrKsDleXnKLCDw71w8jltvfLa8Rm4qQxxT4jmDBYbJG/z7qoww==",
+        "dependencies": {
+          "es5-ext": "es5-ext@0.10.64",
+          "next-tick": "next-tick@1.1.0"
+        }
+      },
       "to-regex-range@5.0.1": {
         "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
         "dependencies": {
@@ -2015,6 +2592,10 @@
       },
       "ts-interface-checker@0.1.13": {
         "integrity": "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==",
+        "dependencies": {}
+      },
+      "type@2.7.3": {
+        "integrity": "sha512-8j+1QmAbPvLZow5Qpi6NCaN8FB60p/6x8/vfNqOk/hC+HuvFZhL4+WfekuhQLiqFZXOgQdrs3B+XxEmCc6b3FQ==",
         "dependencies": {}
       },
       "typesense@1.7.1_@babel+runtime@7.25.6": {
@@ -2074,6 +2655,10 @@
           "isexe": "isexe@2.0.0"
         }
       },
+      "wordwrap@1.0.0": {
+        "integrity": "sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==",
+        "dependencies": {}
+      },
       "wrap-ansi@7.0.0": {
         "integrity": "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==",
         "dependencies": {
@@ -2090,12 +2675,20 @@
           "strip-ansi": "strip-ansi@7.1.0"
         }
       },
+      "wrappy@1.0.2": {
+        "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==",
+        "dependencies": {}
+      },
       "ws@8.18.0": {
         "integrity": "sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==",
         "dependencies": {}
       },
       "yaml@2.5.1": {
         "integrity": "sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==",
+        "dependencies": {}
+      },
+      "zod@3.23.8": {
+        "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==",
         "dependencies": {}
       }
     }
@@ -2706,6 +3299,762 @@
     "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.22/workflows/mod.ts": "110483e95fc1e2a3a81d98a1d0a7a9d575d38a4cc33186ef45724d4dc05e8132",
     "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.22/workflows/types.ts": "9930e6fc8e04c9d36fa951eaadd74a2f13f49886b21fc25a5558f6a62c22adda",
     "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.22/workflows/utils/awaiters.ts": "749ea359ca083e9643d82b2b31ee3197cf8d7274f7d9b89a5f6e5efe7a83db2f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/admin/widgets.ts": "fa00cb641a085cd414b4756566478e7f8ce1336533bfaa78594e3f96cdd78625",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/actions/awsUploadImage.ts": "ec8f65d94f0ec340da3ec95bf92cbca45f2e5496c3733284512093cc3e2be07f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/actions/chat.ts": "14b9703493499d767dde99ae20103eb1aa7c6e87d022dac63b15df8440619196",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/actions/describeImage.ts": "2b2ac810c6db5a9663cc5c57b807b199338b3ec1c42c4248f179bc685b76dbfc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/actions/transcribeAudio.ts": "301b7db47222750c1fb8409feb44fdce012e618ad77bf5f42e1159633e247728",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/chat/messages.ts": "f27ca3ea4faa3dcab50761b2a14e1b25e45a58f520fd01f834460b97a5eb1250",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/deps.ts": "6377fe775214daa498202aec85168194619a61a49e0deef0894b25a2c8fcf08a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/loaders/messages.ts": "cffd03377df89bee437de9e70a8945e8c4e4dea4e0ae91fac3fbea59724d8cef",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/manifest.gen.ts": "774895f97801115b095c451d0cfe3a9c8b45bd352059939db98bfcba63e724a2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/mod.ts": "203e3a6a4895ee33891128d9af886371a4aa1df661f5e60b45b0b148a3c13b2a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/schema.ts": "13b711cfe51fd547f8146c8315584e6d3af51c6fd998e5e903d11bdaf80646ce",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/types.ts": "e45ad5ac7c7a924f919c51d947a7ebe32c53f50d706e9bdacea7b963d5dafc5d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ai-assistants/utils/blobConversion.ts": "a38c51dfd3de7494433ff63d7752e649c73cd29e3023a30f5102305820806bf9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/actions/index/product.ts": "241a089d84e4a31c169a1d3af5edbbde515d0b2fd5942d9543129c4ded93c5d7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/actions/index/wait.ts": "a153f71fd47912d44e13a85e4483e3b37cd138def00e14a56e6bd04a6ab509d6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/actions/setup.ts": "468ea1badfd957edcd737e621b19d158cd28f39267d1a4bf994668063d0def5b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/loaders/client.ts": "8787610ddc9d4de52b9a8bbaa97d867bcaa6eceb95ed2dcf083bcd92aa2c90cd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/loaders/product/list.ts": "c0c01cecc66c81312df6669b49386fc62dc205681eaea6e8780079a8239002e0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/loaders/product/listingPage.ts": "1481cdc7354d1a642b800b7f8ddcebc1d1cc1f273e42b28717054b23a6135ab8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/loaders/product/suggestions.ts": "17bc1d994241a15c7c70650073ef91b11fe6dd0a65ca1d527b1aaf470203254e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/manifest.gen.ts": "53d74aa04d368cac1bbfc33069bb7e36f1a7df03973ab08f418853efc067d6ea",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/mod.ts": "18fe88577860026025fe53f50745ee55b95c17887a642d47e2dd10b10c8bd1da",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/sections/Analytics/Algolia.tsx": "1f79d9cdbaa2ab817f8050387f17bd2ad6e651f97b95d905dc057e5d838e053c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/utils/highlight.ts": "c409cc200816cb9fb2405ebeab8265beff4c6de54d769f60779b6590dcceb1d4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/utils/product.ts": "4002836e2fcc606d326ca09266c597d7bc641ad448faaf041a69a5caf0971ca6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/algolia/workflows/index/product.ts": "d9648de71735edd7365668cad2eb8c5b9600d9f36cf53b9e6f12da7203395ff7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/analytics/components/DecoAnalytics.tsx": "0ad975cd3abcea85e4375b262db75591d751d6f16e4870cf645807ec9b7e6d9d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/analytics/loaders/DecoAnalyticsScript.ts": "4be8c7068e51eb416744c717793fe65ecb681a5d419bdfa962470bc274837d1d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/analytics/manifest.gen.ts": "7ed884c653e81641ee8fb526a9e0b4ead367adeacefb014fd0fc3b6f2df592ed",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/analytics/mod.ts": "5229e2e38cc07c4ea8c6ca278567c8a78b06fcb3a2a22b45c1b4b31565591d1c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/analytics/sections/Analytics/DecoAnalytics.tsx": "8c05f8ead082e65b77fa90965274c31cf27592651a1c624ab67e62337ada73a8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/anthropic/actions/code.ts": "10f4bcdaed26ffdc8e4508e8c3bb319bdbf58e61d5ae52f752519b9439aa6329",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/anthropic/actions/stream.ts": "b35a432ed55ea71e94da69cb490bb55ec3bb7b47b0d094d3a0e0e254f47b250a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/anthropic/deps.ts": "d65a7ce6db6ba5c3f71ebca1f838243f729dc5828e5dc613ed081b7482a54350",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/anthropic/manifest.gen.ts": "90b012efdac29423a41b49e2c0029b0fc6a90677113f0237541ce2fbfdcfe64c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/anthropic/mod.ts": "9ded118b98c3e061f1c967db90289a99aa0ebb04ce75de5fd3dafcbc80b66acb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/Author.ts": "6514a78fb19817a005db59f4795d0f3bf6fd4395f2a7108aa0079e7a7f229237",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/BlogPostItem.ts": "47e4341e31bd16adfd8b72fe320e5f87e3a6fee97e94dc6c46ac9278492525c8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/BlogPostPage.ts": "f5f0201a943e76acfe7ea37b466b6069a9b22447ccc3c70464ec339ca9a112cb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/Blogpost.ts": "a7f91888bcbebaa5fcd24b6910535458721722673baf78266f5c8865a4d481ee",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/BlogpostList.ts": "9162d8bd5b2abe2720073bc97a970c0e969cf03b2a1dccd5cb6fc177d7839dfd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/BlogpostListing.ts": "c7a13a8740e680ff77e64f21eb6484f7b1848152929171169f9db1a6c297f178",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/Category.ts": "b38a778cdcb8623fbae63a3e55ef8e5ab5e1e49855ff18ae99dd454e22824d8b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/loaders/GetCategories.ts": "b1f2a3e6bfbce256e9fcd5f0017507e395d0f545a87420c0c168b16322767c57",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/manifest.gen.ts": "edffa6434eca76406c83ca151dcc9f9b1ca845af42cbdd6e7d2ebd7e9f1f5b41",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/mod.ts": "56718fcf8b2e3fabab6742c99af0e67a428314df57f6fc846930c8c2ff446eda",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/sections/Seo/SeoBlogPost.tsx": "778538ab5a3b90775b79ec81276ef5b61347c5e83ea608a3880ad8aa6437a29a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/sections/Seo/SeoBlogPostListing.tsx": "26ad7f35185a83f11090b877a7c35175ad9833142f56c2edd9318fa0d0861392",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/sections/Template.tsx": "f66a7484093e33ea453d9563f169b7353c519d669a99fc1218795f71d918de71",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/static/css.ts": "5870a7237c4c522fdcc43e52652968d40789d40a4b469e5751beebf46105dbdb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/types.ts": "67b4a63201f08774beab968d9da38770138d647bcb5da9ef2cf3cef6a3721309",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/utils/constants.ts": "6191ca04c8a8263867a4f89dc2f03eec53e62122a9db3ab92d76a22f736ec4a5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/utils/handlePosts.ts": "d9bf127205ad3caabbfeb188632d7803ba8bdc5fa55c9a4e52be1de370481b1f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/blog/utils/records.ts": "380f6aa72060cc63a7c17b30efdca7a639ceca36c35cd5ff6dd34d3e3262a81d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/brand-assistant/loaders/assistant.ts": "f3fe921d48986804b09e5a2b9afa761d8a1455d7702a9bc651e780a40c905157",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/brand-assistant/manifest.gen.ts": "14f318f57ee7fbae7ec0f66021562f994e3acca94982aa8ccd0f1e05607dd99c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/brand-assistant/mod.ts": "cbe5e2fe10edefb81ed8ffafd685f3d87b00b7d5122a6800e115216c3371a020",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/commerce/types.ts": "1945cb6bcea52f5101da16b98f891de46271ed1dd8c7cce672beed7d39067e4f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/commerce/utils/constants.ts": "35dd7c0249c9648bfd59ff3871169d883cff8e02f7dbd9a7eb43ba90fd990860",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/commerce/utils/filters.ts": "3b659c71f5ab1e57808d2a920da3ba287d1abf86f73ce8f57a5894f9af65db1e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/commerce/utils/stateByZip.ts": "8237de7d3eac64af8393a5722c99ccb39a1124dbd665fdc6e089f68157806b32",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/compat/std/loaders/x/redirects.ts": "d280407904bd8328a60a10f9acd00d7604eeb3f89fd9cf792be1da47cffb56c9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/crux/manifest.gen.ts": "975ff69512c5ee011240bf693c3329a24f91b981c5ab6fe798fb44b98216258f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/crux/mod.ts": "fc13cafb7f5129597e8256cb6dafbe9a225b41cb010de7460c4f9cad6db5dce7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/crux/preview/Preview.tsx": "87d037c56ba056e8d3c63dc32382f3a67691aee40ffa70991161d2ba8b9c6bcd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/ai-assistants.ts": "11d9c84dbbcd8a2959cb43e0c93eeafdbd68d0e25ce4ecfc7ee419ed0b3a8d83",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/algolia.ts": "fe7e30da65ec8420f31c3124479992a914b5321f270a3c0767a342701f4ddc51",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/analytics.ts": "06828d22b4b946d4d9e021a91bdf732c29c2f9b74f6891a5194b41e319a51918",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/anthropic.ts": "7897e30215851baf1f268b95efc8975ea0deca66e5806ddeb13433409ae71cc9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/blog.ts": "16f8d96948c7b5502ad6265a9fcc50e52ebc3b7d82050341701c9909db33dedc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/brand-assistant.ts": "26073c761fa71decc2ea7a6ef8c986d72ffca8057fc6ef7973fbc06ba9610a82",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/crux.ts": "a1dc93298d303162b9121a4bdb235d67619b5f3120aca9cc9d0eb56931f6d1a4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/emailjs.ts": "ec7741c14df3c42728faca80cb3688a6fcbb2467df38043932c1fbdfe25684b7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/htmx.ts": "b8063fe66ecceebe69ea786b490e9e06f14292def9694020741a97040f71d48c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/implementation.ts": "5b8cd9fff1539ad9b5a21cbb6b6fa12e70de4a313cc1cd6929bf358197aca0f2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/konfidency.ts": "9041d8828489cca46f8b5a34c2cbcd6d88f98951f31741bfd264ccaec4c58742",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/linx-impulse.ts": "bae636c10079d32dcae04a5d4d08426f9a21e5dcd9aa7e8f7318b639530a6860",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/linx.ts": "225a0a2f1dcdc721338bf916e97d50840849d84588b29458e86a07d2634f1de6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/mailchimp.ts": "38031ec7e77866d09e53dbe6191ecdd32d5b62ccbf1cb0056348966bb50d26ae",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/nuvemshop.ts": "5bd458b7d6c00c2e754850672e3cc133c37b40c6135c204322ada33c04476020",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/power-reviews.ts": "fed18540a0991984e30844bd1694e26b954389ad41c3d60115bffbfaaf6bf3ea",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/ra-trustvox.ts": "4689166fafec5eded5f046148bcc1a47dbeefdc314e652c1c9cdaafbe0565b58",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/resend.ts": "cf88e05342d05d0e16bd9cc9be6a51a8900d7c3185d5db1c1f87d77daf820e38",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/shopify.ts": "ee50f6a828fc1c3bb2407d528a90514b994d19c1881bc10d3e72ae75d24607ef",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/smarthint.ts": "401d95a30c36321a1ad59e354b0da8bf6da306e74b2136146ac009ca5b609a43",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/sourei.ts": "abe7b919a944175698335ac22eb8c55c3a5f719ff38dc923970e9d93f3fb77d3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/typesense.ts": "599f0a244203da42aeff9b9c7a021962aba42756d9265bfd0cc8452d313333b9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/verified-reviews.ts": "cc612fd094d3dabfd783e7a93dc862ae94d8956b0899500d9c73cb1edf80daa9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/vnda.ts": "ee7d1e73a76da2240543df3a702e4d250c61dffa629eb1ffc263ee0bae240b50",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/vtex.ts": "76711830686bc8789083827573c29dda37a2eddfa0c5b66ea64312e83f1660d8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/wake.ts": "8d312024fd969460176a1cc9bbe811955d127651a6cd09936130d778fe59e729",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/wap.ts": "33a58c7d57168db2941ce3ff360e515f477d9c9f164efe892ecad45111691a0c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/weather.ts": "8442ee804dafcffc091d0a3302cecd10333bda26a302acea92c4951f470fc0cd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/apps/workflows.ts": "9e12134f078fe94b0ff3ac4c1850015a5127f57561903aa2a44d735fe9742d59",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/components/Markdown.tsx": "0812476cc672de226dcca5c85dcccc740bea919204e4fef69f84c067d2002e5b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/manifest.gen.ts": "9e8f75b6366c8362207a6e041c39133f0fc1790f971aa69c2a6c1f3a45ed7d59",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/decohub/mod.ts": "a5cb07e92e2b1fa2aa2877a7adff7e6e4709afbe81d7f4abd93ea9b55ac121b8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/emailjs/actions/send.ts": "9ab47b9cad74d8069d2173390645389d656028feb4bb3bdaf2a6b609f16edaeb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/emailjs/manifest.gen.ts": "c7849b17b1a4b505437f557a80e677239f0a83bf6bd4e92fccfea2099bff0b9b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/emailjs/mod.ts": "6273341b27257a62afb0bb471d92775e3354e86693ae1a2be1f3fcb59e9e3bcf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/htmx/manifest.gen.ts": "70a1faa95c640959b4e3359e64684b37b579cec3224a2d540a9cabe22d14c766",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/htmx/mod.ts": "bf08236010469009207124122b7c28e687a3132ab5543e11105071c364ccd3a5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/htmx/sections/Deferred.tsx": "8741aca71209f6e870fedf2abe185fd3624377ba3bbf31dfcc3bce594248fb95",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/htmx/sections/htmx.tsx": "0b77ad396514a9cc48addb22cab36a61b7c3a40a92d9261b1c8cdf1dbe521eb0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/implementation/manifest.gen.ts": "feafb2b4473c4b210d067cbd21407235ec1fdc6b5e1b176d1cc1e45efd879314",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/implementation/mod.ts": "f3e1c122315d2c40ebba7af3f11dbf9f01988637ee5c17fad527954d9acdadd8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/konfidency/loaders/productDetailsPage.ts": "d37c7f7ec7490f88a00b0a005ff576652f4b44002bfb9ac075df26febcbe1e51",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/konfidency/manifest.gen.ts": "65fb6987f00cca847849200d05a62c867da67e540c9e8a965728b18df09a6d3e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/konfidency/mod.ts": "bde02ed7f6c57eee186dfc9e7ccefc7c7bf05f0638942427eda784dc765e0769",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/konfidency/utils/transform.ts": "06d6f6f2ddcd270f3d3f3bdf027f2c7f8e3b9b435eaceed180b85e1e59755a70",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/actions/analytics/sendEvent.ts": "8af9e848da90feeffb1072a773c27c2c02fbbbf007814c5702984e7e90ded4c2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/config.ts": "9656314f5554f7aac10531c67f6e95558b2bbb6493c1246da65c3f52d609d2df",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/hotsite.ts": "dd1243c761039faa7f9a5c25aab65ee67d11f61e693e6f51f75a8920508bc106",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/linxEngage.ts": "71b96bd29dcf34662ad5fefb3407cbaa14202b97c4f9062edc68878b1bcbb740",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/productList.ts": "0007fb853f2bfa6148b272cc14bf7199023a0d9a8f3a1ca187d49adeadd036f8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/productListingPage.ts": "ea4cf5703ea44b9f6c1677aa903edf5824598f7a78724178bff797c5a16d373f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/productLists.ts": "e264ca7d3b0838bafe76d757837491858ab0083ebac29ebd6558e3d76a7ab4eb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/quickFilters.ts": "0eecd5ea9bdb3e1d1135f2e953c9e6f9de9a8dda2b9774837a474e26f7a0756c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/products/suggestions.ts": "35799962bc934464f3648f980382dc7faea25e1181e3f39a3ac0ec8abb9778c2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/search/autocomplete.ts": "06dfeb6c92ffacb4a11caa3bd1401ee53fadac74481125da108688bbf9bb452b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/search/popular.ts": "ac00d5096b1bbfc2e171c03aaf756a0b2f9a2f41b28d627f9d2ff0d06dc6f934",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/loaders/search/products.ts": "945c0de5b0c9e8bb6c2bde6ff92c55ebecc4ad4506bcb595a06c85d2461520ca",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/manifest.gen.ts": "1a674d5ed7c4b27e98744df3c50e0e24cff1dfcd4dea317eae75c0393246f4f2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/middleware.ts": "9e7d955adfecd81fb0cb0d5e255965f11a962b52093344df572b14f9e1c2cd2e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/mod.ts": "43858dd8a345423b5eee60a939deb9a43c46fbb264d2c04da515533ec9974971",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/sections/Analytics/LinxImpulsePageView.tsx": "40864929443fc1efb31e0f03e22a2ada265182608a5e27a93569fd7658e470d0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/sections/Script/LinxImpulseScript.tsx": "943015036643ead5d9c7ae964c3754f6526d1906127350d4b342d69327c31414",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/chaordic.ts": "667d7be9c043ad23bc531493f003dcf29907fafbcbaeebb3c0732ddbf826e02c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/client.ts": "32b5887ef9c4d2d4694b8f30c7739122263857f882bcb5c9086dd9495bd35d24",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/constants.ts": "ec0df628dc00c48f5fa397e887e578b63f630f98b8388a73154aa7148f1c3aaa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/deviceId.ts": "7b59f7e616c38d69c5120ce8fbf083345dd25f36fe5c0036ce797798ce9335dd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/events.ts": "4bfa3ec6c12108f75cce071a69d9abd6fac14ad6e06b18da03eb568deeb6dc2b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/source.ts": "126dd4e211fd7055e6ba6a1ebf37b164f76d6cd51a1ac881df5c0591e1392956",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/transform.ts": "139da97aa74f836bc863efd014ca40f47ed482f3858828510b23c372e8805da1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/types/analytics.ts": "7ac9cd385514b58dfdfc070aa4c62411442c54785cca7347ce9ab7888e50a9a6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/types/linx.ts": "1a375fb2fd4e949e94f471a754bee8c2008e2686836bac43bdc75daf85b41ebe",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx-impulse/utils/types/search.ts": "d7ec4d062af45118413448cf66d3247b36a009e1f8f3d5d82ef07e8365a84f3a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/auction/addBid.ts": "886e2a52d37d5e428d36e7f3a8365ada4f1e8912fd9d838653f89487c5487b80",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/cart/addCoupon.ts": "982220d0a5159e865ee9dd617f827f5517c3c0123798cffab3a043f48d53fa89",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/cart/addItem.ts": "8c5206ce48b95f25aba18d966d918e8a6f7515125b734975a678b0483c46ba8c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/cart/simulate.ts": "1e9bceb3f98f6f26766ab96015cd54e70319834af0a0c0bf90acb179be779681",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/cart/updateItem.ts": "31b192f16c90d09f5e735d62efe506038f5e43ef3ffd301f5e97956d65901396",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/checkout/redirect.ts": "3a2a0774439e170b916c8e52cb9485e9990b402feb9e65adc0b061ee430fc88a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/login.ts": "466b73520b27cfcee6a3d6c3a25fb0e662c28f0557c47d625bf44f70e44179b4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/newsletter/subscribe.ts": "32f2af7f11186fbd4830ac6f6a29af2dded2b73139ac55ed6404beb62c463ce1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/wishlist/addItem.ts": "4cfeaa2a6d6c457c8b9b1d0138738a259d9189a33b0c506f008de87b0a58bae1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/wishlist/addWishlist.ts": "89716cb5ce30d8723cbc2b53566707b77c43a24dbb9cbc7e787a4d5347951b29",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/wishlist/removeItem.ts": "9295dc3cd6e67b8e08da902fb518d76bd9e89028d58dd51e0b912017d86da552",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/wishlist/removeWishlist.ts": "73b1f316039162eb2f872200c2ff0a95f145a95c5a16f8272706258c569cbe36",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/wishlist/shareWishlist.ts": "cb82edd0a8837b3c43f7a8769a9208f1c91f28df89983532dcb94c7396922212",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/actions/wishlist/updateWishlist.ts": "8b4a76a1e15b3093677467f379e93b35656d92e90b3cab2f8269040f5b3a18bc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/handlers/sitemap.ts": "70c7bb19573bb1bc64130b278828076cab57e5d47db92ad4eeee6a632c54673d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/auction/ListBids.ts": "ffa24ce992ea6025e9ebb70f6fbe735edb7f2613a7cd30ce872c16ecd5899286",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/auction/detailsPage.ts": "8bd4cf46db5e58cf0bd09d6b19f1481d44cbb83757f4f17a71097bc0155bf173",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/auction/list.ts": "2b11334a9dea4a8a29ef94e4234127ead5cbc43db1f13ea9d085e9547fcd9bbb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/cart.ts": "b108d1fa4d9c07679d106ce370e451ffeda3af7c75b1ff9639096b00ebc3269e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/page.ts": "1319ba7415fe4285be28837f95628973b2cd5a4c3a85672e39de245015387a86",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/pages.ts": "dc83df1b8db618200d868b7a1aa237f82e3348e685aeef6acef4cabd179e64a3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/path.ts": "5a6b91477daf956c0f63b67430d04bae650eaad8631c9655eec5e359c55e9137",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/product/associations.ts": "b851c2e1b1f26911c45c1a9aa77f1f5862f36313e53f63bcad30eef73bba6c94",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/product/byId.ts": "f452f2cba5f126464c609abc7ec03167b8a7574602fd6957e65e300bf2bb6886",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/product/detailsPage.ts": "ed7b6dd15aed38fe1c3631d636787ae9b1b786024bc6a2883351fb8894bca233",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/product/list.ts": "bb2f2e663d00f17e1ce93cabb050105f1fa5135d8180a1c8fba6f51e7764e0b6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/product/listingPage.ts": "9621993d83dd49262e48c2568d4ee54bdb46a97167da7c9d62601fd0341c8108",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/product/suggestions.ts": "2f62517b46b1147fbc1109e418b481a00c36a652f76f1a77b083d6354ac84013",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/proxy.ts": "3bd2d834aee8fd83c71f929a3feeb9abcc67b8843da13a12aca33b11dde32976",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/user.ts": "5e1132762ac89e66f9a813ef7865f2b5f7a47be7b4d1ec0ef8b67e1c2d807f98",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/widget.ts": "dcacbce1a3c71b7dacd8b3d6c2395b3455d752af1b5b2aa7aab9c5b550b8c481",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/loaders/wishlist/search.ts": "d1b7c9c05c1eda1fbd17fc4b08ee8ec1bbab257be7c725d38b49da5cb901297f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/manifest.gen.ts": "ba4eea2002d254f26db1b32f9927fb8f915baf487b5eb0114a961e7d15809e8a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/mod.ts": "2bc7804a3da63be69a865b675014046c030c8a7acd236bc46e6ead00bc4dfcef",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/client.ts": "261562170c5fc280986dfed8d4e75c5202e2f2db00b05e9f0008f30f1e47ec7b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/headers.ts": "d72af9679e42343f6d34fb56a440b506fcf5f14ddd4b431eb8830ac1b6f502d5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/layer.ts": "80e6dbe6ec8eeec8fd1a07e3dacd184dd5235929043890862f84ca025d0bb70a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/paths.ts": "53c2362c3dccea79d2ff3fb07921be50f3884f077725e0e163e2c776df7c29d5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/transform.ts": "f670bf740ded9f506257d316d2e8197a471c551173da3dd17944fc696d8360e6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/ListBidsJSON.ts": "c2b2d14030a06205e21bc0d17958378e2244ca8427810abf2a98cf3e7134b41d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/associationsJSON.ts": "456883222995263e08fc7076ade32598c186cdb4ec7a2654dbdfb8d04a3d5ce6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/auction.ts": "98678bcf60884ea8307132f93a67919fbcb46da2e80bbf37d3b160e7c9448090",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/auctionDetailJSON.ts": "fbc40ebbecf33ca557eb84d1ab8f219690ad721b60232130757c331e3a17af92",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/auctionJSON.ts": "6293c899d140cd3d767a69aa6f06def5d1b71151738b3b7b12ff369a6f19709b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/availableOptions.ts": "2a243f7b66c91e9b6d2e7a34ad9d8a29b2c98e05fb0168d39eae12201f661e36",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/basket.ts": "2c89932ad81729bf5abc089cdf1cce8f968f5749b75929bd7deaa779d0cbe742",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/basketJSON.ts": "c2808c6c2397174dd6611c1c111325b5623d9e8304d7d2cb31b0501762d66071",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/common.ts": "a5d91e83e615ff184a584afb5e55222654989c408528a8ff502c619c5569ac2f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/facets.ts": "bf652b50ddf023791b21fda2bc83704ffdfa030bf4f18f6a029eb6bfecf1827a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/gridProductsJSON.ts": "4c5cf7e0bacf2e5eea4281db19d5f32588c0025f5447e3f5764ddb550cbecdfb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/installments.ts": "3f035e613ac4f48e67882ca58c3dc7fbbdc2d1558b263a2e639dce19e2243691",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/login.ts": "236407b4f129c077d1921f8652d8066b96160b2f79cb849a21f7cad3443ec0a5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/newsletterJSON.ts": "d3b269ce9018059c95481fba8be89579af44d3d6c1fc24463d2014ac768b7ba7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/productByIdJSON.ts": "dffb757202f1aa754d80e94d113bd7bee23e11f2744c2ca523b5d5d76dc8c561",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/productJSON.ts": "695c06ee713e4b15023d47ceaebd55b7556c414be04f3efd901c63242f6b8dab",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/productList.ts": "811cbc41c34d8c41696a66201dd6b447875d3536b5399ac30e95f5153404ce93",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/suggestionsJSON.ts": "ff2063549291778f45a9e59c67b001b314664e20680b1c81aeeb7f6eab9bb750",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/userJSON.ts": "c51c0c1852cf093d69e7faa7d005229a6840bb67404be4e4c42803dc4fbda6c0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/linx/utils/types/wishlistJSON.ts": "3f9eda34f9f9731b57e23b5676bc1b51765075f206b7e333950878680dede786",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/actions/subscribe.ts": "7d68cfc23c8af90ae765629dcae2015831c858c4d84fc539d836fa09dadb87b0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/actions/unsubscribe.ts": "b9e99d6bfcae884a6faf44faa88f1bb6cddb46f56b9580a971c4424ee2be8d9e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/loaders/listMember.ts": "371f9ad32a3cd6264b870ef8d7fd651cc96ef6c3c5a25537aca60f64758f8559",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/loaders/lists.ts": "fb0d461799b6344d89e5d0e56fb5446ec2f28bf6a1e70a9236b2247a1917d8c6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/loaders/options/lists.ts": "63da15a74d8583246c814fe195f75be9bf544f6074d3af47ba1acc8b00cb74d4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/manifest.gen.ts": "79026b3f764a39bdf2a344886807a6b4901e9bc016933ce270be3f3e45d52e47",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/mod.ts": "5eb76255a8f398cd1d0f390da161f9b99ea07bb6aac4c23332d01fbf7b9adaf9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/utils/client.ts": "ab6c0831ee05ca761099ff5b7980648a96ea1cfeec061a694057453dda85bad8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/utils/transform.ts": "178934e04f7614fa00d39cf46e78372603ad4a27ef0db7495591c91608dfb9fd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/mailchimp/utils/types.ts": "0bab631ceb6c4dbdb19b7acaa472e0833bf74dc6c5565517aa8cdf6f2af1df22",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/actions/cart/addItems.ts": "87117e3adc7034b5e8dea41df31cec56be9deb34bb9bd0ff6d71e8a99abae926",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/actions/cart/updateItems.ts": "4b389444d8b060941cc8960b764d407dc16d10fed8f226721cf2e64d5dc34bcc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/handlers/sitemap.ts": "9f9a46f61b3d9c91310fd5c02e63578abb4ea7efa5c731663c741d18c0cbc45c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/loaders/cart.ts": "3cdd71455abc87a3817ae09741892e05529d5765daeda12d7617257d1fc29159",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/loaders/productDetailsPage.ts": "31dc4b225ba4c45a7b5d2a9e204bfc68bae518bd058f9389145cad8105d52ea1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/loaders/productList.ts": "6ddb912f9050fcc2aae6e170425bcc24417d7ee1e8fe46c167e49cc3fe63bfe3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/loaders/productListingPage.ts": "2e07ff1b93e271a00ad965178c95956e230650971d3e51c961a07be08599d754",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/loaders/proxy.ts": "ee9174f6182b0e91287448b18c6c3a00fa1a39971dcad80161e43277f2c4082c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/manifest.gen.ts": "deb6e61143af51ba26ceeff94e03bb4582fdd8731617bdd92754c0aeae6f0589",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/mod.ts": "7fff4351c6629a1bd66c97690dc62a5eb1d6576430f2cb5d1abdd6616ceca238",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/preview/index.tsx": "75e95984415977ed7c5d7550e9a335e37b33d6b39ecddd0233171474db316641",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/utils/cart.ts": "3cb9aba7b1e608007ca81ddc10b6c8bd91a380111d91bdf0642941c1049011e0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/utils/client.ts": "ba81d4b6041ebb60bbca1e906748ae95b1956d505b2a575ab8a12a201d2b2f94",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/utils/transform.ts": "46ebbf39ad1ec4f2b791654445cea7296044df03528132654fd8094f5609755a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/nuvemshop/utils/types.ts": "9b72ebc726c195067481eb38a8a650b88c4f65bba7e6dc30bd21c3c2f7a428e1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/openai/deps.ts": "5e15385038f7a1263d97ca7e77a4a27d71f59cc05c8acda3a77e0e898737957d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/openai/loaders/vision.ts": "a2a3be4a943b51951d92bc43239a4f1e31a11482a943bbbdea18b07a46f47d62",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/openai/manifest.gen.ts": "81a26ed6b34114b4e9b4b3f38295d646f2502e7950f2fadde215ecf2869c2b99",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/openai/mod.ts": "10abf027940deffc9ebf24db91323f0f400e4da2a38c3360679d39e104af3646",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/actions/submitReview.ts": "1f2cfb72021b49bbf999ace04ebf35319e92d110093ed1fabb58b7fac6792994",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/loaders/productDetailsPage.ts": "324856c58a9908ac77b72b0944de92483017592ae5f33841cc4c2579b2894274",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/loaders/productList.ts": "5dfa4a5929a35fee18209eba923082fa46477cc5df6c4d3f94e34719b3bde1fb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/loaders/productListingPage.ts": "0060befa0f405a748f2c5f53b29088cb7411403f360b54b0b397686afe360443",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/loaders/review.ts": "c9c375a7d77e4935dd593c3bf21b2a446610fb34e0c71d945d3d5ebdb2f8ccf5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/loaders/reviewForm.ts": "f4e7805f129352310deb9bdf0c2e159f639191ccd6724a5fd38d8708f85fabbc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/manifest.gen.ts": "7d5ff92037de524ccef984e2fd8bf074d6acb8ec3b6800612286760bd38f4141",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/mod.ts": "0826153103ca94b3d6165688eb3c3fe4b1bd85e2c8db98174ae509c8f4e08f90",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/sections/Question.tsx": "af2a672da1afb6a41a92172d7fd4d75dc54937c02ab320f385f8fc3f9e8a8ab3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/sections/WriteReviewForm.tsx": "4f244944addc0f6b2a8846b51dcca8bd01309b4d95c4a8ef25c49d2458366bd8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/utils/client.ts": "549c5b596c9554249fecacf476431e9cdd1602f054249f5b24e2a8cec46feb17",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/utils/tranform.ts": "04821bd8ef5e473426df9a40bce61312e4eda305709f49bc864c85741b60dbbf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/power-reviews/utils/types.ts": "1508c7a298838acecc44e97f9ef5d76595b0401ba17c07a0599f4b406694469f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ra-trustvox/manifest.gen.ts": "242d962b1d02630ae2cf0f91c8118851ef696a7c348da2b44ee507fbdc3b121f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ra-trustvox/mod.ts": "ed4cfa60a494bed6187aef58d03893a9850bd9220c9dffd0f803040daf1fef1a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ra-trustvox/sections/TrustvoxCertificate.tsx": "f7ae904c1b6f660b7d1ff53f88cda8b7cc7adc27085f40b1523f303d6181b7cc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ra-trustvox/sections/TrustvoxProductReviews.tsx": "71c61b66078ae07904c59ac5fc92cb7c071a2b625d14a18d84e09a0d103e3490",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ra-trustvox/sections/TrustvoxRateConfig.tsx": "2cea8505194116a5e5d1ec5b3493e4298acafbe9bd89e2150de26bfab2624917",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/ra-trustvox/sections/TrustvoxStoreReviewsCarousel.tsx": "245612fd5901fa5f2c74ba3b13189463785cd47684745a2a73edbf635de71982",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/records/deps.ts": "0d0e2ce1d8bf863a60053945d2f5fff3464c04fffdaff49d89e9dcb2e2ff19ce",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/records/loaders/drizzle.ts": "c87775886e950d58183f3c7c16b2809caad485a433e505801ebc6b02720c0580",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/records/loaders/sqlClient.ts": "026d3f03cfc01b630681ae5a234d319d86fe37ddca91b56c52cc3c0f04e66035",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/records/manifest.gen.ts": "cd33856b342ab9ba8840aacc9698415a6b5b8c05f0fbfd63212d09677789baec",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/records/mod.ts": "a060f13bf10e0bbdd8ede03ac48c1b76ab5e43a3e574b66cfaa92e7b1abd13a2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/records/utils.ts": "cdb521a0bf2e6b573924233b10e7ced4115cc6c87e2b131222eae0e7b833267b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/resend/actions/emails/send.ts": "92805d5fe3be7d1cedca4ab2c4f824732d1243004e827ce7b18c4dff262c7435",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/resend/manifest.gen.ts": "0fef9c7edbc9d400d75288c3242317e7e221a985c577cde67b248fe2e89a42d1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/resend/mod.ts": "10ebde39fb626c15752ab5b94f7f85d5884ef908c24b2aee51aa1dcaf1f2195c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/resend/utils/client.ts": "25034f9ba4bc5222766ba181a9391b6fd64c6f18c219c3704a79bf3649df0bfb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/resend/utils/types.ts": "c33071bbcfe2f2b5523248852ba90fb8b31c2d4893e140262c1925131801ccfb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/actions/cart/addItems.ts": "7c3ad18f1b9ed3e37a07d028a6894923dd70a11ea61a89f0cdf068ccd8d673d9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/actions/cart/updateCoupons.ts": "183f3c9d2387c4ce6dcdca70609f7b198286f0721b221fd18eb44362d5738468",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/actions/cart/updateItems.ts": "4d8a7bb7d57366a5ef207721e1bc1dd53c87e22f06671c111386d52317182a3e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/actions/order/draftOrderCalculate.ts": "18ec2ede10040d593b66cf0fd6581284e22d16c277f09834d4b0237a9c7cbf4c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/handlers/sitemap.ts": "91deb26cf0f9dfb16a6254bdc8b4992c4b36d0a1bf0ac37a3e8473c20fecc6d2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/loaders/ProductDetailsPage.ts": "398ce86b676844c623a2aaee49167bbb739407f146eabbc5f6d14b8144a365f5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/loaders/ProductList.ts": "039da561372485a0054523316a000979f3c4b8c85bf96268526c78d0cf1e1e76",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/loaders/ProductListingPage.ts": "548b44f1f904b2decff71eee64b6a6bda5cc5dcca30da6aeecf294c965b3aa07",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/loaders/RelatedProducts.ts": "da50bfb46eec3c2340fcfa648074fa535a93f0a340c476fa9cead35afb1b4751",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/loaders/cart.ts": "bef8e194fe63bf6536e1052abb98f8352d103c8ce5b62ffdbbf442b9f3a061e1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/loaders/proxy.ts": "7773fc6713315f04a7c891d3e269bceae3c12875384cd05df1699fa22a50cd09",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/manifest.gen.ts": "4da1d3e9b2c19767b6d6633b7173d6e70f41481777b35c3af9c5d16b1f86223c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/mod.ts": "32efc767300608abef4895e50535170a2c9179ba00060e9870ae29efa2296d2e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/admin/admin.graphql.gen.ts": "cd24040b9dbc5e86177356440d178ce6df4fef9a31661c53c8e0f90e1c279dcc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/admin/queries.ts": "c564735a6aaeedc681b627e43712a8d4ecd49bc0a215c8526883bd137386f97b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/cart.ts": "b128d23ab3623d8814436e0eee94d5f43903594270e57d4c8af8a55e23e7534c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/password.ts": "994ea53bf8cfc72477378763d7ffe476dcd28eac2a0a302e06dd175b1e4b4d38",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/storefront/queries.ts": "ef54312576b0125eb6d7d9c0bd67672f416192c1ebd27b99a7c19cb1fdea73ca",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/storefront/storefront.graphql.gen.ts": "5a4e307b83c4d8f2630b3cdcf33cf9b15ecf8322f7ad13feff571bd8ad728139",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/transform.ts": "36de639e34abef652e561227f400b872d33d7228e75602855d66d2f3a2228773",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/shopify/utils/utils.ts": "dd56e3463d6ad3e18441a5d360c98004a1937928cd0b74dffd698e013df3be64",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/actions/click.ts": "8213f5f3eaf374e4a20e27ed907c17c3c14711b1377bd7a97f09c7f63d7e47fd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/actions/pageview.ts": "51f168ae5a59c974aa341b0d2e13e2f05c5c644705228b3c69a084e260f97d02",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/loaders/PLPBanners.ts": "6868dd74fa8adfdc2c20947688b1fad1a3fba48fc026c8fc857cc47ed20f5c67",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/loaders/autocomplete.ts": "50ef68d1fb3701e2775e42b05f27443506e8765c09a3694f0525f4d8b2002e3a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/loaders/banners.ts": "465f34ccc446346f0abc21354dc5f3afd221f1381e204a0d0ba454917c3d6067",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/loaders/productListingPage.ts": "81274c9d47a35d8059dc66bac7bf54448040f4663251be5527155762a6be3426",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/loaders/recommendations.ts": "dac1be46cb08c514f3640e6a280cf8beb398595505f9aed70f715b9e731c69ab",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/manifest.gen.ts": "f93db50a12f2c3488ae1371e0ba30fa7fff21c8fc51ce59710099c260cdba164",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/mod.ts": "8176b002ee8a9bdc9a2e90e7255ca363f685ae5afae8796e6e3cf66678921f31",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/sections/Analytics/SmarthintTracking.tsx": "decedcb5c2aa0fd898a7e306d1a374814c247a3918332a49bc55ff27f0c3c847",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/utils/getSession.ts": "d9b695204f2ef28d36f901748f13ec7c04b097ca1a1831a70ddb7bb0f3b9680a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/utils/openapi/smarthint.openapi.gen.ts": "bd2c9d4207c2a385e9f5f86ff4c3f497b0c23bf1d0bea2692837179cba725707",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/utils/sortPagesPattern.ts": "ccc31ec3f0b561d9a93dd568c2962721fef7a86ada49dedd4249b2b2abcf5f61",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/utils/transform.ts": "60e4f6e3347ad37cd2e6e3ac081ed5e8ae2814a580f1e3cec5767533d9cba524",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/smarthint/utils/typings.ts": "feae4f6b69741155ef1d3019bbc216376487c2be150df230f7e11866f0da42fa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/sourei/manifest.gen.ts": "5423fdee86bc1b2757a6c1a53c3fb81d6dc6361ab44cbdb51fff74a5a14eecec",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/sourei/mod.ts": "0469d895586e79ccbff8ccaeaad162487610b03207f069a2d50acebe1420cd46",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/sourei/sections/Analytics/Sourei.tsx": "2d189d79859b7f14185e0c05189fb0a024944c94a55e475120ac3fc8d3996e40",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/actions/index/product.ts": "c30eeb25d0b5c9ca8c576b41f6cc1a1647925f0a4476c96c98359bb08f3b4543",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/loaders/product/list.ts": "d3e33a8f9101c5ee1e63bca8f99cfe259c62c466c2053313f09ba42c024cb1df",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/loaders/product/listingPage.ts": "4e43c6b56b643e74ed9ba05058460093d580a91e2afb8e4a1bdb00495b322c73",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/manifest.gen.ts": "8a781d0b55b2bdd48d53978afe61f168313fe5bc6eb704a4d58570920dc6b74d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/mod.ts": "fd9786dbea3b574a213cc54f2191244f8bd9ca40ba7967cd5e0d54415272bdfe",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/utils/highlight.ts": "ffb2e405b2ac50f3bc755c6d3f5f4ec58ba6f90686cc6775c4122b308f71c8f3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/utils/once.ts": "0f97e2587bf47fae7b1ee100cbaf095c7154143feaa2629c1dc96a72c1c3eac4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/utils/product.ts": "a8729661667af28369d2fe6a7b83707701fd9818bd52ed04e63ab75e1ed5b901",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/typesense/workflows/index/product.ts": "7682f4e188b0d3e9f7a035becd5b354f5e26a0856c29178ddeedbe4954363b41",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/capitalize.ts": "55fef74dc56a6fb27f903d26b51a00b5ca482c5805daafad82270ce89d0d07d5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/components/Slider.tsx": "4e5ba894b398f627bca0fc72c52f857e8bbc15225397c6f2826369d3f677f1aa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/components/SliderJS.tsx": "bb1abbd09e500ee935961a2eddaa5ef26715f19304a8bb2c5835bf3d755a6036",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/cookie.ts": "aa64b0456f081838c3d0fbad6932ccef101b3347437d189eebd4c88a35796ce9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/dataURI.ts": "d9e12a0003180a00fb8887ef0e4df76aef198abb3dc95758120e7249f9a41182",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/defaultErrorPage.tsx": "ccad87ff0a65a45dec8a7a0b421e59fd2c731f856bd94d74f5c84e3870a2c3d0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/deferred.ts": "04a368328dadbda92dd96449cc50ca86cdb01e01a793c79032254dee350add5d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/fetch.ts": "90bed9b7835435942e29a5d6d6c2c007e95ba77ea2e14f83967f55198192b786",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/framework.tsx": "f2e3161c794b88b29450dac1aafc7952bc6f6c20276c75c5f6c6e4b6f58b82df",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/graphql.ts": "a582aa57e753564ad2927fa4652d29545e93aee25b13d63df2be86302e133623",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/http.ts": "90d5eaca0c28d1f1495433a2b84810e827bcccfc3883987a246c14be1d82d1b6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/normalize.ts": "812386523d72903b2250eb77c26bc414fb083730f8b40cc9c807801325f444db",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/pool.ts": "9609d82e3d6eb386bdadf70a9bafc584450b5a828c8db4493551ee3f6d67b0e5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/preview.tsx": "a874de646fb141770fa54f1a89b188f9544ea31a01051f3da701859d5289c991",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/shortHash.ts": "f5ea893560744a141ffe5bd1f3a6f73874efa0eaa3c72860a7553f3eec9cc733",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/utils/worker.ts": "5cc2d91ec9eea2d96d0630d932944d2449b7c8a1ba861197b504f25e1394c517",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/loaders/productDetailsPage.ts": "16ff9a4baa482579418fe1eaffa553484a7bfd566cbdf4e3c7d4db4358899ba8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/loaders/productList.ts": "b69d8e312d7ee62ac85f205fe92265f6b3a443bde9ee7f8d196cdb82ff341801",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/loaders/productListingPage.ts": "832b5e8f62f443ab8b6b7a7ed951101625e3556dd172fc8890454db08615d368",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/loaders/storeReview.ts": "b079309e5cc0ef00d419d6d2c945c73a478aeb53c50bac6969f3a1f85a70f788",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/manifest.gen.ts": "a6786a9d588923a709a0316fc5281e409067a93e895345f6b8ff19c5cb4ac133",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/mod.ts": "0a784b6694768a364920a6fbd1043bf4c10b0a8e4e9784ac171adc81c04d9c8e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/utils/client.ts": "bb550887c4685584935ba7886c23e2c52e527092b6056e31fd43fe12bfdbfce5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/utils/transform.ts": "4b9cb5bec9b8dfeeafb31c8e80f6925bc987261d2520419490a22200efd53a89",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/verified-reviews/utils/types.ts": "6903593e918f21481553c7f0e9df9156e57883da9c24c0cd55c1210db380914f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/actions/cart/addItem.ts": "5053b380872190150765ab6f84e18e46c9678eae81d56094eac12ecb6749911e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/actions/cart/simulation.ts": "e10a1f0a70aca1b3451031086a6aa762f027281d9a9b451c6c464ff9e4e92067",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/actions/cart/updateCart.ts": "cfe08426bcf99a122d79192d0f4d7737fb3f156a8771086919d115d88e20cf04",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/actions/cart/updateItem.ts": "55da906e221bc18a13f95a66990e15484d4f84579248c27ab400ac799983bd42",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/actions/notifyme.ts": "008513a05d7db7055f1411c8a308f3fed63e823a7ce6bf680230a1f0f738a42d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/handlers/sitemap.ts": "651f8f2f24fb5936ad381b8ea51ea4c97675b169a989cfafd6a22a4bfab80c2a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/loaders/cart.ts": "fbc0594afdd858008bb8ab32b779bc905e6834c817df79b92a2ce81e5e36726c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/loaders/productDetailsPage.ts": "768f5f641ba0b1cc3c0828b3c2927d62a598f786d27bb0212a959b1907e4682c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/loaders/productDetailsPageVideo.ts": "310fa7073c9c120ab0eb56d050a91f6d71d825dbc74a481258b5d67e88137c30",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/loaders/productList.ts": "31ab1061686065157561757fbbf9c5ea1370561c9dd4148a240e0b41d8cb7ef1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/loaders/productListingPage.ts": "6dffa0ea0a2ffc84234a85b5689b150c6f6c1926b0070f57825ba17cf4d8a392",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/loaders/proxy.ts": "fadf92622b1211589dcf0ae73fe3d35febe4daf5738c2c736e828a82708bde8b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/manifest.gen.ts": "e1cff74763cee7d0077bcc3e8f8d5be0fbaffe615e563ab390da3f6e110b20dc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/middleware.ts": "38e32b487f1bb5eb93d79168fd787513f4a06cfd74eaa410ad88975d5e98b160",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/mod.ts": "d6a4f319b9659189cba8c761c88f92827bd0f7bd2713c7eab03b633059fdbb4f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/utils/cart.ts": "c27c4fcab31e89c71d85a656b9d2b84df741bfc046fb2c3df627d053a2365c18",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/utils/client/types.ts": "d60b5fde8566e2eecf2b5e50c6dde3259668428c8d6bc7961478ac01cdfb0f82",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/utils/openapi/vnda.openapi.gen.ts": "8e0458a480eb71c843d32f2bfac099d3c68f008198f217b0c4d31c0b9c7db591",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/utils/segment.ts": "318513b7133bede62177a4d182a995449a6277a7ca1ece9da2aede595570be55",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vnda/utils/transform.ts": "c72091002362c58152f86c2e31fa9a8a8c7e5c2d00a29f82c444a4c68be27540",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/analytics/sendEvent.ts": "863b8b01ae2ce361de0bd8aef0392262d865e1089c4c8217cc585b3479e04747",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/addItems.ts": "5b62630d222287cfa80ad22bd4539b75d82474c5de47fceb5082bb2870b99f7d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/addOfferings.ts": "501de7f0088b84b140844e6ac0d2c01d47e4365b18b3c3699e25bab482ea7284",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/clearOrderformMessages.ts": "7ec1430ba53329abf5f5b5d57212cb969886c14cf165ff02271d9d4c50ca4bc7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/getInstallment.ts": "effa268498b64e1e6a040ef5b6cfc234f6d80c18cac9d5621a15707499f20aaa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/removeItemAttachment.ts": "199f7de31737d7b570f3a220be41bbcebd7c5dd34fa8e561be53857c4b07d4d8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/removeItems.ts": "30cf95cbd83f2f544f5aa1df53803da5ab2046f055c64203d5c0f34225066f9b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/removeOffering.ts": "c7cc3396447e885fcf4b0da004f324235e6d9d8489a103e054ca7de7eaa0865e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/simulation.ts": "8c5bdc146f5083e29e270d8550942a6478ca1eaa4b46348bb3d109b2240ee0f6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateAttachment.ts": "ed05c8fcf6d53af433d6c981c03007b42482a541c3765902d6e0cc6a266f7afe",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateCoupons.ts": "766f9ca124337a4015f1aeb3a76b704e52c5d31369702130b5b3afa474aa283f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateGifts.ts": "ad498c66a59f411a5f1d21eab1bd1c64084925245ecf2d47948e943974a12642",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateItemAttachment.ts": "486cde1e60b00d7122e3d3912807ad274ada39432916fc6cb139e5f5deb2d713",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateItemPrice.ts": "aaaf721026a6577c763441594a1947eb1a198627e45ad1b38a00bfe9528745f7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateItems.ts": "d74ac05c6be1da818227c7fbdc6eca324cd96f6355d85d4aef7833e05e88d64d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateProfile.ts": "392907ab415be17f747394c832e1ee010888377e46a786d73c88c85273117310",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/cart/updateUser.ts": "f16dd5df137b692004e625398c70a7eacb101dfeac7e2378729b17c9610dbfec",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/masterdata/createDocument.ts": "d3669ce1d76d50f2d47849bef49d2abf955ff1e4dae173d9aeaa8d86b6520a28",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/newsletter/subscribe.ts": "a98182697836db1c9c1ecc609ad972b296312e30dbd399c187a3a0aba3b8a4a3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/notifyme.ts": "3058082edd72222de95d016f14f3a469d6a3bdb6f97bab2a985691e67c39e249",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/review/submit.ts": "b331f3b4ca4778fb9fb0a985008672aff8afaba24b70fdacf25f25d62ccafa26",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/trigger.ts": "48e061ad3a0dd821b3484a6a0fb703698a5f66f1e9e5ae8da804fc1db6f6b7d6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/wishlist/addItem.ts": "da311a12054975cc18492fd9397eaa51250c850ca3d30b8265999133275e3bd7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/actions/wishlist/removeItem.ts": "97d3ef1d8d10f1f726b3b4ce3e965b1e0818d25683f3921e7ff0b75f50105a2e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/handlers/sitemap.ts": "ae83725b463ab3e08d6f3a0da54eb18c0e86dff3f5888230cb56e0df0cc35c00",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/cart.ts": "b8459d10a95500ea2bcd56050684d638da1dacd97226961c2a54d94711604a5e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/categories/tree.ts": "e8e90d5c073774f4c1bdcbe0a37fd61ad4d78431698e1cda869f84b782c19bf8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/collections/list.ts": "aac08774e74f67ac249cf5177fb49cf2601cf458a5052631781c6a3b83694553",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/config.ts": "0a2649235cd5f1a61c98ab381b04a3dbe0c32ef302acee6fea79d1c65499b2b5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/intelligentSearch/productDetailsPage.ts": "0eda7ed78633a0964b2f6f6a7625ffb7ca14eb67f1834b3bc6e4b4b3b1b20528",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/intelligentSearch/productList.ts": "f36a263a3ee1ecf0966b57ee2449df241d6f73d549f83381740e5210c599403d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/intelligentSearch/productListingPage.ts": "b4f4530f4edcf36d90a1bda3fbd4501b30ec1874e4b268de6be21ae8443cab7c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/intelligentSearch/productSearchValidator.ts": "421db9a3c989b8ee48587f4fe8bde7069237eb73874b24faf1ad2162357a9ecb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/intelligentSearch/suggestions.ts": "03d58d0477dbcead4985f5e1f9f679c1efb797b325c5aaf8bdd3e7237622853e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/intelligentSearch/topsearches.ts": "e10f1e9d5c1f893e5f65dc5d422feac2b4fea6680ce79e348a7df4c1506a08f6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/brands.ts": "70a22980a61946e566031ff06c188d5203530e586c6ed9fe35d8bb7726049458",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/pageType.ts": "5add146aa754f16c6d864268ab6fe20258d6c40dda4a9a9131a1a88938441053",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/productDetailsPage.ts": "d1678c422cdf5ad0eb1741baa2a1b763de3d7b894d48ab449a76432a312ffb3f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/productList.ts": "8c51b4be052f39657075f9a548ad362a75b1027a58cb18631f5c341b67971f5e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/productListingPage.ts": "d90df500172738756bac8647d64d5b4e933b4d5d442c2875e858bb952d6eddea",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/relatedProductsLoader.ts": "650dcf1fc5721d5a8cfe79d2e231e683623f67e2b0cfcf687b351f861aad7b01",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/legacy/suggestions.ts": "f0ca975db87a24b1dcff796d75033409c5544b9b918bce603fa31c6db0374a13",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/logistics/listPickupPoints.ts": "dfe05433bab45142393207e537d92a188f2687f70eb446538795267470efa595",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/logistics/listPickupPointsByLocation.ts": "993ac1f47967e586b1d5bcdc2c60df6ba09bca1389e22288774fb88b85ac4e83",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/masterdata/searchDocuments.ts": "a133f80e569def6b5de7281bb86715fd9a0120ae4a0c534769c76ca044f82f02",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/navbar.ts": "03964ed7731ea1d1b77d8cb6825ab03437b31642360c7bae7b5aa1e7bd988551",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/options/productIdByTerm.ts": "3058278b2e83ec64a9379a2904fd7ad3b78ddc837980075b28ab5ec0542825f5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/orders/list.ts": "aab7fe52ca52124312d3e4d10d701053f26be2245d2700358dae7fdc607feffc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/paths/PDPDefaultPath.ts": "c9c0bc73545a65d17686e3668f27447059aa32872a11398d23c088a9bf37e028",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/paths/PLPDefaultPath.ts": "9fa8e8ddd3ea3267cd3d1b68bf317ec08b51f07cc0ad4c2c98e0d72bfe12ab76",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/product/extend.ts": "ccf9684e785bebdcd8af8bb21bb73a00d1cdb8d8909a4a4bb22ec372ae0e7fa9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/product/extensions/detailsPage.ts": "b1f06f9c5408f238eba663452f4afaf05108d7aa442c84bf7ad229c5d3bd3671",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/product/extensions/list.ts": "89ac5b228ddd0d403f65564d9c5ba2e97044db6012e0e3c911be5f5e2c9081b9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/product/extensions/listingPage.ts": "46d24743f62c32b7f13183214fe80ddf4626a5495697b063aace28516dd07652",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/product/extensions/suggestions.ts": "3a5ce89bf4a40c950ac1e833bdff1f7e231e3315407f20675ced816a4b60a4db",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/product/wishlist.ts": "81eb4efbfc13d020c64a084b6687b6a820e8dba9d707ee5a7f47542b043a14c7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/proxy.ts": "7de3db92cd09e4badcf60bffce5ab74c785c6136d5a18965077141117848e945",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/user.ts": "61eed261f42d1c4b3f6838dd6d540ce6a0ea7d89a9d7d4a7121b1bf93dc92cf1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/wishlist.ts": "c48a69883f1d94bff663a33f80c71671f3b44d721887b7f3b979e22c4fa56405",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/workflow/product.ts": "749f4999a223555f5dc9776f2a490fa71057c355c13fa0e1dd67f4bd0107cb79",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/loaders/workflow/products.ts": "d94c794ad4c26ba2069ff631af1a58746dce344b5f26147f9a48b7dc568c5d84",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/manifest.gen.ts": "23af7d3c505a6b95465357d949b0f4df9e48cf519d79c176911af8e9e13906db",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/middleware.ts": "5bd9636c69cf29da792cec94b4085b656c1e3d8eb60514cc022f738f64dd0e89",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/mod.ts": "dcb541de558dd64a3f3356e22481c86a9fd41eb5547d52b7d10f1edff90d8ac2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/preview/Preview.tsx": "8c906661673f6ea7230c091b1f4f8ee4c6f220ec63011207e6219a3af9bf12d3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/sections/Analytics/Vtex.tsx": "08d2a333e92464c903bd01a033fdb5c12bf6cf108dd4b405d1161ac6c5defc2c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/batch.ts": "bd5d786d4e96d8293a3ef1f97ded7571acefccedeeae7c9bda49dd102d923753",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/client.ts": "212b407ab15414c5c9d2c66ccfb58336b9a954ea42d98bee6e1a58f40ba100bf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/cookies.ts": "5248c31a146742edcc7187d77e41f99385d2dc39029f2dde0571300830669703",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/extensions/simulation.ts": "b084e5403179963a4506b4e93661fa0bafeccd101213dea036c77530e68e60d1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/fetchVTEX.ts": "2991516e35b284068fb99e151ccf05a3229480976daaa84cef364e58d0915fed",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/intelligentSearch.ts": "c088b01b9476d7b75d88bd51ff407ed16e6ab461ff5460ffd83edbcce795fe1f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/legacy.ts": "2fb98c37eb32c0f63108c3ccffbbc1c55895f5cc601e46d8f0c2e8c727f96332",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/openapi/api.openapi.gen.ts": "5bffb5d167ec449d4149058b90b595b0f85d266816b1bd0fc060071cbeac20e8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/openapi/my.openapi.gen.ts": "a0b1d1d5904c40e87b1e8d5e64be3059e30054b1600b6180b6fb978baabe2699",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/openapi/vcs.openapi.gen.ts": "39aaee12fb53fe287532fa51ac3a55fe7709306ad55643e49832cc0115e3f18e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/orderForm.ts": "ddd5c419c9983fa195faffb7f484047c855163fc70aa41bf7f62403d9c3383e9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/resourceRange.ts": "181ac936f0fcbc5b8925070b32ac3e5eb1c23e7a0ea4f9cf891f4d596847da40",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/segment.ts": "2b0f60a82f648fc87d8d24059d170b89d45ad42ee35ada74189003ea1168e565",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/similars.ts": "a2be1d4d79bdd325e36246704b6383af984e6c81022651275234c6492d31e165",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/slugify.ts": "7fa8e9f142d6fa809e0a5c3b0ee781805157df1a72d8108f1d5d0c8f45a7af05",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/transform.ts": "adc62872d095360f577f305d3cc61979a3065249f539d121427cf3df95982a6a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/types.ts": "1e2095b639f955b065ea5aa5b0f731334a75efca05f601f4b4105aa45d6ebc1e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/utils/vtexId.ts": "5742c8399ce3361c106d1af2d26f62fa3cc896d901000dbabf8c00db3f2b2404",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/workflows/events.ts": "9436b4e78e5f4dbe30a2b15f76e0d4720d148b68f3f23d2104374254e7a3836d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/vtex/workflows/product/index.ts": "1e15e06b3e6cf52748f5c7669761f8cc2917c32b2588dc8048f9bcda280c880e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/cart/addCoupon.ts": "71fd21ff77203c34d67c06068e6df03d6d348311bde4a05ddf46cc6fbfdc0256",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/cart/addItem.ts": "6823a8eeaa379a3abef3937730dac216d6dd85d14ed8ac92b364961c7e41e900",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/cart/addItems.ts": "06daeb7322afb01349a105dcc8a272bb9956f80146c9c451bef8d3bc9bf5f16d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/cart/removeCoupon.ts": "2b8aed505cffc1df10aab260e75c0bc4ac42c21c661a1c7d344f48d36c0eeed3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/cart/updateItemQuantity.ts": "d9e45219afbb00d7dc4396fae709c694a56d857df42d16d0c6add57b78f7f627",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/newsletter/register.ts": "20b7f34f465e1447ecca491ce4e2e1749ea4c3e785f779ea9b1815fd905c1d77",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/notifyme.ts": "73257edd7b447670b1de67b336fe86a2d8c09534cbd37ff5d691ed68c77f9452",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/review/create.ts": "cc827dcbf1ddffbdef8346bebd7889d671c89c53177163a0450e3ed48f476662",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/shippingSimulation.ts": "62380fc62ceb0dc449ba6b3bfe4b1e9f4659570972e2b8699d7c79ff0e3c5b7b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/submmitForm.ts": "33dfdaa04e2c369e0cc953a3246f1c04d7a3a3ae53a3becf888a1a84e7aee6ca",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/wishlist/addProduct.ts": "a6e70fe3a1288cb4d8e0ec25f77a3572edaccc46cc51859eb5fe11d24feb9bbe",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/actions/wishlist/removeProduct.ts": "750d0157fab7677c6c12d554b1431714c17148d187f91dfb925bf95771cb30a4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/handlers/sitemap.ts": "ff6cc3c1e90ab543dbfa9cb8bc78de521d271aa2b7d4e38b8da95df6527bf3a0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/cart.ts": "c123776ef26d2a55199c6ad5f39a8b41522a807eb9d76ed2f3b1d7099dda9960",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/productDetailsPage.ts": "d18c0920f8daae20d3df6c817f5e5ec3d0118bf976c2fbe6d4e8cfd3b002746a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/productList.ts": "c2db766d29bb84a698ab5d8198d5f954e8021063e12c2744d3c50ceeb06ab260",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/productListingPage.ts": "c7de85d2e93f0715540ed54f7047c91fe2c1c30303c3a5ab93b60d49ac4e1ef3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/proxy.ts": "33898380d4ff6f6f7f0b396691b6f0228a18cbdcc5473cf2ba8d0f1f9231909f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/recommendations.ts": "4b883af9069e2cdeb70e141b53151f65d5bfc32b8181f1ae7a846b846789ab03",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/shop.ts": "c7e56a294971391552044bec8b627dfbfb71db6802b2e62eb52a8ab08cc7b5c1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/suggestion.ts": "1094e210b44375448ae3ee43f69bc6eaf5605bfa3a9baa4484ec7c44d5c16b91",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/user.ts": "16ccd37c933477c0253e7ce05f0e81a0e2c9cb712334da144a666f21badd0748",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/loaders/wishlist.ts": "5d11e5f1c36201fe86f24bc4db3c96f846eda118ea4b1ed8eadf573651084c70",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/manifest.gen.ts": "6a70a0a6fc935419637b3ad7652d0b98c8c00d5ada1611b0e013a0ce3087bf9a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/mod.ts": "76d58fbb4aabfbe97b966bf3b98815e2475795d7f747602245092d3a7a8481b5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/authenticate.ts": "db7be1e7502a5c49e51a69b7a78843dac25d0420f6f65ab69d6029dedc4fa9b3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/cart.ts": "a162eb54c02073301c5794f6dd5a73767e40f2e3ad386d0d5d21dfafd8093660",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/client.ts": "9f0e31f07dfc4fdfe9bcf304e533954b7dfb17b76d3dc03c3224c0207ddb1e25",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/getVariations.ts": "722902a07f95baba162af2231eb9ac0e73bcadd0430a54dc2e33113fe9027398",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/graphql/queries.ts": "207891a5d90df131551da3e56a744226f208f5b72d97a13660be97f880c4544d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/graphql/storefront.graphql.gen.ts": "c6f0f708f889f52920488d8efd8cc2ae3ee46da833e520473bbcae47ce1d10f3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/openapi/wake.openapi.gen.ts": "bccc6ca09b560ef510e682560add84d62e1a4cfec64ba0c85cfa674c197d30d4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/parseHeaders.ts": "ccebcf293571260f0562e447fe0e31b82e01c9aa8d81c2316caded11e2d30265",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/transform.ts": "944ae4a2c1946d1be5e7ee50a4cd7e40e8645ffc776989ace7056c427e43b83c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wake/utils/user.ts": "2c431201dffc6c3f9a9a02687dbd3d1ee1c5245e4ab756a561d0c3aef7b6f9ce",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/cart/addItems.ts": "7d9de625c976c8667600ceaf7ff8495998bac3f24106ff38403309096386f765",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/cart/removeItem.ts": "933e2e2ef611da3612e16bad97212210ad1bf8deaf23609e02b02c059d0c118e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/cart/updateCoupon.ts": "a50b55160b9ba07f25742a871a1a28b08bbc7bbbbeb4e17c428bc210b134c203",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/cart/updateItem.ts": "5e691cd3534ccfa9606aa4358b828cf2d5c69ab922cf50023833ad8d074a55b3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/evaluations/product.ts": "f902b205948849c6f2b691dd2fbbd09cc298a8af273e8862b0a002543dec599b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/forms/contact.ts": "4362db8c94adceec0a5e9f657841f38b04d6507472070fad646859c9f983b511",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/newsletter/associates.ts": "68fdd66900260fe0325884d01abac17d9e0f4ca5349092906846aafaf6afec6a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/newsletter/register.ts": "744c1948c2f2cf7b678cad2a3ccc019c3b384e806f7cd855150f2df765e6250a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/product/solicitation.ts": "143c02bb5a3575fc5c35827ba552a27532357339e4be6a0b52de8c114b688243",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/question/answer.ts": "4d35c4d9a534cd70bdd7e8a076c6e1ee4f373e6cec58006d5735697596f7d9f8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/question/question.ts": "cdf4148f315052f7d84b1c97cea7d2e0c65dc73294614622770faeae8f908e60",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/shipment/product.ts": "feb4b6633b46e91214cca0fbdfcbe452c8adfc57a4a66c90d845751780f3af0d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/wishlist/addItem.ts": "4987ce90b569f0aad9a15cd480521eaa89043f14acecda51ebe2b08d50196e9b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/actions/wishlist/removeItem.ts": "70f604c19939466493f12c5607c057de4dc95da2f92005b91958e9c56bf3a692",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/cart.ts": "3ede421beb4e1a3c9f394c97904e437d13867adf31482e19fa9d401910bb8f27",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/productDetailsPage.ts": "2cc43a89164fe74523be1192ed82d582f3ec73f8b2e3eb652f3ce8cd25e5778e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/productList.ts": "22004ea033e8a45b50048df82e34f9596e10f206521ed1f7ff6a417cf754976b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/productListIndicated.ts": "6bf756b5c353536ec137ea5562d7a0807c18355e056c977845987e192b578e46",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/productListLastSeen.ts": "c3abb431f70446f1bd0bae51d8e0b22ad44b692d0999264bddd6b533d73d200e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/productListingPage.ts": "d19a091f67394d85cc5a19d72ba0396850cb76b5a2f46cde20aa880372ba0f1a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/proxy.ts": "5c2d3e242706513c5f356da0017940ae695a58ddcb573c1c97a867784bad8b52",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/suggestions.ts": "5e1458a4bbfc70a37b5a2a5a66cddbd56c37ed753d0d2cae6f2e8812d1b6176f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/user.ts": "4d40222c0f2da84d1affeb00d7104c1ab82ca681b86d607abbe486edf053c20c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/loaders/wishlist.ts": "53c3ae4444a1370bfa0bb7afb6ebb90144ceaea01c8f1c2b178ef45ccb83c4d4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/manifest.gen.ts": "9d64a8dd8c88b0592f52da05ccd53e8b3fb96937ec2f118ba617d371d43fa15e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/mod.ts": "7613c0ccc9340e4f262c049cf4e02e21b4d6e16e5d06b2c9b0fe4fca9864c2f6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/utils/openapi/api.openapi.gen.ts": "9736e8edcb5f821606e146728dc5f58aa0b0ebc7611164a88b1d6aa4ab6ebb32",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/utils/transform.ts": "f7ecd2c2f5b8130574205c1c4414049c8e2b1911ad828827e5477d7d9d8f042f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/wap/utils/type.ts": "006bb93b74dad0ce16d4e9bf11866e1b04a2a209884aaabf63c15be2df3b451b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/weather/loaders/temperature.ts": "adce8cedcc1252d5287dabd8a9cc98db8afaaef87ee8441780f326b47f2e940e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/weather/manifest.gen.ts": "6f4e5ec851851369ccbedfcccc6786bc96fb1dc0da4a75395d17bddca43807d6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/weather/matchers/temperature.ts": "381b9779d1dccfb4d39d5396d20b5789093ccd23fa284ca33568ce413498b9d0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/weather/mod.ts": "f37cee5364610dd0d27c8bb2b5f6028bb72534c63aeaee56e9014c16d26f1b9a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/weather/sections/WhatsTheTemperature.tsx": "883b5bbad67f620a833b11ed9f5fcf6a50d64a3e5572ff24fe71584f53b56514",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/Preview.tsx": "e4244e36bbdc78c4ef0b9978e3f52185ebe7606f1e360d22d4c8093823c0865a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/actions/secrets/encrypt.ts": "06cf779dbd5bf168f54d1707597cd4dd56185b08bc6bdc6d8338daf53d5529e1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/Analytics.tsx": "ee2c9a314729e6e273afbed0e93da98ffa75ce83d4ca458cfdb3fb36973e5df9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/Clickhouse.tsx": "0f54a6dfeedfe283648cad16f4d897a4cf3e088204610de8facdc8bd2c24582f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/Events.tsx": "4b9730a27b35a25675c8abc2b461bf914d8a9639fc958e7393e30b83e7cead99",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/Image.tsx": "7da0d5f7bfb6a9e58f087ae0f5ed26f68e838acb5d7c93ab47796cc8fdb2b90e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/Seo.tsx": "281b989f6b45fbaa30e0d8e6f842f5ac6be605f6a779ec6811574d080805d974",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/Theme.tsx": "0fa0a533eb02ab192d38d78d0021695c9007a1316bee26aee9f9425d24f7f9e0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_Controls.tsx": "33691de39026b64ea37607d89b24403fb9f67b502295da340cee92647ca0e8c0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Discord.tsx": "b1def0cf005483532e0d2fca65d56e90bfcfed28727da6e22733ef155b60fb23",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Facebook.tsx": "6bd0ba0d3407c2da0a845c9e5a23d563db84f8dc7458c011db6eea5deca97b85",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Google.tsx": "c8b8d8751e09a5ff4af0335db826a61b152eac21078f34b3b22d64dd5f244a05",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Icons.tsx": "28464a985796e70186e594cbfe93e496819f376db9a6171ead9134420e4e5d30",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/LinkedIn.tsx": "23cee26d66c7ec51cc395468c4184ae03a52ff36349324afd53f041f2260e9ca",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Preview.tsx": "76c5c1ff03f83af751f5ca2ba57628bc5b23cd071148ae03682e29d0130de02a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Slack.tsx": "1fbf6c0de00a6d55830c5cb0a0a046fed7b57f10c7047461ed0dc54a4c260c4e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Telegram.tsx": "40c9c8c17ad5cbce8021d4f3e2f13acd187a30717add6917e51b8b9e6135b8d5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/Twitter.tsx": "71b0ad09e68d470a06687a9c3272504d5446875bb407db67df065c23dc87ff78",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/WhatsApp.tsx": "bf14b70bb61de9e34a7397c9b56b0d9ae9c50b709a0544dfe8b9856cc1646178",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/helpers/textShortner.tsx": "21bbb93bd9f022ab5c384ef81607263dce0b627434ef4a6eb9255145c6920cf5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/components/_seo/instructions.json": "c739ecd045f8459d2e98f3f9144e59a42c057eddcfe11c725866f7c0e60ed193",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/audience.ts": "bcc1af0110b371f30e4b39a504888e21c34d98e6c2b02a7f3f53114ca2e092af",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/everyone.ts": "4e6444fe57b1f9c5ec347cda9f96b3f11422a22efeb6db22fe79fb47232d1660",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/flag.ts": "84be866fab9cdaa724308eb8cabec0e71e8257a6f76c98c32a55fa62c5ddd02e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/multivariate.ts": "2af66e57d6e81d4dd04a65c755cc6c588b488eac48229b76977dd67c8008c8f6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/multivariate/image.ts": "255bb06b5d1faac7d638689a92bad4295632cb51240f1d3d986d9038f4c11891",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/multivariate/message.ts": "201fb0aec626490cb9dbaab9e7c4dcfe3f65fd8c2a351df97f2b95d6b8839d67",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/multivariate/page.ts": "a6ac4539295e9e5f9990ef931ee6412dc3ea47697bddd7eb83c0f1cbc34db9f7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/flags/multivariate/section.ts": "d820e9965f03b53e7ce40520a28bcc48fef306e2410524efe13ac0b1dcc949e8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/functions/requestToParam.ts": "5fd224b426ef3d3a742293f778cbba6031ab98a799299a99c5ab7caefd0bf196",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/handlers/fresh.ts": "b0612bf515946ce3c3bb09f7bd23083e8031bae97188557020b1649d2dfb2472",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/handlers/proxy.ts": "7175945c811fad1febec1f830eb5f4d36fc74c9bbc70b69d2981e3d0336b4600",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/handlers/redirect.ts": "8502f61e03fdd0bfe5b05a124bb19c0517598c0edd23c860cfad97c7c819462f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/handlers/router.ts": "c2edaedac326e66d1256cdecfc08c94039101bf832c6341a56cc97b68a7c0f94",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/handlers/sitemap.ts": "af6145d139d766680061649f8e90c128eb6f5ebd006ece42affe0ab9230a9556",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/asset.ts": "962026fddd3dd4259846ebe8a7cbe7de76e7c79363ac4b6c2304ded02e391849",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/extension.ts": "1a34e11b3d722b2a0f5e10187d77c104d59324d4d1a1e0afbefb68a4121d2a0f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/fonts/googleFonts.ts": "dcae9f3b59c59a1cf1efdc0951f0d411269056db2750c3ea024bbab19e1a5ad0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/fonts/local.ts": "c77d244e5c6230de7ebac29d55eb77fd64595967f44b0e7909cd65fb93418f2b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/image.ts": "fe29c13d2c3896e1821640000ff5490edfa52aa36905e8e27757399b41d08bf7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/options/routes.ts": "f5e7067187489351ee5a0915bf769cf09c68b4dd27b34248129bbc796d85729f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/options/urlParams.ts": "5b8398ebf35f854d97d4d9e0a25261b20b067c2008ec6db996deafcdb8e0ab09",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/pages.ts": "f6599fa7d187c6df479c786390f9345688248cb5b2ff1bdd87ad79c50c7bf468",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/redirect.ts": "965a6d462955f676fb83f3a7c3b95730bb679ee0bde585feaa23bdf6851f8acf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/redirects.ts": "1215da309b8211a98b2e10fe85faf6523eda46189f30b940d65278f22ea921e8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/redirectsFromCsv.ts": "e8a601a47ede21e260d38d3a4acb418bed31ea570940a60f2d46e98b3e7c78bf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/secret.ts": "2361bdf13d41964a85fb29ef9dddc8b9b5c06b5cbee243f374e02033abe0b442",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/loaders/secretString.ts": "31ca2ee83771e9d39d4dd6b935c7b5e94999e53873c1076fa43f05d5319ba6b8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/manifest.gen.ts": "01d52787cea5239874a0a3172c503b12f62686e70595a7a6f706dd64bf3060ff",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/always.ts": "a4a7e87b2864f8c64cd78a2b7e098395c914c02b5c6aaa86b021dfbb42b8bc53",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/cookie.ts": "d5443e9ce1468108e68f3de2341b428498d1e00cae00a07dce2dae899a02e514",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/cron.ts": "3cd945b68b63b55a9e1b976ab34bdad28bf9b957cad55493296a625d6116b53b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/date.ts": "fa2cbaee79a1422ddaefe15a343f430a4cf3dfd43e5a7a08f42ce15d7c0890a7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/device.ts": "02bfbbf67d6220ce4d82da4f7b7fe08bef4e3b24a1e60bf5fdfdb4278efb9d9d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/environment.ts": "f233429e31518555c4c79c59bc9d10840b2fbf3081f815d24d2fbd302a0bf5dc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/host.ts": "b3b7c16ade93e77c952a66d2a237da2836ab2543fa2c028350de9240828cb24c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/location.ts": "18a83ccd937683aae843e6345482e51a641cf8ef4db9b9bc4d543b1083e6da46",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/multi.ts": "bceeee94e1e860a0f8fe2741bafa8f43b05ca38423fd1e353e74388c32122310",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/negate.ts": "73be61b3c5fb94af628f0ad88dd71668896b67211aa5c03faf53304cfa0d1ac9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/never.ts": "fd564e0f5af71a73e83133e11eb038f8ab0c7f8f835fedaac1accfc55cfc5d24",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/pathname.ts": "9f664006dd415867ff74d04f7c109a05b7b5d4eebf80517242179f59380380fa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/queryString.ts": "9fc98f50a783a3aa2d12b0873ba24cf4e4f52daf9fcecef04d3667dca9b2f268",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/random.ts": "bf93439df9d8c8fcc4aba01512459931467ab7038fa8cef498b7b430a9b1c40e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/site.ts": "3142a05cb7906d55b6df02eaa4b6694499c9816932003a78110a7b2ae5bb796e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/matchers/userAgent.ts": "a10bf00495bfb182d794a9fbe3e0d09211d12dac616333c0b483cbf5ae23f4bc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/mod.ts": "c7005d79044334e02d028e1f00125d859220722efd6a82d7d22345dfb442a206",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/pages/Page.tsx": "0065eb04ab4e16f0fa93f062cbba606bc36daffa86fa38a8aa2c8982e6a51221",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/sections/Analytics/Analytics.tsx": "e4fc1223d92e2a87c526b41411b7caf211ef529b0f762002092a9320e1f8c9bd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/sections/Rendering/Deferred.tsx": "17c35f63ff86e039ccc44ed371a51f7b12331ee54026d9ea0378e41d95319c70",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/sections/Rendering/Lazy.tsx": "662bc5d6410f1a3e6246b8d5f72773176f5a398565bb57d056b61c0f7b63b99a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/sections/Rendering/SingleDeferred.tsx": "dc44c9d8bcf3a7e7e0d4546e0dd2bbf30cbdb33e45bb68feaed181747a62f1e7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/sections/Seo/Seo.tsx": "4c3c1696dce979c42f344ac13e826522743a72f51397874fc3f2ae1c235a9254",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/sections/Seo/SeoV2.tsx": "bb886cd3a0fafbafce49b89bccdc782ebfaaaa36ccce9f68561efa20861fc456",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/types.ts": "57c705045bd431b6a93a77f0541de4303f80167de84ac27e96e2c07c1b9ae4d7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/crypto.ts": "2684738df6bd450d13b51062dfcbf094ed474fe1058428da4d6c88a9f45a5eb5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/html.ts": "8d34cfa99b0d36240f1ec035b80ab2e4ccc30c5c7c6ce146e116645d36d2b31d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/image/engine.ts": "aff32457a205a3ebbb54bf129333ffdb1edb897d6997191e1eb0401918641e1a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/image/engines/cloudflare/engine.ts": "531585028d51573fd1327f48426f74a48930eaad071569c0367d9d81dd30db83",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/image/engines/deco/engine.ts": "bce867646a74d2f5b4a463f964afa867c5b0c2cb7f26a6c95605b1c0cca086d8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/image/engines/passThrough/engine.ts": "0460df5ef376e4fc04117bfe5aa8c7824fb566f35f91b100615bbe07915ccc1d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/image/engines/remote/engine.ts": "32402e3924efbb6e55948a019c18c5e62a7c7ad18e6b233ebcc455aa4b60f064",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/image/engines/wasm/engine.ts": "643a79c81e876ea2debf6ae28b7c3b325862ad5b01475623d84b7e1421c8cfab",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/location.ts": "f8cda7cbe9d993c81d1490bdc98dca2c962fd64fd15228dfe11279e428206058",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/multivariate.ts": "841f346f9d24b4e7d3370c5c6fd2287535f6d69c7fa36c2acaa34232b385df6f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/website/utils/unhandledRejection.ts": "754461a2c4878b4419d16f072a6301a8ee2460a7907dfcbe1f90a7e438f5186b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/actions/cancel.ts": "0ea52479eb9aabd9bb56da16d48e9a01ef39efb10426a98ad3f6cbc24265f920",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/actions/signal.ts": "5d23e47eb4c15dfc7e448358402e9100fab3b12b4d3fea617d9dde4417fe38d3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/actions/start.ts": "6b0abd65798835da54aec37ca415cdab8f2154023a5ed0a24841f40774cf2786",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/deps.ts": "45964e73a092581a6d363004d4d95093c792127a3f64e098cb1da9b1a280e2cc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/handlers/workflowRunner.ts": "741339cb90dd6dcd03f497880f291369190a2ff00778ca07805fd7baf305c7db",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/initializer.ts": "f454a000db405935928f3b33b018a59389e6ecaa758a90eb93dcacd7e5eb6460",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/loaders/events.ts": "f369be2ef1de26410c93550eb51c639840f8db9649b1ca4e025fae8cea5aa7a6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/loaders/get.ts": "e87231827ccb8d8c639a748d0aa2fc9be2e62f00d335efdadc90456493bf9220",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/manifest.gen.ts": "aaa8644502dfaa7ae59e3959fb29ac908cdfd6f61aad0e77e99ffe19ef92d82d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/mod.ts": "110483e95fc1e2a3a81d98a1d0a7a9d575d38a4cc33186ef45724d4dc05e8132",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/types.ts": "9930e6fc8e04c9d36fa951eaadd74a2f13f49886b21fc25a5558f6a62c22adda",
+    "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.23/workflows/utils/awaiters.ts": "749ea359ca083e9643d82b2b31ee3197cf8d7274f7d9b89a5f6e5efe7a83db2f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/account.ts": "52608e3f02535a06c0ba499ccb7d59ff47b69b9dd9c7d03b001add1336e8f130",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/action.ts": "3b6986dd6e51a56158caa37c5fcdf06cbd66f28c3da41b5e329c1a0eaa3b0923",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/app.ts": "8b91717178fef31d15a4c7b7c2c52f45e8fa991fc59f5c672602b7052c200dad",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/appsUtil.ts": "ca18fb663ddbf971aecc7531fb55ee41bdab64e7eed029bf048a13ea9f81a8ff",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/flag.ts": "ee6ee05b23f3b60e3810f996b486a84be4d23b4cf64386f5dcb23381d79b3cc9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/function.ts": "fe599f187e53b86f4dd49662afd4fe787ac1c12b0494b55004f92b3d27013622",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/handler.ts": "1a5519ace156deca2edb01ce5671d82e9b21e053f484c0b7c0d3b2432342a4bd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/index.ts": "3b08726431df325491b9a7cf0344db91700f52fe720f2e55c3877fda977f0fcf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/loader.ts": "5eed3358daa231ba68d7c706c9ab1ee9e83606e65c3fa623a71869fff0d6bbe4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/matcher.ts": "f645006aa76f559e31ab026f73c63a577e001dc353e81c00b96159b8d687ecab",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/mod.ts": "ad9ed63da5b49d3145cc673d600c72287c91e7a0024422715f98cf870b2f2496",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/page.tsx": "25be1c17f355f9b8b80dd3a4e3cab84c94ae01b051e306c22c39d280f6f55443",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/propsLoader.ts": "e8e65dc51f8e0c3a903334302b922e3c7be321badeb7a37d92d6059501df2b93",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/section.ts": "e13da47df754cdb87291c464a626a97aeb9b12da47106270f52056c802c12596",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/utils.tsx": "663d66cb5f4287e6da6581f0a556998131a116a8fb1511b8749f159686ce3483",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/blocks/workflow.ts": "300a5cbc87aa1bcb80daba4fd7a657c0add6cec96b58f221a63f60ae5dfe3735",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/clients/formdata.ts": "6b2b43ba4eeb34c564fae7f918a1eade2e81ebe8429dfbd3e8e25c9b87a96417",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/clients/proxy.ts": "8f53aa7455690833fe3294248dea3bffd21a90b207cf0947562bf518e67fc144",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/clients/withManifest.ts": "1201b4db64952f56b1867b2d44aed7e53c28d2e45030ade06071451adff173d1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/commons/workflows/initialize.ts": "0d92f07e4dd1a1d4d5e5a92b5f3c365e10cd63724c8b9241d4a6cab3d677c866",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/commons/workflows/mod.ts": "3a8f4112ecb8b4e12c3c95bed8e684c1b129d848882169571654964d55b68fd3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/commons/workflows/types.ts": "9655ffb55f4317a792cf70ee64359ba7b016bf0691ff3b462ddfd88cd171746f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/components/JsonViewer.tsx": "8e6b0941c2252bde17e5b95f1662dcb9663eb443b7cae64deb02e10529a1d4a1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/components/LiveControls.tsx": "db4e09058ffaebff18f9b404a54f34bc8fb1caaf326d3fdcbeab7f6a08985a31",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/components/PreviewNotAvailable.tsx": "00ce6f0574ae5a005ff63818f6088e99c4098ce791923dacdaaf13578d817ef8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/components/StubSection.tsx": "9d42b02994ce64366d10a9bfe318c1119860394452f235392067f8e3e8ac820e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/components/section.tsx": "1ea822dcbad9e84dde04bc94802c66920577500a102213d99311eef62bf68df2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/deco.ts": "87234c1928def8839e8a4d739c248d884bd0746feb6324a16d06bf2a0c756978",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/deno.json": "703ceba15c9262c173242c2bbb693ccda0bc358cf692b0d66b4bc86d3629db1d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/deps.ts": "60cb3275029c8483940c012fbcb5ea124e976cd3b44e9ab6b61990337b00c0cf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/block.ts": "52eeb0d7743e5e13bc64abf834f82d9186b278267b1408c8e5bc6605fb6ed9e3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/core/hints.ts": "c7aec801245e6f1b8424597319ca9e6d9f91ce40eaac7cf56cb71210f5de91c2",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/core/mod.ts": "2139138f3a3f49b67ea6523f1f716ced33c29d9e508321343f486e4287b1fec1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/core/resolver.ts": "f4b0416ec1368dee9c8552cb3e1e1c7ea4dea30cb45c745dec4dc77f1e8000dc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/core/utils.ts": "283775ec357c1b8be175b5a7e796ba02b9ea4f3055e485607c48e27a060f8792",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/constants.ts": "77410d3a0c47387b972b89df73329536c75adf82bbdca993bc76e74ba9d400f4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/fetcher.ts": "7ef9ab1b1a5ec57cc828abdfa0578153ee8dd617b7e05a9df7eab282c4256ac1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/fs.ts": "906a620fe82cb079e2dbb797e4adf82c47992e25535b413b41fee7a406a2c572",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/fsFolder.ts": "cbd8891a6eeb4d45a0972cd4229c13131c726f91caff6c65787d23674dd02833",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/json.ts": "e3ffe3c4669e8e93f84e2dd5bc387cae99b97bbf7fee636b0465c98accd557d5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/provider.ts": "fe090d476826b5615487495df83fc89bfe42db9ded035e638f7a46cb0c4573db",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/realtime.ts": "47cfbb5086ce181a075f84bfe67083153d793e8b2863994cc05822f76e1876f8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/decofile/release.ts": "fd31812c7ec04c7d3c68466f5e4e6f3ee9e82e31038f5b3e6a862d1a14dfe531",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/errors.ts": "1e66cd95d9047274ea355509c2da5f114a1d3eeb94572f410b2547f220d78206",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/importmap/_util.ts": "fcc41b01a4bbf555003e84b0c3106f2b8e8fa187b5e44a7c18d1169716099f98",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/importmap/builder.ts": "1fe54463b2742fa458713a699f06445c29df8b916551b08fb639732827bdba5a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/importmap/jsr.ts": "baf07cad3c6b1c492ce0027ee2676e27bad41e40e58affe41f07ac0081522b48",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/importmap/mod.ts": "4dacb39e3ab1349fa7fcfe6101d8f8ad75b86901221ad5c10af95fccb97ef1f0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/integrity.ts": "9f5ebe59bc92a555a251dee28cb5dfa16e6813c22857d0c4f37f67030ee08383",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/manifest/defaults.ts": "d0bb16088b84c3742b518b82643c613391b87c1912ed0234fcc6b5b5bea78afb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/manifest/fresh.ts": "8904a4e3ffc2646436a2d0cea9f8fd0c6f66c1283209cc9d00f965060dc29dc3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/manifest/manifest.ts": "23db32e9751df4cc53d62f87685db505345f98e050688c20f9d554a450d2f905",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/manifest/manifestBuilder.ts": "8f57242885e60a8e65f27506aec1da0896ddc67723687708b77699c18b40f801",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/manifest/manifestGen.ts": "d7e97faf03fb091e8bee2d83f04223fa0dead5ae1aef14936eb12b7b964926c3",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/manifest/utils.ts": "7568363b0ef83e4f252fa8ce558430ba173096b3fba0239adaa1e0f49e22fc08",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/middleware.ts": "e37649e895a7dc844e6626ae9cc70d25ec7ab5fa7306dcf6b0234843f71b2bf9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/builder.ts": "fcdd5d34deff2de023d8a583e7572091c34f9767135a9b07bfe1162a8e645ccc",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/comments.ts": "3a91640960e663d35d6b4abcef8599a6c0d4c2721045158553baf8864a249145",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/deps.ts": "9e8ff300f9569daedc2a2b5291fddbb9d5cfb32b9940558b899dc75cd0d6a9a0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/gen.ts": "f900b628c81f6102df6c8088e8e5666302410d2e6f497ccd7a152a47fc1f265b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/lazy.ts": "e6c57d1ae44e53e306f0b4b7d8024188df898ae213954f260325715b5d087386",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/merge.ts": "085d53e96f0873e7ba58cf85ce41f38c7934aa4d0342792d9c40e8102ec33f4e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/parser.ts": "0877a27c01df81b1888accf30aed7bbd7d105299def1be3eb8f695e21b2cded4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/reader.ts": "4f0593eead8f73e3ed0bfb151a37cd83d07e34e36fcb8b261727eee2ba174337",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/schemeable.ts": "10ea677803381799122cbde0ae512015a525c9819847d8ff287bca268f1f6261",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/transform.ts": "72fb1b92fb424bb4c2dff5dcd0038c6307c036ce6828d80d65c438ae0aa94397",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/schema/utils.ts": "83bb187ced72649090c539dd2d765ddab722abaf3eeea0288b6e04cb6e23d6c0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/engine/trustedAuthority.ts": "2c4f44f5755aa8888e0e74cf09ed7d2d51082c162500d10378645f9ed71fac32",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/hooks/usePartialSection.ts": "0b302d38872a1b4b7ba0216ce46e178775e7184313df1879c10daebcfe1f80ab",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/hooks/useScript.ts": "f3a53b403bb79c0364ba71a4054cdfe55c72da1253e025955b8497763a9ec314",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/hooks/useSection.ts": "d967e829a27b9dfce9ff15cf60b646ef3b1b888149c7f0e7c56877e59c051781",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/live.ts": "2728ee4a35115a1b3ebbdb2a3e0711f92d45c9db60b7de7aa636f155ab6919ee",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/mod.ts": "5a84be12a47123ccfe935598edef41e763305e8d27ba930fbb2696cd89fa3daf",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/http.ts": "fc570a1873019b1e3bfa699673736ccfcbf0b656f646ca7367f609f79ece5fea",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/mod.ts": "74f387a1f11880c7a73df053684eb405b62e32d9426a403ec7a8da0d1aa5e763",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/observe.ts": "ea0e251cfc4b53aca57f7b2e753fa365b2678e32df5af7c9b244667ede0ade43",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/config.ts": "e9dfc118eab5f5fd79d18c8d4db2caf778a69afe07de69b458cb53b24920f851",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/context.ts": "76abca3670de91ba1c558011e72197455cade22cdb635894c9dc75cedf3e2876",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/instrumentation/deno-runtime.ts": "335531a2755a058af6836761563cd7ce30e42e99332ba646c659decb431c2c38",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/logger.ts": "5d6b6b76d7129d8ccd528d94725ce67eb520cd464a1e8c4c1c7d240fff3a7b14",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/metrics.ts": "157ce5a6f2a8b3a70545dbc1911f508c95e738fbc6c3c7045b2100a17ff1d500",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/samplers/debug.ts": "507aaaafa89aebf0940dfe0e4708553aff8136806d76be1cf6b6b6ecf093ab0f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/otel/samplers/urlBased.ts": "fe04cd22a4ec72f6d05f15970e0a13f561de0af3eb3f0e68800c322733930020",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/handler.ts": "2c6cb22ed8b79a4def3fffd6b2c803a21cc6608b30e012c2c16701dacecbbc58",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/medianLatency.ts": "e69db3b6cd1e5eddcfb7b28bf471e4253c778039f2b72eab0a26f43298aadc40",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/memory.ts": "c28905a86062588cfbea5281616fd574ac1b995401bf997f83103f724c474bc9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/reqCount.ts": "8c93be6da98e0794769d030f9e23d6474ae7e83614adadfcafcc5cad0b7440aa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/reqInflight.ts": "bb957f55346a3ec18e43715b8b94d74b4e97081b57ce8efd28d6ace3032eb119",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/resources.ts": "6fa1d94d4fbc93a903fe439eebdba5a0c1c4fb7436e3e51af37260ac28f2a12e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/observability/probes/uptime.ts": "d722490d38d58311f75bd28ef68aa6bcbe6634e94679af2debe90f2e05e4820a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/plugins/deco.ts": "f6f5edf8bc6b359c0865087ef0531b9d29a22c2116efd5cffc813130c4059f26",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/caches/common.ts": "92096de4206249c8b6ebd3c02566516b7cf68d473e978151f975513f055e04b5",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/caches/fileSystem.ts": "b55a4d38ca0745cf52cb37307c2dd6fcbfa094e3dad61bc426290f39dab5e6ec",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/caches/mod.ts": "6cafc955c062b8ca362b8f24967194c7d67fb2bf93cb819e3c2f93c1b88fa9d9",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/caches/proxy.ts": "a21dd41e7235a188acb56400d2a37d61129917909a9dc72f184b186c8a098bb8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/caches/tiered.ts": "42a241821b18b38803a7e6786e7a456a88febeaf772ad39bdf9f639f66f987c6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/deps.ts": "ff8d324438f12dc0c7853772e34293775135083fc750add1b29fd9a6a84857a0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/errors.ts": "e7663363c0e5c3757f958dc7f41526d3f430565d5f5d83fed8262ef43a34961e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/features/invoke.ts": "be3545657a7e71db4e82f7f6b931cad962ad5e91dc6f9ac028338de2e03da3e0",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/features/meta.ts": "e21e8a38ee44d74f9b5e18d19151700e37670298318434aee1bff426a2511094",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/features/preview.tsx": "683020c4bbbee0ffe513d59bb9d6b9c93a487659d95603d6d332ebfc9aacafc8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/features/render.tsx": "af2e1dfdd2a28fabdee0105a65468044549d352db9867946508242e537fa9689",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/features/styles.css.ts": "2a128d2a390325a8bb821018502b5756e6bb82e548e9d1a382bfe065ee796dce",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/fetch/fetchCache.ts": "a8fa26e422eee05a2ec119f749ba5c672d7ab8afc7496120fbd6692f00e9d77c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/fetch/fetchLog.ts": "4f569a90c016c793db3973c0a81627f4fe253314b9c9fd558c02f92916639628",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/fetch/mod.ts": "70287b62c7537937234ee69af8fa6a2f1d329b02ae69a2733d71454f87f453d1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/fresh/Bindings.tsx": "529fb9e66d06a15532ab83633752900c4d6d28b8f44526ed9ce911a9bdbb9191",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/fresh/plugin.ts": "e15d49625b798d8418347018ceb8d08a044dc4eb9e183c3a2b4542eaf7c8481d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/fresh/plugin.tsx": "153fe41618a269e70fd4e583b3b576815e69925102ead6bd85288e9b5080effe",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/handler.tsx": "73d98e0b2d583b1d26cdc9a637d0bd9c8ae23751688c645a534b9867374d8887",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/htmx/Bindings.tsx": "0daff22158152909ad6f96ec6bf113b88151ee370fd64eb3bab09592596a5b77",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/htmx/Renderer.tsx": "274e6f415560161c36e8510785c83e263d95f8dbdce18d94b1f8ed476f70df88",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/htmx/fileCache.ts": "2db5d0b83f7c1eba9d220d9e26be9cd2a91fdfcf90306373568f594c0aeefaa4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/htmx/mod.tsx": "f2511ba2735567e97993998a9823e121fef2a48c1aae1a5fd47b4df52b09b7b6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/htmx/serveStatic.ts": "a998e29170167024ceb0397d0e15e406227cf2efb8404af9c6599944c28c0eae",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/middleware.ts": "52ff57deb6d896148c051a93e50be4255b1d2d141825bfa64a3fdf11bbbe60df",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/middlewares/liveness.ts": "4536695fd5aaa61476385740122f0c5919aba444566610f5e829dd05000bf1b4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/mod.ts": "c65cb6b52548494a37a7f900eec7b799b6e609de2f521f920573fc9b531bd85e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/_meta.ts": "1e5697b800de4d108981232e28a24d4a11d403e5fccfa3d7308d3620b5aa2d04",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/batchInvoke.ts": "1d4f74046e2f1033879f8824e64cc426d7d27a0a2e8b70e3d762d98cf3ea1404",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/blockPreview.tsx": "97c07ad70f5cf3b5ccc8ac7d040e80c0b7861a59b2da7d8f9c0bf1fd4bbc1227",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/entrypoint.tsx": "cfd4605bc31da94e8c0f380d99a550f5d157d156988a34329a59ed0c4472e429",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/inspect.ts": "4d6e193b479e3f15fa59e2272f192b619d965fac33d3f4583864b45f745b82c4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/invoke.ts": "c845922a376399d08af3a8d330073aa4e2b4cfa40a38575d257d14f39d2b30e4",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/previews.tsx": "ade80f7413fd2c1a0413d83f60400b25760c5e0555527fc92c788b112e17491d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/release.ts": "88ca53bc162e61b482c3fb658ff72f67bac323a466fbb04100cabae531d75aff",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/render.tsx": "58ce46bfad1a794e0c6b48982dbccbdc8b48bda508bd4e8d1a3feb4bad5867a1",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/styles.css.ts": "aa8350b8bde20d2a3c34918e6b8893fa4518cb64430a585f78815817168dd1d7",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/routes/workflow.ts": "5e6126cdd748cd7d335c596bee461b0bf31ea6545d1484c5becb096853d8e3eb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/runtime/utils.ts": "43a8075473ac9bf3641ecab007a27c594f8892a48109805a5b7deb028c8fed7b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/scripts/apps/bundle.lib.ts": "cf0cb61e1888c71d68d199265f9edda7b57aad0cbd9b05714fa07423e05afa2f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/scripts/apps/bundle.ts": "72064a02bc8190c47c0bb548b7c484d7960c5fb080686d41549b8987134ed54b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/scripts/apps/config.ts": "77e1c8001a38b30f9a17aa2bf896f865f3b0298b1626d68c15f7a4654f25105b",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/scripts/formatter.ts": "c90be7018e89aa7d1449b41e241e798783b7bdef9bfc79cb13de1e5af3cecdfa",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/scripts/registry.ts": "e4c413c936c29fc13f756d7180b7e6d109fd7f7823e4cd34e1ec12e0ceea584c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/supabase.ts": "c95d2b036607f42b43f808e184ccbdf5c93c75927f5c2e049609d1349a8650c6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/types.ts": "f7589e9d9075d14d4699c32df220fcf5871f806e229d141c6e15f899f4fa5f2f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/admin.ts": "aeaba860e46f2c8ef85d5d0848e100618488092b9fda14d5e348ce2eebc259a8",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/cookies.ts": "772aa3d218885ffe44127294f49983369ccedfc08ef0275f42495321258eb272",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/filesystem.ts": "70ec9977f4e8d154b0284a489b0f68e4cc11caf3fc535ef3ab7695d63e214a06",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/hasher.ts": "e1afed5d23e08d3fe629d3d5b5ae3b2cc68ed3e66f186097f140a191dc9b9170",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/http.ts": "97be2c6be5225727e868c3b64415f408e278a8ed9aa8a53bfad7fd1dad877c7d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/invoke.server.ts": "58834819289841e724a1c0c96aaf6cb131cb4ff9c6283207edd160ac1f7d297a",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/invoke.ts": "1a3116abd727ba9f2282ada4736a51d6f92d57a469f8c4ee4c874608fe7f062d",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/invoke.types.ts": "d1f0a39474511053d2a6d5d35b5b3be1240b73b2de757e04acd09e8fff58da1c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/json.ts": "11c5b73fed931e2a91c6ba476797750a98150530d5337e5609d687964756f046",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/log.ts": "8e52a43dbb1cfcd0c231fac70e726780f0cb64e1833db40b32005318ffdda63e",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/metabase.tsx": "317b32c486b6caab6e694ef9cd6f46aad247b734fe12f9bd32a333036cd3f4fd",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/object.ts": "2044023f7c515455615d6a0b97539b930110bc93e7817c7e0e514f11db55fae6",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/patched_fetch.ts": "138e34c6bd55fdbbc9355210d6ec16da1cef957a566b76e561dcf8f0db94fc07",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/promise.ts": "42ef536bceb330910e18f2669d72778f5deecf87f88958519ba77630d9543ced",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/rand.ts": "c774b0301d61f00f0290f94ae9c79b21ac67ac781f00c1db02df712c677b2aeb",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/stat.ts": "3a4b1145cc6e635367ed9a08913989f0c8cfa829a055003aec1fd91f607cc35f",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/sync.ts": "27bc4da61cf354fca7813c3efd054b6126424fab1db26f994479f2f89bbc2898",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/timings.ts": "fea5a1f83a894a07f03644b2b4cb95dace75500698bc09c691f90b107374847c",
+    "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.11/utils/userAgent.ts": "5ff2e613b2352136ca176b086a4f2b0b30ea60b456bf66e8570e24946f7cdc66",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.9/blocks/account.ts": "52608e3f02535a06c0ba499ccb7d59ff47b69b9dd9c7d03b001add1336e8f130",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.9/blocks/action.ts": "3b6986dd6e51a56158caa37c5fcdf06cbd66f28c3da41b5e329c1a0eaa3b0923",
     "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.96.9/blocks/app.ts": "8b91717178fef31d15a4c7b7c2c52f45e8fa991fc59f5c672602b7052c200dad",
