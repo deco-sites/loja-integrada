@@ -3,6 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
 
 const onClickStart = (rootId: string) => {
+    event?.preventDefault();
     const parent = document.getElementById(rootId);
     if (parent) {
         Array.from(parent.children)[0].classList.add("hidden");
@@ -129,8 +130,12 @@ function TcoCalculatorPage1(
                 /></div>}
                 <p class="mt-[117px] text-transparent bg-gradient-to-r from-warning-content to-error-content bg-clip-text text-xl text-center font-semibold">{objectivesCaption}</p>
                 <div class="flex flex-wrap justify-between mt-7">
-                    {objectives.map((objective) => (
-                        <button hx-on:click={useScript(objectiveOnClick)} class="p-6 flex flex-col items-center justify-between w-[154px] min-h-32 border border-neutral hover:border-primary disabled:border-primary rounded-[10px] bg-primary-content group">
+                    {objectives.map((objective, index) => (
+                        <button 
+                            hx-on:click={useScript(objectiveOnClick)} 
+                            class="p-6 flex flex-col items-center justify-between w-[154px] min-h-32 border border-neutral hover:border-primary disabled:border-primary rounded-[10px] bg-primary-content group"
+                            disabled={index == 0}
+                            >
                             <div class="min-h-[26px]"><Image
                                 height={26}
                                 width={26}
@@ -143,19 +148,23 @@ function TcoCalculatorPage1(
                     ))}
                 </div>
                 <p class="text-center text-xl font-semibold mt-[60px] text-transparent bg-gradient-to-r from-warning-content to-error-content bg-clip-text">{emailCaption}</p>
-                <div class={`bg-primary-content flex justify-between py-1.5 pr-1.5 mt-7 text-base text-primary border border-base-200 rounded-xl shadow-spreaded`}>
+                <form 
+                    class={`bg-primary-content flex justify-between py-1.5 pr-1.5 mt-7 text-base text-primary border border-base-200 rounded-xl shadow-spreaded`}
+                    hx-on:submit={useScript(onClickStart, rootId)}
+                >
                     <input
                         type="email"
                         class="w-1/2 md:w-auto md:flex-grow pl-2 md:pl-7 focus:outline-none text-sm md:text-base text-primary"
                         placeholder={emailPlaceHolder}
+                        required
                     />
-                    <button 
+                    <input 
+                    type="submit"
                         class="btn btn-primary font-bold px-7 hover:scale-110 text-lg"
-                        hx-on:click={useScript(onClickStart, rootId)}
+                        value={emailButtonText}
                         >
-                        {emailButtonText}
-                    </button>
-                </div>
+                    </input>
+                </form>
             </div>
         </div>
     );

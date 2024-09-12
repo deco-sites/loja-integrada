@@ -14,9 +14,20 @@ export interface IImage {
     alt?: string;
 }
 
+/** @title {{title}} */
+export interface Plan {
+    title: string;
+    montlyFee: number;
+    cardFee: number;
+    boletoFee: number;
+    pixFee: number;
+    comission: number;
+}
+
 export interface Props {
     title?: string;
     caption?: string;
+    plans: Plan[];
     page1: Page1;
     page2: Page2;
     page3: Page3;

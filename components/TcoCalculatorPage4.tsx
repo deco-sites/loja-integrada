@@ -69,17 +69,17 @@ export interface Page4 {
     }
 }
 
-function ResultRow({ label }: { label: string }) {
+function ResultRow({ label, userValueId, lojaIntegradaValue, lojaIntegradaValueId }: { label: string, userValueId?: string, lojaIntegradaValue?: string, lojaIntegradaValueId?: string }) {
     return <div class="flex gap-2.5 text-sm text-base-300 font-normal">
         <div>
             <div class="flex justify-between min-w-[390px] py-[18px]">
                 <p>{label}</p>
-                <p class="min-w-40 text-center">R$ 389,00</p>
+                <p id={userValueId} class="min-w-40 text-center">R$ 389,00</p>
             </div>
             <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-neutral to-transparent" />
         </div>
         <div class="bg-primary py-[18px] px-3 max-w-[193px] w-full">
-            <p class="bg-transparent text-primary-content text-center font-semibold">R$ 259,00</p>
+            <p id={lojaIntegradaValueId} class="bg-transparent text-primary-content text-center font-semibold">{lojaIntegradaValue || "R$ 389,00"}</p>
         </div>
     </div>
 }
@@ -243,9 +243,9 @@ function TcoCalculatorPage4(
                         <p class="bg-transparent text-primary-content text-center font-semibold">Loja Integrada</p>
                     </div>
                 </div>
-                <ResultRow label={result.montlyFeeLabel} />
-                <ResultRow label={result.salesComissionLabel} />
-                <ResultRow label={result.platformTotal} />
+                <ResultRow label={result.montlyFeeLabel} userValueId={rootId + "montlyFee"} />
+                <ResultRow label={result.salesComissionLabel} userValueId={rootId + "comission"} />
+                <ResultRow label={result.platformTotal} userValueId={rootId + "platformTotal"} />
                 <ResultRow label={result.cardLabel} />
                 <ResultRow label={result.boletoLabel} />
                 <ResultRow label={result.pixLabel} />
