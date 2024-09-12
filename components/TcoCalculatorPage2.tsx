@@ -188,6 +188,7 @@ function TcoCalculatorPage2(
                             type="text"
                             placeholder={averageMonthlyRevenue.placeholder}
                             required
+                            id={rootId+"gmvInput"}
                         >
                         </input>
                     </label>
@@ -219,6 +220,7 @@ function TcoCalculatorPage2(
                             type="text"
                             placeholder={currentPlatformMonthlyFee.placeholder}
                             required
+                            id={rootId + 'montlyFeeInput'}
                         >
                         </input>
                     </label>
@@ -234,6 +236,7 @@ function TcoCalculatorPage2(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={currentPlatformComission.placeholder}
+                            id={rootId + 'comissionInput'}
                             required
                         >
                         </input>

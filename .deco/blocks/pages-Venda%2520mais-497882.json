@@ -855,9 +855,44 @@
             "href": "#",
             "text": "Migre agora",
             "outline": false
-          }
+          },
+          "montlyFeeLojaIntegrada": "R$ 259,00"
         }
-      }
+      },
+      "plans": [
+        {
+          "title": "Crescimento",
+          "montlyFee": 54,
+          "cardFee": 4.59,
+          "boletoFee": 2.39,
+          "pixFee": 1,
+          "comission": 0.99
+        },
+        {
+          "title": "Aceleração",
+          "montlyFee": 99,
+          "cardFee": 4.49,
+          "boletoFee": 2.39,
+          "pixFee": 1,
+          "comission": 0.9
+        },
+        {
+          "title": "Expansão",
+          "montlyFee": 259,
+          "cardFee": 4.29,
+          "boletoFee": 2.39,
+          "pixFee": 1,
+          "comission": 0.7
+        },
+        {
+          "title": "Elite",
+          "montlyFee": 1599,
+          "cardFee": 3.59,
+          "boletoFee": 1.99,
+          "comission": 0.5,
+          "pixFee": 1.99
+        }
+      ]
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

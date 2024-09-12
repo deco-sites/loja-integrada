@@ -33,6 +33,22 @@ const onClickNext = (rootId: string) => {
         Array.from(parent.children)[2].classList.add("hidden");
         Array.from(parent.children)[3].classList.remove("hidden");
     }
+    
+    const moneyToNumber = (value: string):number => parseFloat(value.replace('R$', '').replace('.', '').replace(',', '.').trim()); 
+    const percentToNumber = (value: string):number => parseFloat(value.replace('%', '').replace(',','.').trim());
+
+    //pega os valores digitados pelo usuario
+    const montlyFeeInput = (parent?.querySelector("#"+rootId+'montlyFeeInput') as HTMLInputElement).value;
+    const comissionInput = (parent?.querySelector("#"+rootId+"comissionInput") as HTMLInputElement).value;
+    const gmvInput = (parent?.querySelector("#"+rootId+"gmvInput") as HTMLInputElement).value;
+
+    //coloca os valores digitados pelo usuario na pagina de resultado e calcula campos necessarios
+    (parent?.querySelector("#"+rootId+'montlyFee') as HTMLElement).textContent = montlyFeeInput;
+    (parent?.querySelector("#"+rootId+'comission') as HTMLElement).textContent = comissionInput;
+    const platformTotal = moneyToNumber(montlyFeeInput) + (moneyToNumber(gmvInput) * percentToNumber(comissionInput) / 100);
+    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+
+    console.log(platformTotal);
 };
 
 const onClickBack = (rootId: string) => {
