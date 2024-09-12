@@ -253,6 +253,7 @@ function TcoCalculatorPage2(
                             type="number"
                             placeholder={MontlyOrders.placeholder}
                             required
+                            id={rootId + 'montlyOrdersInput'}
                         >
                         </input>
                     </label>

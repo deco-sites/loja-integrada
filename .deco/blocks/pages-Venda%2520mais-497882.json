@@ -767,7 +767,7 @@
         },
         "boletoFee": {
           "caption": "Tarifa do boleto",
-          "placeholder": "30%",
+          "placeholder": "R$ 2,99",
           "tooltipMessage": "Qual é a tarifa média cobrada por boleto bancário emitido?"
         },
         "pixShare": {
