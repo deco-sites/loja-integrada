@@ -111,7 +111,7 @@ function TcoCalculatorPage2(
 
     return (
         <div
-            class="relative flex w-full min-h-[971px]  rounded-[30px] overflow-hidden"
+            class="relative flex w-full min-h-[971px]  rounded-[30px] overflow-hidden hidden"
         >
             <div class={`relative max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content`}>
                 {asideTopIcon && <Image
