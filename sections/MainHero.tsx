@@ -32,7 +32,17 @@ export default function MainHero({ title, caption = "", inputButtonText, inputPl
                 <h2 class="text-primary text-2xl md:text-[56px] font-semibold md:font-bold max-w-[575px] leading-[120%]">{title}</h2>
                 <p class="text-base-300 text-lg md:text-[32px] font-normal" dangerouslySetInnerHTML={{ __html: caption }} />
                 <label class="md:pt-7">
-                    {inputLabel && <p class="bg-info rounded-tl-xl rounded-tr-xl py-1.5 px-5 text-base text-primary hidden md:inline-block">{inputLabel}</p>}
+                    <div dangerouslySetInnerHTML={{
+                        __html: `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "7112881",
+                        formId: "51bbcad7-31d8-4a8f-ba76-845a10da854d"
+                    });
+                    </script>
+                    `}} />
+                    {/* {inputLabel && <p class="bg-info rounded-tl-xl rounded-tr-xl py-1.5 px-5 text-base text-primary hidden md:inline-block">{inputLabel}</p>}
                     <div class={`bg-primary-content flex justify-between py-1.5 pr-1.5 text-base text-primary border border-base-200 rounded-xl shadow-spreaded ${inputLabel && 'md:rounded-tl-none'}`}>
                         <input
                             type="email"
@@ -42,7 +52,7 @@ export default function MainHero({ title, caption = "", inputButtonText, inputPl
                         <button class="btn btn-primary font-bold px-7 hover:scale-110 text-lg">
                             {inputButtonText}
                         </button>
-                    </div>
+                    </div> */}
                 </label>
             </div>
         </div>
