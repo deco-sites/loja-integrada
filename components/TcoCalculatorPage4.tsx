@@ -246,12 +246,12 @@ function TcoCalculatorPage4(
                 <ResultRow label={result.montlyFeeLabel} userValueId={rootId + "montlyFee"} />
                 <ResultRow label={result.salesComissionLabel} userValueId={rootId + "comission"} />
                 <ResultRow label={result.platformTotal} userValueId={rootId + "platformTotal"} />
-                <ResultRow label={result.cardLabel} />
-                <ResultRow label={result.boletoLabel} />
-                <ResultRow label={result.pixLabel} />
-                <ResultRow label={result.totalPaymentLabel} />
-                <ResultRow label={result.totalLabel} />
-                <ResultRow label={result.totalTcoLabel} />
+                <ResultRow label={result.cardLabel} userValueId={rootId + "cardFeeMoney"} />
+                <ResultRow label={result.boletoLabel} userValueId={rootId + "boletoFeeMoney"} />
+                <ResultRow label={result.pixLabel} userValueId={rootId + "pixFeeMoney"} />
+                <ResultRow label={result.totalPaymentLabel} userValueId={rootId + "totalPaymentMoney"} />
+                <ResultRow label={result.totalLabel} userValueId={rootId + "totalMoney"} />
+                <ResultRow label={result.totalTcoLabel} userValueId={rootId + "totalTco"} />
 
                 <div class="flex gap-2.5">
                     <div class="min-w-[390px]" />

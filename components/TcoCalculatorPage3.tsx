@@ -41,14 +41,35 @@ const onClickNext = (rootId: string) => {
     const montlyFeeInput = (parent?.querySelector("#"+rootId+'montlyFeeInput') as HTMLInputElement).value;
     const comissionInput = (parent?.querySelector("#"+rootId+"comissionInput") as HTMLInputElement).value;
     const gmvInput = (parent?.querySelector("#"+rootId+"gmvInput") as HTMLInputElement).value;
+    const cardShareInput = (parent?.querySelector("#"+rootId+"cardShareInput") as HTMLInputElement).value;
+    const cardFeeInput = (parent?.querySelector("#"+rootId+"cardFeeInput") as HTMLInputElement).value;
+    const boletoShareInput = (parent?.querySelector("#"+rootId+"boletoShareInput") as HTMLInputElement).value;
+    const boletoFeeInput = (parent?.querySelector("#"+rootId+"boletoFeeInput") as HTMLInputElement).value;
+    const montlyOrdersInput = (parent?.querySelector("#"+rootId+"montlyOrdersInput") as HTMLInputElement).value;        
+    const pixShareInput = (parent?.querySelector("#"+rootId+"pixShareInput") as HTMLInputElement).value;
+    const pixFeeInput = (parent?.querySelector("#"+rootId+"pixFeeInput") as HTMLInputElement).value;                                                                            
 
     //coloca os valores digitados pelo usuario na pagina de resultado e calcula campos necessarios
     (parent?.querySelector("#"+rootId+'montlyFee') as HTMLElement).textContent = montlyFeeInput;
     (parent?.querySelector("#"+rootId+'comission') as HTMLElement).textContent = comissionInput;
     const platformTotal = moneyToNumber(montlyFeeInput) + (moneyToNumber(gmvInput) * percentToNumber(comissionInput) / 100);
-    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const cardShareGmv = percentToNumber(cardShareInput) * moneyToNumber(gmvInput) / 100; 
+    const cardFeeMoney = cardShareGmv * percentToNumber(cardFeeInput) / 100;
+    (parent?.querySelector("#"+rootId+"cardFeeMoney") as HTMLElement).textContent = cardFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const pedidosBoleto = percentToNumber(boletoShareInput) / 100 * Number(montlyOrdersInput);
+    const boletoFeeMoney = moneyToNumber(boletoFeeInput) * pedidosBoleto;
+    (parent?.querySelector("#"+rootId+"boletoFeeMoney") as HTMLElement).textContent = boletoFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const pixShareGmv = percentToNumber(pixShareInput) * moneyToNumber(gmvInput) / 100; 
+    const pixFeeMoney = pixShareGmv * percentToNumber(pixFeeInput) / 100;
+    (parent?.querySelector("#"+rootId+"pixFeeMoney") as HTMLElement).textContent = pixFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const totalPaymentMoney = pixFeeMoney + boletoFeeMoney + cardFeeMoney;
+    (parent?.querySelector("#"+rootId+"totalPaymentMoney") as HTMLElement).textContent = totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const totalMoney = totalPaymentMoney + platformTotal;
+    (parent?.querySelector("#"+rootId+"totalMoney") as HTMLElement).textContent = totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const totalTco = totalMoney / moneyToNumber(gmvInput) * 100;
+    (parent?.querySelector("#"+rootId+"totalTco") as HTMLElement).textContent = totalTco.toFixed(2) + "%";
 
-    console.log(platformTotal);
 };
 
 const onClickBack = (rootId: string) => {
@@ -208,6 +229,7 @@ function TcoCalculatorPage3(
                             type="text"
                             placeholder={cardShare.placeholder}
                             required
+                            id={rootId+"cardShareInput"}
                         >
                         </input>
                     </label>
@@ -224,6 +246,7 @@ function TcoCalculatorPage3(
                             type="text"
                             placeholder={cardFee.placeholder}
                             required
+                            id={rootId+"cardFeeInput"}
                         >
                         </input>
                     </label>
@@ -240,6 +263,7 @@ function TcoCalculatorPage3(
                             type="text"
                             placeholder={boletoShare.placeholder}
                             required
+                            id={rootId+"boletoShareInput"}
                         >
                         </input>
                     </label>
@@ -252,10 +276,11 @@ function TcoCalculatorPage3(
                         </div>
                         <input
                             class={inputClass}
-                            hx-on:keyup={useScript(percentageInputOnKeyUp)}
+                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
                             type="text"
                             placeholder={boletoFee.placeholder}
                             required
+                            id={rootId+"boletoFeeInput"}
                         >
                         </input>
                     </label>
@@ -272,6 +297,7 @@ function TcoCalculatorPage3(
                             type="text"
                             placeholder={pixShare.placeholder}
                             required
+                            id={rootId + "pixShareInput"}
                         >
                         </input>
                     </label>
@@ -288,6 +314,7 @@ function TcoCalculatorPage3(
                             type="text"
                             placeholder={pixFee.placeholder}
                             required
+                            id={rootId + "pixFeeInput"}
                         >
                         </input>
                     </label>
