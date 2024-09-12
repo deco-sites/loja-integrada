@@ -10,6 +10,7 @@ const moneyInputOnKeyUp = () => {
     valor = valor.replace(".", ","); // Substitui ponto por vírgula
     valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."); // Adiciona ponto a cada 3 dígitos
     element.value = "R$ " + valor;
+    if (element.value.toLowerCase().includes('nan')) element.value = "";
 }
 
 const percentageInputOnKeyUp = () => {
@@ -20,7 +21,7 @@ const percentageInputOnKeyUp = () => {
     if(valor.length >= 3) valor = (Number(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
     valor = valor.replace(".", ","); // Substitui ponto por vírgula
     element.value = valor + "%"; // Adiciona o símbolo de porcentagem
-    if (keyEvent.key === "Backspace") {
+    if (keyEvent.key === "Backspace" || element.value == "%") {
         element.value = "";
     }
 }
@@ -177,7 +178,7 @@ function TcoCalculatorPage3(
                     alt={progressImage.alt || "progress image"}
                 /></div>}
 
-                <form class="flex flex-wrap gap-[38px] mt-14 w-full">
+                <form class="flex flex-wrap gap-[38px] mt-14 w-full" hx-on:submit={useScript(onClickNext, rootId)}>
                     <label class={labeClass}>
                         <div class={inputCaptionClass} >
                             <p>{cardShare.caption}</p>
@@ -190,6 +191,7 @@ function TcoCalculatorPage3(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={cardShare.placeholder}
+                            required
                         >
                         </input>
                     </label>
@@ -205,6 +207,7 @@ function TcoCalculatorPage3(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={cardFee.placeholder}
+                            required
                         >
                         </input>
                     </label>
@@ -220,6 +223,7 @@ function TcoCalculatorPage3(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={boletoShare.placeholder}
+                            required
                         >
                         </input>
                     </label>
@@ -235,6 +239,7 @@ function TcoCalculatorPage3(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={boletoFee.placeholder}
+                            required
                         >
                         </input>
                     </label>
@@ -250,6 +255,7 @@ function TcoCalculatorPage3(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={pixShare.placeholder}
+                            required
                         >
                         </input>
                     </label>
@@ -265,6 +271,7 @@ function TcoCalculatorPage3(
                             hx-on:keyup={useScript(percentageInputOnKeyUp)}
                             type="text"
                             placeholder={pixFee.placeholder}
+                            required
                         >
                         </input>
                     </label>
@@ -281,6 +288,7 @@ function TcoCalculatorPage3(
                                 hx-on:keyup={useScript(moneyInputOnKeyUp)}
                                 type="text"
                                 placeholder={antiFraudCosts.placeholder}
+                                required
                             >
                             </input>
                         </label>
@@ -296,6 +304,7 @@ function TcoCalculatorPage3(
                                 hx-on:keyup={useScript(moneyInputOnKeyUp)}
                                 type="text"
                                 placeholder={processingCosts.placeholder}
+                                required
                             >
                             </input>
                         </label>
@@ -312,7 +321,7 @@ function TcoCalculatorPage3(
                     </button>
                     <button 
                         class="flex items-center gap-2.5 font-bold hover:scale-110 text-lg transition-transform text-secondary-content bg-primary rounded-lg py-2.5 px-[30px]"
-                        hx-on:click={useScript(onClickNext, rootId)}
+                        type="submit"
                         >
                         {nextButtonText}
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
