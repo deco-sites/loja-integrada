@@ -38,6 +38,7 @@ const onClickNext = (rootId: string) => {
     const percentToNumber = (value: string):number => parseFloat(value.replace('%', '').replace(',','.').trim());
 
     //pega os valores digitados pelo usuario
+    const currentPlatformInput = (parent?.querySelector("#"+rootId+'currentPlatformInput') as HTMLSelectElement).value;
     const montlyFeeInput = (parent?.querySelector("#"+rootId+'montlyFeeInput') as HTMLInputElement).value;
     const comissionInput = (parent?.querySelector("#"+rootId+"comissionInput") as HTMLInputElement).value;
     const gmvInput = (parent?.querySelector("#"+rootId+"gmvInput") as HTMLInputElement).value;
@@ -49,26 +50,39 @@ const onClickNext = (rootId: string) => {
     const pixShareInput = (parent?.querySelector("#"+rootId+"pixShareInput") as HTMLInputElement).value;
     const pixFeeInput = (parent?.querySelector("#"+rootId+"pixFeeInput") as HTMLInputElement).value;                                                                            
 
-    //coloca os valores digitados pelo usuario na pagina de resultado e calcula campos necessarios
+    //calcula o tco
+    function calculateTco (montlyFee: number, gmv: number, comission: number, MontlyOrders: number, cardShare: number, cardFee: number,  boletoShare: number, boletoFee: number, pixShare: number, pixFee: number) {
+        
+        const platformTotal = montlyFee + (gmv * comission / 100);
+        const cardShareGmv = cardShare * gmv / 100;
+        const boletoOrders = boletoShare / 100 * MontlyOrders;
+        const pixShareGmv = pixShare * gmv / 100;
+        const cardFeeMoney = cardShareGmv * cardFee / 100;
+        const boletoFeeMoney = boletoFee * boletoOrders;
+        const pixFeeMoney = pixShareGmv * pixFee / 100;
+        const totalPaymentMoney = pixFeeMoney + boletoFeeMoney + cardFeeMoney;
+        const totalMoney = totalPaymentMoney + platformTotal;
+
+        return { platformTotal, cardFeeMoney, boletoFeeMoney, pixFeeMoney, totalPaymentMoney, totalMoney, totalTco: totalMoney / gmv * 100 }
+    }
+
+    const currentPlatformTco = calculateTco(moneyToNumber(montlyFeeInput), moneyToNumber(gmvInput), percentToNumber(comissionInput), Number(montlyOrdersInput), percentToNumber(cardShareInput), percentToNumber(cardFeeInput), percentToNumber(boletoShareInput), moneyToNumber(boletoFeeInput), percentToNumber(pixShareInput), percentToNumber(pixFeeInput));
+
+    //coloca o resultado do calculo tco da plataforma do cliente na última página
+    (parent?.querySelector("#"+rootId+'currentPlatform') as HTMLElement).textContent = currentPlatformInput;
     (parent?.querySelector("#"+rootId+'montlyFee') as HTMLElement).textContent = montlyFeeInput;
     (parent?.querySelector("#"+rootId+'comission') as HTMLElement).textContent = comissionInput;
-    const platformTotal = moneyToNumber(montlyFeeInput) + (moneyToNumber(gmvInput) * percentToNumber(comissionInput) / 100);
-    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const cardShareGmv = percentToNumber(cardShareInput) * moneyToNumber(gmvInput) / 100; 
-    const cardFeeMoney = cardShareGmv * percentToNumber(cardFeeInput) / 100;
-    (parent?.querySelector("#"+rootId+"cardFeeMoney") as HTMLElement).textContent = cardFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const pedidosBoleto = percentToNumber(boletoShareInput) / 100 * Number(montlyOrdersInput);
-    const boletoFeeMoney = moneyToNumber(boletoFeeInput) * pedidosBoleto;
-    (parent?.querySelector("#"+rootId+"boletoFeeMoney") as HTMLElement).textContent = boletoFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const pixShareGmv = percentToNumber(pixShareInput) * moneyToNumber(gmvInput) / 100; 
-    const pixFeeMoney = pixShareGmv * percentToNumber(pixFeeInput) / 100;
-    (parent?.querySelector("#"+rootId+"pixFeeMoney") as HTMLElement).textContent = pixFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const totalPaymentMoney = pixFeeMoney + boletoFeeMoney + cardFeeMoney;
-    (parent?.querySelector("#"+rootId+"totalPaymentMoney") as HTMLElement).textContent = totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const totalMoney = totalPaymentMoney + platformTotal;
-    (parent?.querySelector("#"+rootId+"totalMoney") as HTMLElement).textContent = totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const totalTco = totalMoney / moneyToNumber(gmvInput) * 100;
-    (parent?.querySelector("#"+rootId+"totalTco") as HTMLElement).textContent = totalTco.toFixed(2) + "%";
+    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = currentPlatformTco.platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"cardFeeMoney") as HTMLElement).textContent = currentPlatformTco.cardFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"boletoFeeMoney") as HTMLElement).textContent = currentPlatformTco.boletoFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"pixFeeMoney") as HTMLElement).textContent = currentPlatformTco.pixFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"totalPaymentMoney") as HTMLElement).textContent = currentPlatformTco.totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"totalMoney") as HTMLElement).textContent = currentPlatformTco.totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"totalTco") as HTMLElement).textContent = (currentPlatformTco.totalTco.toFixed(2) + "%").toString().replace(".", ",");
+
+    console.log(currentPlatformInput);
+    console.log((parent?.querySelector("#"+rootId+'currentPlatform') as HTMLElement));
+    console.log(currentPlatformInput);
 
 };
 

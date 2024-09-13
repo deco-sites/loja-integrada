@@ -201,6 +201,7 @@ function TcoCalculatorPage2(
                         </div>
                         <select 
                             class={inputClass}
+                            id={rootId+"currentPlatformInput"}
                         >
                             {currentPlatform.options.map(option => (
                                 <option>{option}</option>

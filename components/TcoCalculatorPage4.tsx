@@ -236,7 +236,7 @@ function TcoCalculatorPage4(
                     <div>
                         <div class="flex justify-between min-w-[390px] py-[18px]">
                             <p></p>
-                            <p class="min-w-40 text-center text-primary font-semibold">NuvemShop</p>
+                            <p id={rootId + "currentPlatform"} class="min-w-40 text-center text-primary font-semibold" />
                         </div>
                     </div>
                     <div class="bg-primary py-[18px] px-3 max-w-[193px] w-full">
