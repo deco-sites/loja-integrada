@@ -243,15 +243,15 @@ function TcoCalculatorPage4(
                         <p class="bg-transparent text-primary-content text-center font-semibold">Loja Integrada</p>
                     </div>
                 </div>
-                <ResultRow label={result.montlyFeeLabel} userValueId={rootId + "montlyFee"} />
-                <ResultRow label={result.salesComissionLabel} userValueId={rootId + "comission"} />
-                <ResultRow label={result.platformTotal} userValueId={rootId + "platformTotal"} />
-                <ResultRow label={result.cardLabel} userValueId={rootId + "cardFeeMoney"} />
-                <ResultRow label={result.boletoLabel} userValueId={rootId + "boletoFeeMoney"} />
-                <ResultRow label={result.pixLabel} userValueId={rootId + "pixFeeMoney"} />
-                <ResultRow label={result.totalPaymentLabel} userValueId={rootId + "totalPaymentMoney"} />
-                <ResultRow label={result.totalLabel} userValueId={rootId + "totalMoney"} />
-                <ResultRow label={result.totalTcoLabel} userValueId={rootId + "totalTco"} />
+                <ResultRow label={result.montlyFeeLabel} userValueId={rootId + "montlyFee"} lojaIntegradaValueId={rootId + "montlyFeeIndicatedPlan"} />
+                <ResultRow label={result.salesComissionLabel} userValueId={rootId + "comission"} lojaIntegradaValueId={rootId + "comissionIndicatedPlan"} />
+                <ResultRow label={result.platformTotal} userValueId={rootId + "platformTotal"} lojaIntegradaValueId={rootId + "platformTotalIndicatedPlan"} />
+                <ResultRow label={result.cardLabel} userValueId={rootId + "cardFeeMoney"} lojaIntegradaValueId={rootId + "cardFeeMoneyIndicatedPlan"} />
+                <ResultRow label={result.boletoLabel} userValueId={rootId + "boletoFeeMoney"} lojaIntegradaValueId={rootId + "boletoFeeMoneyIndicatedPlan"} />
+                <ResultRow label={result.pixLabel} userValueId={rootId + "pixFeeMoney"} lojaIntegradaValueId={rootId + "pixFeeMoneyIndicatedPlan"} />
+                <ResultRow label={result.totalPaymentLabel} userValueId={rootId + "totalPaymentMoney"} lojaIntegradaValueId={rootId + "totalPaymentMoneyIndicatedPlan"} />
+                <ResultRow label={result.totalLabel} userValueId={rootId + "totalMoney"} lojaIntegradaValueId={rootId + "totalMoneyIndicatedPlan"} />
+                <ResultRow label={result.totalTcoLabel} userValueId={rootId + "totalTco"} lojaIntegradaValueId={rootId + "totalTcoIndicatedPlan"} />
 
                 <div class="flex gap-2.5">
                     <div class="min-w-[390px]" />
