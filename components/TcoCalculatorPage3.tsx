@@ -1,6 +1,7 @@
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
+import { HtmlEscaped } from "@hono/hono/utils/html";
 import { Plan } from "site/sections/TcoCalculator.tsx";
 
 const moneyInputOnKeyUp = () => {
@@ -29,6 +30,7 @@ const percentageInputOnKeyUp = () => {
 
 const onClickNext = (rootId: string, plans: Plan[]) => {
     const parent = document.getElementById(rootId);
+    let negativeResult = false;
     event?.preventDefault();
     if (parent) {
         Array.from(parent.children)[2].classList.add("hidden");
@@ -69,7 +71,7 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
 
     const currentPlatformTco = calculateTco(moneyToNumber(montlyFeeInput), moneyToNumber(gmvInput), percentToNumber(comissionInput), Number(montlyOrdersInput), percentToNumber(cardShareInput), percentToNumber(cardFeeInput), percentToNumber(boletoShareInput), moneyToNumber(boletoFeeInput), percentToNumber(pixShareInput), percentToNumber(pixFeeInput));
 
-    //manda o resultado do calculo tco da plataforma do cliente para a última página
+    //manda o resultado do calculo tco da plataforma atual do cliente para a última página
     (parent?.querySelector("#"+rootId+'currentPlatform') as HTMLElement).textContent = currentPlatformInput;
     (parent?.querySelector("#"+rootId+'montlyFee') as HTMLElement).textContent = montlyFeeInput;
     (parent?.querySelector("#"+rootId+'comission') as HTMLElement).textContent = comissionInput;
@@ -83,10 +85,26 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
 
     //calcula o tco dos planos da loja integrada
     plans.sort((a, b) => b.montlyFee - a.montlyFee);
-    const indicatedPlanTco = calculateTco(plans[0].montlyFee, moneyToNumber(gmvInput), plans[0].comission, Number(montlyOrdersInput), percentToNumber(cardShareInput), plans[0].cardFee, percentToNumber(boletoShareInput), plans[0].boletoFee, percentToNumber(pixShareInput), plans[0].pixFee);
-    const indicatedPlan = 0;
+    const plansTco = plans.map((plan) => calculateTco(plan.montlyFee, moneyToNumber(gmvInput), plan.comission, Number(montlyOrdersInput), percentToNumber(cardShareInput), plan.cardFee, percentToNumber(boletoShareInput), plan.boletoFee, percentToNumber(pixShareInput), plan.pixFee));
+    
+    //calcula quanto economisa com cada plano
+    const savings = plansTco.map((plan) => currentPlatformTco.totalMoney - plan.totalMoney);
+    
+    //escolhe o plano indicado
+    let indicatedPlan = -1;
+    for(let i = 0; i < savings.length; i++) {
+        if (savings[i] > 0) {
+            indicatedPlan = i;
+            i = savings.length + 1;
+        }
+    }
+    console.log(savings);
+    if (indicatedPlan === -1) { 
+        negativeResult = true;
+        indicatedPlan = Math.floor(savings.length / 2); 
+    }
 
-    console.log();
+    const indicatedPlanTco = plansTco[indicatedPlan];
 
     //manda o calculo do tco do plano indicado para a última página
     (parent?.querySelector("#"+rootId+'montlyFeeIndicatedPlan') as HTMLElement).textContent = plans[indicatedPlan].montlyFee.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -98,6 +116,27 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
     (parent?.querySelector("#"+rootId+'totalPaymentMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     (parent?.querySelector("#"+rootId+'totalMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     (parent?.querySelector("#"+rootId+'totalTcoIndicatedPlan') as HTMLElement).textContent = (indicatedPlanTco.totalTco.toFixed(2) + "%").toString().replace(".", ",");
+
+    //calcula a economia com o plano indicado
+    const saving = currentPlatformTco.totalMoney - indicatedPlanTco.totalMoney;
+
+    //manda a economia com o plano indicado para a última página
+    (parent?.querySelector("#"+rootId+"savingAside") as HTMLElement).textContent = saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).split(',')[0];
+    (parent?.querySelector("#"+rootId+"indicatedPlanLabelSaving") as HTMLElement).textContent = saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).split(',')[0];
+    (parent?.querySelector("#"+rootId+"indicatedPlanName") as HTMLElement).textContent = plans[indicatedPlan].title;
+
+    //caso nenhuma plano ofereça economia transforma a tela final na tela negativa
+    if (negativeResult) {
+        parent?.querySelector("#"+rootId+"resultAsideContentDiv")?.classList.add("flex-col-reverse");
+        parent?.querySelector("#"+rootId+"negativeScreenAsideTitle")?.classList.remove("hidden");
+        parent?.querySelector("#"+rootId+"savingDiv")?.classList.add("hidden");
+        parent?.querySelector("#"+rootId+"currentPlanLabel")?.classList.add("hidden");
+        parent?.querySelector("#"+rootId+"indicatedPlanLabel")?.classList.add("hidden");
+        (parent?.querySelector("#"+rootId+"indicatedPlanLabelSaving")?.parentElement?.parentElement as HTMLElement).classList.add("hidden");
+        parent?.querySelector("#"+rootId+"negativeScreenExtraBenefit1")?.classList.remove("hidden");
+        parent?.querySelector("#"+rootId+"negativeScreenExtraBenefit2")?.classList.remove("hidden");
+        parent?.querySelector("#"+rootId+"negativeScreenAsideTopIcon")?.classList.remove("hidden");
+    }
 };
 
 const onClickBack = (rootId: string) => {
