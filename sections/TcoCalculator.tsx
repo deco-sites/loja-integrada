@@ -36,7 +36,7 @@ export interface Props {
 
 function TcoCalculator(props: Props) {
     const id = useId();
-    const { title, caption, page1, page2, page3, page4 } = { ...props };
+    const { title, caption, page1, page2, page3, page4, plans } = { ...props };
 
     return (
         <div
@@ -61,6 +61,7 @@ function TcoCalculator(props: Props) {
                     page1={page1}
                     page3={page3}
                     rootId={id}
+                    plans={plans}
                 />
                 <TcoCalculatorPage4
                     page1={page1}

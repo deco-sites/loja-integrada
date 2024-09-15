@@ -1,6 +1,8 @@
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
+import { HtmlEscaped } from "@hono/hono/utils/html";
+import { Plan } from "site/sections/TcoCalculator.tsx";
 
 const moneyInputOnKeyUp = () => {
     const element = event!.currentTarget as HTMLInputElement;
@@ -26,8 +28,9 @@ const percentageInputOnKeyUp = () => {
     }
 }
 
-const onClickNext = (rootId: string) => {
+const onClickNext = (rootId: string, plans: Plan[]) => {
     const parent = document.getElementById(rootId);
+    let negativeResult = false;
     event?.preventDefault();
     if (parent) {
         Array.from(parent.children)[2].classList.add("hidden");
@@ -38,6 +41,7 @@ const onClickNext = (rootId: string) => {
     const percentToNumber = (value: string):number => parseFloat(value.replace('%', '').replace(',','.').trim());
 
     //pega os valores digitados pelo usuario
+    const currentPlatformInput = (parent?.querySelector("#"+rootId+'currentPlatformInput') as HTMLSelectElement).value;
     const montlyFeeInput = (parent?.querySelector("#"+rootId+'montlyFeeInput') as HTMLInputElement).value;
     const comissionInput = (parent?.querySelector("#"+rootId+"comissionInput") as HTMLInputElement).value;
     const gmvInput = (parent?.querySelector("#"+rootId+"gmvInput") as HTMLInputElement).value;
@@ -49,27 +53,90 @@ const onClickNext = (rootId: string) => {
     const pixShareInput = (parent?.querySelector("#"+rootId+"pixShareInput") as HTMLInputElement).value;
     const pixFeeInput = (parent?.querySelector("#"+rootId+"pixFeeInput") as HTMLInputElement).value;                                                                            
 
-    //coloca os valores digitados pelo usuario na pagina de resultado e calcula campos necessarios
+    //calcula o tco da plataforma atual do usuario
+    function calculateTco (montlyFee: number, gmv: number, comission: number, MontlyOrders: number, cardShare: number, cardFee: number,  boletoShare: number, boletoFee: number, pixShare: number, pixFee: number) {
+        
+        const platformTotal = montlyFee + (gmv * comission / 100);
+        const cardShareGmv = cardShare * gmv / 100;
+        const boletoOrders = boletoShare / 100 * MontlyOrders;
+        const pixShareGmv = pixShare * gmv / 100;
+        const cardFeeMoney = cardShareGmv * cardFee / 100;
+        const boletoFeeMoney = boletoFee * boletoOrders;
+        const pixFeeMoney = pixShareGmv * pixFee / 100;
+        const totalPaymentMoney = pixFeeMoney + boletoFeeMoney + cardFeeMoney;
+        const totalMoney = totalPaymentMoney + platformTotal;
+
+        return { platformTotal, cardFeeMoney, boletoFeeMoney, pixFeeMoney, totalPaymentMoney, totalMoney, totalTco: totalMoney / gmv * 100 }
+    }
+
+    const currentPlatformTco = calculateTco(moneyToNumber(montlyFeeInput), moneyToNumber(gmvInput), percentToNumber(comissionInput), Number(montlyOrdersInput), percentToNumber(cardShareInput), percentToNumber(cardFeeInput), percentToNumber(boletoShareInput), moneyToNumber(boletoFeeInput), percentToNumber(pixShareInput), percentToNumber(pixFeeInput));
+
+    //manda o resultado do calculo tco da plataforma atual do cliente para a última página
+    (parent?.querySelector("#"+rootId+'currentPlatform') as HTMLElement).textContent = currentPlatformInput;
     (parent?.querySelector("#"+rootId+'montlyFee') as HTMLElement).textContent = montlyFeeInput;
     (parent?.querySelector("#"+rootId+'comission') as HTMLElement).textContent = comissionInput;
-    const platformTotal = moneyToNumber(montlyFeeInput) + (moneyToNumber(gmvInput) * percentToNumber(comissionInput) / 100);
-    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const cardShareGmv = percentToNumber(cardShareInput) * moneyToNumber(gmvInput) / 100; 
-    const cardFeeMoney = cardShareGmv * percentToNumber(cardFeeInput) / 100;
-    (parent?.querySelector("#"+rootId+"cardFeeMoney") as HTMLElement).textContent = cardFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const pedidosBoleto = percentToNumber(boletoShareInput) / 100 * Number(montlyOrdersInput);
-    const boletoFeeMoney = moneyToNumber(boletoFeeInput) * pedidosBoleto;
-    (parent?.querySelector("#"+rootId+"boletoFeeMoney") as HTMLElement).textContent = boletoFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const pixShareGmv = percentToNumber(pixShareInput) * moneyToNumber(gmvInput) / 100; 
-    const pixFeeMoney = pixShareGmv * percentToNumber(pixFeeInput) / 100;
-    (parent?.querySelector("#"+rootId+"pixFeeMoney") as HTMLElement).textContent = pixFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const totalPaymentMoney = pixFeeMoney + boletoFeeMoney + cardFeeMoney;
-    (parent?.querySelector("#"+rootId+"totalPaymentMoney") as HTMLElement).textContent = totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const totalMoney = totalPaymentMoney + platformTotal;
-    (parent?.querySelector("#"+rootId+"totalMoney") as HTMLElement).textContent = totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const totalTco = totalMoney / moneyToNumber(gmvInput) * 100;
-    (parent?.querySelector("#"+rootId+"totalTco") as HTMLElement).textContent = totalTco.toFixed(2) + "%";
+    (parent?.querySelector("#"+rootId+'platformTotal') as HTMLElement).textContent = currentPlatformTco.platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"cardFeeMoney") as HTMLElement).textContent = currentPlatformTco.cardFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"boletoFeeMoney") as HTMLElement).textContent = currentPlatformTco.boletoFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"pixFeeMoney") as HTMLElement).textContent = currentPlatformTco.pixFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"totalPaymentMoney") as HTMLElement).textContent = currentPlatformTco.totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"totalMoney") as HTMLElement).textContent = currentPlatformTco.totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+"totalTco") as HTMLElement).textContent = (currentPlatformTco.totalTco.toFixed(2) + "%").toString().replace(".", ",");
 
+    //calcula o tco dos planos da loja integrada
+    plans.sort((a, b) => b.montlyFee - a.montlyFee);
+    const plansTco = plans.map((plan) => calculateTco(plan.montlyFee, moneyToNumber(gmvInput), plan.comission, Number(montlyOrdersInput), percentToNumber(cardShareInput), plan.cardFee, percentToNumber(boletoShareInput), plan.boletoFee, percentToNumber(pixShareInput), plan.pixFee));
+    
+    //calcula quanto economisa com cada plano
+    const savings = plansTco.map((plan) => currentPlatformTco.totalMoney - plan.totalMoney);
+    
+    //escolhe o plano indicado
+    let indicatedPlan = -1;
+    for(let i = 0; i < savings.length; i++) {
+        if (savings[i] > 0) {
+            indicatedPlan = i;
+            i = savings.length + 1;
+        }
+    }
+    console.log(savings);
+    if (indicatedPlan === -1) { 
+        negativeResult = true;
+        indicatedPlan = Math.floor(savings.length / 2); 
+    }
+
+    const indicatedPlanTco = plansTco[indicatedPlan];
+
+    //manda o calculo do tco do plano indicado para a última página
+    (parent?.querySelector("#"+rootId+'montlyFeeIndicatedPlan') as HTMLElement).textContent = plans[indicatedPlan].montlyFee.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'comissionIndicatedPlan') as HTMLElement).textContent = (plans[indicatedPlan].comission + "%").replace(".", ",");
+    (parent?.querySelector("#"+rootId+'platformTotalIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.platformTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'cardFeeMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.cardFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'boletoFeeMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.boletoFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'pixFeeMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.pixFeeMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'totalPaymentMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.totalPaymentMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'totalMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    (parent?.querySelector("#"+rootId+'totalTcoIndicatedPlan') as HTMLElement).textContent = (indicatedPlanTco.totalTco.toFixed(2) + "%").toString().replace(".", ",");
+
+    //calcula a economia com o plano indicado
+    const saving = currentPlatformTco.totalMoney - indicatedPlanTco.totalMoney;
+
+    //manda a economia com o plano indicado para a última página
+    (parent?.querySelector("#"+rootId+"savingAside") as HTMLElement).textContent = saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).split(',')[0];
+    (parent?.querySelector("#"+rootId+"indicatedPlanLabelSaving") as HTMLElement).textContent = saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).split(',')[0];
+    (parent?.querySelector("#"+rootId+"indicatedPlanName") as HTMLElement).textContent = plans[indicatedPlan].title;
+
+    //caso nenhuma plano ofereça economia transforma a tela final na tela negativa
+    if (negativeResult) {
+        parent?.querySelector("#"+rootId+"resultAsideContentDiv")?.classList.add("flex-col-reverse");
+        parent?.querySelector("#"+rootId+"negativeScreenAsideTitle")?.classList.remove("hidden");
+        parent?.querySelector("#"+rootId+"savingDiv")?.classList.add("hidden");
+        parent?.querySelector("#"+rootId+"currentPlanLabel")?.classList.add("hidden");
+        parent?.querySelector("#"+rootId+"indicatedPlanLabel")?.classList.add("hidden");
+        (parent?.querySelector("#"+rootId+"indicatedPlanLabelSaving")?.parentElement?.parentElement as HTMLElement).classList.add("hidden");
+        parent?.querySelector("#"+rootId+"negativeScreenExtraBenefit1")?.classList.remove("hidden");
+        parent?.querySelector("#"+rootId+"negativeScreenExtraBenefit2")?.classList.remove("hidden");
+        parent?.querySelector("#"+rootId+"negativeScreenAsideTopIcon")?.classList.remove("hidden");
+    }
 };
 
 const onClickBack = (rootId: string) => {
@@ -138,7 +205,7 @@ function InfoIcon() {
 }
 
 function TcoCalculatorPage3(
-    { page1, rootId, page3 }: { page1: Page1; page3: Page3; rootId: string, },
+    { page1, rootId, page3, plans }: { page1: Page1; page3: Page3; rootId: string, plans: Plan[] },
 ) {
     const {
         title, caption, benefits, contentTitle, contentTitleIcon, contentCaption, contentBackground, asideBackground, asideTopIcon
@@ -215,7 +282,7 @@ function TcoCalculatorPage3(
                     alt={progressImage.alt || "progress image"}
                 /></div>}
 
-                <form class="flex flex-wrap gap-[38px] mt-14 w-full" hx-on:submit={useScript(onClickNext, rootId)}>
+                <form class="flex flex-wrap gap-[38px] mt-14 w-full" hx-on:submit={useScript(onClickNext, rootId, plans)}>
                     <label class={labeClass}>
                         <div class={inputCaptionClass} >
                             <p>{cardShare.caption}</p>
@@ -318,7 +385,7 @@ function TcoCalculatorPage3(
                         >
                         </input>
                     </label>
-                    <div class="w-[375px] flex flex-col gap-y-[18px]">
+                    <div class="w-[375px] flex flex-col gap-y-[18px] hidden">
                         <label class="w-full">
                             <div class={inputCaptionClass} >
                                 <p>{antiFraudCosts.caption}</p>
@@ -331,7 +398,7 @@ function TcoCalculatorPage3(
                                 hx-on:keyup={useScript(moneyInputOnKeyUp)}
                                 type="text"
                                 placeholder={antiFraudCosts.placeholder}
-                                required
+                                // required
                             >
                             </input>
                         </label>
@@ -347,7 +414,7 @@ function TcoCalculatorPage3(
                                 hx-on:keyup={useScript(moneyInputOnKeyUp)}
                                 type="text"
                                 placeholder={processingCosts.placeholder}
-                                required
+                                // required
                             >
                             </input>
                         </label>

@@ -821,11 +821,12 @@
         },
         "saving": {
           "textBefore": "Economize",
-          "textAfter": "no plano Expansão",
+          "textAfter": "no plano",
           "background": {
             "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/20ee682c-2405-4b9c-92e7-453ee5cf43e6/savings-bg-png.png",
             "alt": "savings background"
-          }
+          },
+          "indicatedPlanSavingLabel": "Economia de"
         },
         "benefit1": {
           "text": "Aumente suas vendas e economize na sua operação com as nossas soluções nativas",
@@ -857,7 +858,20 @@
             "outline": false
           },
           "montlyFeeLojaIntegrada": "R$ 259,00"
-        }
+        },
+        "negativeScreenExtraBenefit2": {
+          "text": "Atendimento personalizado com gerente de performance dedicado à sua conta",
+          "image": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5bf710f8-0e2f-4a41-81f6-04efe77d7d47/extra-benefit-2-background-image.png"
+          }
+        },
+        "negativeScreenExtraBenefit1": {
+          "text": "Smartcheckout: checkout sem senha, baseado no smartcheckout da VTEX",
+          "image": {
+            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ffa82a75-e6b5-4115-a166-79a2f43d4dc9/extra-benefit-1-background-image.png"
+          }
+        },
+        "negativeScreenAsideTitle": "Por que migrar para a Loja Integrada?"
       },
       "plans": [
         {

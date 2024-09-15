@@ -54,7 +54,9 @@ export interface Page4 {
         textBefore: string;
         textAfter: string;
         background: IImage;
+        indicatedPlanSavingLabel: string;
     }
+    negativeScreenAsideTitle?: string;
     whatsappText: string;
     whatsappNameInput: IInput;
     whatsappNumberInput: IInput;
@@ -64,6 +66,14 @@ export interface Page4 {
         image?: IImage;
     }
     benefit2: {
+        text: string;
+        image?: IImage;
+    }
+    negativeScreenExtraBenefit1: {
+        text: string;
+        image?: IImage;
+    }
+    negativeScreenExtraBenefit2: {
         text: string;
         image?: IImage;
     }
@@ -91,7 +101,7 @@ function TcoCalculatorPage4(
         contentTitle, contentTitleIcon, contentCaption, asideTopIcon
     } = page1;
 
-    const { progressImage, contentBackground, saving, whasappCta, whatsappNameInput, whatsappNumberInput, whatsappText, benefit1, benefit2, result } = page4;
+    const { progressImage, contentBackground, saving, whasappCta, whatsappNameInput, whatsappNumberInput, whatsappText, benefit1, benefit2, result, negativeScreenExtraBenefit1, negativeScreenExtraBenefit2, negativeScreenAsideTitle } = page4;
 
     const inputCaptionClass = "text-base text-primary font-bold flex justify-between items-center";
     const inputClass = "bg-transparent min-h-[38px] w-full rounded-lg border border-neutral-content px-4 mt-1";
@@ -101,11 +111,19 @@ function TcoCalculatorPage4(
             class="relative flex w-full min-h-[971px] rounded-[30px] overflow-hidden hidden"
         >
             <div class={`relative max-w-[437px] pt-[70px] px-7 bg-warning text-primary`}>
-                <div class="px-7 py-[14px] relative max-w-[242px]">
+                {asideTopIcon && <Image
+                    id={rootId + "negativeScreenAsideTopIcon"}
+                    width={133}
+                    height={119}
+                    src={asideTopIcon.src}
+                    alt={asideTopIcon.alt || "content background"}
+                    class="absolute top-4 right-[-30px] w-[133px] h-[119px] object-contain z-10 hidden"
+                />}
+                <div id={rootId + "savingDiv"} class="px-7 py-[14px] relative max-w-[242px]">
                     <div class="relative z-10">
                         <p class="text-xl font-semibold pr-9">{saving.textBefore}</p>
-                        <input type="text" disabled value="R$ 845" class="bg-transparent text-[40px] font-semibold" />
-                        <p class="text-xl font-semibold">{saving.textAfter}</p>
+                        <p id={rootId + "savingAside"} class="bg-transparent text-[40px] font-semibold" />
+                        <p class="text-xl font-semibold">{saving.textAfter} <span id={rootId + "indicatedPlanName"} /></p>
                     </div>
                     <Image
                         width={242}
@@ -123,70 +141,92 @@ function TcoCalculatorPage4(
                     />}
                 </div>
 
-                <p class="mt-[70px] text-xl ">{whatsappText}</p>
-
-                <form class="mt-5 max-w-64 flex flex-col gap-5 z-10">
-                    <label>
-                        <div class={inputCaptionClass} >
-                            <p>{whatsappNameInput.caption}</p>
-                        </div>
-                        <input
-                            class={inputClass}
-                            type="text"
-                            placeholder={whatsappNameInput.placeholder}
-                            disabled={false}
-                        >
-                        </input>
-                    </label>
-                    <label>
-                        <div class={inputCaptionClass} >
-                            <p>{whatsappNumberInput.caption}</p>
-                        </div>
-                        <input
-                            class={inputClass}
-                            type="tel"
-                            placeholder={whatsappNumberInput.placeholder}
-                        >
-                        </input>
-                    </label>
+                <p id={rootId + "negativeScreenAsideTitle"} class="text-2xl font-semibold hidden">{negativeScreenAsideTitle}</p>
+                <div id={rootId + "resultAsideContentDiv"} class="flex flex-col gap-y-[70px] mt-10">
                     <div>
-                        <a
-                            id={whasappCta.id}
-                            href={whasappCta?.href ?? "#"}
-                            target={whasappCta?.href.includes("http") ? "_blank" : "_self"}
-                            class={`btn btn-primary ${whasappCta.outline ? "btn-outline" : ""} font-bold px-5 hover:scale-110 text-lg h-auto w-auto`}
-                        >
-                            {whasappCta.icon && <Image
-                                width={20}
-                                height={20}
-                                src={whasappCta.icon.src}
-                                class="h-5 w-5"
-                            />}
-                            {whasappCta?.text}
-                        </a>
+                        <p class="text-xl ">{whatsappText}</p>
+                        <form class="mt-5 max-w-64 flex flex-col gap-5 z-10">
+                            <label>
+                                <div class={inputCaptionClass} >
+                                    <p>{whatsappNameInput.caption}</p>
+                                </div>
+                                <input
+                                    class={inputClass}
+                                    type="text"
+                                    placeholder={whatsappNameInput.placeholder}
+                                    disabled={false}
+                                >
+                                </input>
+                            </label>
+                            <label>
+                                <div class={inputCaptionClass} >
+                                    <p>{whatsappNumberInput.caption}</p>
+                                </div>
+                                <input
+                                    class={inputClass}
+                                    type="tel"
+                                    placeholder={whatsappNumberInput.placeholder}
+                                >
+                                </input>
+                            </label>
+                            <div>
+                                <a
+                                    id={whasappCta.id}
+                                    href={whasappCta?.href ?? "#"}
+                                    target={whasappCta?.href.includes("http") ? "_blank" : "_self"}
+                                    class={`btn btn-primary ${whasappCta.outline ? "btn-outline" : ""} font-bold px-5 hover:scale-110 text-lg h-auto w-auto`}
+                                >
+                                    {whasappCta.icon && <Image
+                                        width={20}
+                                        height={20}
+                                        src={whasappCta.icon.src}
+                                        class="h-5 w-5"
+                                    />}
+                                    {whasappCta?.text}
+                                </a>
+                            </div>
+                        </form>
                     </div>
-                </form>
-                <div class="mt-[70px] flex gap-4">
-                    <div class="relative max-w-[226px] min-h-[238px] px-2 py-5">
-                        <p class="text-center text-base font-semibold relative z-10">{benefit1.text}</p>
-                        {benefit1.image && <Image
-                            src={benefit1.image.src}
-                            alt={benefit1.image.alt || "background"}
-                            width={226}
-                            height={237}
-                            class="h-full w-full object-fill absolute top-0 left-0"
-                        />}
-                    </div>
-                    <div class="flex items-end">
-                        <div class="relative max-w-[140px] min-h-[163px] px-2 py-5">
-                            <p class="text-center text-base font-semibold relative z-10">{benefit2.text}</p>
-                            {benefit2.image && <Image
-                                src={benefit2.image.src}
-                                alt={benefit2.image.alt || "background"}
-                                width={140}
-                                height={163}
-                                class="h-full w-full object-fill absolute top-0 left-0"
-                            />}
+                    <div class="flex gap-4">
+                        <div class="flex flex-col gap-y-5">
+                            <div id={rootId + "negativeScreenExtraBenefit1"} class="relative max-w-[226px] min-h-[125px] px-2 py-5 hidden">
+                                <p class="text-center text-base font-semibold relative z-10">{negativeScreenExtraBenefit1.text}</p>
+                                {negativeScreenExtraBenefit1.image && <Image
+                                    src={negativeScreenExtraBenefit1.image.src}
+                                    alt={negativeScreenExtraBenefit1.image.alt || "background"}
+                                    width={226}
+                                    class="h-full w-full object-fill absolute top-0 left-0"
+                                />}
+                            </div>
+                            <div class="relative max-w-[226px] min-h-[238px] px-2 py-5">
+                                <p class="text-center text-base font-semibold relative z-10">{benefit1.text}</p>
+                                {benefit1.image && <Image
+                                    src={benefit1.image.src}
+                                    alt={benefit1.image.alt || "background"}
+                                    width={226}
+                                    class="h-full w-full object-fill absolute top-0 left-0"
+                                />}
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-end gap-y-5">
+                            <div class="relative max-w-[140px] min-h-[163px] px-2 py-5">
+                                <p class="text-center text-base font-semibold relative z-10">{benefit2.text}</p>
+                                {benefit2.image && <Image
+                                    src={benefit2.image.src}
+                                    alt={benefit2.image.alt || "background"}
+                                    width={140}
+                                    class="h-full w-full object-fill absolute top-0 left-0"
+                                />}
+                            </div>
+                            <div id={rootId + "negativeScreenExtraBenefit2"} class="relative max-w-[140px] min-h-[191px] h-full px-2 py-5 hidden">
+                                <p class="text-center text-base font-semibold relative z-10">{negativeScreenExtraBenefit2.text}</p>
+                                {negativeScreenExtraBenefit2.image && <Image
+                                    src={negativeScreenExtraBenefit2.image.src}
+                                    alt={negativeScreenExtraBenefit2.image.alt || "background"}
+                                    width={140}
+                                    class="h-full w-full object-fill absolute top-0 left-0"
+                                />}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,14 +261,14 @@ function TcoCalculatorPage4(
                     <div>
                         <div class="flex justify-between min-w-[390px] pt-9">
                             <p></p>
-                            <p class="min-w-40 text-center text-primary font-semibold bg-info rounded-[20px] py-2.5 pt-2">😥  menos vantajoso</p>
+                            <p id={rootId + "currentPlanLabel"} class="min-w-40 text-center text-primary font-semibold bg-info rounded-[20px] py-2.5 pt-2">😥  menos vantajoso</p>
                         </div>
                     </div>
                     <div class="relative bg-primary pt-9 px-3 max-w-[193px] w-full rounded-tl-[20px] rounded-tr-[20px]">
                         <div class="absolute w-full top-[-29px] left-0 h-14 bg-error-content bg-opacity-30 -z-10 rounded-lg">
-                            <p class="text-primary text-xs text-center font-semibold pt-2">Economia de R$ 845</p>
+                            <p class="text-primary text-xs text-center font-semibold pt-2">{saving.indicatedPlanSavingLabel} <span id={rootId + "indicatedPlanLabelSaving"} /></p>
                         </div>
-                        <p class="text-primary text-center font-semibold bg-info rounded-[20px] py-2.5 pb-3 pt-2">🚀 mais vantajoso</p>
+                        <p id={rootId + "indicatedPlanLabel"} class="text-primary text-center font-semibold bg-info rounded-[20px] py-2.5 pb-3 pt-2">🚀 mais vantajoso</p>
                     </div>
                 </div>
 
@@ -236,22 +276,22 @@ function TcoCalculatorPage4(
                     <div>
                         <div class="flex justify-between min-w-[390px] py-[18px]">
                             <p></p>
-                            <p class="min-w-40 text-center text-primary font-semibold">NuvemShop</p>
+                            <p id={rootId + "currentPlatform"} class="min-w-40 text-center text-primary font-semibold" />
                         </div>
                     </div>
                     <div class="bg-primary py-[18px] px-3 max-w-[193px] w-full">
                         <p class="bg-transparent text-primary-content text-center font-semibold">Loja Integrada</p>
                     </div>
                 </div>
-                <ResultRow label={result.montlyFeeLabel} userValueId={rootId + "montlyFee"} />
-                <ResultRow label={result.salesComissionLabel} userValueId={rootId + "comission"} />
-                <ResultRow label={result.platformTotal} userValueId={rootId + "platformTotal"} />
-                <ResultRow label={result.cardLabel} userValueId={rootId + "cardFeeMoney"} />
-                <ResultRow label={result.boletoLabel} userValueId={rootId + "boletoFeeMoney"} />
-                <ResultRow label={result.pixLabel} userValueId={rootId + "pixFeeMoney"} />
-                <ResultRow label={result.totalPaymentLabel} userValueId={rootId + "totalPaymentMoney"} />
-                <ResultRow label={result.totalLabel} userValueId={rootId + "totalMoney"} />
-                <ResultRow label={result.totalTcoLabel} userValueId={rootId + "totalTco"} />
+                <ResultRow label={result.montlyFeeLabel} userValueId={rootId + "montlyFee"} lojaIntegradaValueId={rootId + "montlyFeeIndicatedPlan"} />
+                <ResultRow label={result.salesComissionLabel} userValueId={rootId + "comission"} lojaIntegradaValueId={rootId + "comissionIndicatedPlan"} />
+                <ResultRow label={result.platformTotal} userValueId={rootId + "platformTotal"} lojaIntegradaValueId={rootId + "platformTotalIndicatedPlan"} />
+                <ResultRow label={result.cardLabel} userValueId={rootId + "cardFeeMoney"} lojaIntegradaValueId={rootId + "cardFeeMoneyIndicatedPlan"} />
+                <ResultRow label={result.boletoLabel} userValueId={rootId + "boletoFeeMoney"} lojaIntegradaValueId={rootId + "boletoFeeMoneyIndicatedPlan"} />
+                <ResultRow label={result.pixLabel} userValueId={rootId + "pixFeeMoney"} lojaIntegradaValueId={rootId + "pixFeeMoneyIndicatedPlan"} />
+                <ResultRow label={result.totalPaymentLabel} userValueId={rootId + "totalPaymentMoney"} lojaIntegradaValueId={rootId + "totalPaymentMoneyIndicatedPlan"} />
+                <ResultRow label={result.totalLabel} userValueId={rootId + "totalMoney"} lojaIntegradaValueId={rootId + "totalMoneyIndicatedPlan"} />
+                <ResultRow label={result.totalTcoLabel} userValueId={rootId + "totalTco"} lojaIntegradaValueId={rootId + "totalTcoIndicatedPlan"} />
 
                 <div class="flex gap-2.5">
                     <div class="min-w-[390px]" />
