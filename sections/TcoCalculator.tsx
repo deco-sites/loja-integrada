@@ -4,6 +4,7 @@ import TcoCalculatorPage1 from "site/components/TcoCalculatorPage1.tsx";
 import TcoCalculatorPage2 from "site/components/TcoCalculatorPage2.tsx";
 import TcoCalculatorPage3 from "site/components/TcoCalculatorPage3.tsx";
 import TcoCalculatorPage4 from "site/components/TcoCalculatorPage4.tsx";
+import TcoCalculatorMobileStartPage from "site/components/TcoCalculatorMobileStartPage.tsx";
 import { Page1 } from "site/components/TcoCalculatorPage1.tsx";
 import { Page2 } from "site/components/TcoCalculatorPage2.tsx";
 import { Page3 } from "site/components/TcoCalculatorPage3.tsx"
@@ -40,12 +41,12 @@ function TcoCalculator(props: Props) {
 
     return (
         <div
-            class="min-h-min flex flex-col lg:container md:max-w-[1332px] lg:mx-auto pt-7 lg:pt-[123px]"
+            class="min-h-min flex flex-col lg:container md:max-w-[1332px] lg:mx-auto lg:pt-[123px]"
         >
-            {caption && <h3 class="text-center text-neutral text-2xl font-semibold">{caption}</h3>}
-            {title && <h2 class="mt-3 text-center text-primary text-5xl font-semibold">{title}</h2>}
+            {caption && <h3 class="text-center text-neutral text-2xl font-semibold hidden lg:block">{caption}</h3>}
+            {title && <h2 class="mt-3 text-center text-primary text-5xl font-semibold hidden lg:block">{title}</h2>}
             <div
-                class="w-full gap-9 pl-[30px] pr-[22px] pt-[116px] pb-9 md:px-9"
+                class="w-full gap-9 lg:pt-[116px] pb-9 lg:px-9"
                 id={id}
             >
                 <TcoCalculatorPage1
@@ -66,6 +67,10 @@ function TcoCalculator(props: Props) {
                 <TcoCalculatorPage4
                     page1={page1}
                     page4={page4}
+                    rootId={id}
+                />
+                <TcoCalculatorMobileStartPage
+                    page1={page1}
                     rootId={id}
                 />
             </div>

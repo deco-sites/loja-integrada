@@ -182,6 +182,7 @@ export interface Page1 {
     asideBackground?: IImage;
     asideTopIcon?: IImage;
     contentBackground?: IImage;
+    mobileTopBanner: IImage;
 }
 
 export interface Page3 { 
@@ -208,20 +209,20 @@ function TcoCalculatorPage3(
     { page1, rootId, page3, plans }: { page1: Page1; page3: Page3; rootId: string, plans: Plan[] },
 ) {
     const {
-        title, caption, benefits, contentTitle, contentTitleIcon, contentCaption, contentBackground, asideBackground, asideTopIcon
+        title, caption, benefits, contentTitle, contentTitleIcon, contentCaption, contentBackground, asideBackground, asideTopIcon, mobileTopBanner
     } = page1;
 
     const { progressImage, cardShare, cardFee, boletoShare, boletoFee, pixFee, pixShare, antiFraudCosts, processingCosts, nextButtonText, backButtonText } = page3;
 
-    const labeClass = "w-[195px]";
+    const labeClass = "w-full md:w-[40%] lg:w-[195px]";
     const inputCaptionClass = "text-base text-primary flex justify-between items-center";
     const inputClass = "bg-transparent min-h-[38px] w-full rounded-lg border border-primary px-4 mt-2.5";
 
     return (
         <div
-            class="relative flex w-full min-h-[971px] rounded-[30px] overflow-hidden hidden"
+            class="relative flex flex-wrap lg:flex-nowrap w-full min-h-[971px] lg:rounded-[30px] overflow-hidden hidden"
         >
-            <div class={`relative max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content`}>
+            <div class={`relative w-full lg:max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content hidden lg:block`}>
                 {asideTopIcon && <Image
                     width={133}
                     height={119}
@@ -257,7 +258,18 @@ function TcoCalculatorPage3(
                 </div>
             </div>
 
-            <div class="py-14 px-28 relative">
+            <div class="lg:hidden relative text-2xl text-secondary-content font-semibold py-10 px-4 w-full min-h-[155px]">
+                    {mobileTopBanner && <Image 
+                        width={430}
+                        height={155}
+                        alt={mobileTopBanner.alt || "background image"}
+                        src={mobileTopBanner.src}
+                        class="absolute w-full h-full top-0 left-0 object-cover -z-10"
+                    />}
+                    <p>{title}</p>
+            </div>
+
+            <div class="py-14 px-3.5 lg:px-28 relative w-full">
                 {contentBackground && <Image
                     width={813}
                     height={971}
@@ -280,13 +292,14 @@ function TcoCalculatorPage3(
                     height={70}
                     src={progressImage.src}
                     alt={progressImage.alt || "progress image"}
+                    class="max-h-[67px] object-contain object-left"
                 /></div>}
 
                 <form class="flex flex-wrap gap-[38px] mt-14 w-full" hx-on:submit={useScript(onClickNext, rootId, plans)}>
                     <label class={labeClass}>
                         <div class={inputCaptionClass} >
                             <p>{cardShare.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={cardShare.tooltipMessage}>
+                            <div class="tooltip tooltip-primary tooltip-left" data-tip={cardShare.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -303,7 +316,7 @@ function TcoCalculatorPage3(
                     <label class={labeClass}>
                         <div class={inputCaptionClass} >
                             <p>{cardFee.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={cardFee.tooltipMessage}>
+                            <div class="tooltip tooltip-primary tooltip-left" data-tip={cardFee.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -320,7 +333,7 @@ function TcoCalculatorPage3(
                     <label class={labeClass}>
                         <div class={inputCaptionClass} > 
                             <p>{boletoShare.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={boletoShare.tooltipMessage}>
+                            <div class="tooltip tooltip-primary tooltip-left" data-tip={boletoShare.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -337,7 +350,7 @@ function TcoCalculatorPage3(
                     <label class={labeClass}>
                         <div class={inputCaptionClass} >
                             <p>{boletoFee.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={boletoFee.tooltipMessage}>
+                            <div class="tooltip tooltip-primary tooltip-left" data-tip={boletoFee.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -354,7 +367,7 @@ function TcoCalculatorPage3(
                     <label class={labeClass}>
                         <div class={inputCaptionClass} > 
                             <p>{pixShare.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={pixShare.tooltipMessage}>
+                            <div class="tooltip tooltip-primary tooltip-left" data-tip={pixShare.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -371,7 +384,7 @@ function TcoCalculatorPage3(
                     <label class={labeClass}>
                         <div class={inputCaptionClass} >
                             <p>{pixFee.caption}</p>
-                            <div class="tooltip tooltip-info" data-tip={pixFee.tooltipMessage}>
+                            <div class="tooltip tooltip-primary tooltip-left" data-tip={pixFee.tooltipMessage}>
                                 <InfoIcon />
                             </div>
                         </div>
@@ -389,7 +402,7 @@ function TcoCalculatorPage3(
                         <label class="w-full">
                             <div class={inputCaptionClass} >
                                 <p>{antiFraudCosts.caption}</p>
-                                <div class="tooltip tooltip-info" data-tip={antiFraudCosts.tooltipMessage}>
+                                <div class="tooltip tooltip-primary tooltip-left" data-tip={antiFraudCosts.tooltipMessage}>
                                     <InfoIcon />
                                 </div>
                             </div>
@@ -405,7 +418,7 @@ function TcoCalculatorPage3(
                         <label class="w-full">
                             <div class={inputCaptionClass} >
                                 <p>{processingCosts.caption}</p>
-                                <div class="tooltip tooltip-info" data-tip={processingCosts.tooltipMessage}>
+                                <div class="tooltip tooltip-primary tooltip-left" data-tip={processingCosts.tooltipMessage}>
                                     <InfoIcon />
                                 </div>
                             </div>

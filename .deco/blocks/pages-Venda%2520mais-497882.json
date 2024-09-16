@@ -664,7 +664,7 @@
         },
         "contentCaption": "Preencha os campos abaixo com seus custos atuais e  compare com os custos da Loja Integrada:",
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4ae51a58-e6ee-4ea4-9091-3444688795a9/progress-1.svg",
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/db7538ad-59ff-4a2f-a6f6-0b26aea201a2/progress-1.svg",
           "alt": "progress bar"
         },
         "objectivesCaption": "Qual o seu objetivo?",
@@ -702,13 +702,22 @@
         },
         "asideTopIcon": {
           "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3378d398-85c5-4432-b6b7-fff2419fbeaf/Coins.svg"
-        }
+        },
+        "mobileTopBanner": {
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/554fb72f-c6c8-4ab7-865b-abf6db6424ec/mobile-top-banner.svg",
+          "alt": "mobile top banner"
+        },
+        "mobileStartBanner": {
+          "alt": "mobile start screen background",
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7bb388f3-cdd3-4873-9705-250ea560571c/mobile-start-banner2.svg"
+        },
+        "mobileStartButtonText": "Iniciar cálculo TCO"
       },
       "title": "Calcule a eficiência da sua operação",
       "caption": "Cálculo de TCO",
       "page2": {
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7d774b13-a5f2-4366-890b-27119e1d6ffc/progress-2.svg",
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/777e9d5f-780c-4d07-b054-33c67c89f470/progress-2.svg",
           "alt": "progress bar"
         },
         "averageMonthlyRevenue": {
@@ -747,7 +756,7 @@
       },
       "page3": {
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/f707df1b-69b3-4d55-a8db-d36495f47ff1/progress-3.svg",
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7b6e1caf-8212-4d45-b813-8a3b26b7d559/progress-3.svg",
           "alt": "progress bar"
         },
         "cardShare": {
@@ -795,7 +804,7 @@
       },
       "page4": {
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7a6f43e7-71e6-4cdb-a6a2-10891cd62413/progress-4.svg"
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/df9d7262-910c-433f-a655-14463cf93037/progress-4.svg"
         },
         "contentBackground": {
           "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/722fd251-8380-473b-bcc9-bc45a85bd315/page4contentBackground.svg"
