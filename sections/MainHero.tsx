@@ -1,6 +1,7 @@
 
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { CSS } from "../static/css.ts";
 
 export interface IImage {
     src: ImageWidget;
@@ -10,15 +11,14 @@ export interface IImage {
 export interface Props {
     title: string,
     caption?: HTMLWidget,
-    inputPlaceHolder: string;
-    inputButtonText: string;
     inputLabel?: string;
     image: IImage;
     backgroundImage?: IImage
 }
 
-export default function MainHero({ title, caption = "", inputButtonText, inputPlaceHolder, inputLabel, backgroundImage, image }: Props) {
+export default function MainHero({ title, caption = "", inputLabel, backgroundImage, image }: Props) {
     return <div class="flex min-h-96 pt-40 relative overflow-hidden">
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
         {backgroundImage?.src && <Image
             width={1440}
             height={926}
@@ -27,11 +27,12 @@ export default function MainHero({ title, caption = "", inputButtonText, inputPl
             alt={backgroundImage?.alt || "background image"}
             src={backgroundImage.src}
         />}
-        <div class="flex-grow flex justify-center xl:justify-end items-center w-full xl:w-1/2 px-7 md:px-0">
+        <div class="flex-grow flex justify-center xl:justify-end items-center w-full xl:w-1/2 px-7 md:px-0 border-base">
             <div class="flex-grow flex flex-col gap-5 md:gap-7 max-w-[630px] z-10">
                 <h2 class="text-primary text-2xl md:text-[56px] font-semibold md:font-bold max-w-[575px] leading-[120%]">{title}</h2>
                 <p class="text-base-300 text-lg md:text-[32px] font-normal" dangerouslySetInnerHTML={{ __html: caption }} />
                 <label class="md:pt-7">
+                    {inputLabel && <p class="bg-info rounded-tl-xl rounded-tr-xl py-1.5 px-5 text-base text-primary hidden md:inline-block">{inputLabel}</p>}
                     <div dangerouslySetInnerHTML={{
                         __html: `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
                     <script>
@@ -42,8 +43,7 @@ export default function MainHero({ title, caption = "", inputButtonText, inputPl
                     });
                     </script>
                     `}} />
-                    {/* {inputLabel && <p class="bg-info rounded-tl-xl rounded-tr-xl py-1.5 px-5 text-base text-primary hidden md:inline-block">{inputLabel}</p>}
-                    <div class={`bg-primary-content flex justify-between py-1.5 pr-1.5 text-base text-primary border border-base-200 rounded-xl shadow-spreaded ${inputLabel && 'md:rounded-tl-none'}`}>
+                    {/* <div class={`bg-primary-content flex justify-between py-1.5 pr-1.5 text-base text-primary border border-base-200 rounded-xl shadow-spreaded ${inputLabel && 'md:rounded-tl-none'}`}>
                         <input
                             type="email"
                             class="w-1/2 md:w-auto md:flex-grow pl-2 md:pl-7 focus:outline-none text-sm md:text-base"

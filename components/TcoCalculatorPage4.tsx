@@ -192,7 +192,7 @@ function TcoCalculatorPage4(
                     <div class="flex gap-4 justify-center xl:justify-start">
                         <div class="flex flex-col gap-y-5">
                             <div id={rootId + "negativeScreenExtraBenefit1"} class="relative max-w-[226px] min-h-[125px] px-2 py-5 hidden">
-                                <p class="text-center text-base font-semibold relative z-10">{negativeScreenExtraBenefit1.text}</p>
+                                <p class="text-center text-sm font-semibold relative z-10">{negativeScreenExtraBenefit1.text}</p>
                                 {negativeScreenExtraBenefit1.image && <Image
                                     src={negativeScreenExtraBenefit1.image.src}
                                     alt={negativeScreenExtraBenefit1.image.alt || "background"}
@@ -201,7 +201,7 @@ function TcoCalculatorPage4(
                                 />}
                             </div>
                             <div class="relative max-w-[226px] min-h-[238px] px-2 py-5">
-                                <p class="text-center text-base font-semibold relative z-10">{benefit1.text}</p>
+                                <p class="text-center text-sm font-semibold relative z-10">{benefit1.text}</p>
                                 {benefit1.image && <Image
                                     src={benefit1.image.src}
                                     alt={benefit1.image.alt || "background"}
@@ -212,7 +212,7 @@ function TcoCalculatorPage4(
                         </div>
                         <div class="flex flex-col justify-end gap-y-5">
                             <div class="relative max-w-[140px] min-h-[163px] px-2 py-5">
-                                <p class="text-center text-base font-semibold relative z-10">{benefit2.text}</p>
+                                <p class="text-center text-sm font-semibold relative z-10">{benefit2.text}</p>
                                 {benefit2.image && <Image
                                     src={benefit2.image.src}
                                     alt={benefit2.image.alt || "background"}
@@ -221,7 +221,7 @@ function TcoCalculatorPage4(
                                 />}
                             </div>
                             <div id={rootId + "negativeScreenExtraBenefit2"} class="relative max-w-[140px] min-h-[191px] h-full px-2 py-5 hidden">
-                                <p class="text-center text-base font-semibold relative z-10">{negativeScreenExtraBenefit2.text}</p>
+                                <p class="text-center text-sm font-semibold relative z-10">{negativeScreenExtraBenefit2.text}</p>
                                 {negativeScreenExtraBenefit2.image && <Image
                                     src={negativeScreenExtraBenefit2.image.src}
                                     alt={negativeScreenExtraBenefit2.image.alt || "background"}
