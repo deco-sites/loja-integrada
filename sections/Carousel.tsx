@@ -1,4 +1,4 @@
-import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, HTMLWidget, VideoWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
@@ -74,6 +74,8 @@ export interface CarouselItem {
     textPlacement: "Top" | "Bottom";
     icon?: CarouselIcon;
     backgroundImage?: IImage;
+    backgroundVideo?: VideoWidget;
+    useBackground?: 'image' | 'video';
     bulletPoints?: BulletPoints;
 }
 
@@ -112,7 +114,7 @@ function SliderItem(
     { slide, id }: { slide: CarouselItem; id: string },
 ) {
     const {
-        title, caption, textPlacement, textColor, icon, backgroundImage, bulletPoints,
+        title, caption, textPlacement, textColor, icon, backgroundImage, bulletPoints, useBackground = 'image', backgroundVideo,
     } = slide;
 
     const iconPosition = {
@@ -127,13 +129,28 @@ function SliderItem(
             id={id}
             class={`relative w-full h-[400px] sm:h-[484px] rounded-[30px] overflow-y-auto p-6 md:p-10 ${textColor == 'Dark' ? 'text-primary' : 'text-primary-content'}`}
         >
-            {backgroundImage && <div class="absolute top-0 left-0 -z-50 h-full w-full"><Image
+            {useBackground == 'image' && backgroundImage && <div class="absolute top-0 left-0 -z-50 h-full w-full"><Image
                 src={backgroundImage.src}
                 alt={backgroundImage.alt || "carousel item background image"}
                 width={456}
                 height={608}
                 class="w-full h-full object-cover object-top"
             /></div>}
+            {useBackground == 'video' && backgroundVideo && <video
+                width="456"
+                height="608"
+                autoPlay
+                playsInline
+                muted
+                loading="lazy"
+                loop
+                class="absolute top-0 left-0 -z-50 h-full w-full object-cover object-top"
+            >
+                <source src={backgroundVideo} type="video/mp4" />
+                <object data="" width="320" height="240">
+                    <embed width="320" height="240" src={backgroundVideo} />
+                </object>
+            </video>}
             <div class={`relative w-full h-full flex justify-between ${textPlacement == 'Top' ? 'flex-col' : 'flex-col-reverse'}`}>
                 {icon && <div class={`absolute -z-40 h-8 ${iconPosition[icon.placement || 'Top right']}`}><Image
                     src={icon.src}

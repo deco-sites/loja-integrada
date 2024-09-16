@@ -178,7 +178,9 @@
             "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
             "alt": "purple arrow"
           },
-          "textColor": "Dark"
+          "textColor": "Dark",
+          "useBackground": "image",
+          "backgroundVideo": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/2014ce37-ca95-449b-8498-8d66dec23865/Developer-Coding-Background.mp4"
         },
         {
           "textPlacement": "Top",
@@ -205,7 +207,8 @@
               "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/12f925ba-030b-498b-8aaf-ff031a1c765d/check-icon.png",
               "alt": "check icon"
             }
-          }
+          },
+          "useBackground": "image"
         },
         {
           "textColor": "Dark",
@@ -222,7 +225,8 @@
           "caption": "<p>Conte com o Enviali para obter as<br>melhores negociações de fretecom Correios e outras transportadoras.<br><strong>Fretes com até 70% de desconto.</strong></p>",
           "backgroundImage": {
             "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b1802835-9b2b-4ed1-ab2a-560863be1c1c/carousel-image-3.png"
-          }
+          },
+          "useBackground": "image"
         },
         {
           "textColor": "Light",
@@ -239,7 +243,8 @@
           "caption": "<p>Ferramentas estratégicas: Carrinho abandonado, promoções, Compre Junto e cupom nativos.</p>",
           "backgroundImage": {
             "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/531dda31-3645-49c7-ba96-7aa159ed080d/carousel-image-4.png"
-          }
+          },
+          "useBackground": "image"
         },
         {
           "textColor": "Dark",
@@ -256,7 +261,8 @@
           "caption": "<p>Apps e integrações plug n' play que alavancam as suas vendas.</p>",
           "backgroundImage": {
             "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/211824dc-57db-47f7-8efd-62b3e1136823/carousel-image-5.png"
-          }
+          },
+          "useBackground": "image"
         },
         {
           "textColor": "Light",
@@ -273,7 +279,8 @@
           "caption": "<p>Escale sem medo. Nossa infraestrutura elástica cresce junto com você.</p>",
           "backgroundImage": {
             "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5aa0aee6-d22a-4fdc-8d21-32fdcc0a7754/carousel-image-6.png"
-          }
+          },
+          "useBackground": "image"
         }
       ],
       "arrows": true,
@@ -487,7 +494,9 @@
                     "E muito mais..."
                   ]
                 },
-                "time": 3
+                "time": 3,
+                "video": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/2014ce37-ca95-449b-8498-8d66dec23865/Developer-Coding-Background.mp4",
+                "use": "image"
               },
               {
                 "image": {

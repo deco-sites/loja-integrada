@@ -1,4 +1,4 @@
-import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, HTMLWidget, VideoWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
@@ -77,7 +77,9 @@ export interface BulletPoints {
  */
 export interface Slide {
     title: string;
-    image: IImage;
+    image?: IImage;
+    video?: VideoWidget;
+    use?: 'image' | 'video';
     bulletPoints?: BulletPoints;
 }
 
@@ -108,7 +110,7 @@ function SliderItem(
     { slide, id }: { slide: Slide; id: string },
 ) {
     const {
-        title, image, bulletPoints
+        title, image, bulletPoints, video, use = 'image'
     } = slide;
 
     return (
@@ -117,13 +119,28 @@ function SliderItem(
                 id={id}
                 class="relative flex flex-col md:flex-row gap-[84px] md:gap-10 w-full min-h-[292px]"
             >
-                <div class="max-w-[730px] flex-grow bg-primary-content bg-opacity-30 rounded-[30px]">
-                    <Image
+                <div class="max-w-[730px] flex-grow bg-primary-content bg-opacity-30 rounded-[30px] flex items-center overflow-hidden">
+                    {use == 'image' && image && <Image
                         width={730}
                         height={553}
                         src={image.src}
                         alt={image.alt || ""}
-                    />
+                    />}
+                    {use == 'video' && video && <video
+                        width="730"
+                        height="553"
+                        autoPlay
+                        playsInline
+                        muted
+                        loading="lazy"
+                        loop
+                        class="object-cover object-top h-full w-full"
+                    >
+                        <source src={video} type="video/mp4" />
+                        <object data="" width="320" height="240">
+                            <embed width="320" height="240" src={video} />
+                        </object>
+                    </video>}
                 </div>
 
                 <div class="flex flex-col gap-7 md:max-w-[396px]">
