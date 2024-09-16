@@ -6,6 +6,7 @@ const onClickStart = (rootId: string) => {
     event?.preventDefault();
     const parent = document.getElementById(rootId);
     if (parent) {
+        Array.from(parent.children)[0].classList.remove("lg:flex");
         Array.from(parent.children)[0].classList.add("hidden");
         Array.from(parent.children)[1].classList.remove("hidden");
     }
@@ -55,20 +56,23 @@ export interface Objective {
     asideBackground?: IImage;
     asideTopIcon?: IImage;
     contentBackground?: IImage;
+    mobileTopBanner: IImage;
+    mobileStartBanner: IImage;
+    mobileStartButtonText: string;
 }
 
 function TcoCalculatorPage1(
     { page1, rootId }: { page1: Page1; rootId: string },
 ) {
     const {
-        title, caption, benefits, contentTitle, contentTitleIcon, contentCaption, progressImage, objectivesCaption, objectives, emailCaption, emailPlaceHolder, emailButtonText, contentBackground, asideBackground, asideTopIcon
+        title, caption, benefits, contentTitle, contentTitleIcon, contentCaption, progressImage, objectivesCaption, objectives, emailCaption, emailPlaceHolder, emailButtonText, contentBackground, asideBackground, asideTopIcon, mobileTopBanner
     } = page1;
 
     return (
         <div
-            class="relative flex w-full min-h-[971px] rounded-[30px] overflow-hidden"
+            class="relative flex flex-wrap lg:flex-nowrap justify-center w-full min-h-[971px] lg:rounded-[30px] overflow-hidden hidden lg:flex"
         >
-            <div class={`relative max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content`}>
+            <div class={`relative w-full lg:max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content hidden lg:block`}>
                 {asideTopIcon && <Image
                     width={133}
                     height={119}
@@ -104,7 +108,18 @@ function TcoCalculatorPage1(
                 </div>
             </div>
 
-            <div class="py-14 px-28 relative">
+            <div class="lg:hidden relative text-2xl text-secondary-content font-semibold py-10 px-4 w-full min-h-[155px]">
+                    {mobileTopBanner && <Image 
+                        width={430}
+                        height={155}
+                        alt={mobileTopBanner.alt || "background image"}
+                        src={mobileTopBanner.src}
+                        class="absolute w-full h-full top-0 left-0 object-cover -z-10"
+                    />}
+                    <p>{title}</p>
+            </div>
+            
+            <div class="py-14 px-3.5 md:px-14 xl:px-28 relative w-full">
                 {contentBackground && <Image
                     width={813}
                     height={971}
@@ -127,9 +142,10 @@ function TcoCalculatorPage1(
                     height={70}
                     src={progressImage.src}
                     alt={progressImage.alt || "progress image"}
+                    class="max-h-[67px] object-contain object-left"
                 /></div>}
                 <p class="mt-[117px] text-transparent bg-gradient-to-r from-warning-content to-error-content bg-clip-text text-xl text-center font-semibold">{objectivesCaption}</p>
-                <div class="flex flex-wrap justify-between mt-7">
+                <div class="flex flex-wrap justify-center lg:justify-between mt-7 px-10">
                     {objectives.map((objective, index) => (
                         <button 
                             hx-on:click={useScript(objectiveOnClick)} 
@@ -160,7 +176,7 @@ function TcoCalculatorPage1(
                     />
                     <input 
                     type="submit"
-                        class="btn btn-primary font-bold px-7 hover:scale-110 text-lg"
+                        class="btn btn-primary font-bold px-7 hover:scale-110 text-lg min-h-10 lg:min-h-12 h-auto"
                         value={emailButtonText}
                         >
                     </input>

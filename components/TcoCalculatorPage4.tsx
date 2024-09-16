@@ -27,10 +27,12 @@ export interface CTA {
 }
 
 export interface Page1 {
+    title: string;
     contentTitle: HTMLWidget;
     contentTitleIcon?: IImage;
     contentCaption?: string;
     asideTopIcon?: IImage;
+    mobileTopBanner: IImage;
 }
 
 export interface Result {
@@ -81,14 +83,14 @@ export interface Page4 {
 
 function ResultRow({ label, userValueId, lojaIntegradaValue, lojaIntegradaValueId }: { label: string, userValueId?: string, lojaIntegradaValue?: string, lojaIntegradaValueId?: string }) {
     return <div class="flex gap-2.5 text-sm text-base-300 font-normal">
-        <div>
-            <div class="flex justify-between min-w-[390px] py-[18px]">
-                <p>{label}</p>
-                <p id={userValueId} class="min-w-40 text-center">R$ 389,00</p>
+        <div class="w-[68%] 2xl:w-auto">
+            <div class="flex justify-between w-full 2xl:w-[390px] py-[18px]">
+                <p class="w-[60%] 2xl:w-auto">{label}</p>
+                <p id={userValueId} class="w-[40%] 2xl:w-40 text-center">R$ 389,00</p>
             </div>
             <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-neutral to-transparent" />
         </div>
-        <div class="bg-primary py-[18px] px-3 max-w-[193px] w-full">
+        <div class="bg-primary py-[18px] sm:px-3 max-w-[193px] w-[32%] 2xl:w-full">
             <p id={lojaIntegradaValueId} class="bg-transparent text-primary-content text-center font-semibold">{lojaIntegradaValue || "R$ 389,00"}</p>
         </div>
     </div>
@@ -98,7 +100,7 @@ function TcoCalculatorPage4(
     { page1, rootId, page4 }: { page1: Page1; page4: Page4; rootId: string, },
 ) {
     const {
-        contentTitle, contentTitleIcon, contentCaption, asideTopIcon
+        contentTitle, contentTitleIcon, contentCaption, asideTopIcon, mobileTopBanner, title
     } = page1;
 
     const { progressImage, contentBackground, saving, whasappCta, whatsappNameInput, whatsappNumberInput, whatsappText, benefit1, benefit2, result, negativeScreenExtraBenefit1, negativeScreenExtraBenefit2, negativeScreenAsideTitle } = page4;
@@ -108,9 +110,9 @@ function TcoCalculatorPage4(
 
     return (
         <div
-            class="relative flex w-full min-h-[971px] rounded-[30px] overflow-hidden hidden"
+            class="relative flex flex-wrap xl:flex-nowrap w-full min-h-[971px] xl:rounded-[30px] overflow-hidden hidden"
         >
-            <div class={`relative max-w-[437px] pt-[70px] px-7 bg-warning text-primary`}>
+            <div class={`relative w-full xl:max-w-[437px] pt-[70px] px-7 pb-16 xl:pb-0 bg-warning text-primary order-last xl:order-none`}>
                 {asideTopIcon && <Image
                     id={rootId + "negativeScreenAsideTopIcon"}
                     width={133}
@@ -144,8 +146,8 @@ function TcoCalculatorPage4(
                 <p id={rootId + "negativeScreenAsideTitle"} class="text-2xl font-semibold hidden">{negativeScreenAsideTitle}</p>
                 <div id={rootId + "resultAsideContentDiv"} class="flex flex-col gap-y-[70px] mt-10">
                     <div>
-                        <p class="text-xl ">{whatsappText}</p>
-                        <form class="mt-5 max-w-64 flex flex-col gap-5 z-10">
+                        <p class="text-xl px-7 xl:px-0 text-center xl:text-left">{whatsappText}</p>
+                        <form class="mt-5 xl:max-w-64 flex flex-col gap-5 z-10 items-center w-full">
                             <label>
                                 <div class={inputCaptionClass} >
                                     <p>{whatsappNameInput.caption}</p>
@@ -187,7 +189,7 @@ function TcoCalculatorPage4(
                             </div>
                         </form>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 justify-center xl:justify-start">
                         <div class="flex flex-col gap-y-5">
                             <div id={rootId + "negativeScreenExtraBenefit1"} class="relative max-w-[226px] min-h-[125px] px-2 py-5 hidden">
                                 <p class="text-center text-base font-semibold relative z-10">{negativeScreenExtraBenefit1.text}</p>
@@ -232,7 +234,18 @@ function TcoCalculatorPage4(
                 </div>
             </div>
 
-            <div class="py-14 px-28 relative">
+            <div class="xl:hidden relative text-2xl text-secondary-content font-semibold py-10 px-4 w-full min-h-[155px]">
+                {mobileTopBanner && <Image
+                    width={430}
+                    height={155}
+                    alt={mobileTopBanner.alt || "background image"}
+                    src={mobileTopBanner.src}
+                    class="absolute w-full h-full top-0 left-0 object-cover -z-10"
+                />}
+                <p>{title}</p>
+            </div>
+
+            <div class="py-14 px-3.5 xl:px-28 relative w-full">
                 {contentBackground && <Image
                     width={813}
                     height={971}
@@ -255,17 +268,18 @@ function TcoCalculatorPage4(
                     height={70}
                     src={progressImage.src}
                     alt={progressImage.alt || "progress image"}
+                    class="max-h-[67px] object-contain object-left"
                 /></div>}
 
                 <div class="flex gap-2.5 text-sm mt-[54px]">
-                    <div>
-                        <div class="flex justify-between min-w-[390px] pt-9">
-                            <p></p>
-                            <p id={rootId + "currentPlanLabel"} class="min-w-40 text-center text-primary font-semibold bg-info rounded-[20px] py-2.5 pt-2">😥  menos vantajoso</p>
+                    <div class="w-[68%] 2xl:w-auto">
+                        <div class="flex justify-between w-full 2xl:w-[390px] pt-9">
+                            <p class="w-[60%] 2xl:w-auto"></p>
+                            <p id={rootId + "currentPlanLabel"} class="w-[40%] 2xl:w-40 text-center text-primary font-semibold bg-info rounded-[20px] py-2.5 pt-2">😥  menos vantajoso</p>
                         </div>
                     </div>
-                    <div class="relative bg-primary pt-9 px-3 max-w-[193px] w-full rounded-tl-[20px] rounded-tr-[20px]">
-                        <div class="absolute w-full top-[-29px] left-0 h-14 bg-error-content bg-opacity-30 -z-10 rounded-lg">
+                    <div class="relative bg-primary pt-9 sm:px-3 max-w-[193px] w-[32%] 2xl:w-full rounded-tl-[20px] rounded-tr-[20px]">
+                        <div class="absolute w-full top-[-45px] md:top-[-29px] left-0 h-14 bg-error-content bg-opacity-30 -z-10 rounded-lg">
                             <p class="text-primary text-xs text-center font-semibold pt-2">{saving.indicatedPlanSavingLabel} <span id={rootId + "indicatedPlanLabelSaving"} /></p>
                         </div>
                         <p id={rootId + "indicatedPlanLabel"} class="text-primary text-center font-semibold bg-info rounded-[20px] py-2.5 pb-3 pt-2">🚀 mais vantajoso</p>
@@ -273,13 +287,13 @@ function TcoCalculatorPage4(
                 </div>
 
                 <div class="flex gap-2.5 text-sm">
-                    <div>
-                        <div class="flex justify-between min-w-[390px] py-[18px]">
-                            <p></p>
-                            <p id={rootId + "currentPlatform"} class="min-w-40 text-center text-primary font-semibold" />
+                    <div class="w-[68%] 2xl:w-auto">
+                        <div class="flex justify-between w-full 2xl:w-[390px] py-[18px]">
+                            <p class="w-[60%] 2xl:w-auto"></p>
+                            <p id={rootId + "currentPlatform"} class="w-[40%] 2xl:w-40 text-center text-primary font-semibold" />
                         </div>
                     </div>
-                    <div class="bg-primary py-[18px] px-3 max-w-[193px] w-full">
+                    <div class="bg-primary py-[18px] sm:px-3 max-w-[193px] w-[32%] 2xl:w-full">
                         <p class="bg-transparent text-primary-content text-center font-semibold">Loja Integrada</p>
                     </div>
                 </div>
@@ -294,13 +308,13 @@ function TcoCalculatorPage4(
                 <ResultRow label={result.totalTcoLabel} userValueId={rootId + "totalTco"} lojaIntegradaValueId={rootId + "totalTcoIndicatedPlan"} />
 
                 <div class="flex gap-2.5">
-                    <div class="min-w-[390px]" />
-                    <div class="flex justify-center bg-primary py-[18px] px-3 max-w-[193px] w-full rounded-bl-[20px] rounded-br-[20px]">
+                    <div class="w-[68%] 2xl:w-[390px]" />
+                    <div class="flex justify-center bg-primary py-[18px] sm:px-3 max-w-[193px] w-[32%] 2xl:w-full rounded-bl-[20px] rounded-br-[20px]">
                         <a
                             id={result.migrateCta.id}
                             href={result.migrateCta?.href ?? "#"}
                             target={result.migrateCta?.href.includes("http") ? "_blank" : "_self"}
-                            class={`btn ${result.migrateCta.outline ? "bg-primary border border-secondary-content text-secondary-content" : "bg-primary-content"}  font-bold hover:scale-110 text-lg h-auto w-full`}
+                            class={`btn ${result.migrateCta.outline ? "bg-primary border border-secondary-content text-secondary-content" : "bg-primary-content"}  font-bold hover:scale-110 text-lg h-auto w-full px-3.5`}
                         >
                             {result.migrateCta.icon && <Image
                                 width={20}

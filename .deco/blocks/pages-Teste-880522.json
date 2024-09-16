@@ -34,7 +34,6 @@
         {
           "value": {
             "__resolveType": "site/sections/MainHero.tsx",
-            "title": "Suporte e economia na hora de migrar",
             "caption": "<p><span style=\"font-size: 24pt; color: rgb(95, 110, 130);\" data-mce-style=\"font-size: 24pt; color: rgb(95, 110, 130);\">Redução média de R$ 90.000/ano com custos de manutenção da plataforma</span><br></p>",
             "inputPlaceHolder": "Digite seu email aqui para ganhar",
             "inputButtonText": "Aproveitar",
@@ -698,6 +697,12 @@
         },
         "title": "Calcule a eficiência da sua operação",
         "caption": "Cálculo de TCO"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Faq - default"
       }
     },
     {
