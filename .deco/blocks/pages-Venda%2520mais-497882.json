@@ -482,7 +482,6 @@
                     "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   },
                   "items": [
-                    "Compre Junto",
                     "Carrinho Abandonado",
                     "Painel de promoções ",
                     "Cupons personalizados",
@@ -738,10 +737,23 @@
           "caption": "Plataforma atual",
           "placeholder": "Plataforma",
           "options": [
+            "Outros",
             "NuvemShop",
             "Tray",
             "Bagy",
-            "Shopify"
+            "Shopify",
+            "VTEX",
+            "Wake",
+            "Mercado Shops",
+            "Wix",
+            "UOL",
+            "WordPress",
+            "001Shop",
+            "Magento",
+            "GoDaddy",
+            "Dloja",
+            "Magazord",
+            "Loja Virtual"
           ],
           "tooltipMessage": "Qual é a sua plataforma de e-commerce atual?"
         },
@@ -775,12 +787,12 @@
         },
         "cardFee": {
           "caption": "Tarifa cartão",
-          "placeholder": "30%",
+          "placeholder": "4,99%",
           "tooltipMessage": "Qual é a tarifa média cobrada por transação de cartão de crédito?"
         },
         "boletoShare": {
           "caption": "Share do boleto",
-          "placeholder": "60%",
+          "placeholder": "20%",
           "tooltipMessage": "Qual é a porcentagem de vendas realizadas por boleto bancário?"
         },
         "boletoFee": {
@@ -790,12 +802,12 @@
         },
         "pixShare": {
           "caption": "Share do Pix",
-          "placeholder": "60%",
+          "placeholder": "20%",
           "tooltipMessage": "Qual é a porcentagem de vendas realizadas por PIX?"
         },
         "pixFee": {
           "caption": "Tarifa Pix",
-          "placeholder": "30%",
+          "placeholder": "1,99%",
           "tooltipMessage": "Qual é a tarifa média cobrada por transação via PIX?"
         },
         "antiFraudCosts": {
@@ -894,7 +906,7 @@
       "plans": [
         {
           "title": "Crescimento",
-          "montlyFee": 54,
+          "montlyFee": 43,
           "cardFee": 4.59,
           "boletoFee": 2.39,
           "pixFee": 1,
@@ -902,7 +914,7 @@
         },
         {
           "title": "Aceleração",
-          "montlyFee": 99,
+          "montlyFee": 79,
           "cardFee": 4.49,
           "boletoFee": 2.39,
           "pixFee": 1,
@@ -910,7 +922,7 @@
         },
         {
           "title": "Expansão",
-          "montlyFee": 259,
+          "montlyFee": 191,
           "cardFee": 4.29,
           "boletoFee": 2.39,
           "pixFee": 1,
@@ -925,6 +937,19 @@
           "pixFee": 1.99
         }
       ]
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/BlogPosts.tsx",
+        "title": "DASDSDAS"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Faq - default"
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

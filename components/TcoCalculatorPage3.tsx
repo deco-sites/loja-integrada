@@ -7,25 +7,25 @@ import { Plan } from "site/sections/TcoCalculator.tsx";
 const moneyInputOnKeyUp = () => {
     const element = event!.currentTarget as HTMLInputElement;
     let valor = element.value;
-    valor = valor.replace(/\D/g, ""); // Remove tudo que não é dígito
-    valor = (parseFloat(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
-    valor = valor.replace(".", ","); // Substitui ponto por vírgula
+    valor = valor.replace(/[^\d,]/g, ""); // Remove todos os caracteres não numéricos e não vírgula
+    valor = valor.replace(/(,.*),/g, "$1"); // Permite apenas uma vírgula
+    valor = valor.replace(/(\,\d{2})\d+/, "$1"); // Limita a dois dígitos após a vírgula
     valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."); // Adiciona ponto a cada 3 dígitos
+    if (valor[0] == ',') valor = '';
     element.value = "R$ " + valor;
-    if (element.value.toLowerCase().includes('nan')) element.value = "";
+    if (element.value.toLowerCase().includes('nan') || element.value.length == 3) element.value = "";
 }
 
 const percentageInputOnKeyUp = () => {
     const element = event!.currentTarget as HTMLInputElement;
     const keyEvent = event as KeyboardEvent;
     let valor = element.value;
-    valor = valor.replace(/\D/g, ""); // Remove tudo que não é dígito
-    if(valor.length >= 3) valor = (Number(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
-    valor = valor.replace(".", ","); // Substitui ponto por vírgula
+    valor = valor.replace(/[^\d,]/g, ""); // Remove todos os caracteres não numéricos e não vírgula
+    valor = valor.replace(/(,.*),/g, "$1"); // Permite apenas uma vírgula
+    if( keyEvent.key === "Backspace" ) valor = valor.slice(0, -1);
+    if (valor[0] == ',') valor = '';
     element.value = valor + "%"; // Adiciona o símbolo de porcentagem
-    if (keyEvent.key === "Backspace" || element.value == "%") {
-        element.value = "";
-    }
+    if (element.value == "%") element.value = "";
 }
 
 const onClickNext = (rootId: string, plans: Plan[]) => {
@@ -53,7 +53,6 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
     const pixShareInput = (parent?.querySelector("#"+rootId+"pixShareInput") as HTMLInputElement).value;
     const pixFeeInput = (parent?.querySelector("#"+rootId+"pixFeeInput") as HTMLInputElement).value;                                                                            
 
-    //calcula o tco da plataforma atual do usuario
     function calculateTco (montlyFee: number, gmv: number, comission: number, MontlyOrders: number, cardShare: number, cardFee: number,  boletoShare: number, boletoFee: number, pixShare: number, pixFee: number) {
         
         const platformTotal = montlyFee + (gmv * comission / 100);
@@ -69,6 +68,7 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
         return { platformTotal, cardFeeMoney, boletoFeeMoney, pixFeeMoney, totalPaymentMoney, totalMoney, totalTco: totalMoney / gmv * 100 }
     }
 
+    //calcula o tco da plataforma atual do usuario
     const currentPlatformTco = calculateTco(moneyToNumber(montlyFeeInput), moneyToNumber(gmvInput), percentToNumber(comissionInput), Number(montlyOrdersInput), percentToNumber(cardShareInput), percentToNumber(cardFeeInput), percentToNumber(boletoShareInput), moneyToNumber(boletoFeeInput), percentToNumber(pixShareInput), percentToNumber(pixFeeInput));
 
     //manda o resultado do calculo tco da plataforma atual do cliente para a última página
@@ -84,24 +84,21 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
     (parent?.querySelector("#"+rootId+"totalTco") as HTMLElement).textContent = (currentPlatformTco.totalTco.toFixed(2) + "%").toString().replace(".", ",");
 
     //calcula o tco dos planos da loja integrada
-    plans.sort((a, b) => b.montlyFee - a.montlyFee);
+    plans.sort((a, b) => a.montlyFee - b.montlyFee);
     const plansTco = plans.map((plan) => calculateTco(plan.montlyFee, moneyToNumber(gmvInput), plan.comission, Number(montlyOrdersInput), percentToNumber(cardShareInput), plan.cardFee, percentToNumber(boletoShareInput), plan.boletoFee, percentToNumber(pixShareInput), plan.pixFee));
     
     //calcula quanto economisa com cada plano
     const savings = plansTco.map((plan) => currentPlatformTco.totalMoney - plan.totalMoney);
-    
+
     //escolhe o plano indicado
-    let indicatedPlan = -1;
-    for(let i = 0; i < savings.length; i++) {
-        if (savings[i] > 0) {
+    let indicatedPlan = 0;
+    for(let i = 0; i < plans.length; i++) {
+        if (plans[i].montlyFee <= moneyToNumber(montlyFeeInput)) {
             indicatedPlan = i;
-            i = savings.length + 1;
         }
     }
-    console.log(savings);
-    if (indicatedPlan === -1) { 
+    if (savings[indicatedPlan] <= 0) { 
         negativeResult = true;
-        indicatedPlan = Math.floor(savings.length / 2); 
     }
 
     const indicatedPlanTco = plansTco[indicatedPlan];
@@ -117,15 +114,15 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
     (parent?.querySelector("#"+rootId+'totalMoneyIndicatedPlan') as HTMLElement).textContent = indicatedPlanTco.totalMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     (parent?.querySelector("#"+rootId+'totalTcoIndicatedPlan') as HTMLElement).textContent = (indicatedPlanTco.totalTco.toFixed(2) + "%").toString().replace(".", ",");
 
-    //calcula a economia com o plano indicado
-    const saving = currentPlatformTco.totalMoney - indicatedPlanTco.totalMoney;
+    //calcula a economia anual com o plano indicado
+    const saving = (currentPlatformTco.totalMoney - indicatedPlanTco.totalMoney) * 12;
 
     //manda a economia com o plano indicado para a última página
     (parent?.querySelector("#"+rootId+"savingAside") as HTMLElement).textContent = saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).split(',')[0];
     (parent?.querySelector("#"+rootId+"indicatedPlanLabelSaving") as HTMLElement).textContent = saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).split(',')[0];
     (parent?.querySelector("#"+rootId+"indicatedPlanName") as HTMLElement).textContent = plans[indicatedPlan].title;
 
-    //caso nenhuma plano ofereça economia transforma a tela final na tela negativa
+    //caso o plano indicado não ofereça economia transforma a tela final na tela negativa
     if (negativeResult) {
         parent?.querySelector("#"+rootId+"resultAsideContentDiv")?.classList.add("flex-col-reverse");
         parent?.querySelector("#"+rootId+"negativeScreenAsideTitle")?.classList.remove("hidden");
