@@ -5,25 +5,25 @@ import { useScript } from "deco/hooks/useScript.ts";
 const moneyInputOnKeyUp = () => {
     const element = event!.currentTarget as HTMLInputElement;
     let valor = element.value;
-    valor = valor.replace(/\D/g, ""); // Remove tudo que não é dígito
-    valor = (parseFloat(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
-    valor = valor.replace(".", ","); // Substitui ponto por vírgula
+    valor = valor.replace(/[^\d,]/g, ""); // Remove todos os caracteres não numéricos e não vírgula
+    valor = valor.replace(/(,.*),/g, "$1"); // Permite apenas uma vírgula
+    valor = valor.replace(/(\,\d{2})\d+/, "$1"); // Limita a dois dígitos após a vírgula
     valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."); // Adiciona ponto a cada 3 dígitos
+    if (valor[0] == ',') valor = '';
     element.value = "R$ " + valor;
-    if (element.value.toLowerCase().includes('nan')) element.value = "";
+    if (element.value.toLowerCase().includes('nan') || element.value.length == 3) element.value = "";
 }
 
 const percentageInputOnKeyUp = () => {
     const element = event!.currentTarget as HTMLInputElement;
     const keyEvent = event as KeyboardEvent;
     let valor = element.value;
-    valor = valor.replace(/\D/g, ""); // Remove tudo que não é dígito
-    if(valor.length >= 3) valor = (Number(valor) / 100).toFixed(2) + ""; // Divide por 100 e fixa duas casas decimais
-    valor = valor.replace(".", ","); // Substitui ponto por vírgula
+    valor = valor.replace(/[^\d,]/g, ""); // Remove todos os caracteres não numéricos e não vírgula
+    valor = valor.replace(/(,.*),/g, "$1"); // Permite apenas uma vírgula
+    if( keyEvent.key === "Backspace" ) valor = valor.slice(0, -1);
+    if (valor[0] == ',') valor = '';
     element.value = valor + "%"; // Adiciona o símbolo de porcentagem
-    if (keyEvent.key === "Backspace" || element.value == "%") {
-        element.value = "";
-    }
+    if (element.value == "%") element.value = "";
 }
 
 const onClickNext = (rootId: string) => {
