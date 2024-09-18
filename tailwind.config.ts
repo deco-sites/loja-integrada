@@ -33,8 +33,8 @@ export default {
           "100%": { opacity: 1 },
         },
         "pop-up": {
-          "0%": { transform: "scale(90%)" },
-          "100%": { transform: "scale(100%)" },
+          "0%": { transform: "scale(50%)", opacity: 0 },
+          "100%": { transform: "scale(100%)", opacity: 1 },
         },
         "fade-up": {
           "0%": { transform: "translateY(100%)", opacity: 0 },
@@ -60,6 +60,7 @@ export default {
       boxShadow: {
         "spreaded": "0px 5.563px 31.72px 0px rgba(0, 72, 82, 0.09)",
         "spreaded2": "0px 4px 44px 0px rgba(0, 0, 0, 0.13)",
+        "spreaded3": "11px 4px 44px 0px rgba(29, 26, 26, 0.15)",
       },
     },
   },

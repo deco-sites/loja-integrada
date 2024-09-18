@@ -23,7 +23,7 @@
     "success": "#008060",
     "warning": "#F1EEFF",
     "error": "#d82c0d",
-    "info": "#EAE0EE"
+    "info": "#FFE6A0"
   },
   "font": {
     "__resolveType": "website/loaders/fonts/googleFonts.ts",
@@ -45,7 +45,7 @@
     "success-content": "#D2C7FE",
     "warning-content": "#825AB4",
     "error-content": "#BB95D7",
-    "info-content": "#000000",
+    "info-content": "#EAE0EE",
     "base-content": "#000000"
   }
 }

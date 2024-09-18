@@ -180,7 +180,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   prev?.addEventListener("click", onClickPrev);
   next?.addEventListener("click", onClickNext);
 
-  let timeout: number | undefined | Timer;
+  let timeout: number | undefined;
 
   function startInterval() {
     timeout = interval && setInterval(onClickNext, interval);
