@@ -1279,7 +1279,13 @@
             "annualLabel": "Anual",
             "montlyLabel": "Mensal",
             "annualTag": "-20% OFF",
-            "dots": false
+            "dots": false,
+            "bottomCaption": "Ainda em dúvida?",
+            "bottomTitle": "Comece pelo plano gratuito",
+            "bottomButton": {
+              "text": "Começar no grátis",
+              "href": "#"
+            }
           },
           "rule": {
             "__resolveType": "website/matchers/always.ts"
