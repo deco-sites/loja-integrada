@@ -275,14 +275,14 @@ function TcoCalculatorPage4(
                     <div class="w-[68%] 2xl:w-auto">
                         <div class="flex justify-between w-full 2xl:w-[390px] pt-9">
                             <p class="w-[60%] 2xl:w-auto"></p>
-                            <p id={rootId + "currentPlanLabel"} class="w-[40%] 2xl:w-40 text-center text-primary font-semibold bg-info rounded-[20px] py-2.5 pt-2">😥  menos vantajoso</p>
+                            <p id={rootId + "currentPlanLabel"} class="w-[40%] 2xl:w-40 text-center text-primary font-semibold bg-info-content rounded-[20px] py-2.5 pt-2">😥  menos vantajoso</p>
                         </div>
                     </div>
                     <div class="relative bg-primary pt-9 sm:px-3 max-w-[193px] w-[32%] 2xl:w-full rounded-tl-[20px] rounded-tr-[20px]">
                         <div class="absolute w-full top-[-45px] md:top-[-29px] left-0 h-14 bg-error-content bg-opacity-30 -z-10 rounded-lg">
                             <p class="text-primary text-xs text-center font-semibold pt-2">{saving.indicatedPlanSavingLabel} <span id={rootId + "indicatedPlanLabelSaving"} /></p>
                         </div>
-                        <p id={rootId + "indicatedPlanLabel"} class="text-primary text-center font-semibold bg-info rounded-[20px] py-2.5 pb-3 pt-2">🚀 mais vantajoso</p>
+                        <p id={rootId + "indicatedPlanLabel"} class="text-primary text-center font-semibold bg-info-content rounded-[20px] py-2.5 pb-3 pt-2">🚀 mais vantajoso</p>
                     </div>
                 </div>
 

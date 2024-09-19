@@ -129,7 +129,7 @@ function SliderItem(
                             {tag.text}
                         </p>}
                     </div>
-                    <h2 class="text-[40px] font-medium leading-tight mt-2">{title}</h2>
+                    <h2 class="text-[13vw] lg:text-[40px] font-bold lg:font-medium leading-tight mt-2">{title}</h2>
 
                     <div class="montlyValues hidden">
                         <div class="leading-tight" dangerouslySetInnerHTML={{__html: montlyFee}}/>

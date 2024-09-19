@@ -37,7 +37,7 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
         Array.from(parent.children)[3].classList.remove("hidden");
     }
     
-    const moneyToNumber = (value: string):number => parseFloat(value.replace('R$', '').replace('.', '').replace(',', '.').trim()); 
+    const moneyToNumber = (value: string):number => parseFloat(value.replace('R$', '').replace(/\./g, '').replace(',', '.').trim()); 
     const percentToNumber = (value: string):number => parseFloat(value.replace('%', '').replace(',','.').trim());
 
     //pega os valores digitados pelo usuario
@@ -52,6 +52,10 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
     const montlyOrdersInput = (parent?.querySelector("#"+rootId+"montlyOrdersInput") as HTMLInputElement).value;        
     const pixShareInput = (parent?.querySelector("#"+rootId+"pixShareInput") as HTMLInputElement).value;
     const pixFeeInput = (parent?.querySelector("#"+rootId+"pixFeeInput") as HTMLInputElement).value;                                                                            
+
+    // console.log("gmvInput="+gmvInput);
+    // console.log("cardShareInput="+cardShareInput);
+    // console.log("cardFeeInput="+cardFeeInput);
 
     function calculateTco (montlyFee: number, gmv: number, comission: number, MontlyOrders: number, cardShare: number, cardFee: number,  boletoShare: number, boletoFee: number, pixShare: number, pixFee: number) {
         
@@ -70,6 +74,9 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
 
     //calcula o tco da plataforma atual do usuario
     const currentPlatformTco = calculateTco(moneyToNumber(montlyFeeInput), moneyToNumber(gmvInput), percentToNumber(comissionInput), Number(montlyOrdersInput), percentToNumber(cardShareInput), percentToNumber(cardFeeInput), percentToNumber(boletoShareInput), moneyToNumber(boletoFeeInput), percentToNumber(pixShareInput), percentToNumber(pixFeeInput));
+    // console.log("monteyToNumberGmv="+moneyToNumber(gmvInput));
+    // console.log("percentageToNumberCardShare="+percentToNumber(cardShareInput));
+    // console.log("moneyToNumberCardFee="+moneyToNumber(cardFeeInput));
 
     //manda o resultado do calculo tco da plataforma atual do cliente para a última página
     (parent?.querySelector("#"+rootId+'currentPlatform') as HTMLElement).textContent = currentPlatformInput;
@@ -85,7 +92,7 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
 
     //calcula o tco dos planos da loja integrada
     plans.sort((a, b) => a.montlyFee - b.montlyFee);
-    const plansTco = plans.map((plan) => calculateTco(plan.montlyFee, moneyToNumber(gmvInput), plan.comission, Number(montlyOrdersInput), percentToNumber(cardShareInput), plan.cardFee, percentToNumber(boletoShareInput), plan.boletoFee, percentToNumber(pixShareInput), plan.pixFee));
+    const plansTco = plans.map((plan) => calculateTco(plan.montlyFee, moneyToNumber(gmvInput), plan.comission, Number(montlyOrdersInput), percentToNumber(cardShareInput), percentToNumber(cardFeeInput), percentToNumber(boletoShareInput), plan.boletoFee, percentToNumber(pixShareInput), plan.pixFee));
     
     //calcula quanto economisa com cada plano
     const savings = plansTco.map((plan) => currentPlatformTco.totalMoney - plan.totalMoney);
