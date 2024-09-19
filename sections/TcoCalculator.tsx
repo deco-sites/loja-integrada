@@ -46,7 +46,7 @@ function TcoCalculator(props: Props) {
             {caption && <h3 class="text-center text-neutral text-2xl font-semibold hidden lg:block">{caption}</h3>}
             {title && <h2 class="mt-3 text-center text-primary text-5xl font-semibold hidden lg:block">{title}</h2>}
             <div
-                class="w-full gap-9 lg:pt-[116px] pb-9 lg:px-9"
+                class="w-full gap-9 lg:pt-[116px] lg:px-9"
                 id={id}
             >
                 <TcoCalculatorPage1
