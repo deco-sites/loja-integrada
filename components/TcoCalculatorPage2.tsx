@@ -162,7 +162,7 @@ function TcoCalculatorPage2(
                     <p>{title}</p>
             </div>
 
-            <div class="py-14 px-3.5 lg:px-28 relative w-full">
+            <div class="py-14 px-3.5 lg:px-28 relative w-full overflow-hidden">
                 {contentBackground && <Image
                     width={813}
                     height={971}
@@ -189,7 +189,7 @@ function TcoCalculatorPage2(
                 /></div>}
 
                 <form class="flex flex-col gap-[18px] mt-14 max-w-[375px]" hx-on:submit={useScript(onClickNext, rootId)}>
-                    <label>
+                    <label class="animate-fade-right" style={{animationDuration: "0.3s"}}>
                         <div class={inputCaptionClass} >
                             <p>{averageMonthlyRevenue.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={averageMonthlyRevenue.tooltipMessage}>
@@ -206,7 +206,7 @@ function TcoCalculatorPage2(
                         >
                         </input>
                     </label>
-                    <label>
+                    <label class="animate-fade-right" style={{animationDuration: "0.3s", animationDelay: "0.1s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{currentPlatform.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={currentPlatform.tooltipMessage}>
@@ -222,7 +222,7 @@ function TcoCalculatorPage2(
                             ))}
                         </select>
                     </label>
-                    <label>
+                    <label class="animate-fade-right" style={{animationDuration: "0.3s", animationDelay: "0.2s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{currentPlatformMonthlyFee.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={currentPlatformMonthlyFee.tooltipMessage}>
@@ -239,7 +239,7 @@ function TcoCalculatorPage2(
                         >
                         </input>
                     </label>
-                    <label>
+                    <label class="animate-fade-right" style={{animationDuration: "0.3s", animationDelay: "0.3s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{currentPlatformComission.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={currentPlatformComission.tooltipMessage}>
@@ -256,7 +256,7 @@ function TcoCalculatorPage2(
                         >
                         </input>
                     </label>
-                    <label>
+                    <label class="animate-fade-right" style={{animationDuration: "0.3s", animationDelay: "0.4s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{MontlyOrders.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={MontlyOrders.tooltipMessage}>

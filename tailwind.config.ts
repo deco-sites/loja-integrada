@@ -15,6 +15,7 @@ export default {
         "pop-up": "pop-up 1s ease-in-out",
         "fade-up": "fade-up 1s ease-in-out",
         "fade-down": "fade-down 1s ease-in-out",
+        "fade-right": "fade-right 1s ease-in-out",
         "fade-up50": "fade-up50 1.5s ease-in-out",
         "fade-down50": "fade-down50 1.5s ease-in-out",
         "progress": "progress 3s linear",
@@ -43,6 +44,10 @@ export default {
         "fade-down": {
           "0%": { transform: "translateY(-100%)", opacity: 0 },
           "100%": { transform: "translateY(0%)", opacity: 1 },
+        },
+        "fade-right": {
+          "0%": { transform: "translateX(-100%)", opacity: 0 },
+          "100%": { transform: "translateX(0%)", opacity: 1 },
         },
         "fade-up50": {
           "0%": { transform: "translateY(50%)", opacity: 0 },

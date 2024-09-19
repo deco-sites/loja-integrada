@@ -218,7 +218,7 @@ function TcoCalculatorPage3(
 
     const { progressImage, cardShare, cardFee, boletoShare, boletoFee, pixFee, pixShare, antiFraudCosts, processingCosts, nextButtonText, backButtonText } = page3;
 
-    const labeClass = "w-full md:w-[40%] lg:w-[195px]";
+    const labeClass = "w-full md:w-[40%] lg:w-[195px] animate-fade-right";
     const inputCaptionClass = "text-base text-primary flex justify-between items-center";
     const inputClass = "bg-transparent min-h-[38px] w-full rounded-lg border border-primary px-4 mt-2.5";
 
@@ -300,7 +300,7 @@ function TcoCalculatorPage3(
                 /></div>}
 
                 <form class="flex flex-wrap gap-[38px] mt-14 w-full" hx-on:submit={useScript(onClickNext, rootId, plans)}>
-                    <label class={labeClass}>
+                    <label class={labeClass} style={{animationDuration: "0.3s"}}> 
                         <div class={inputCaptionClass} >
                             <p>{cardShare.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={cardShare.tooltipMessage}>
@@ -317,7 +317,7 @@ function TcoCalculatorPage3(
                         >
                         </input>
                     </label>
-                    <label class={labeClass}>
+                    <label class={labeClass} style={{animationDuration: "0.3s", animationDelay: "0.1s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{cardFee.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={cardFee.tooltipMessage}>
@@ -334,7 +334,7 @@ function TcoCalculatorPage3(
                         >
                         </input>
                     </label>
-                    <label class={labeClass}>
+                    <label class={labeClass} style={{animationDuration: "0.3s", animationDelay: "0.2s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} > 
                             <p>{boletoShare.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={boletoShare.tooltipMessage}>
@@ -351,7 +351,7 @@ function TcoCalculatorPage3(
                         >
                         </input>
                     </label>
-                    <label class={labeClass}>
+                    <label class={labeClass} style={{animationDuration: "0.3s", animationDelay: "0.3s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{boletoFee.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={boletoFee.tooltipMessage}>
@@ -368,7 +368,7 @@ function TcoCalculatorPage3(
                         >
                         </input>
                     </label>
-                    <label class={labeClass}>
+                    <label class={labeClass} style={{animationDuration: "0.3s", animationDelay: "0.4s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} > 
                             <p>{pixShare.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={pixShare.tooltipMessage}>
@@ -385,7 +385,7 @@ function TcoCalculatorPage3(
                         >
                         </input>
                     </label>
-                    <label class={labeClass}>
+                    <label class={labeClass} style={{animationDuration: "0.3s", animationDelay: "0.5s", opacity: "0", animationFillMode: "forwards"}}>
                         <div class={inputCaptionClass} >
                             <p>{pixFee.caption}</p>
                             <div class="tooltip tooltip-primary tooltip-left" data-tip={pixFee.tooltipMessage}>
