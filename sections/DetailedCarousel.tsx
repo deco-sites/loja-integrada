@@ -3,47 +3,21 @@ import Image from "apps/website/components/Image.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
 import { useScript } from "deco/hooks/useScript.ts";
+import { CSS } from "../static/css.ts";
+import AnimateOnShow from "../components/ui/AnimateOnShow.tsx";
 
-const onLoad = () => {
-    const detailedCarousel = document.getElementById("detailedCarousel") as HTMLElement;
-    const detailedCarouselTitle = detailedCarousel.querySelector("#detailedCarouselTitle") as HTMLElement;
-    const detailedCarouselContent = detailedCarousel.querySelector("#detailedCarouselContent") as HTMLElement;
-    const detailedCarouselButtons = detailedCarousel.querySelector("#detailedCarouselButtons") as HTMLElement;
+const openPopUpForm = (rootId: string) => {
+    event!.preventDefault();
+    const parent = document.getElementById(rootId) as HTMLElement;
+    const popUpForm = parent.querySelector("#" + rootId + "popUpForm");
+    popUpForm?.classList.remove("hidden"); 
+}
 
-    detailedCarouselTitle.classList.add("opacity-0");
-    detailedCarouselContent.classList.add("opacity-0");
-    detailedCarouselButtons.classList.add("opacity-0");
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const fadeDown = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate-fade-down");
-                    entry.target.classList.remove("opacity-0");
-                }
-            });
-        });
-        const fadeIn = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate-fade-in");
-                    entry.target.classList.remove("opacity-0");
-                }
-            });
-        });
-        const fadeUp = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate-fade-up");
-                    entry.target.classList.remove("opacity-0");
-                }
-            });
-        });
-
-        fadeDown.observe(detailedCarouselTitle);
-        fadeIn.observe(detailedCarouselContent);
-        fadeUp.observe(detailedCarouselButtons);
-    });
+const closePopUpForm = (rootId: string) => {
+    event!.preventDefault();
+    const parent = document.getElementById(rootId) as HTMLElement;
+    const popUpForm = parent.querySelector("#" + rootId + "popUpForm");
+    popUpForm?.classList.add("hidden"); 
 }
 
 /** @title {{text}} */
@@ -114,7 +88,7 @@ function SliderItem(
     } = slide;
 
     return (
-        <div id="detailedCarouselContent">
+        <AnimateOnShow animation="animate-fade-in" delay={300}>
             <div
                 id={id}
                 class="relative flex flex-col md:flex-row gap-[84px] md:gap-10 w-full min-h-[292px]"
@@ -161,7 +135,7 @@ function SliderItem(
                     </div>
                 </div>
             </div>
-        </div>
+        </AnimateOnShow>
     );
 }
 
@@ -243,14 +217,10 @@ function Carousel(props: Props) {
                 id={id}
                 class="min-h-min flex items-center flex-col lg:container md:max-w-[1220px] lg:mx-auto pt-16 pb-24 lg:pt-24"
             >
-                <script
-                    type="module"
-                    dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
-                />
 
-                {title && <h2 id="detailedCarouselTitle" class="max-w-[307px] md:max-w-full text-2xl md:text-5xl text-primary text-center font-semibold leading-snug pb-7 md:pb-12 lg:pb-16">
+                {title && <AnimateOnShow divClass="max-w-[307px] md:max-w-full text-2xl md:text-5xl text-primary text-center font-semibold leading-snug pb-7 md:pb-12 lg:pb-16">
                     {title}
-                </h2>}
+                </AnimateOnShow>}
 
                 <div class="relative w-full md:hidden">
                     <div class="absolute top-[28vw] left-0 flex justify-end w-full lg:px-9 ">
@@ -277,7 +247,7 @@ function Carousel(props: Props) {
                         </Slider.Item>
                     ))}
                 </Slider>
-                {cta && <div id="detailedCarouselButtons" class="flex flex-wrap justify-center gap-7 mt-4">
+                {cta && <AnimateOnShow animation="animate-fade-up" divClass="flex flex-wrap justify-center gap-7 mt-4">
                     {cta.map((item) => (
                         <a
                             key={item?.id}
@@ -285,11 +255,12 @@ function Carousel(props: Props) {
                             href={item?.href ?? "#"}
                             target={item?.href.includes("http") ? "_blank" : "_self"}
                             class={`btn btn-primary ${item.outline ? "btn-outline" : ""} font-bold px-7 hover:scale-110 text-lg`}
+                            hx-on:click={item.href == '/talkToSpecialist' && useScript(openPopUpForm, id)} 
                         >
                             {item?.text}
                         </a>
                     ))}
-                </div>}
+                </AnimateOnShow>}
                 {links && <div class="mt-5 text-primary flex flex-wrap justify-center gap-5">
                     {links.map(link => (
                         <a
@@ -305,6 +276,23 @@ function Carousel(props: Props) {
                         </a>
                     ))}
                 </div>}
+
+                <div id={id + "popUpForm"} class="fixed top-0 left-0 h-screen w-screen flex items-center justify-center bg-black bg-opacity-50 z-50 talkToSpecialistForm hidden">
+                    <style dangerouslySetInnerHTML={{ __html: CSS }} />
+                    <div class="max-w-[550px] min-h-[600px] bg-primary-content rounded-xl lg:p-12 animate-pop-up relative" style={{animationDuration: "0.3s"}}>
+                        <button class="text-primary font-black p-2.5 absolute top-2 right-2" hx-on:click={useScript(closePopUpForm, id)}>X</button>
+                        <div dangerouslySetInnerHTML={{
+                            __html: `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                                                                <script>
+                                                                hbspt.forms.create({
+                                                                    region: "na1",
+                                                                    portalId: "7112881",
+                                                                    formId: "06d3df52-7c37-4749-aa27-5c7744917d89"
+                                                                });
+                                                                </script>
+                        `}} />
+                    </div>
+                </div>
             </div>
         </div>
     );

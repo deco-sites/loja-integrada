@@ -3,7 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
 import { useScript } from "deco/hooks/useScript.ts";
-import FadeDown from "site/components/ui/FadeDown.tsx";
+import AnimateOnShow from "../components/ui/AnimateOnShow.tsx";
 
 const onClick = (rootId: string) => {
     const parent = document.getElementById(rootId) as HTMLElement;
@@ -250,13 +250,17 @@ function Plans(props: Props) {
                 id={id}
                 class="min-h-min flex flex-col items-center lg:container md:max-w-[1500px] lg:mx-auto pt-7 lg:pt-[90px]"
             >
-                <FadeDown animation="animate-fade-down">
+                <AnimateOnShow animation="animate-fade-down">
                     <p class="text-lg lg:text-2xl text-neutral-content font-semibold leading-tight">{caption}</p>
-                </FadeDown>
+                </AnimateOnShow>
 
-                {title && <FadeDown animation="animate-fade-down50" divClass="text-2xl lg:text-5xl text-primary text-center leading-tight font-semibold lg:w-[911px] pb-12 lg:pb-16 mx-auto">
+                {title && <AnimateOnShow 
+                    animation="animate-fade-down" 
+                    animationDuration="1.1s"
+                    divClass="text-2xl lg:text-5xl text-primary text-center leading-tight font-semibold lg:w-[911px] pb-12 lg:pb-16 mx-auto"
+                >
                     {title}
-                </FadeDown>}
+                </AnimateOnShow>}
                 
                 <div className="form-control">
                     <label className="label cursor-pointer gap-5">
@@ -274,7 +278,7 @@ function Plans(props: Props) {
                     </label>
                 </div>
 
-                <FadeDown animation="animate-pop-up" divClass="w-full" delay={400}>
+                <AnimateOnShow animation="animate-pop-up" divClass="w-full" delay={400}>
                     <Slider
                         class="carousel carousel-center lg:px-[30px] py-9 w-full"
                         rootId={id}
@@ -296,7 +300,7 @@ function Plans(props: Props) {
                     <div class="flex justify-end pr-[22px] lg:px-9 ">
                         {arrows && <Buttons />}
                     </div>
-                </FadeDown>
+                </AnimateOnShow>
 
                 <div class="mt-12">
                     <p class="text-center text-xl font-normal leading-tight text-neutral-content">{bottomCaption}</p>
