@@ -94,6 +94,9 @@ export interface Props {
      * @description show arrows to navigate through the images
      */
     arrows?: boolean;
+    bottomCaption?: string;
+    bottomTitle?: string;
+    bottomButton?: CTA;
 }
 
 function InfoIcon({theme}: {theme: 'dark' | 'light'}) {
@@ -238,7 +241,7 @@ function Buttons() {
 
 function Plans(props: Props) {
     const id = useId();
-    const { title, caption, slides, montlyLabel, annualLabel, annualTag, arrows } = { ...props };
+    const { title, caption, slides, montlyLabel, annualLabel, annualTag, arrows, bottomCaption, bottomTitle, bottomButton } = { ...props };
 
     return (
         <div id="plansCarousel">
@@ -294,6 +297,20 @@ function Plans(props: Props) {
                         {arrows && <Buttons />}
                     </div>
                 </FadeDown>
+
+                <div class="mt-12">
+                    <p class="text-center text-xl font-normal leading-tight text-neutral-content">{bottomCaption}</p>
+                    <p class="text-center mt-[6px] text-primary text-2xl font-semibold">{bottomTitle}</p>
+                    <div class="flex justify-center mt-5">
+                        {bottomButton?.text && <a
+                        href={bottomButton?.href ?? "#"}
+                        class="btn btn-primary  font-bold px-7 hover:scale-110 text-lg"
+                        target={bottomButton?.href?.includes("http") ? "_blank" : "_self"}
+                    >
+                        {bottomButton.text}
+                    </a>}
+                    </div>
+                </div>
             </div>
         </div>
     );
