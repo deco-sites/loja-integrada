@@ -28,11 +28,12 @@ export interface Props {
     children: ComponentChildren;
     delay?: number;
     animation?: string;
+    animationDuration?: string;
 }
 
-export default function FadeDown({ children, divClass = "", delay = 0, animation = 'animate-fade-down' }: Props) {
+export default function FadeDown({ children, divClass = "", delay = 0, animationDuration, animation = 'animate-fade-down' }: Props) {
     const id = useId();
-    return <div id={id} class={divClass}>
+    return <div id={id} class={divClass} style={{ animationDuration }}>
         <script
             type="module"
             dangerouslySetInnerHTML={{ __html: useScript(onLoad, id, delay, animation) }}

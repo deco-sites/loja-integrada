@@ -22,7 +22,7 @@
     "neutral": "#CCC4CF",
     "success": "#008060",
     "warning": "#F1EEFF",
-    "error": "#d82c0d",
+    "error": "#F57E77",
     "info": "#FFE6A0"
   },
   "font": {

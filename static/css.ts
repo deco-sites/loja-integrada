@@ -2,6 +2,7 @@ export const CSS = `
 .hs-form-private {
   background-color: var(--color-primary-content); /* bg-primary-content */
   display: flex; /* flex */
+  flex-wrap: wrap;
   justify-content: space-between; /* justify-between */
   padding-top: 0.375rem; /* py-1.5 */
   padding-bottom: 0.375rem; /* py-1.5 */
@@ -50,6 +51,34 @@ export const CSS = `
 
 .hs-input:focus {
   outline: none;
+}
+
+.talkToSpecialistForm .hs-form-private {
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.talkToSpecialistForm .hs-form-field {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.talkToSpecialistForm .input {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid;
+  --tw-border-opacity: 1;
+    border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
+}
+
+.talkToSpecialistForm .hs-error-msg {
+  --tw-text-opacity: 1;
+    color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
 }
 
 @media (min-width: 768px) {
