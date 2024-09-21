@@ -59,7 +59,7 @@ export interface Props {
 }
 
 export default function CollapseGroup({ caption, title, collapses }: Props) {
-    return <div class="mt-32 lg:px-24 text-primary leading-[120%]">
+    return <div class="mt-32 lg:px-24 text-primary leading-[120%] hidden md:block">
         <h3 class="text-center text-neutral-content text-2xl font-semibold">{caption}</h3>
         <h2 class="text-center text-2xl font-semibold mt-2.5 mb-5">{title}</h2>
         {collapses.map((collapse) => (<div className="collapse border border-base-200 rounded-[10px] mt-[30px]">

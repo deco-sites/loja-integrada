@@ -88,7 +88,7 @@ function SliderItem(
     } = slide;
 
     return (
-        <AnimateOnShow animation="animate-fade-in" delay={300}>
+        <AnimateOnShow animation="animate-fade-in" delay={150}>
             <div
                 id={id}
                 class="relative flex flex-col md:flex-row gap-[84px] md:gap-10 w-full min-h-[292px]"

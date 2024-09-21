@@ -1,5 +1,11 @@
 export const CSS = `
+
+ul {
+  position: relative;
+}
+
 .hs-form-private {
+  position: relative;
   background-color: var(--color-primary-content); /* bg-primary-content */
   display: flex; /* flex */
   flex-wrap: wrap;
@@ -53,6 +59,15 @@ export const CSS = `
   outline: none;
 }
 
+.hs-error-msg {
+  --tw-text-opacity: 1;
+    color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
+}
+
+.submitted-message {
+  text-align: center;
+}
+
 .talkToSpecialistForm .hs-form-private {
   justify-content: center;
   border: none;
@@ -76,9 +91,32 @@ export const CSS = `
     border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
 }
 
-.talkToSpecialistForm .hs-error-msg {
-  --tw-text-opacity: 1;
-    color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
+.tcoEmailForm form {
+  --tw-bg-opacity: 1;
+    background-color: var(--fallback-pc,oklch(var(--pc)/var(--tw-bg-opacity)));
+  border: none;
+  border-radius: 10px;
+  flex-wrap: nowrap;
+}
+
+.tcoEmailForm .hs-input {
+  width: 100%;
+}
+
+.tcoEmailForm .input {
+  border-radius: 10px;
+}
+
+
+.tcoEmailForm .hs-error-msg {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 200%;
+}
+
+.tcoEmailForm .hs_error_rollup {
+  display: none;
 }
 
 @media (min-width: 768px) {
