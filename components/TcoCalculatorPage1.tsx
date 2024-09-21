@@ -164,7 +164,35 @@ function TcoCalculatorPage1(
                     ))}
                 </div>
                 <p class="text-center text-xl font-semibold mt-[60px] text-transparent bg-gradient-to-r from-warning-content to-error-content bg-clip-text">{emailCaption}</p>
-                <form 
+                <div class="tcoEmailForm mt-7" dangerouslySetInnerHTML={{__html: `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "7112881",
+                        formId: "5b72e2fa-f5b1-4cb8-b711-612b485f79c2",
+                        onFormSubmit: function($form){
+                                    const parent = document.getElementById('${rootId}');
+                                    if (parent) {
+                                        Array.from(parent.children)[0].classList.remove("lg:flex");
+                                        Array.from(parent.children)[0].classList.add("hidden");
+                                        Array.from(parent.children)[1].classList.remove("hidden");
+                                        parent.querySelector('.btnStart').classList.remove("hidden");
+                                    }
+                                }
+                    });
+                    </script>
+                `}}/>
+                
+                <div class="w-full flex justify-center">
+                    <input 
+                        type="submit"
+                        class="btn btn-primary font-bold px-7 hover:scale-110 text-lg min-h-10 lg:min-h-12 h-auto hidden btnStart"
+                        value={emailButtonText}
+                        hx-on:click={useScript(onClickStart, rootId)}
+                    />
+                </div>
+                
+                {/* <form 
                     class={`bg-primary-content flex justify-between py-1.5 pr-1.5 mt-7 text-base text-primary border border-base-200 rounded-xl shadow-spreaded`}
                     hx-on:submit={useScript(onClickStart, rootId)}
                 >
@@ -180,7 +208,7 @@ function TcoCalculatorPage1(
                         value={emailButtonText}
                         >
                     </input>
-                </form>
+                </form> */}
             </div>
         </div>
     );

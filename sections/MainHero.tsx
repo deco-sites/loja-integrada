@@ -57,16 +57,14 @@ export default function MainHero({ title, caption = "", inputLabel, backgroundIm
             </div>
         </div>
 
-        <div class="flex-grow hidden xl:flex justify-end w-1/2">
-            <div class="h-full min-w-[630px] min-h-[697]">
-                <Image
-                    width={697}
-                    height={592}
-                    src={image.src}
-                    alt={image.src || ""}
-                    class="h-full object-contain"
-                />
-            </div>
+        <div class="flex-grow hidden md:flex justify-end w-1/2">
+            <Image
+                width={697}
+                height={592}
+                src={image.src}
+                alt={image.src || ""}
+                class="h-[697px] object-contain"
+            />
         </div>
     </div>
 }
