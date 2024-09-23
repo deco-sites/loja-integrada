@@ -1,4 +1,5 @@
 import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
+import AnimateOnShow from "../components/ui/AnimateOnShow.tsx";
 import Image from "apps/website/components/Image.tsx";
 
 /** @title {{textBefore}} {{text}} */
@@ -12,6 +13,11 @@ export interface Link {
 export interface CTA {
   href: string;
   text: string;
+}
+
+export interface BulletPoints {
+  items?: string[];
+  bulletPointsIcon?: IImage;
 }
 
 export interface IImage {
@@ -31,11 +37,13 @@ export interface Props {
   title?: string;
   caption?: string;
   description?: string;
+  bulletpoints?: BulletPoints;
   bigNumbers?: BigNumber[];
   image?: IImage;
   video?: VideoWidget;
   use?: 'image' | 'video';
   placement?: "left" | "right";
+  ctaTitle?: string;
   cta?: CTA[];
   links?: Link[];
   backgroundImage?: IImage;
@@ -46,18 +54,20 @@ export default function Hero({
   title,
   caption,
   description,
+  bulletpoints,
   bigNumbers,
   image,
   video,
   use = 'image',
   placement = 'left',
+  ctaTitle,
   cta = [],
   links = [],
   backgroundImage,
 }: Props) {
   return (
     <div class={`flex flex-col lg:flex-row w-full mt-48 text-primary leading-[120%] ${placement == "left" ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-      <div class={`relative lg:w-1/2 flex flex-col lg:flex-row ${placement == "left" ? 'justify-start' : 'justify-end'}`}>
+      <AnimateOnShow divClass={`relative lg:w-1/2 flex flex-col lg:flex-row ${placement == "left" ? 'justify-start' : 'justify-end'}`} animation="animate-fade-right">
         {backgroundImage?.src && <Image
           src={backgroundImage.src}
           alt={backgroundImage.alt || "background image"}
@@ -78,28 +88,42 @@ export default function Hero({
           muted
           loading="lazy"
           loop
-          class="w-full xl:w-auto max-w-[809px] object-cover"
+          class="w-full xl:w-auto max-w-[809px] object-contain"
         >
           <source src={video} type="video/mp4" />
           <object data="" width="320" height="240">
             <embed width="320" height="240" src={video} />
           </object>
         </video>}
-      </div>
+      </AnimateOnShow>
       <div class={`lg:w-1/2 flex px-7 justify-center ${placement == "left" ? 'lg:justify-start' : 'lg:justify-end'}`}>
         <div class="max-w-[555px]">
-          <h2 class="text-5xl font-semibold hidden lg:block">{title}</h2>
-          <p class="text-2xl mt-2.5 font-semibold hidden lg:block">{caption}</p>
-          <p class="text-base font-normal leading-normal text-base-300 mt-5">{description}</p>
-          <div class="flex flex-wrap">
+          <AnimateOnShow divClass="text-5xl font-semibold hidden lg:block" animation="animate-fade-left">{title}</AnimateOnShow>
+          <AnimateOnShow divClass="text-2xl mt-2.5 font-semibold hidden lg:block" delay={100} animation="animate-fade-left">{caption}</AnimateOnShow>
+          <AnimateOnShow divClass="text-base font-normal leading-normal text-base-300 mt-5" delay={200} animation="animate-fade-left">{description}</AnimateOnShow>
+          {bulletpoints && <AnimateOnShow divClass="mt-7 text-base-300 text-base flex flex-col gap-2.5" animation="animate-fade-left" delay={300}>
+            {bulletpoints.items?.map((item) => (
+              <p class="flex gap-2.5">
+                {bulletpoints.bulletPointsIcon?.src && <Image
+                  height={bulletpoints.bulletPointsIcon?.height || 16}
+                  width={bulletpoints.bulletPointsIcon?.width || 16}
+                  src={bulletpoints.bulletPointsIcon?.src}
+                  alt={bulletpoints.bulletPointsIcon.alt || ""}
+                />}
+                {item}
+              </p>
+            ))}
+          </AnimateOnShow>}
+          <AnimateOnShow divClass="flex flex-wrap" delay={400} animation="animate-fade-left">
             {bigNumbers?.map((bigNumber) =>
               <div class="w-1/3 px-3 mt-10">
-                <p class="text-2xl lg:text-[34px] leading-[120%] font-bold">{bigNumber.text}</p>
-                <p class="text-base-300 text-sm mt-2">{bigNumber.caption}</p>
+                <p class="text-xl sm:text-2xl lg:text-[34px] leading-[120%] font-bold">{bigNumber.text}</p>
+                <p class="text-base-300 text-xs sm:text-sm mt-2">{bigNumber.caption}</p>
               </div>
             )}
-          </div>
-          <div class="flex flex-wrap items-center gap-7 mt-10">
+          </AnimateOnShow>
+          {ctaTitle && <p class="text-base-300 text-base mb-5 mt-7">{ctaTitle}</p>}
+          <AnimateOnShow divClass="flex flex-wrap items-center gap-7 mt-5" animation="animate-fade-up" delay={400}>
             {cta.map((button) =>
               <a
                 href={button?.href ?? "#"}
@@ -122,7 +146,7 @@ export default function Hero({
                 </svg>
               </a>
             )}
-          </div>
+          </AnimateOnShow>
         </div>
       </div>
     </div>

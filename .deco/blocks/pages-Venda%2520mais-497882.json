@@ -60,6 +60,8 @@
         {
           "value": {
             "__resolveType": "site/sections/Logos.tsx",
+            "title": "Dos R$100 mil aos R$10 milhões!",
+            "caption": "Descubra quem já faz parte da nossa história 🚀 ",
             "logos": [
               {
                 "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/86b5ac4e-c69d-42ae-9423-7d4f66b26e58/image-1.png",
@@ -89,9 +91,7 @@
                 "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/d393d421-8842-4d10-9a75-5357364c5ff6/image-7-(2).png",
                 "altText": "+Mu logo"
               }
-            ],
-            "title": "Dos R$100 mil aos R$10 milhões!",
-            "caption": "Descubra quem já faz parte da nossa história 🚀 "
+            ]
           },
           "rule": {
             "__resolveType": "website/matchers/device.ts",
@@ -101,6 +101,8 @@
         {
           "value": {
             "__resolveType": "site/sections/Logos.tsx",
+            "title": "Descubra quem já faz parte da nossa história",
+            "caption": "+700 lojistas escolheram migrar para a Loja Integrada nos últimos 6 meses 🚀 ",
             "logos": [
               {
                 "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/86b5ac4e-c69d-42ae-9423-7d4f66b26e58/image-1.png",
@@ -130,9 +132,7 @@
                 "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/d393d421-8842-4d10-9a75-5357364c5ff6/image-7-(2).png",
                 "altText": "+Mu logo"
               }
-            ],
-            "title": "Descubra quem já faz parte da nossa história",
-            "caption": "+700 lojistas escolheram migrar para a Loja Integrada nos últimos 6 meses 🚀 "
+            ]
           },
           "rule": {
             "__resolveType": "website/matchers/always.ts"
@@ -147,7 +147,7 @@
       "slides": [
         {
           "content": {
-            "description": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">\"Depois que migramos para a Loja Integrada, <em><strong>aumentamos nosso ticket médio em 15% e reduzimos nossos custos operacionais em 9 mil reais.</strong></em> Viemos pela fácil integração com a VTEX, em busca de redução de custo e uma plataforma mais fácil de usar e foi exatamente isso que encontramos\".</span></p>",
+            "description": "<p>\"Depois que migramos para a Loja Integrada, <em><strong>aumentamos nosso ticket médio em 15% e reduzimos nossos custos operacionais em 9 mil reais.</strong></em> Viemos pela fácil integração com a VTEX, em busca de redução de custo e uma plataforma mais fácil de usar e foi exatamente isso que encontramos\".</p>",
             "avatar": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/c3896dc4-da5c-4496-a704-f5f37a2c759c/m-camicado-logo.png",
             "name": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Loja no ar em <strong>menos de meses</strong></span></p>",
             "alt": "m camicado"
@@ -165,7 +165,6 @@
     },
     {
       "__resolveType": "site/sections/Carousel.tsx",
-      "title": "Aumente suas vendas e potencialize sua eficiência com nosso ecossistema!",
       "slides": [
         {
           "title": "Gere mais receita por usuário",
@@ -284,6 +283,7 @@
         }
       ],
       "arrows": true,
+      "title": "Aumente suas vendas e potencialize sua eficiência com nosso ecossistema!",
       "backgroundImage": {
         "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4868c23-20ac-4754-a3d9-8a02cf8d61bb/rounded-bg-figure.png"
       },
@@ -5060,109 +5060,322 @@
       ]
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "website/flags/multivariate/section.ts",
-        "variants": [
-          {
-            "value": {
-              "__resolveType": "site/sections/Hero.tsx",
-              "title": "Carrinho Abandonado",
-              "caption": "Recupere vendas de forma automatizada",
-              "description": "Nosso ecossistema é feito para seu negócio economizar e você lucrar mais. Com a ferramenta de Carrinho Abandonado, você reengaja visitantes que já mostraram interesse em seus produtos e que estão a um passo de realizar uma compra. E, no plano Elite, seus disparos são ilimitados.",
-              "bigNumbers": [
-                {
-                  "text": "+ R$ 14 milhões",
-                  "caption": "em vendas recuperadas"
-                },
-                {
-                  "text": "+ 45 mil pedidos",
-                  "caption": "recuperados com estratégia"
-                },
-                {
-                  "text": "+ 2 mil lojistas",
-                  "caption": "já utilizaram a ferramenta"
-                }
-              ],
-              "image": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Carrinho Abandonado",
+            "caption": "Recupere vendas de forma automatizada",
+            "description": "Nosso ecossistema é feito para seu negócio economizar e você lucrar mais. Com a ferramenta de Carrinho Abandonado, você reengaja visitantes que já mostraram interesse em seus produtos e que estão a um passo de realizar uma compra. E, no plano Elite, seus disparos são ilimitados.",
+            "bigNumbers": [
+              {
+                "text": "+ R$ 14 milhões",
+                "caption": "em vendas recuperadas"
               },
-              "placement": "right",
-              "cta": [
-                {
-                  "text": "Ver plano Aceleração ",
-                  "href": "#"
-                }
-              ],
-              "links": [
-                {
-                  "textBefore": "Já tem uma loja?",
-                  "text": "Ative agora",
-                  "href": "#"
-                }
-              ],
-              "backgroundImage": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
-                "alt": "green elipse",
-                "width": 797,
-                "height": 1227
+              {
+                "text": "+ 45 mil pedidos",
+                "caption": "recuperados com estratégia"
+              },
+              {
+                "text": "+ 2 mil lojistas",
+                "caption": "já utilizaram a ferramenta"
               }
+            ],
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
             },
-            "rule": {
-              "__resolveType": "website/matchers/device.ts",
-              "mobile": true
+            "placement": "right",
+            "cta": [
+              {
+                "text": "Ver plano Aceleração ",
+                "href": "#"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": "Ative agora",
+                "href": "#"
+              }
+            ],
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
+              "alt": "green elipse",
+              "width": 797,
+              "height": 1227
             }
           },
-          {
-            "value": {
-              "__resolveType": "site/sections/Hero.tsx",
-              "title": "Recupe vendas com eficiência",
-              "caption": "Conheça a solução nativa de “Carrinho Abandonado”",
-              "description": "Nosso ecossistema é feito para seu negócio economizar e você lucrar mais. Com a ferramenta de Carrinho Abandonado, você reengaja visitantes que já mostraram interesse em seus produtos e que estão a um passo de realizar uma compra. E, no plano Elite, seus disparos são ilimitados.",
-              "bigNumbers": [
-                {
-                  "text": "+ R$ 14 milhões",
-                  "caption": "em vendas recuperadas"
-                },
-                {
-                  "text": "+ 45 mil pedidos",
-                  "caption": "recuperados com estratégia"
-                },
-                {
-                  "text": "+ 2 mil lojistas",
-                  "caption": "já utilizaram a ferramenta"
-                }
-              ],
-              "image": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
-              },
-              "placement": "right",
-              "cta": [
-                {
-                  "text": "Ver plano Aceleração ",
-                  "href": "#"
-                }
-              ],
-              "links": [
-                {
-                  "textBefore": "Já tem uma loja?",
-                  "text": "Ative agora",
-                  "href": "#"
-                }
-              ],
-              "backgroundImage": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
-                "alt": "green elipse",
-                "width": 797,
-                "height": 1227
-              }
-            },
-            "rule": {
-              "__resolveType": "website/matchers/always.ts"
-            }
+          "rule": {
+            "__resolveType": "website/matchers/device.ts",
+            "mobile": true
           }
-        ]
-      }
+        },
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Recupe vendas com eficiência",
+            "caption": "Conheça a solução nativa de “Carrinho Abandonado”",
+            "description": "Nosso ecossistema é feito para seu negócio economizar e você lucrar mais. Com a ferramenta de Carrinho Abandonado, você reengaja visitantes que já mostraram interesse em seus produtos e que estão a um passo de realizar uma compra. E, no plano Elite, seus disparos são ilimitados.",
+            "bigNumbers": [
+              {
+                "text": "+ R$ 14 milhões",
+                "caption": "em vendas recuperadas"
+              },
+              {
+                "text": "+ 45 mil pedidos",
+                "caption": "recuperados com estratégia"
+              },
+              {
+                "text": "+ 2 mil lojistas",
+                "caption": "já utilizaram a ferramenta"
+              }
+            ],
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
+            },
+            "cta": [
+              {
+                "text": "Ver plano Aceleração ",
+                "href": "#"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": "Ative agora",
+                "href": "#"
+              }
+            ],
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
+              "alt": "green elipse",
+              "width": 797,
+              "height": 1227
+            },
+            "placement": "right"
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Pagali",
+            "caption": "Taxas competitivas em relação ao mercado, maiores taxas de aprovação",
+            "description": "Conheça o Pagali, nosso meio de pagamento nativo. Feito para quem quer reduzir suas taxas e melhorar sua taxa de aceitação e aprovação. Tudo isso no painel da sua loja, completamente integrado.",
+            "bigNumbers": [
+              {
+                "text": "+ R$ 1,8 bilhão",
+                "caption": "transacionados"
+              },
+              {
+                "text": "+ 12 mil lojistas",
+                "caption": "ativos no Pagali"
+              },
+              {
+                "text": "+ 8,6 milhões ",
+                "caption": "de transações pagas"
+              }
+            ],
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/06f5310e-1057-487a-8425-a02c83d3825c/hero-3-image-mobile.svg"
+            },
+            "placement": "right",
+            "cta": [
+              {
+                "text": "Ver planos",
+                "href": "#"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja? ",
+                "text": "Ative agora",
+                "href": "#"
+              }
+            ],
+            "ctaTitle": "Disponível em todos os planos",
+            "bulletpoints": {
+              "bulletPointsIcon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+              },
+              "items": [
+                "Liquidez instantânea ",
+                "Sem taxa extra para transações com outros meios de pagamento.",
+                "Fácil configuração  "
+              ]
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e96066ee-e1c9-4516-b5f7-60c3f8ec6391/Ellipse-62-(1).png"
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/device.ts",
+            "mobile": true
+          }
+        },
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Aumente a taxa de aprovação das suas vendas",
+            "caption": "Venda muito mais com o meio de pagamento Pagali.",
+            "description": "Conheça o Pagali, nosso meio de pagamento nativo. Feito para quem quer reduzir suas taxas e melhorar sua taxa de aceitação e aprovação. Tudo isso no painel da sua loja, completamente integrado.",
+            "bigNumbers": [
+              {
+                "text": "+ R$ 1,8 bilhão",
+                "caption": "transacionados"
+              },
+              {
+                "text": "+ 12 mil lojistas",
+                "caption": "ativos no Pagali"
+              },
+              {
+                "text": "+ 8,6 milhões ",
+                "caption": "de transações pagas"
+              }
+            ],
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a7020552-9bea-4573-a1c1-53f7a681e735/hero-3-image.svg"
+            },
+            "placement": "right",
+            "cta": [
+              {
+                "text": "Ver planos",
+                "href": "#"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja? ",
+                "text": "Ative agora",
+                "href": "#"
+              }
+            ],
+            "ctaTitle": "Disponível em todos os planos",
+            "bulletpoints": {
+              "bulletPointsIcon": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+              },
+              "items": [
+                "Gestão financeira unificada ",
+                "Sem taxa sob valor de cada transação: só no Pagali",
+                "Fácil configuração  "
+              ]
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e96066ee-e1c9-4516-b5f7-60c3f8ec6391/Ellipse-62-(1).png"
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Enviali",
+            "caption": "Reduza os custos e a complexidade da sua operação logística e venda mais",
+            "bigNumbers": [
+              {
+                "text": "Fretes 70%  ",
+                "caption": "mais baratos"
+              },
+              {
+                "text": "+ 2 mil pontos",
+                "caption": "de coletas para envios"
+              },
+              {
+                "text": "+ 2,5 mil veículos",
+                "caption": "de entregas"
+              }
+            ],
+            "ctaTitle": "Tenha acesso a tabelas de preço mais competitivas com os Correios e com a transportadora Jadlog e aumente sua conversão. Os melhores valores de frete já negociados pelo Enviali para você vender mais. Disponível em todos os planos",
+            "cta": [
+              {
+                "href": "#",
+                "text": "Ver planos"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": " Ativar recursos",
+                "href": "#"
+              }
+            ],
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/14a0d78a-9192-4fa1-8602-c9bbd427b019/hero-4-image-mobile.svg"
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/37ad2c84-9ed1-438c-bb7c-d0f1ac8eaed4/Ellipse-63.png",
+              "width": 430,
+              "height": 690
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/device.ts",
+            "mobile": true
+          }
+        },
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Reduza seus custos com frete",
+            "caption": "Ofereça fretes mais competitivos com Enviali e aumente suas vendas",
+            "bigNumbers": [
+              {
+                "text": "Fretes 70%  ",
+                "caption": "mais baratos"
+              },
+              {
+                "text": "+ 2 mil pontos",
+                "caption": "de coletas para envios"
+              },
+              {
+                "text": "+ 2,5 mil veículos",
+                "caption": "de entregas"
+              }
+            ],
+            "ctaTitle": "Tenha acesso a tabelas de preço mais competitivas com os Correios e com a transportadora Jadlog e aumente sua conversão. Os melhores valores de frete já negociados pelo Enviali para você vender mais. Disponível em todos os planos",
+            "cta": [
+              {
+                "href": "#",
+                "text": "Ver planos"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": " Ativar recursos",
+                "href": "#"
+              }
+            ],
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02de4eda-2931-42b8-9fbc-cd8ddea17749/hero-4-image.svg"
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/21ead906-16be-442f-a3ca-814d04e5561a/Ellipse-67.png",
+              "width": 880,
+              "height": 1295
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
+          }
+        }
+      ]
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
