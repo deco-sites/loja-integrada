@@ -4956,6 +4956,215 @@
       ]
     },
     {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "cta": [
+              {
+                "style": "button",
+                "text": "Ver plano Aceleração ",
+                "href": "#"
+              }
+            ],
+            "title": "Compre Junto",
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e1976be0-b8c1-441d-bfb6-8de773198dea/hero-1-image-mobile.svg",
+              "alt": "hero image"
+            },
+            "caption": "Venda mais sem gastar com anúncios pagos",
+            "description": "Potencialize a capacidade do seu negócio de vender mais para o mesmo cliente. Com o “Compre Junto”, aumentamos até 31% do seu faturamento oferecendo um produto complementar ao seu usuário no momento da compra.",
+            "bigNumbers": [
+              {
+                "text": "+ 31% de aumento",
+                "caption": "no ticket médio"
+              },
+              {
+                "text": "+ 900 lojas",
+                "caption": "usando a ferramenta"
+              },
+              {
+                "text": "+ 2 mil lojistas",
+                "caption": "já utilizaram a ferramenta"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": " Ative agora",
+                "href": "#"
+              }
+            ],
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/94d5a22d-6783-411d-8035-00cbfd929774/Ellipse-62-(1).svg",
+              "alt": "background gradiente"
+            },
+            "placement": "left",
+            "use": "image"
+          },
+          "rule": {
+            "__resolveType": "website/matchers/device.ts",
+            "mobile": true
+          }
+        },
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "cta": [
+              {
+                "style": "button",
+                "text": "Ver plano Aceleração ",
+                "href": "#"
+              }
+            ],
+            "title": "Venda mais sem gastar com anúncios pagos",
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4d2a4a59-bf70-4c3b-850c-e11e59ef5e5a/hero1-image.svg",
+              "alt": "hero image"
+            },
+            "caption": "Conheça o “Compre Junto”, nossa  ferramenta nativa",
+            "description": "Potencialize a capacidade do seu negócio de vender mais para o mesmo cliente. Com o “Compre Junto”, aumentamos até 31% do seu faturamento oferecendo um produto complementar ao seu usuário no momento da compra.",
+            "bigNumbers": [
+              {
+                "text": "+ 31% de aumento",
+                "caption": "no ticket médio"
+              },
+              {
+                "text": "+ 2.5k lojistas",
+                "caption": "usando a ferramenta"
+              },
+              {
+                "text": "+ 8.6k pedidos",
+                "caption": "convertidos em vendas no 1º Tri de 2024"
+              }
+            ],
+            "links": [
+              {
+                "textBefore": "Já tem uma loja?",
+                "text": " Ative agora",
+                "href": "#"
+              }
+            ],
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/774fda65-7da8-4ecc-a7f0-2c55c8e67f40/Ellipse-62.svg",
+              "alt": "background gradiente"
+            },
+            "placement": "left",
+            "use": "image"
+          },
+          "rule": {
+            "__resolveType": "website/matchers/always.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "website/flags/multivariate/section.ts",
+        "variants": [
+          {
+            "value": {
+              "__resolveType": "site/sections/Hero.tsx",
+              "title": "Carrinho Abandonado",
+              "caption": "Recupere vendas de forma automatizada",
+              "description": "Nosso ecossistema é feito para seu negócio economizar e você lucrar mais. Com a ferramenta de Carrinho Abandonado, você reengaja visitantes que já mostraram interesse em seus produtos e que estão a um passo de realizar uma compra. E, no plano Elite, seus disparos são ilimitados.",
+              "bigNumbers": [
+                {
+                  "text": "+ R$ 14 milhões",
+                  "caption": "em vendas recuperadas"
+                },
+                {
+                  "text": "+ 45 mil pedidos",
+                  "caption": "recuperados com estratégia"
+                },
+                {
+                  "text": "+ 2 mil lojistas",
+                  "caption": "já utilizaram a ferramenta"
+                }
+              ],
+              "image": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
+              },
+              "placement": "right",
+              "cta": [
+                {
+                  "text": "Ver plano Aceleração ",
+                  "href": "#"
+                }
+              ],
+              "links": [
+                {
+                  "textBefore": "Já tem uma loja?",
+                  "text": "Ative agora",
+                  "href": "#"
+                }
+              ],
+              "backgroundImage": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
+                "alt": "green elipse",
+                "width": 797,
+                "height": 1227
+              }
+            },
+            "rule": {
+              "__resolveType": "website/matchers/device.ts",
+              "mobile": true
+            }
+          },
+          {
+            "value": {
+              "__resolveType": "site/sections/Hero.tsx",
+              "title": "Recupe vendas com eficiência",
+              "caption": "Conheça a solução nativa de “Carrinho Abandonado”",
+              "description": "Nosso ecossistema é feito para seu negócio economizar e você lucrar mais. Com a ferramenta de Carrinho Abandonado, você reengaja visitantes que já mostraram interesse em seus produtos e que estão a um passo de realizar uma compra. E, no plano Elite, seus disparos são ilimitados.",
+              "bigNumbers": [
+                {
+                  "text": "+ R$ 14 milhões",
+                  "caption": "em vendas recuperadas"
+                },
+                {
+                  "text": "+ 45 mil pedidos",
+                  "caption": "recuperados com estratégia"
+                },
+                {
+                  "text": "+ 2 mil lojistas",
+                  "caption": "já utilizaram a ferramenta"
+                }
+              ],
+              "image": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
+              },
+              "placement": "right",
+              "cta": [
+                {
+                  "text": "Ver plano Aceleração ",
+                  "href": "#"
+                }
+              ],
+              "links": [
+                {
+                  "textBefore": "Já tem uma loja?",
+                  "text": "Ative agora",
+                  "href": "#"
+                }
+              ],
+              "backgroundImage": {
+                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
+                "alt": "green elipse",
+                "width": 797,
+                "height": 1227
+              }
+            },
+            "rule": {
+              "__resolveType": "website/matchers/always.ts"
+            }
+          }
+        ]
+      }
+    },
+    {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "Footer"

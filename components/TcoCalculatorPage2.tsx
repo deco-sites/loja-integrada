@@ -2,7 +2,7 @@ import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
 
-const moneyInputOnKeyUp = () => {
+const moneyInputOnKeyUp = (rootId?: string) => {
     const element = event!.currentTarget as HTMLInputElement;
     let valor = element.value;
     valor = valor.replace(/[^\d,]/g, ""); // Remove todos os caracteres não numéricos e não vírgula
@@ -12,6 +12,16 @@ const moneyInputOnKeyUp = () => {
     if (valor[0] == ',') valor = '';
     element.value = "R$ " + valor;
     if (element.value.toLowerCase().includes('nan') || element.value.length == 3) element.value = "";
+
+   if (rootId) {
+        const parent = document.querySelector(".hs_gmv");
+        console.log(parent);
+        const test2 = parent?.querySelector('input[name="gmv"]') as HTMLInputElement | null;
+        console.log(test2);
+        if (test2) test2.value = "R$ " + valor;
+   }
+
+
 }
 
 const percentageInputOnKeyUp = () => {
@@ -115,6 +125,7 @@ function TcoCalculatorPage2(
         <div
             class="relative flex flex-wrap lg:flex-nowrap w-full min-h-[971px] lg:rounded-[30px] overflow-hidden hidden"
         >
+
             <div class={`relative w-full lg:max-w-[437px] pt-[121px] px-11 ${!asideBackground && 'bg-primary'} text-primary-content hidden lg:block`}>
                 {asideTopIcon && <Image
                     width={133}
@@ -198,7 +209,7 @@ function TcoCalculatorPage2(
                         </div>
                         <input
                             class={inputClass}
-                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
+                            hx-on:keyup={useScript(moneyInputOnKeyUp, rootId)}
                             type="text"
                             placeholder={averageMonthlyRevenue.placeholder}
                             required
@@ -230,6 +241,7 @@ function TcoCalculatorPage2(
                             </div>
                         </div>
                         <input
+                            name="test"
                             class={inputClass}
                             hx-on:keyup={useScript(moneyInputOnKeyUp)}
                             type="text"

@@ -1,5 +1,6 @@
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { CSS } from "../static/css.ts"
 
 export interface IImage {
     src: ImageWidget;
@@ -147,7 +148,17 @@ function TcoCalculatorPage4(
                 <div id={rootId + "resultAsideContentDiv"} class="flex flex-col gap-y-[70px] mt-10">
                     <div>
                         <p class="text-xl px-7 xl:px-0 text-center xl:text-left">{whatsappText}</p>
-                        <form class="mt-5 xl:max-w-64 flex flex-col gap-5 z-10 items-center w-full">
+                        <div dangerouslySetInnerHTML={{
+                            __html: `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                            <script>
+                            hbspt.forms.create({
+                                region: "na1",
+                                portalId: "7112881",
+                                formId: "9e130d4a-96c0-49ba-a934-2cdbb42ae3e8"
+                            });
+                            </script>
+                        `}} />
+                        {/* <form class="mt-5 xl:max-w-64 flex flex-col gap-5 z-10 items-center w-full">
                             <label>
                                 <div class={inputCaptionClass} >
                                     <p>{whatsappNameInput.caption}</p>
@@ -187,7 +198,7 @@ function TcoCalculatorPage4(
                                     {whasappCta?.text}
                                 </a>
                             </div>
-                        </form>
+                        </form> */}
                     </div>
                     <div class="flex gap-4 justify-center xl:justify-start">
                         <div class="flex flex-col gap-y-5">
