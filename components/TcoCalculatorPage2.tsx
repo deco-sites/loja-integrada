@@ -2,7 +2,7 @@ import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
 
-const moneyInputOnKeyUp = (rootId?: string) => {
+const moneyInputOnKeyUp = () => {
     const element = event!.currentTarget as HTMLInputElement;
     let valor = element.value;
     valor = valor.replace(/[^\d,]/g, ""); // Remove todos os caracteres não numéricos e não vírgula
@@ -12,15 +12,6 @@ const moneyInputOnKeyUp = (rootId?: string) => {
     if (valor[0] == ',') valor = '';
     element.value = "R$ " + valor;
     if (element.value.toLowerCase().includes('nan') || element.value.length == 3) element.value = "";
-
-   if (rootId) {
-        const parent = document.querySelector(".hs_gmv");
-        console.log(parent);
-        const test2 = parent?.querySelector('input[name="gmv"]') as HTMLInputElement | null;
-        console.log(test2);
-        if (test2) test2.value = "R$ " + valor;
-   }
-
 
 }
 
@@ -209,7 +200,7 @@ function TcoCalculatorPage2(
                         </div>
                         <input
                             class={inputClass}
-                            hx-on:keyup={useScript(moneyInputOnKeyUp, rootId)}
+                            hx-on:keyup={useScript(moneyInputOnKeyUp)}
                             type="text"
                             placeholder={averageMonthlyRevenue.placeholder}
                             required
