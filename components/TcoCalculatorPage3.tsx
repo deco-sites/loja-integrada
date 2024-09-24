@@ -1,4 +1,5 @@
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
+import { invoke } from "../runtime.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
 import { HtmlEscaped } from "@hono/hono/utils/html";
@@ -41,6 +42,7 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
     const percentToNumber = (value: string):number => parseFloat(value.replace('%', '').replace(',','.').trim());
 
     //pega os valores digitados pelo usuario
+    const emailInput = (parent?.querySelector("#"+rootId+'emailInput') as HTMLInputElement).value
     const currentPlatformInput = (parent?.querySelector("#"+rootId+'currentPlatformInput') as HTMLSelectElement).value;
     const montlyFeeInput = (parent?.querySelector("#"+rootId+'montlyFeeInput') as HTMLInputElement).value;
     const comissionInput = (parent?.querySelector("#"+rootId+"comissionInput") as HTMLInputElement).value;
@@ -141,6 +143,41 @@ const onClickNext = (rootId: string, plans: Plan[]) => {
         parent?.querySelector("#"+rootId+"negativeScreenExtraBenefit2")?.classList.remove("hidden");
         parent?.querySelector("#"+rootId+"negativeScreenAsideTopIcon")?.classList.remove("hidden");
     }
+
+    //envia os dados para o hubspot
+    const fields = {
+        email: emailInput,
+        gmv: gmvInput,
+        plataforma: currentPlatformInput,
+        mensalidade: montlyFeeInput,
+        comissao: comissionInput,
+        pedidos: montlyOrdersInput,
+        share_cartao: cardShareInput,
+        tarifa_cartao: cardFeeInput,
+        share_pix: pixShareInput,
+        tarifa_pix: pixFeeInput,
+        share_boleto: boletoShareInput,
+        tarifa_boleto: boletoFeeInput,
+        tco_atual: currentPlatformTco.totalTco.toString(),
+        tco_li: plansTco[indicatedPlan].totalTco.toString(),
+        plano_li: plans[indicatedPlan].title.toString(),
+        economia: saving.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    } 
+
+    //envia os dados para a hubspot
+    // invoke.site.actions.sendTcoUserData({fields, formGuid: '7ed4157b-6a66-425a-aebd-b66f51c1f0c8', portalId: '7112881'});
+    const hutk = document.cookie.replace(/(?:(?:^|.;\s)hubspotutk\s=\s([^;]).$)|^.*$/, "$1");
+    const context = {
+        "hutk": hutk,
+        "pageUri": window.location.href,
+        "pageName": document.title
+    };
+
+    fetch('/live/invoke/site/actions/sendTcoUserData.ts', {
+        body: JSON.stringify({fields, formGuid: '7ed4157b-6a66-425a-aebd-b66f51c1f0c8', portalId: '7112881', context: context}),
+        method: 'POST',
+        headers: {'content-type': 'application/json'}
+    }).then((r) => r.json()).then((r) => console.log(r));
 };
 
 const onClickBack = (rootId: string) => {

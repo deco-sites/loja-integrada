@@ -178,6 +178,11 @@ function TcoCalculatorPage1(
                                         Array.from(parent.children)[1].classList.remove("hidden");
                                         parent.querySelector('.btnStart').classList.remove("hidden");
                                     }
+                                    
+                                    const emailInput = $form.querySelector('input[name="email"]').value;
+
+                                    const emailForm = document.getElementById('${rootId+'emailInput'}');
+                                    if (emailForm) emailForm.value = emailInput;
                                 }
                     });
                     </script>
@@ -192,11 +197,12 @@ function TcoCalculatorPage1(
                     />
                 </div>
                 
-                {/* <form 
-                    class={`bg-primary-content flex justify-between py-1.5 pr-1.5 mt-7 text-base text-primary border border-base-200 rounded-xl shadow-spreaded`}
+                <form 
+                    class={`bg-primary-content flex justify-between py-1.5 pr-1.5 mt-7 text-base text-primary border border-base-200 rounded-xl shadow-spreaded hidden`}
                     hx-on:submit={useScript(onClickStart, rootId)}
                 >
                     <input
+                        id={rootId + 'emailInput'}
                         type="email"
                         class="w-1/2 md:w-auto md:flex-grow pl-2 md:pl-7 focus:outline-none text-sm md:text-base text-primary"
                         placeholder={emailPlaceHolder}
@@ -208,7 +214,7 @@ function TcoCalculatorPage1(
                         value={emailButtonText}
                         >
                     </input>
-                </form> */}
+                </form>
             </div>
         </div>
     );

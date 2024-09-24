@@ -1,6 +1,35 @@
 import type { ImageWidget, HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { CSS } from "../static/css.ts"
+import { useScript } from "deco/hooks/useScript.ts";
+
+const sendWhatsapp = (rootId: string) => {
+    const parent = document.getElementById(rootId);
+    const email = (parent?.querySelector("#"+rootId+'emailInput') as HTMLInputElement).value;
+    const firstname = (parent?.querySelector("#"+rootId+'whatsappName') as HTMLInputElement).value;
+    const mobilephone = (parent?.querySelector("#"+rootId+'whatsappNumber') as HTMLInputElement).value;
+    
+    //envia os dados para o hubspot
+    const fields = {
+       email,
+       firstname,
+       mobilephone
+    } 
+
+    //envia os dados para a hubspot
+    // invoke.site.actions.sendTcoUserData({fields, formGuid: '7ed4157b-6a66-425a-aebd-b66f51c1f0c8', portalId: '7112881'});
+    const hutk = document.cookie.replace(/(?:(?:^|.;\s)hubspotutk\s=\s([^;]).$)|^.*$/, "$1");
+    const context = {
+        "hutk": hutk,
+        "pageUri": window.location.href,
+        "pageName": document.title
+    };
+
+    fetch('/live/invoke/site/actions/sendTcoUserData.ts', {
+        body: JSON.stringify({fields, formGuid: '9e130d4a-96c0-49ba-a934-2cdbb42ae3e8', portalId: '7112881', context: context}),
+        method: 'POST',
+        headers: {'content-type': 'application/json'}
+    }).then((r) => r.json()).then((r) => console.log(r));
+}
 
 export interface IImage {
     src: ImageWidget;
@@ -148,7 +177,7 @@ function TcoCalculatorPage4(
                 <div id={rootId + "resultAsideContentDiv"} class="flex flex-col gap-y-[70px] mt-10">
                     <div>
                         <p class="text-xl px-7 xl:px-0 text-center xl:text-left">{whatsappText}</p>
-                        <div dangerouslySetInnerHTML={{
+                        {/* <div dangerouslySetInnerHTML={{
                             __html: `<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
                             <script>
                             hbspt.forms.create({
@@ -157,28 +186,32 @@ function TcoCalculatorPage4(
                                 formId: "9e130d4a-96c0-49ba-a934-2cdbb42ae3e8"
                             });
                             </script>
-                        `}} />
-                        {/* <form class="mt-5 xl:max-w-64 flex flex-col gap-5 z-10 items-center w-full">
+                        `}} /> */}
+                        <form class="mt-5 xl:max-w-64 flex flex-col gap-5 z-10 items-center w-full">
                             <label>
                                 <div class={inputCaptionClass} >
                                     <p>{whatsappNameInput.caption}</p>
                                 </div>
                                 <input
+                                    id={rootId+'whatsappName'}
                                     class={inputClass}
                                     type="text"
+                                    required
                                     placeholder={whatsappNameInput.placeholder}
                                     disabled={false}
                                 >
                                 </input>
                             </label>
                             <label>
-                                <div class={inputCaptionClass} >
+                                <div class={inputCaptionClass} >    
                                     <p>{whatsappNumberInput.caption}</p>
                                 </div>
                                 <input
+                                    id={rootId+'whatsappNumber'}
                                     class={inputClass}
                                     type="tel"
                                     placeholder={whatsappNumberInput.placeholder}
+                                    required
                                 >
                                 </input>
                             </label>
@@ -186,6 +219,7 @@ function TcoCalculatorPage4(
                                 <a
                                     id={whasappCta.id}
                                     href={whasappCta?.href ?? "#"}
+                                    hx-on:click={useScript(sendWhatsapp, rootId)}
                                     target={whasappCta?.href.includes("http") ? "_blank" : "_self"}
                                     class={`btn btn-primary ${whasappCta.outline ? "btn-outline" : ""} font-bold px-5 hover:scale-110 text-lg h-auto w-auto`}
                                 >
@@ -198,7 +232,7 @@ function TcoCalculatorPage4(
                                     {whasappCta?.text}
                                 </a>
                             </div>
-                        </form> */}
+                        </form>
                     </div>
                     <div class="flex gap-4 justify-center xl:justify-start">
                         <div class="flex flex-col gap-y-5">
