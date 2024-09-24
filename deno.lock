@@ -27,27 +27,27 @@
       "jsr:@std/fmt@^1.0.2": "jsr:@std/fmt@1.0.2",
       "jsr:@std/fs@^0.223": "jsr:@std/fs@0.223.0",
       "jsr:@std/fs@^0.229.1": "jsr:@std/fs@0.229.3",
-      "jsr:@std/fs@^1.0.3": "jsr:@std/fs@1.0.3",
-      "jsr:@std/http@^1.0.0": "jsr:@std/http@1.0.6",
+      "jsr:@std/fs@^1.0.4": "jsr:@std/fs@1.0.4",
+      "jsr:@std/http@^1.0.0": "jsr:@std/http@1.0.7",
       "jsr:@std/io@^0.223": "jsr:@std/io@0.223.0",
-      "jsr:@std/io@^0.224.4": "jsr:@std/io@0.224.8",
-      "jsr:@std/io@^0.224.7": "jsr:@std/io@0.224.8",
+      "jsr:@std/io@^0.224.4": "jsr:@std/io@0.224.9",
+      "jsr:@std/io@^0.224.9": "jsr:@std/io@0.224.9",
       "jsr:@std/json@^0.213.1": "jsr:@std/json@0.213.1",
       "jsr:@std/jsonc@0.213": "jsr:@std/jsonc@0.213.1",
-      "jsr:@std/log@^0.224.5": "jsr:@std/log@0.224.7",
+      "jsr:@std/log@^0.224.5": "jsr:@std/log@0.224.8",
       "jsr:@std/media-types@^1.0.0-rc.1": "jsr:@std/media-types@1.0.3",
       "jsr:@std/media-types@^1.0.3": "jsr:@std/media-types@1.0.3",
-      "jsr:@std/net@^1.0.3": "jsr:@std/net@1.0.4",
+      "jsr:@std/net@^1.0.4": "jsr:@std/net@1.0.4",
       "jsr:@std/path@0.213": "jsr:@std/path@0.213.1",
       "jsr:@std/path@1.0.0-rc.1": "jsr:@std/path@1.0.0-rc.1",
       "jsr:@std/path@^0.223": "jsr:@std/path@0.223.0",
       "jsr:@std/path@^0.225.2": "jsr:@std/path@0.225.2",
       "jsr:@std/path@^1.0.2": "jsr:@std/path@1.0.6",
-      "jsr:@std/path@^1.0.5": "jsr:@std/path@1.0.6",
+      "jsr:@std/path@^1.0.6": "jsr:@std/path@1.0.6",
       "jsr:@std/semver@^0.224.3": "jsr:@std/semver@0.224.3",
-      "jsr:@std/streams@^1.0.5": "jsr:@std/streams@1.0.5",
+      "jsr:@std/streams@^1.0.6": "jsr:@std/streams@1.0.6",
       "jsr:@supabase/supabase-js@2.45.1": "jsr:@supabase/supabase-js@2.45.1",
-      "npm:@algolia/client-search": "npm:@algolia/client-search@5.5.3",
+      "npm:@algolia/client-search": "npm:@algolia/client-search@5.6.0",
       "npm:@algolia/requester-fetch@4.20.0": "npm:@algolia/requester-fetch@4.20.0",
       "npm:@algolia/transporter@4.20.0": "npm:@algolia/transporter@4.20.0",
       "npm:@libsql/client@0.7.0": "npm:@libsql/client@0.7.0",
@@ -78,7 +78,7 @@
       "npm:fuse.js@7.0.0": "npm:fuse.js@7.0.0",
       "npm:lru-cache@10.2.0": "npm:lru-cache@10.2.0",
       "npm:postcss@8.4.27": "npm:postcss@8.4.27",
-      "npm:preact-render-to-string@6.4.0": "npm:preact-render-to-string@6.4.0_preact@10.24.0",
+      "npm:preact-render-to-string@6.4.0": "npm:preact-render-to-string@6.4.0_preact@10.24.1",
       "npm:search-insights@2.9.0": "npm:search-insights@2.9.0",
       "npm:tailwindcss@3.4.1": "npm:tailwindcss@3.4.1_postcss@8.4.27",
       "npm:typesense@1.7.1": "npm:typesense@1.7.1_@babel+runtime@7.25.6",
@@ -180,19 +180,19 @@
           "jsr:@std/path@1.0.0-rc.1"
         ]
       },
-      "@std/fs@1.0.3": {
-        "integrity": "3cb839b1360b0a42d8b367c3093bfe4071798e6694fa44cf1963e04a8edba4fe"
+      "@std/fs@1.0.4": {
+        "integrity": "2907d32d8d1d9e540588fd5fe0ec21ee638134bd51df327ad4e443aaef07123c"
       },
-      "@std/http@1.0.6": {
-        "integrity": "20a6f3fa4a914fbb19ea96572f2519b656232597092581ed706cd865d842d0d0",
+      "@std/http@1.0.7": {
+        "integrity": "9b904fc256678a5c9759f1a53a24a3fdcc59d83dc62099bb472683b6f819194c",
         "dependencies": [
           "jsr:@std/cli@^1.0.6",
           "jsr:@std/encoding@^1.0.5",
           "jsr:@std/fmt@^1.0.2",
           "jsr:@std/media-types@^1.0.3",
-          "jsr:@std/net@^1.0.3",
-          "jsr:@std/path@^1.0.5",
-          "jsr:@std/streams@^1.0.5"
+          "jsr:@std/net@^1.0.4",
+          "jsr:@std/path@^1.0.6",
+          "jsr:@std/streams@^1.0.6"
         ]
       },
       "@std/io@0.223.0": {
@@ -202,8 +202,8 @@
           "jsr:@std/bytes@^0.223.0"
         ]
       },
-      "@std/io@0.224.8": {
-        "integrity": "f525d05d51fd873de6352b9afcf35cab9ab5dc448bf3c20e0c8b521ded9be392",
+      "@std/io@0.224.9": {
+        "integrity": "4414664b6926f665102e73c969cfda06d2c4c59bd5d0c603fd4f1b1c840d6ee3",
         "dependencies": [
           "jsr:@std/bytes@^1.0.2"
         ]
@@ -218,12 +218,12 @@
           "jsr:@std/json@^0.213.1"
         ]
       },
-      "@std/log@0.224.7": {
-        "integrity": "021941e5cd16de60cb11599c9b36f892aea95987fe66c753922808da27909e18",
+      "@std/log@0.224.8": {
+        "integrity": "8938225caf405cbf0a4871191fa3d55f2fabe3363f4235fdb20ebe2620ecda43",
         "dependencies": [
           "jsr:@std/fmt@^1.0.2",
-          "jsr:@std/fs@^1.0.3",
-          "jsr:@std/io@^0.224.7"
+          "jsr:@std/fs@^1.0.4",
+          "jsr:@std/io@^0.224.9"
         ]
       },
       "@std/media-types@1.0.3": {
@@ -259,8 +259,8 @@
       "@std/semver@0.224.3": {
         "integrity": "7bb34b5ad46de2c0c73de0ca3e30081ef64b4361f66abd57c84ff1011c6a1233"
       },
-      "@std/streams@1.0.5": {
-        "integrity": "74e5c73d7d68eeab0d7fba3b05cbee3ba4ac5ae37c5f4e675f67e62f8f53edc4"
+      "@std/streams@1.0.6": {
+        "integrity": "022ed94e380d06b4d91c49eb70241b7289ab78b8c2b4c4bbb7eb265e4997c25c"
       },
       "@supabase/supabase-js@2.45.1": {
         "integrity": "6a11880b2a83facb69debd2862afbaab2ad560205eee3dec6499602785ca7491",
@@ -279,27 +279,27 @@
         "integrity": "sha512-vCfxauaZutL3NImzB2G9LjLt36vKAckc6DhMp05An14kVo8F1Yofb6SIl6U3SaEz8pG2QOB9ptwM5c+zGevwIQ==",
         "dependencies": {}
       },
-      "@algolia/client-common@5.5.3": {
-        "integrity": "sha512-3rdSdreBL2LGYu4DWmUGlMhaGy1vy36Xp42LdbTFsW/y3bhW5viptMHI5A3PKT0hPEMZUn+te1iM/EWvLUuVGQ==",
+      "@algolia/client-common@5.6.0": {
+        "integrity": "sha512-oh8Ow3g1TTPcOopJG3o7td8U48vn7SHfnXX5Ciwl1KJd5FHoUr2wrQiQg0iQD5j+4t3lO/B9iLM4LyH81hH/zg==",
         "dependencies": {}
       },
-      "@algolia/client-search@5.5.3": {
-        "integrity": "sha512-qrokD+uoNxchbiF9aP8niQd/9SZ6BgYg4WaesFaubHhr9DFvwGm4IePEMha8vQcc3fSsY6uL+gOtKB3J6RF0NQ==",
+      "@algolia/client-search@5.6.0": {
+        "integrity": "sha512-H5Fm662YDzx17cKZUjZRwv6IkygDeXTxoyeoervGl32MVxIIjO/dOPS3kJBM1D45zVac/LG4XRBTPKyY9pcy9Q==",
         "dependencies": {
-          "@algolia/client-common": "@algolia/client-common@5.5.3",
-          "@algolia/requester-browser-xhr": "@algolia/requester-browser-xhr@5.5.3",
-          "@algolia/requester-fetch": "@algolia/requester-fetch@5.5.3",
-          "@algolia/requester-node-http": "@algolia/requester-node-http@5.5.3"
+          "@algolia/client-common": "@algolia/client-common@5.6.0",
+          "@algolia/requester-browser-xhr": "@algolia/requester-browser-xhr@5.6.0",
+          "@algolia/requester-fetch": "@algolia/requester-fetch@5.6.0",
+          "@algolia/requester-node-http": "@algolia/requester-node-http@5.6.0"
         }
       },
       "@algolia/logger-common@4.20.0": {
         "integrity": "sha512-xouigCMB5WJYEwvoWW5XDv7Z9f0A8VoXJc3VKwlHJw/je+3p2RcDXfksLI4G4lIVncFUYMZx30tP/rsdlvvzHQ==",
         "dependencies": {}
       },
-      "@algolia/requester-browser-xhr@5.5.3": {
-        "integrity": "sha512-LsfUPokiXEpvlYF7SwNjyyjkUX7IoW7oIhH6WkDUD4PCfEZkFbVplGQA0UrCiWOAbpb25P7mmP6+ldwjwqW6Kg==",
+      "@algolia/requester-browser-xhr@5.6.0": {
+        "integrity": "sha512-rB3Y/1dLX2ozJk+7nFzVcvuoEOwghbcly2TYyn+pYMx4qOV3EIg1qBO6x3zkqiW+lv7CWsAANP7M8xtP5fCGiA==",
         "dependencies": {
-          "@algolia/client-common": "@algolia/client-common@5.5.3"
+          "@algolia/client-common": "@algolia/client-common@5.6.0"
         }
       },
       "@algolia/requester-common@4.20.0": {
@@ -312,16 +312,16 @@
           "@algolia/requester-common": "@algolia/requester-common@4.20.0"
         }
       },
-      "@algolia/requester-fetch@5.5.3": {
-        "integrity": "sha512-RKaliEFHtVeD/fMxwrApkcI6ZxR+mU6pZna29r3NwVMpCXTJWWtlMpQmbr1RHzUsaAlpfv9pfGJN4nYPE8XWEg==",
+      "@algolia/requester-fetch@5.6.0": {
+        "integrity": "sha512-/4ntw7RDHmLyMUfS7IPRuqtmSGal0Thhv1cqRAXFt5CLNiLqR4VnELu5pFi0eSxNxSj3LHBS2yIYFFvlMSwgNg==",
         "dependencies": {
-          "@algolia/client-common": "@algolia/client-common@5.5.3"
+          "@algolia/client-common": "@algolia/client-common@5.6.0"
         }
       },
-      "@algolia/requester-node-http@5.5.3": {
-        "integrity": "sha512-2wU+HlTVrVce7BMW2b3Gd62btk8B0jBbuKYYzu3OFeBD/aZa88eHABtjcjQCdw3x+wvkIPEc56UsZx9eHYLebg==",
+      "@algolia/requester-node-http@5.6.0": {
+        "integrity": "sha512-kOXFn5o1R1L8g9x0JeGkstVwxxBPHB+D7vBscACuY7uVtYrEmJWcPxWcFvazfB57M+FVrzR7TCu41UlDLB1few==",
         "dependencies": {
-          "@algolia/client-common": "@algolia/client-common@5.5.3"
+          "@algolia/client-common": "@algolia/client-common@5.6.0"
         }
       },
       "@algolia/transporter@4.20.0": {
@@ -840,7 +840,7 @@
         "integrity": "sha512-btwCFJVjI4YWDNfau8RhZ+B1Q/VLoUITrm3RlP6y1tYGWIOa+InuYiRGXUBXo8nA1qKmHMyLB/iVQg5TT4eFoA==",
         "dependencies": {
           "caniuse-lite": "caniuse-lite@1.0.30001663",
-          "electron-to-chromium": "electron-to-chromium@1.5.27",
+          "electron-to-chromium": "electron-to-chromium@1.5.28",
           "node-releases": "node-releases@2.0.18",
           "update-browserslist-db": "update-browserslist-db@1.1.0_browserslist@4.23.3"
         }
@@ -1079,8 +1079,8 @@
         "integrity": "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==",
         "dependencies": {}
       },
-      "electron-to-chromium@1.5.27": {
-        "integrity": "sha512-o37j1vZqCoEgBuWWXLHQgTN/KDKe7zwpiY5CPeq2RvUqOyJw9xnrULzZAEVQ5p4h+zjMk7hgtOoPdnLxr7m/jw==",
+      "electron-to-chromium@1.5.28": {
+        "integrity": "sha512-VufdJl+rzaKZoYVUijN13QcXVF5dWPZANeFTLNy+OSpHdDL5ynXTF35+60RSBbaQYB1ae723lQXHCrf4pyLsMw==",
         "dependencies": {}
       },
       "emoji-regex@8.0.0": {
@@ -1683,15 +1683,15 @@
           "source-map-js": "source-map-js@1.2.1"
         }
       },
-      "preact-render-to-string@6.4.0_preact@10.24.0": {
+      "preact-render-to-string@6.4.0_preact@10.24.1": {
         "integrity": "sha512-pzDwezZaLbK371OiJjXDsZJwVOALzFX5M1wEh2Kr0pEApq5AV6bRH/DFbA/zNA7Lck/duyREPQLLvzu2G6hEQQ==",
         "dependencies": {
-          "preact": "preact@10.24.0",
+          "preact": "preact@10.24.1",
           "pretty-format": "pretty-format@3.8.0"
         }
       },
-      "preact@10.24.0": {
-        "integrity": "sha512-aK8Cf+jkfyuZ0ZZRG9FbYqwmEiGQ4y/PUO4SuTWoyWL244nZZh7bd5h2APd4rSNDYTBNghg1L+5iJN3Skxtbsw==",
+      "preact@10.24.1": {
+        "integrity": "sha512-PnBAwFI3Yjxxcxw75n6VId/5TFxNW/81zexzWD9jn1+eSrOP84NdsS38H5IkF/UH3frqRPT+MvuCoVHjTDTnDw==",
         "dependencies": {}
       },
       "pretty-format@3.8.0": {
@@ -3144,8 +3144,10 @@
     "https://deno.land/x/fresh@1.6.8/src/runtime/build_id.ts": "8376e70e42ce456dfa6932c638409d2ef1bca4833b4ceba0bf74510080a7f976",
     "https://deno.land/x/fresh@1.6.8/src/runtime/csp.ts": "9ee900e9b0b786057b1009da5976298c202d1b86d1f1e4d2510bde5f06530ac9",
     "https://deno.land/x/fresh@1.6.8/src/runtime/deserializer.ts": "1b83e75fa61c48b074ea121f33647d1ed15c68fa2f2a11b0a7f7a12cd38af627",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/client.ts": "a9224606e41bc58d81f37b7125650432920a7d136bdf416051e925ac9bbd1f05",
     "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/deserializer.ts": "e836f44c454e1f67c86eab30f108eb9be05a38489604a24e418b564b77058b96",
     "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/main.ts": "de3aa5cbd9b3abfa825939b58bc8df088ab183e042c0447b37180f4ea31c613c",
+    "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/main_dev.ts": "d2960e339119e45017954c7cf6798b9e0a3110d173cc378e1e3e7bc84bd68c34",
     "https://deno.land/x/fresh@1.6.8/src/runtime/entrypoints/signals.ts": "782c81f97d125ad4f92aa0160dad3a2e8b6ea7a61cec7fdab87bbbbd8c0d215c",
     "https://deno.land/x/fresh@1.6.8/src/runtime/head.ts": "0f9932874497ab6e57ed1ba01d549e843523df4a5d36ef97460e7a43e3132fdc",
     "https://deno.land/x/fresh@1.6.8/src/runtime/polyfills.ts": "c3de932b2f23df9a4ade1ab4f8890730c0db0a71bf85faa41742a1763631e917",

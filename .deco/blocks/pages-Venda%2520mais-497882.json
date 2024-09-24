@@ -883,7 +883,7 @@
           "totalLabel": "Total",
           "totalTcoLabel": "Total TCO",
           "migrateCta": {
-            "href": "#",
+            "href": "https://api.whatsapp.com/send/?phone=%2B5511971694777&text=Ol%C3%A1%2C+fiz+o+meu+calculo+TCO+e+quero+saber+mais+sobre+a+minha+proposta+personalizada.&type=phone_number&app_absent=0",
             "text": "Migre agora",
             "outline": false
           },
