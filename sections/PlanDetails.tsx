@@ -174,7 +174,7 @@ function Dots({ slides, interval = 0 }: { slides: Slide[], interval: number }) {
 
 function Buttons() {
     return (
-        <div class="flex gap-4">
+        <div class="flex gap-4 ml-5 lg:ml-0">
             <div class="flex items-center justify-center z-10 ">
                 <Slider.PrevButton class="flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 50 50" class="text-primary-content fill-current rotate-180">
@@ -198,10 +198,10 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
     const carouselId = `${id}carousel`;
     return (
         <div class={`overflow-hidden ${!useBackground && 'bg-primary'} leading-[120%] text-primary-content`}>
-            <div class="relative flex justify-center items-center w-full h-[43vw]">
+            <div class="relative flex justify-center items-center w-full h-[86vw] lg:h-[43vw]">
                 {planTag?.text && <div class="absolute w-full top-0 left-0">
-                    <div class="w-full max-w-[1200px] mx-auto">
-                        <AnimateOnShow divClass="py-2 px-4 mt-24 bg-primary rounded-[20px] inline-flex gap-2.5" animation="animate-pop-up">
+                    <div class="w-full max-w-[1200px] mx-auto mt-">
+                        <AnimateOnShow divClass="py-2 px-4 ml-7 mt-20 lg:mt-24 bg-primary rounded-[20px] inline-flex gap-2.5" animation="animate-pop-up">
                             {planTag.icon?.src && <Image width={planTag.icon.width || 20} height={planTag.icon.height || 20} src={planTag.icon.src} alt={planTag.icon.alt || "plan tag icon"} />}
                             {planTag.text}
                         </AnimateOnShow>
@@ -235,7 +235,7 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
                 />
                 <AnimateOnShow
                     animation="animate-fade-down"
-                    divClass="text-5xl text-center font-semibold max-w-[870px] leading-[120%]">
+                    divClass="text-2xl lg:text-5xl px-7 lg:px-0 text-center font-semibold max-w-[870px] leading-[120%]">
                     {title}
                     {titleTyping.length > 0 && <span id={id + 'typingSpan'} style={{ color: color3 }}>
                         {titleTyping[0]}
@@ -243,22 +243,22 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
                     {titleTyping.length > 0 && <span class="animate-blink" style={{ color: color3 }}>|</span>}
                 </AnimateOnShow>
             </div>
-            <div class="h-[130px] mt-[-130px]" />
+            <div class="h-[-20px] lg:h-[130px] mt-[-20px] lg:mt-[-130px]" />
             <div class={`${!bottomBackground?.src && 'bg-primary'} min-h-[340px] relative`}>
                 {bottomBackground?.src && <Image
                     width={bottomBackground.width || 1440}
                     height={bottomBackground.height || 340}
                     src={bottomBackground.src}
                     alt={bottomBackground.alt || "bottom background image"}
-                    class="absolute w-full h-full object-cover -z-20"
+                    class="absolute w-full h-full object-cover object-right -z-20"
                 />}
                 <div class="max-w-[1200px] s1800:max-w-[1365px] mx-auto pb-[72px]">
-                    <AnimateOnShow animation="animate-fade-up50" divClass="flex items-end" delay={300}>
+                    <AnimateOnShow animation="animate-fade-up50" divClass="flex flex-wrap xl:flex-nowrap items-start lg:items-end" delay={300}>
                         <div
                             id={carouselId}
-                            class="min-h-min flex flex-col w-[600px] mt-[-130px]"
+                            class="min-h-min flex flex-col w-full lg:w-[600px] mt-[-20px] lg:mt-[-130px]"
                         >
-                            <div class="mb-6 flex gap-7">
+                            <div class="mb-6 hidden lg:flex gap-7">
                                 {slidesTitleIcon && slidesTitleIcon.src && <Image
                                     width={slidesTitleIcon.width || 36}
                                     height={slidesTitleIcon.height || 24}
@@ -277,7 +277,7 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
                                 {slides?.map((slide, index) => (
                                     <Slider.Item
                                         index={index}
-                                        class="carousel-item w-[49%]"
+                                        class="carousel-item w-[80%] lg:w-[49%]"
                                     >
                                         <SliderItem
                                             slide={slide}
@@ -292,7 +292,7 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
                                 {showArrows && <Buttons />}
                             </div>
                         </div>
-                        {annualValues?.title && <div class="max-w-40 pb-[70px]">
+                        {annualValues?.title && <div class="max-w-40 pb-[70px] mt-6 lg:mt-0 ml-5 lg:ml-0">
                             <h3 class="text-2xl font-semibold flex flex-wrap items-center">
                                 {annualValues.title}
                                 {annualValues.tag && <span class="text-primary text-xs py-1 px-4 ml-1.5 bg-info rounded-[20px]">{annualValues.tag}</span>}
@@ -300,10 +300,10 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
                             {annualValues.text && <div class="mt-3" dangerouslySetInnerHTML={{ __html: annualValues.text }} />}
                             {annualValues.saving && <p class="mt-3" style={{ color: color3 }}>{annualValues.saving}</p>}
                         </div>}
-                        {montlyValues?.title && <div class="ml-5 pb-[70px]">
+                        {montlyValues?.title && <div class="ml-5 pb-[70px] mt-6">
                             <h3 class="text-2xl font-semibold">{montlyValues.title}</h3>
                             {montlyValues.text && <div class="mt-3" dangerouslySetInnerHTML={{ __html: montlyValues.text }} />}
-                            <div class="mt-3 flex flex-wrap lg:flex-nowrap items-center gap-5">
+                            <div class="mt-3 hidden lg:flex flex-wrap lg:flex-nowrap items-start lg:items-center gap-5">
                                 {montlyValues.cta?.text && <a
                                     href={montlyValues.cta?.href ?? "#"}
                                     target={montlyValues.cta?.href.includes("http") ? "_blank" : "_self"}
@@ -323,6 +323,26 @@ export default function PlanDetails({ title, titleTyping = [], color3, letterDel
                                     </svg>
                                 </a>}
                             </div>
+                        </div>}
+                        {montlyValues?.title && <div class="mt-3 px-5 flex lg:hidden flex-wrap lg:flex-nowrap items-start lg:items-center gap-5">
+                            {montlyValues.cta?.text && <a
+                                href={montlyValues.cta?.href ?? "#"}
+                                target={montlyValues.cta?.href.includes("http") ? "_blank" : "_self"}
+                                class={`btn  ${montlyValues.cta.outline ? "bg-primary text-primary-content" : "bg-primary-content text-primary"} font-bold px-7 hover:scale-110 text-lg`}
+                            >
+                                {montlyValues?.cta.text}
+                            </a>}
+                            {montlyValues.link?.text && <a
+                                href={montlyValues?.link.href ?? "#"}
+                                target={montlyValues?.link.href.includes("http") ? "_blank" : "_self"}
+                                class={`text-primary-content font-bold hover:scale-110 text-lg transition-transform min-w-[270px]`}
+                            >
+                                {montlyValues?.link.textBefore}
+                                <span class="underline" >{montlyValues.link.text}</span>
+                                <svg width="19" height="20" viewBox="0 0 19 20" class="fill-current inline" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.8441 5.71091V13.4297C14.8441 13.5871 14.7815 13.7382 14.6702 13.8495C14.5588 13.9609 14.4078 14.0234 14.2503 14.0234C14.0929 14.0234 13.9418 13.9609 13.8305 13.8495C13.7191 13.7382 13.6566 13.5871 13.6566 13.4297V7.14407L5.17041 15.631C5.059 15.7424 4.90789 15.805 4.75033 15.805C4.59277 15.805 4.44166 15.7424 4.33025 15.631C4.21884 15.5196 4.15625 15.3685 4.15625 15.2109C4.15625 15.0533 4.21884 14.9022 4.33025 14.7908L12.8172 6.30466H6.53158C6.37411 6.30466 6.22309 6.2421 6.11174 6.13075C6.00039 6.0194 5.93783 5.86838 5.93783 5.71091C5.93783 5.55343 6.00039 5.40241 6.11174 5.29106C6.22309 5.17971 6.37411 5.11716 6.53158 5.11716H14.2503C14.4078 5.11716 14.5588 5.17971 14.6702 5.29106C14.7815 5.40241 14.8441 5.55343 14.8441 5.71091Z" />
+                                </svg>
+                            </a>}
                         </div>}
                     </AnimateOnShow>
                 </div>

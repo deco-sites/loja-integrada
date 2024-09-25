@@ -123,7 +123,7 @@ export default function Hero({
             )}
           </AnimateOnShow>
           {ctaTitle && <p class="text-base-300 text-base mb-5 mt-7">{ctaTitle}</p>}
-          <AnimateOnShow divClass="flex flex-wrap items-center gap-7 mt-5" animation="animate-fade-up" delay={400}>
+          <AnimateOnShow divClass="flex flex-wrap items-center gap-7 mt-5" animation="animate-fade-up" delay={500}>
             {cta.map((button) =>
               <a
                 href={button?.href ?? "#"}
