@@ -3,22 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { useId } from "../sdk/useId.ts";
 import { useScript } from "deco/hooks/useScript.ts";
-
-const onLoad = () => {
-  document.getElementById("testimonialsCarousel")?.classList.add("opacity-0");
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const fadeUp = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fade-up50");
-          entry.target.classList.remove("opacity-0");
-        }
-      });
-    });
-    fadeUp.observe(document.getElementById("testimonialsCarousel") as HTMLElement);
-  });
-}
+import AnimateOnShow from "../components/ui/AnimateOnShow.tsx"
 
 
 /**
@@ -223,16 +208,12 @@ function Carousel(props: Props) {
   const { title, slides, interval } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div id="testimonialsCarousel">
+    <AnimateOnShow animation="animate-fade-up50" delay={300}>
 
       <div
         id={id}
         class="min-h-min flex flex-col lg:container md:max-w-[1332px] lg:mx-auto pt-7 lg:pt-14"
       >
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{ __html: useScript(onLoad) }}
-        />
 
         {title && <h2 class="text-4xl leading-snug lg:w-1/2 pb-12 lg:pb-16 text-primary">
           {title}
@@ -261,7 +242,7 @@ function Carousel(props: Props) {
           {props.arrows && <Buttons />}
         </div>
       </div>
-    </div>
+    </AnimateOnShow>
   );
 }
 
