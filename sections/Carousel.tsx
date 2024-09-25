@@ -240,11 +240,11 @@ function Carousel(props: Props) {
     const { title, caption, slides, backgroundImage, interval, cta } = { ...props };
 
     return (
-        <div id="MainCarousel" class="relative">
+        <div id="MainCarousel" class="relative}">
             {/* <input type="text" value="0" /> */}
             <div
                 id={id}
-                class="min-h-min flex flex-col items-center lg:container md:max-w-[1332px] lg:mx-auto pt-7 lg:pt-14"
+                class="min-h-min flex flex-col items-center w-full pt-7 lg:pt-14"
             >
                 <script
                     type="module"
@@ -268,7 +268,7 @@ function Carousel(props: Props) {
                     </p>}
                 </div>
                 <Slider
-                    class="carousel carousel-center w-full col-span-full row-span-full gap-[30px] pl-[30px] pr-[22px] py-9 md:px-9"
+                    class="carousel carousel-center w-full col-span-full row-span-full gap-[30px] pl-[30px] pr-[22px] py-9 md:px-9 max-w-[1332px]"
                     rootId={id}
                     interval={interval && interval * 1e3}
                     infinite
@@ -293,7 +293,7 @@ function Carousel(props: Props) {
                     </Slider.Item>
                 </Slider>
 
-                <div class="flex justify-end pr-[22px] lg:px-9 w-full">
+                <div class="flex justify-end pr-[22px] lg:px-9 w-full max-w-[1332px] mx-auto">
                     {props.dots && <Dots slides={slides} interval={interval} />}{" "}
                     {props.arrows && <Buttons />}
                 </div>

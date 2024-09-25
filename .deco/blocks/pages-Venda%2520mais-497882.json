@@ -883,7 +883,7 @@
           "totalLabel": "Total",
           "totalTcoLabel": "Total TCO",
           "migrateCta": {
-            "href": "#",
+            "href": "https://api.whatsapp.com/send/?phone=%2B5511971694777&text=Ol%C3%A1%2C+fiz+o+meu+calculo+TCO+e+quero+saber+mais+sobre+a+minha+proposta+personalizada.&type=phone_number&app_absent=0",
             "text": "Migre agora",
             "outline": false
           },
@@ -5162,14 +5162,131 @@
       ]
     },
     {
+      "__resolveType": "site/sections/PlanDetails.tsx",
+      "title": "Para quem já possui um negócio e quer crescer com ",
+      "titleTypingColor": "#28C3C3",
+      "titleTyping": [
+        "eficiência",
+        "acompanhamento",
+        "mais rentabilidade"
+      ],
+      "backgroundVideo": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46cd14c5-bcc4-4d2d-aa5f-f229f245f292/video-dobra-elite.webm",
+      "planTag": {
+        "icon": {
+          "alt": "crown icon",
+          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/880a5336-717a-4f28-ae0e-747b4cb6069d/coroa-1-(1).svg"
+        },
+        "text": "Plano Elite"
+      },
+      "backgroundImage": {},
+      "useBackground": "video",
+      "slides": [
+        {
+          "bulletPoints": {
+            "items": [
+              "Importador de produtos e URL ",
+              "Suporte Premiado",
+              "29 dias (em média) para migração da plataforma"
+            ],
+            "bulletPointsIcon": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+            }
+          },
+          "title": "Para você migrar"
+        },
+        {
+          "bulletPoints": {
+            "items": [
+              "Taxa de 4,29% no cartão de crédito com Pagali",
+              "Pagali a partir de R$0,99 no PIX",
+              "Fretes 70% mais baratos com Enviali",
+              "Prioridade no atendimento"
+            ],
+            "bulletPointsIcon": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+            }
+          },
+          "title": "Para você lucrar"
+        },
+        {
+          "bulletPoints": {
+            "items": [
+              "Importador de produtos e URL ",
+              "Suporte Premiado",
+              "29 dias (em média) para migração da plataforma"
+            ],
+            "bulletPointsIcon": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+            }
+          },
+          "title": "Para você migrar"
+        },
+        {
+          "bulletPoints": {
+            "items": [
+              "Taxa de 4,29% no cartão de crédito com Pagali",
+              "Pagali a partir de R$0,99 no PIX",
+              "Fretes 70% mais baratos com Enviali",
+              "Prioridade no atendimento"
+            ],
+            "bulletPointsIcon": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+            }
+          },
+          "title": "Para você lucrar"
+        },
+        {
+          "bulletPoints": {
+            "items": [
+              "Importador de produtos e URL ",
+              "Suporte Premiado",
+              "29 dias (em média) para migração da plataforma"
+            ],
+            "bulletPointsIcon": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+            }
+          },
+          "title": "Para você migrar"
+        }
+      ],
+      "showArrows": true,
+      "slidesTitle": "As melhores taxas, os melhores recursos e o melhor rendimento para seu negócio!",
+      "slidesTitleIcon": {
+        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png"
+      },
+      "color3": "#28C3C3",
+      "annualValues": {
+        "title": "Anual",
+        "tag": "20% OFF",
+        "saving": "⚡️ Economize R$ 240 no plano anual",
+        "text": "<p><span style=\"font-size: 18pt;\" data-mce-style=\"font-size: 18pt;\">R$ 948</span><span style=\"font-size: 14pt;\" data-mce-style=\"font-size: 14pt;\">/ano</span></p><p style=\"line-height: 1;\" data-mce-style=\"line-height: 1;\"><span style=\"font-size: 10pt;\" data-mce-style=\"font-size: 10pt;\">em até 6x sem juros</span></p>"
+      },
+      "montlyValues": {
+        "cta": {
+          "text": "Fazer parte",
+          "href": "#",
+          "outline": false
+        },
+        "title": "Mensal",
+        "text": "<p><span style=\"font-size: 18pt;\" data-mce-style=\"font-size: 18pt;\">R$ 99</span><span style=\"font-size: 14pt;\" data-mce-style=\"font-size: 14pt;\">/mês</span></p>",
+        "link": {
+          "textBefore": "Já tem uma loja?",
+          "text": " Ative agora",
+          "href": "#"
+        }
+      },
+      "bottomBackground": {
+        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a921d8c9-b6e5-4718-bae3-7e1ec2faebc6/bottom-background.svg"
+      }
+    },
+    {
       "__resolveType": "website/flags/multivariate/section.ts",
       "variants": [
         {
           "value": {
             "__resolveType": "site/sections/Hero.tsx",
             "title": "Pagali",
-            "caption": "Taxas competitivas em relação ao mercado, maiores taxas de aprovação",
-            "description": "Conheça o Pagali, nosso meio de pagamento nativo. Feito para quem quer reduzir suas taxas e melhorar sua taxa de aceitação e aprovação. Tudo isso no painel da sua loja, completamente integrado.",
+            "caption": "Taxas competitivas em relação ao mercado,maiores taxas de aprovação",
             "bigNumbers": [
               {
                 "text": "+ R$ 1,8 bilhão",
@@ -5184,14 +5301,11 @@
                 "caption": "de transações pagas"
               }
             ],
-            "image": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/06f5310e-1057-487a-8425-a02c83d3825c/hero-3-image-mobile.svg"
-            },
-            "placement": "right",
+            "ctaTitle": "Disponível em todos os planos",
             "cta": [
               {
-                "text": "Ver planos",
-                "href": "#"
+                "href": "#",
+                "text": "Ver planos"
               }
             ],
             "links": [
@@ -5201,7 +5315,14 @@
                 "href": "#"
               }
             ],
-            "ctaTitle": "Disponível em todos os planos",
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/06f5310e-1057-487a-8425-a02c83d3825c/hero-3-image-mobile.svg"
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e96066ee-e1c9-4516-b5f7-60c3f8ec6391/Ellipse-62-(1).png"
+            },
+            "description": "Conheça o Pagali, nosso meio de pagamento nativo. Feito para quem quer reduzir suas taxas e melhorar sua taxa de aceitação e aprovação. Tudo isso no painel da sua loja, completamente integrado.",
+            "placement": "right",
             "bulletpoints": {
               "bulletPointsIcon": {
                 "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
@@ -5211,9 +5332,6 @@
                 "Sem taxa extra para transações com outros meios de pagamento.",
                 "Fácil configuração  "
               ]
-            },
-            "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e96066ee-e1c9-4516-b5f7-60c3f8ec6391/Ellipse-62-(1).png"
             }
           },
           "rule": {
@@ -5226,7 +5344,6 @@
             "__resolveType": "site/sections/Hero.tsx",
             "title": "Aumente a taxa de aprovação das suas vendas",
             "caption": "Venda muito mais com o meio de pagamento Pagali.",
-            "description": "Conheça o Pagali, nosso meio de pagamento nativo. Feito para quem quer reduzir suas taxas e melhorar sua taxa de aceitação e aprovação. Tudo isso no painel da sua loja, completamente integrado.",
             "bigNumbers": [
               {
                 "text": "+ R$ 1,8 bilhão",
@@ -5241,14 +5358,11 @@
                 "caption": "de transações pagas"
               }
             ],
-            "image": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a7020552-9bea-4573-a1c1-53f7a681e735/hero-3-image.svg"
-            },
-            "placement": "right",
+            "ctaTitle": "Disponível em todos os planos",
             "cta": [
               {
-                "text": "Ver planos",
-                "href": "#"
+                "href": "#",
+                "text": "Ver planos"
               }
             ],
             "links": [
@@ -5258,7 +5372,14 @@
                 "href": "#"
               }
             ],
-            "ctaTitle": "Disponível em todos os planos",
+            "image": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a7020552-9bea-4573-a1c1-53f7a681e735/hero-3-image.svg"
+            },
+            "backgroundImage": {
+              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e96066ee-e1c9-4516-b5f7-60c3f8ec6391/Ellipse-62-(1).png"
+            },
+            "description": "Conheça o Pagali, nosso meio de pagamento nativo. Feito para quem quer reduzir suas taxas e melhorar sua taxa de aceitação e aprovação. Tudo isso no painel da sua loja, completamente integrado.",
+            "placement": "right",
             "bulletpoints": {
               "bulletPointsIcon": {
                 "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
@@ -5268,9 +5389,6 @@
                 "Sem taxa sob valor de cada transação: só no Pagali",
                 "Fácil configuração  "
               ]
-            },
-            "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e96066ee-e1c9-4516-b5f7-60c3f8ec6391/Ellipse-62-(1).png"
             }
           },
           "rule": {

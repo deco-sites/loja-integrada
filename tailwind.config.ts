@@ -6,6 +6,14 @@ export default {
   daisyui: { themes: [], logs: false },
   content: ["./**/*.tsx"],
   theme: {
+    screens: {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px",
+      "s1800": "1800px",
+    },
     container: { center: true },
     extend: {
       animation: {
@@ -20,6 +28,7 @@ export default {
         "fade-up50": "fade-up50 1.5s ease-in-out",
         "fade-down50": "fade-down50 1.5s ease-in-out",
         "progress": "progress 3s linear",
+        "blink": " blink 0.5s linear infinite",
       },
       keyframes: {
         sliding: {
@@ -65,6 +74,11 @@ export default {
         "progress": {
           "0%": { width: 0 },
           "100%": { width: "100%" },
+        },
+        "blink": {
+          "0%": { opacity: 0 },
+          "50%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
       },
       boxShadow: {

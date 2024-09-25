@@ -130,13 +130,12 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     const isShowingLast = indices[indices.length - 1] === items.length - 1;
     const pageIndex = Math.floor(indices[0] / itemsPerPage);
 
-    // goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage); 
+    //goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
     if (itemsPerPage > 2) {
       goToItem(isShowingLast ? 0 : indices[itemsPerPage - 2]);
     } else {
       goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
     }
-
   };
 
   const observer = new IntersectionObserver(
@@ -180,7 +179,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   prev?.addEventListener("click", onClickPrev);
   next?.addEventListener("click", onClickNext);
 
-  let timeout: number | undefined;
+  let timeout: 0 | Timer | undefined;
 
   function startInterval() {
     timeout = interval && setInterval(onClickNext, interval);
