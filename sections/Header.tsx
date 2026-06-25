@@ -43,7 +43,7 @@ export interface Nav {
 export default function Header({
   logo = {
     src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
+      "https://decoims.com/loja-integrada/338a9f97-bf82-443f-bb06-64fd2c5f5c49/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
     alt: "Logo",
   },
   navigation = {

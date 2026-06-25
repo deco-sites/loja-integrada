@@ -28,7 +28,7 @@ const PLACEMENT = {
 };
 
 const DEFAULT_IMAGE =
-  "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/772e246e-1959-46ac-a309-3f25ab20af6f";
+  "https://decoims.com/loja-integrada/39dad7fa-401b-47d4-91fa-380e0ac2a765/772e246e-1959-46ac-a309-3f25ab20af6f";
 
 export default function ImageWithParagraph({
   title = "Here's an intermediate size heading you can edit",

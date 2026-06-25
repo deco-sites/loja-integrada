@@ -35,7 +35,7 @@ export interface Props {
 
 const IMG_PLACEHODLER = Array(30).fill(0).map(() => ({
   src:
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/03fbcc78-ca86-4616-a59a-b8aa18331a9c",
+    "https://decoims.com/loja-integrada/3a3d1e05-4c8e-4492-b2b6-e4607e7fa56c/03fbcc78-ca86-4616-a59a-b8aa18331a9c",
   altText: "Logo",
 }));
 
