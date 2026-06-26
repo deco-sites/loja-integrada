@@ -17,11 +17,11 @@
             "inputButtonText": "Aproveitar",
             "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
             "image": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
+              "src": "https://decoims.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
               "alt": "top image"
             },
             "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
+              "src": "https://decoims.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
               "alt": "background image"
             }
           },
@@ -40,11 +40,11 @@
             "inputButtonText": "Aproveitar",
             "inputLabel": "⚡ Ganhe 20% OFF na assinatura anual️ ",
             "image": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
+              "src": "https://decoims.com/loja-integrada/a5138fc3-9cef-49db-9369-6ed4f896b5ee/img-topo.png",
               "alt": "top image"
             },
             "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
+              "src": "https://decoims.com/loja-integrada/da9060c9-9708-4d08-b57d-e038c769434f/background-image.webp",
               "alt": "background image"
             }
           },
@@ -62,31 +62,31 @@
             "__resolveType": "site/sections/Logos.tsx",
             "logos": [
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/86b5ac4e-c69d-42ae-9423-7d4f66b26e58/image-1.png",
+                "src": "https://decoims.com/loja-integrada/86b5ac4e-c69d-42ae-9423-7d4f66b26e58/image-1.png",
                 "altText": "Forbes logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/51f719ff-aeef-4957-b78d-b019a4f0fdfe/image-2.png",
+                "src": "https://decoims.com/loja-integrada/51f719ff-aeef-4957-b78d-b019a4f0fdfe/image-2.png",
                 "altText": "Frutifica logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e8fa465a-2113-497e-a5e9-c3c6f8bed643/image-3.png",
+                "src": "https://decoims.com/loja-integrada/e8fa465a-2113-497e-a5e9-c3c6f8bed643/image-3.png",
                 "altText": "Rock in Rio Logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/0270daa3-6cdc-45be-af2a-614b02555cbb/image-4.png",
+                "src": "https://decoims.com/loja-integrada/0270daa3-6cdc-45be-af2a-614b02555cbb/image-4.png",
                 "altText": "PodPah logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6e2076d7-bb3a-41b6-a4c4-57857024d155/image-5.png",
+                "src": "https://decoims.com/loja-integrada/6e2076d7-bb3a-41b6-a4c4-57857024d155/image-5.png",
                 "altText": "Soldiers logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ce9551c3-a6fc-4238-9686-284db5680356/image-6.png",
+                "src": "https://decoims.com/loja-integrada/ce9551c3-a6fc-4238-9686-284db5680356/image-6.png",
                 "altText": "Gorila Shield logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/d393d421-8842-4d10-9a75-5357364c5ff6/image-7-(2).png",
+                "src": "https://decoims.com/loja-integrada/d393d421-8842-4d10-9a75-5357364c5ff6/image-7-(2).png",
                 "altText": "+Mu logo"
               }
             ],
@@ -103,31 +103,31 @@
             "__resolveType": "site/sections/Logos.tsx",
             "logos": [
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/86b5ac4e-c69d-42ae-9423-7d4f66b26e58/image-1.png",
+                "src": "https://decoims.com/loja-integrada/86b5ac4e-c69d-42ae-9423-7d4f66b26e58/image-1.png",
                 "altText": "Forbes logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/51f719ff-aeef-4957-b78d-b019a4f0fdfe/image-2.png",
+                "src": "https://decoims.com/loja-integrada/51f719ff-aeef-4957-b78d-b019a4f0fdfe/image-2.png",
                 "altText": "Frutifica logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e8fa465a-2113-497e-a5e9-c3c6f8bed643/image-3.png",
+                "src": "https://decoims.com/loja-integrada/e8fa465a-2113-497e-a5e9-c3c6f8bed643/image-3.png",
                 "altText": "Rock in Rio Logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/0270daa3-6cdc-45be-af2a-614b02555cbb/image-4.png",
+                "src": "https://decoims.com/loja-integrada/0270daa3-6cdc-45be-af2a-614b02555cbb/image-4.png",
                 "altText": "PodPah logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6e2076d7-bb3a-41b6-a4c4-57857024d155/image-5.png",
+                "src": "https://decoims.com/loja-integrada/6e2076d7-bb3a-41b6-a4c4-57857024d155/image-5.png",
                 "altText": "Soldiers logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ce9551c3-a6fc-4238-9686-284db5680356/image-6.png",
+                "src": "https://decoims.com/loja-integrada/ce9551c3-a6fc-4238-9686-284db5680356/image-6.png",
                 "altText": "Gorila Shield logo"
               },
               {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/d393d421-8842-4d10-9a75-5357364c5ff6/image-7-(2).png",
+                "src": "https://decoims.com/loja-integrada/d393d421-8842-4d10-9a75-5357364c5ff6/image-7-(2).png",
                 "altText": "+Mu logo"
               }
             ],
@@ -148,7 +148,7 @@
         {
           "content": {
             "description": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">\"Depois que migramos para a Loja Integrada, <em><strong>aumentamos nosso ticket médio em 15% e reduzimos nossos custos operacionais em 9 mil reais.</strong></em> Viemos pela fácil integração com a VTEX, em busca de redução de custo e uma plataforma mais fácil de usar e foi exatamente isso que encontramos\".</span></p>",
-            "avatar": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/c3896dc4-da5c-4496-a704-f5f37a2c759c/m-camicado-logo.png",
+            "avatar": "https://decoims.com/loja-integrada/c3896dc4-da5c-4496-a704-f5f37a2c759c/m-camicado-logo.png",
             "name": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Loja no ar em <strong>menos de meses</strong></span></p>",
             "alt": "m camicado"
           }
@@ -156,7 +156,7 @@
         {
           "content": {
             "description": "<p><em><strong>Logo no primeiro mês pós migração, vi um aumento</strong></em><br><em><strong>na taxa de conversão de 60%.</strong></em><br>Vim pela necessidade de otimizar meu investimento, em busca de uma plataforma fácil de usar. Encontrei ambos e ainda um time próximo, o que é muito bom\".</p>",
-            "avatar": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/afd6caee-5062-4712-a347-de06834ec8a8/livraria-florence-logo.png",
+            "avatar": "https://decoims.com/loja-integrada/afd6caee-5062-4712-a347-de06834ec8a8/livraria-florence-logo.png",
             "name": "<p><span style=\"color: rgb(55, 30, 85);\" data-mce-style=\"color: rgb(55, 30, 85);\">Loja no ar em <strong>menos de meses</strong></span></p>",
             "alt": "m camicado"
           }
@@ -171,28 +171,28 @@
           "title": "Gere mais receita por usuário",
           "caption": "Ferramentas estratégicas: Carrinho abandonado, promoções, Compre Junto e cupom nativos.",
           "backgroundImage": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/31ba9f97-836f-451a-8c56-fdfd36eabadf/carousel-image-1.png"
+            "src": "https://decoims.com/loja-integrada/31ba9f97-836f-451a-8c56-fdfd36eabadf/carousel-image-1.png"
           },
           "textPlacement": "Top",
           "icon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
+            "src": "https://decoims.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
             "alt": "purple arrow"
           },
           "textColor": "Dark",
           "useBackground": "image",
-          "backgroundVideo": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/2014ce37-ca95-449b-8498-8d66dec23865/Developer-Coding-Background.mp4"
+          "backgroundVideo": "https://decoims.com/loja-integrada/2014ce37-ca95-449b-8498-8d66dec23865/Developer-Coding-Background.mp4"
         },
         {
           "textPlacement": "Top",
           "icon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
+            "src": "https://decoims.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
             "alt": "white arrow",
             "placement": "Top right"
           },
           "title": "Aumente sua conversão",
           "caption": "Checkout inteligente, sem senha, baseado no SmartCheckout da VTEX.",
           "backgroundImage": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b229cb86-1e0d-4853-a4f6-c2e30eeec939/carousel-image-2.png"
+            "src": "https://decoims.com/loja-integrada/b229cb86-1e0d-4853-a4f6-c2e30eeec939/carousel-image-2.png"
           },
           "textColor": "Light",
           "bulletPoints": {
@@ -204,7 +204,7 @@
               "Acelerar o preenchimento de suas informações "
             ],
             "bulletPointsIcon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/12f925ba-030b-498b-8aaf-ff031a1c765d/check-icon.png",
+              "src": "https://decoims.com/loja-integrada/12f925ba-030b-498b-8aaf-ff031a1c765d/check-icon.png",
               "alt": "check icon"
             }
           },
@@ -215,7 +215,7 @@
           "textPlacement": "Top",
           "icon": {
             "placement": "Top right",
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
+            "src": "https://decoims.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
             "alt": "purple arrow"
           },
           "bulletPoints": {
@@ -224,7 +224,7 @@
           "title": "Reduza seu custo com logística",
           "caption": "<p>Conte com o Enviali para obter as<br>melhores negociações de fretecom Correios e outras transportadoras.<br><strong>Fretes com até 70% de desconto.</strong></p>",
           "backgroundImage": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b1802835-9b2b-4ed1-ab2a-560863be1c1c/carousel-image-3.png"
+            "src": "https://decoims.com/loja-integrada/b1802835-9b2b-4ed1-ab2a-560863be1c1c/carousel-image-3.png"
           },
           "useBackground": "image"
         },
@@ -233,7 +233,7 @@
           "textPlacement": "Top",
           "icon": {
             "placement": "Top right",
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
+            "src": "https://decoims.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
             "alt": "white arrow"
           },
           "bulletPoints": {
@@ -242,7 +242,7 @@
           "title": "Aumente seu tráfego qualificado ",
           "caption": "<p>Ferramentas estratégicas: Carrinho abandonado, promoções, Compre Junto e cupom nativos.</p>",
           "backgroundImage": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/531dda31-3645-49c7-ba96-7aa159ed080d/carousel-image-4.png"
+            "src": "https://decoims.com/loja-integrada/531dda31-3645-49c7-ba96-7aa159ed080d/carousel-image-4.png"
           },
           "useBackground": "image"
         },
@@ -251,7 +251,7 @@
           "textPlacement": "Top",
           "icon": {
             "placement": "Top right",
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
+            "src": "https://decoims.com/loja-integrada/fb4a2731-809a-46cd-8925-fed7e3ec1023/purple-stonks-arrow.png",
             "alt": "white arrow"
           },
           "bulletPoints": {
@@ -260,7 +260,7 @@
           "title": "Melhore sua experiência",
           "caption": "<p>Apps e integrações plug n' play que alavancam as suas vendas.</p>",
           "backgroundImage": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/211824dc-57db-47f7-8efd-62b3e1136823/carousel-image-5.png"
+            "src": "https://decoims.com/loja-integrada/211824dc-57db-47f7-8efd-62b3e1136823/carousel-image-5.png"
           },
           "useBackground": "image"
         },
@@ -269,7 +269,7 @@
           "textPlacement": "Bottom",
           "icon": {
             "placement": "Top right",
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
+            "src": "https://decoims.com/loja-integrada/dcef1aac-4d4d-4ad3-befd-005a6b833bfd/white-stonks-arrow.png",
             "alt": "white arrow"
           },
           "bulletPoints": {
@@ -278,14 +278,14 @@
           "title": "Estabilidade de verdade",
           "caption": "<p>Escale sem medo. Nossa infraestrutura elástica cresce junto com você.</p>",
           "backgroundImage": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5aa0aee6-d22a-4fdc-8d21-32fdcc0a7754/carousel-image-6.png"
+            "src": "https://decoims.com/loja-integrada/5aa0aee6-d22a-4fdc-8d21-32fdcc0a7754/carousel-image-6.png"
           },
           "useBackground": "image"
         }
       ],
       "arrows": true,
       "backgroundImage": {
-        "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4868c23-20ac-4754-a3d9-8a02cf8d61bb/rounded-bg-figure.png"
+        "src": "https://decoims.com/loja-integrada/a4868c23-20ac-4754-a3d9-8a02cf8d61bb/rounded-bg-figure.png"
       },
       "cta": [
         {
@@ -309,12 +309,12 @@
             "slides": [
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
+                  "src": "https://decoims.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
                 },
                 "title": "+10 Funcionalidades incrementais",
                 "bulletPoints": {
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
                   },
                   "items": [
                     "Compre Junto",
@@ -333,7 +333,7 @@
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
+                  "src": "https://decoims.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
                 },
                 "title": "Atendimento e suporte",
                 "bulletPoints": {
@@ -348,18 +348,18 @@
                     "Blog"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
                   }
                 }
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
+                  "src": "https://decoims.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
                 },
                 "title": "+10 Canais de venda",
                 "bulletPoints": {
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
                   },
                   "items": [
                     "Venda por redes sociais",
@@ -377,7 +377,7 @@
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
+                  "src": "https://decoims.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
                 },
                 "bulletPoints": {
                   "items": [
@@ -390,14 +390,14 @@
                     "+20 Serviços recomendados"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
                   }
                 },
                 "title": "+30 Serviços de parceiros recomendados "
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
+                  "src": "https://decoims.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
                 },
                 "bulletPoints": {
                   "items": [
@@ -411,14 +411,14 @@
                     "PayPal"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
                   }
                 },
                 "title": "+7 Formas de pagamento "
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
+                  "src": "https://decoims.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
                 },
                 "bulletPoints": {
                   "items": [
@@ -435,7 +435,7 @@
                     "Retirar Pessoalmente"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/3d1654c8-73d2-48b1-9cd2-649a346d922c/green-check-icon.png"
                   }
                 },
                 "title": "+10 Formas de envio"
@@ -444,7 +444,7 @@
             "arrows": true,
             "title": "Um ecossistema de recursos",
             "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
+              "src": "https://decoims.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
               "alt": "carousel background"
             },
             "dots": true,
@@ -474,12 +474,12 @@
             "slides": [
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
+                  "src": "https://decoims.com/loja-integrada/21c9821a-a34d-400a-8276-cf899c9e9936/detailed-carousel-1.png"
                 },
                 "title": "+10 Funcionalidades incrementais",
                 "bulletPoints": {
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   },
                   "items": [
                     "Carrinho Abandonado",
@@ -494,12 +494,12 @@
                   ]
                 },
                 "time": 3,
-                "video": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/2014ce37-ca95-449b-8498-8d66dec23865/Developer-Coding-Background.mp4",
+                "video": "https://decoims.com/loja-integrada/2014ce37-ca95-449b-8498-8d66dec23865/Developer-Coding-Background.mp4",
                 "use": "image"
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
+                  "src": "https://decoims.com/loja-integrada/278f2a44-ab36-48b5-9168-198d3bdebf3c/detailed-carousel-2.png"
                 },
                 "title": "Atendimento e suporte",
                 "bulletPoints": {
@@ -514,18 +514,18 @@
                     "Blog"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   }
                 }
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
+                  "src": "https://decoims.com/loja-integrada/e6b6e31f-738e-4ae2-8f6c-9b7268843ad7/detailed-carousel-3.png"
                 },
                 "title": "+10 Canais de venda",
                 "bulletPoints": {
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   },
                   "items": [
                     "Venda por redes sociais",
@@ -543,7 +543,7 @@
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
+                  "src": "https://decoims.com/loja-integrada/83a600a2-6b3c-4e67-8d46-0b1e6d57206e/detailed-carousel-4.png"
                 },
                 "bulletPoints": {
                   "items": [
@@ -556,14 +556,14 @@
                     "+20 Serviços recomendados"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   }
                 },
                 "title": "+30 Serviços de parceiros recomendados "
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
+                  "src": "https://decoims.com/loja-integrada/01fe0986-7544-4c98-9c68-25cbf887de56/detailed-carousel-5.png"
                 },
                 "bulletPoints": {
                   "items": [
@@ -577,14 +577,14 @@
                     "PayPal"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   }
                 },
                 "title": "+7 Formas de pagamento "
               },
               {
                 "image": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
+                  "src": "https://decoims.com/loja-integrada/68276b37-5999-4d47-b15e-a8e7f9ed7400/detailed-carousel-6.png"
                 },
                 "bulletPoints": {
                   "items": [
@@ -601,7 +601,7 @@
                     "Retirar Pessoalmente"
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
+                    "src": "https://decoims.com/loja-integrada/6521c377-38ab-4441-a3ac-e29ff0779303/dark-check-icon.png"
                   }
                 },
                 "title": "+10 Formas de envio"
@@ -610,7 +610,7 @@
             "arrows": true,
             "title": "Um ecossistema de recursos",
             "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
+              "src": "https://decoims.com/loja-integrada/46f543f0-e203-4ed6-b206-835381812669/detailed-carousel-background.jpg",
               "alt": "carousel background"
             },
             "dots": true,
@@ -642,7 +642,7 @@
         "benefits": [
           {
             "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/970b1637-bcb5-472c-88f3-a176ac1a66b0/calc-icon.svg",
+              "src": "https://decoims.com/loja-integrada/970b1637-bcb5-472c-88f3-a176ac1a66b0/calc-icon.svg",
               "alt": "calculator icon"
             },
             "title": "Negócio",
@@ -650,7 +650,7 @@
           },
           {
             "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b366da33-5a92-4ba1-ad12-d2e7399ac659/hand-payment-icon.svg",
+              "src": "https://decoims.com/loja-integrada/b366da33-5a92-4ba1-ad12-d2e7399ac659/hand-payment-icon.svg",
               "alt": "hand payment icon"
             },
             "title": "Pagamento",
@@ -658,7 +658,7 @@
           },
           {
             "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ab812e28-846a-44a7-9014-a7deca4c28f3/rocket-icon.svg",
+              "src": "https://decoims.com/loja-integrada/ab812e28-846a-44a7-9014-a7deca4c28f3/rocket-icon.svg",
               "alt": "rocket icon"
             },
             "title": "Envio",
@@ -667,33 +667,33 @@
         ],
         "contentTitle": "<p>É rapidinho <strong>1 min</strong></p>",
         "contentTitleIcon": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/b355f7b9-d26f-48eb-b075-832fd8ea1435/clock-icon.svg",
+          "src": "https://decoims.com/loja-integrada/b355f7b9-d26f-48eb-b075-832fd8ea1435/clock-icon.svg",
           "alt": "clock icon"
         },
         "contentCaption": "Preencha os campos abaixo com seus custos atuais e  compare com os custos da Loja Integrada:",
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/db7538ad-59ff-4a2f-a6f6-0b26aea201a2/progress-1.svg",
+          "src": "https://decoims.com/loja-integrada/db7538ad-59ff-4a2f-a6f6-0b26aea201a2/progress-1.svg",
           "alt": "progress bar"
         },
         "objectivesCaption": "Qual o seu objetivo?",
         "objectives": [
           {
             "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/fef3d2f9-5ffe-4626-9627-cfe6b5a4c151/turn-icon-png.png",
+              "src": "https://decoims.com/loja-integrada/fef3d2f9-5ffe-4626-9627-cfe6b5a4c151/turn-icon-png.png",
               "alt": "migrate icon"
             },
             "title": "Quero  migrar"
           },
           {
             "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/9d44075a-fe10-46a4-9af2-04d2f5046cbe/expand-icon.svg",
+              "src": "https://decoims.com/loja-integrada/9d44075a-fe10-46a4-9af2-04d2f5046cbe/expand-icon.svg",
               "alt": "expand icon"
             },
             "title": "Quero  expandir"
           },
           {
             "icon": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/2f9f48b5-07e6-4966-84e3-672e7132248f/world-icon.svg",
+              "src": "https://decoims.com/loja-integrada/2f9f48b5-07e6-4966-84e3-672e7132248f/world-icon.svg",
               "alt": "digitalize icon"
             },
             "title": "Quero  digitalizar"
@@ -703,21 +703,21 @@
         "emailPlaceHolder": "Digite seu email",
         "emailButtonText": "Começar",
         "contentBackground": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/f79bb247-7e00-4f82-98a2-62ee2fd33830/tco-bg.svg"
+          "src": "https://decoims.com/loja-integrada/f79bb247-7e00-4f82-98a2-62ee2fd33830/tco-bg.svg"
         },
         "asideBackground": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/75a002b4-f5a9-476d-9e97-88c8cacdfe9d/tco-aside-background.svg"
+          "src": "https://decoims.com/loja-integrada/75a002b4-f5a9-476d-9e97-88c8cacdfe9d/tco-aside-background.svg"
         },
         "asideTopIcon": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/3378d398-85c5-4432-b6b7-fff2419fbeaf/Coins.svg"
+          "src": "https://decoims.com/loja-integrada/3378d398-85c5-4432-b6b7-fff2419fbeaf/Coins.svg"
         },
         "mobileTopBanner": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/554fb72f-c6c8-4ab7-865b-abf6db6424ec/mobile-top-banner.svg",
+          "src": "https://decoims.com/loja-integrada/554fb72f-c6c8-4ab7-865b-abf6db6424ec/mobile-top-banner.svg",
           "alt": "mobile top banner"
         },
         "mobileStartBanner": {
           "alt": "mobile start screen background",
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7bb388f3-cdd3-4873-9705-250ea560571c/mobile-start-banner2.svg"
+          "src": "https://decoims.com/loja-integrada/7bb388f3-cdd3-4873-9705-250ea560571c/mobile-start-banner2.svg"
         },
         "mobileStartButtonText": "Iniciar cálculo TCO"
       },
@@ -725,7 +725,7 @@
       "caption": "Cálculo de TCO",
       "page2": {
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/777e9d5f-780c-4d07-b054-33c67c89f470/progress-2.svg",
+          "src": "https://decoims.com/loja-integrada/777e9d5f-780c-4d07-b054-33c67c89f470/progress-2.svg",
           "alt": "progress bar"
         },
         "averageMonthlyRevenue": {
@@ -777,7 +777,7 @@
       },
       "page3": {
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/7b6e1caf-8212-4d45-b813-8a3b26b7d559/progress-3.svg",
+          "src": "https://decoims.com/loja-integrada/7b6e1caf-8212-4d45-b813-8a3b26b7d559/progress-3.svg",
           "alt": "progress bar"
         },
         "cardShare": {
@@ -825,10 +825,10 @@
       },
       "page4": {
         "progressImage": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/60eaea9f-9438-41cb-a766-a46b58346bb0/progress-4.svg"
+          "src": "https://decoims.com/loja-integrada/60eaea9f-9438-41cb-a766-a46b58346bb0/progress-4.svg"
         },
         "contentBackground": {
-          "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/722fd251-8380-473b-bcc9-bc45a85bd315/page4contentBackground.svg"
+          "src": "https://decoims.com/loja-integrada/722fd251-8380-473b-bcc9-bc45a85bd315/page4contentBackground.svg"
         },
         "savingTextBefore": "Economize",
         "savingTextAfter": "no plano Expansão",
@@ -844,7 +844,7 @@
           "text": "Receba proposta",
           "href": "#",
           "icon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/daceb68e-0a01-481c-a0f5-8f64df952d19/wpp-icon-white.svg",
+            "src": "https://decoims.com/loja-integrada/daceb68e-0a01-481c-a0f5-8f64df952d19/wpp-icon-white.svg",
             "alt": "whatsapp icon"
           },
           "outline": false
@@ -853,7 +853,7 @@
           "textBefore": "Economize",
           "textAfter": "no plano",
           "background": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/20ee682c-2405-4b9c-92e7-453ee5cf43e6/savings-bg-png.png",
+            "src": "https://decoims.com/loja-integrada/20ee682c-2405-4b9c-92e7-453ee5cf43e6/savings-bg-png.png",
             "alt": "savings background"
           },
           "indicatedPlanSavingLabel": "Economia de"
@@ -861,14 +861,14 @@
         "benefit1": {
           "text": "Aumente suas vendas e economize na sua operação com as nossas soluções nativas",
           "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4d16431e-e7c8-479c-a615-2a4f891e3f46/benefit1-bg.svg",
+            "src": "https://decoims.com/loja-integrada/4d16431e-e7c8-479c-a615-2a4f891e3f46/benefit1-bg.svg",
             "alt": "background"
           }
         },
         "benefit2": {
           "text": "Atendimento prioritário",
           "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a91d5483-1158-4a8f-b2de-90fb07612429/benefit2-bg.svg",
+            "src": "https://decoims.com/loja-integrada/a91d5483-1158-4a8f-b2de-90fb07612429/benefit2-bg.svg",
             "alt": "background"
           }
         },
@@ -892,13 +892,13 @@
         "negativeScreenExtraBenefit2": {
           "text": "Atendimento personalizado com gerente de performance dedicado à sua conta",
           "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5bf710f8-0e2f-4a41-81f6-04efe77d7d47/extra-benefit-2-background-image.png"
+            "src": "https://decoims.com/loja-integrada/5bf710f8-0e2f-4a41-81f6-04efe77d7d47/extra-benefit-2-background-image.png"
           }
         },
         "negativeScreenExtraBenefit1": {
           "text": "Smartcheckout: checkout sem senha, baseado no smartcheckout da VTEX",
           "image": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/ffa82a75-e6b5-4115-a166-79a2f43d4dc9/extra-benefit-1-background-image.png"
+            "src": "https://decoims.com/loja-integrada/ffa82a75-e6b5-4115-a166-79a2f43d4dc9/extra-benefit-1-background-image.png"
           }
         },
         "negativeScreenAsideTitle": "Por que migrar para a Loja Integrada?"
@@ -951,7 +951,7 @@
                 "tag": {
                   "text": "Premium",
                   "icon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5cc30ad5-f8a1-4ea4-b7e7-a37f25023f91/coroa-1.svg",
+                    "src": "https://decoims.com/loja-integrada/5cc30ad5-f8a1-4ea4-b7e7-a37f25023f91/coroa-1.svg",
                     "alt": "crown icon"
                   }
                 },
@@ -966,7 +966,7 @@
                 },
                 "bulletPoints": {
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/93355d06-53de-4455-bfcf-cff173d1cf9a/check-icon.svg"
+                    "src": "https://decoims.com/loja-integrada/93355d06-53de-4455-bfcf-cff173d1cf9a/check-icon.svg"
                   },
                   "items": [
                     {
@@ -1000,7 +1000,7 @@
                 "annualSaving": "Economia de R$500 no anual",
                 "seeMoreButtonText": "Ver mais",
                 "topImage": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/aa340552-8e36-4e1d-9740-dfbbc9ff9b25/3D-Illustration-Y2K-Abstract-Stars-1.svg"
+                  "src": "https://decoims.com/loja-integrada/aa340552-8e36-4e1d-9740-dfbbc9ff9b25/3D-Illustration-Y2K-Abstract-Stars-1.svg"
                 }
               },
               {
@@ -1037,7 +1037,7 @@
                     }
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+                    "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
                     "alt": "bullet points icon"
                   }
                 },
@@ -1084,7 +1084,7 @@
                     }
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+                    "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
                   }
                 },
                 "tag": {
@@ -1136,7 +1136,7 @@
                 },
                 "bulletPoints": {
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+                    "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
                   },
                   "items": [
                     {
@@ -1203,7 +1203,7 @@
                     }
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+                    "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
                     "alt": "bullet points icon"
                   }
                 },
@@ -1253,13 +1253,13 @@
                     }
                   ],
                   "bulletPointsIcon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
+                    "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg"
                   }
                 },
                 "tag": {
                   "text": "Para quem fatura +100k",
                   "icon": {
-                    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5cc30ad5-f8a1-4ea4-b7e7-a37f25023f91/coroa-1.svg",
+                    "src": "https://decoims.com/loja-integrada/5cc30ad5-f8a1-4ea4-b7e7-a37f25023f91/coroa-1.svg",
                     "alt": "crown icon"
                   }
                 },
@@ -1269,7 +1269,7 @@
                 "annualMontlyFee": "<p><span style=\"font-size: 24pt;\" data-mce-style=\"font-size: 24pt;\">R$</span>&nbsp;<strong><span style=\"font-size: 36pt;\" data-mce-style=\"font-size: 36pt;\">1599</span></strong>&nbsp;<span style=\"font-size: 14pt;\" data-mce-style=\"font-size: 14pt;\">/mês</span></p>",
                 "annualSaving": "Economia de R$500 no anual",
                 "topImage": {
-                  "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/aa340552-8e36-4e1d-9740-dfbbc9ff9b25/3D-Illustration-Y2K-Abstract-Stars-1.svg"
+                  "src": "https://decoims.com/loja-integrada/aa340552-8e36-4e1d-9740-dfbbc9ff9b25/3D-Illustration-Y2K-Abstract-Stars-1.svg"
                 },
                 "seeMoreButtonText": "Ver mais"
               }
@@ -1322,11 +1322,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -1426,11 +1426,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -1508,11 +1508,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -1626,11 +1626,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -2107,11 +2107,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -2340,11 +2340,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -2573,11 +2573,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -2858,11 +2858,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -3199,11 +3199,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -3457,11 +3457,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -3572,11 +3572,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -3794,11 +3794,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -4182,11 +4182,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -4547,11 +4547,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -4776,11 +4776,11 @@
             }
           ],
           "checkIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
+            "src": "https://decoims.com/loja-integrada/02491b5e-9374-4f35-8a14-36d6fcf10054/green-check-icon.svg",
             "alt": "check icon"
           },
           "crossIcon": {
-            "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
+            "src": "https://decoims.com/loja-integrada/5ac6995c-0fee-4d32-80fb-3c26fee9d4f0/crossIcon.svg",
             "alt": "cross icon"
           },
           "rows": [
@@ -4970,7 +4970,7 @@
             ],
             "title": "Compre Junto",
             "image": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/e1976be0-b8c1-441d-bfb6-8de773198dea/hero-1-image-mobile.svg",
+              "src": "https://decoims.com/loja-integrada/e1976be0-b8c1-441d-bfb6-8de773198dea/hero-1-image-mobile.svg",
               "alt": "hero image"
             },
             "caption": "Venda mais sem gastar com anúncios pagos",
@@ -4997,7 +4997,7 @@
               }
             ],
             "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/94d5a22d-6783-411d-8035-00cbfd929774/Ellipse-62-(1).svg",
+              "src": "https://decoims.com/loja-integrada/94d5a22d-6783-411d-8035-00cbfd929774/Ellipse-62-(1).svg",
               "alt": "background gradiente"
             },
             "placement": "left",
@@ -5020,7 +5020,7 @@
             ],
             "title": "Venda mais sem gastar com anúncios pagos",
             "image": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/4d2a4a59-bf70-4c3b-850c-e11e59ef5e5a/hero1-image.svg",
+              "src": "https://decoims.com/loja-integrada/4d2a4a59-bf70-4c3b-850c-e11e59ef5e5a/hero1-image.svg",
               "alt": "hero image"
             },
             "caption": "Conheça o “Compre Junto”, nossa  ferramenta nativa",
@@ -5047,7 +5047,7 @@
               }
             ],
             "backgroundImage": {
-              "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/774fda65-7da8-4ecc-a7f0-2c55c8e67f40/Ellipse-62.svg",
+              "src": "https://decoims.com/loja-integrada/774fda65-7da8-4ecc-a7f0-2c55c8e67f40/Ellipse-62.svg",
               "alt": "background gradiente"
             },
             "placement": "left",
@@ -5085,7 +5085,7 @@
                 }
               ],
               "image": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
+                "src": "https://decoims.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
               },
               "placement": "right",
               "cta": [
@@ -5102,7 +5102,7 @@
                 }
               ],
               "backgroundImage": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
+                "src": "https://decoims.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
                 "alt": "green elipse",
                 "width": 797,
                 "height": 1227
@@ -5134,7 +5134,7 @@
                 }
               ],
               "image": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
+                "src": "https://decoims.com/loja-integrada/a4570df3-1d3c-4408-bb0e-58a2f88a1914/hero-2-image.svg"
               },
               "placement": "right",
               "cta": [
@@ -5151,7 +5151,7 @@
                 }
               ],
               "backgroundImage": {
-                "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
+                "src": "https://decoims.com/loja-integrada/02b136e7-9e3f-48e6-874b-6284cf518868/Ellipse-61.png",
                 "alt": "green elipse",
                 "width": 797,
                 "height": 1227
